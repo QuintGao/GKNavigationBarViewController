@@ -1,8 +1,9 @@
 ## GKNavigationBarViewController --- iOS自定义导航栏-导航栏联动（二）
 
 ## 导航栏联动的实现方法
-[iOS自定义导航栏-导航栏联动（一）](https://github.com/QuintGao/GKNavigationController)
-[iOS自定义导航栏-导航栏联动（二）](https://github.com/QuintGao/GKNavigationBarViewController)
+  [iOS自定义导航栏-导航栏联动（一）](https://github.com/QuintGao/GKNavigationController)
+
+  [iOS自定义导航栏-导航栏联动（二）](https://github.com/QuintGao/GKNavigationBarViewController)
 
 ## 说明：
 
@@ -20,7 +21,9 @@
 
 ## Demo中部分截图如下
 
-![今日头条]
-![网易云音乐]
-![网易新闻]
+![今日头条](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/GKNavigationBarViewControllerDemo/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1.gif)
+
+![网易云音乐](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/GKNavigationBarViewControllerDemo/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.gif)
+
+![网易新闻](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/GKNavigationBarViewControllerDemo/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB.gif)
 
