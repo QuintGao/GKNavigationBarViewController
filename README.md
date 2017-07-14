@@ -127,8 +127,8 @@ GKNavigationBarViewController
 @property (nonatomic, strong) NSArray<UIBarButtonItem *> *gk_navRightBarButtonItems;
 ```
 
-## Cocoapods(暂未支持)
-
+## Cocoapods(已支持)
+pod 'GKNavigationBarViewController'
 
 ## 缺陷及不足
 * 不能使用系统导航栏的各种属性及方法
@@ -137,6 +137,7 @@ GKNavigationBarViewController
 ## 时间记录
 
 * 2017.7.13 框架实现完成，发布
+* 2017.7.14 支持cocoapods
 
 
 
