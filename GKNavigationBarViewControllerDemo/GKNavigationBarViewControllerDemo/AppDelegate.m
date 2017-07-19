@@ -26,6 +26,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    self.window.backgroundColor = [UIColor whiteColor];
+    
     UINavigationController *nav = [UINavigationController rootVC:[GKMainViewController new] translationScale:NO];
     nav.gk_openScrollLeftPush = YES;
     

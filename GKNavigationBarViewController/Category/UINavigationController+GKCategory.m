@@ -52,8 +52,9 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 
 - (void)gk_viewDidLoad {
     // 隐藏系统导航栏
-    self.navigationBar.hidden = YES;
     [self setNavigationBarHidden:YES animated:NO];
+    
+    self.view.backgroundColor = [UIColor blackColor];
     
     // 设置代理
     self.delegate = self.navDelegate;
@@ -218,7 +219,6 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     if ([currentVC.gk_pushDelegate respondsToSelector:@selector(pushToNextViewController)]) {
         [currentVC.gk_pushDelegate pushToNextViewController];
     }
-    
 }
 
 @end
