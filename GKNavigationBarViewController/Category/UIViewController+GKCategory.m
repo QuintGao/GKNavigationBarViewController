@@ -20,6 +20,38 @@ static const void* GKPushDelegateKey   = @"GKPushDelegateKey";
 
 @implementation UIViewController (GKCategory)
 
+// 使用static inline创建静态内联函数，方便调用
+static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swizzledSelector) {
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    BOOL isAdd = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (isAdd) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    }else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
+
+// 方法交换
++ (void)load {
+    // 保证其只执行一次
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+        
+        gk_swizzled_method(class, @selector(viewDidAppear:) ,@selector(gk_viewDidAppear:));
+    });
+}
+
+- (void)gk_viewDidAppear:(BOOL)animated {
+    
+    // 在每次视图出现的时候重新设置当前控制器的手势
+    [[NSNotificationCenter defaultCenter] postNotificationName:GKViewControllerPropertyChangedNotification object:@{@"viewController": self}];
+    
+    [self gk_viewDidAppear:animated];
+}
+
 - (BOOL)gk_interactivePopDisabled {
     return [objc_getAssociatedObject(self, GKInteractivePopKey) boolValue];
 }

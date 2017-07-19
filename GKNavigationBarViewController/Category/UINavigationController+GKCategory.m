@@ -54,6 +54,7 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     // 隐藏系统导航栏
     [self setNavigationBarHidden:YES animated:NO];
     
+    // 设置背景色
     self.view.backgroundColor = [UIColor blackColor];
     
     // 设置代理
@@ -118,12 +119,6 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 - (void)gk_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 设置默认值
     if (self.viewControllers.count > 0) {
-        
-        // 设置当前控制器的默认值
-        viewController.gk_interactivePopDisabled = NO;
-        viewController.gk_fullScreenPopDisabled   = NO;
-        viewController.gk_popMaxAllowedDistanceToLeftEdge = 0;
-        
         // 设置返回按钮
         if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
