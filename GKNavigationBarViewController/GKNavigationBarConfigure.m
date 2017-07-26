@@ -4,7 +4,7 @@
 //
 //  Created by QuintGao on 2017/7/10.
 //  Copyright © 2017年 高坤. All rights reserved.
-//
+//  https://github.com/QuintGao/GKNavigationBarViewController_Swift.git
 
 #import "GKNavigationBarConfigure.h"
 #import "UIBarButtonItem+GKCategory.h"

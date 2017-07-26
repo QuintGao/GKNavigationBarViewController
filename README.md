@@ -1,9 +1,9 @@
 ## GKNavigationBarViewController --- iOS自定义导航栏-导航栏联动（二）
 
 ## 导航栏联动的实现方法
-  [iOS自定义导航栏-导航栏联动（一）](http://www.jianshu.com/p/d348e562cb2e)
+  [iOS自定义导航栏-导航栏联动（一）](http://www.jianshu.com/p/5662cdf4393e),[GKNavigationController](GKNavigationController)
 
-  [iOS自定义导航栏-导航栏联动（二）](http://www.jianshu.com/p/4eec02b48720)
+  [iOS自定义导航栏-导航栏联动（二）](http://www.jianshu.com/p/5ba9b12ec933),[GKNavigationBarViewController](https://github.com/QuintGao/GKNavigationBarViewController)
 
 ## 说明：
 
