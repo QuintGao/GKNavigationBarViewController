@@ -138,7 +138,6 @@ pod 'GKNavigationBarViewController'
 
 * 2017.7.13 框架实现完成，发布
 * 2017.7.14 支持cocoapods
-* 2017.8.18 修复pod错误问题
 
 
 

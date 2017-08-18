@@ -1,0 +1,8 @@
+platform :ios, '8.0'
+
+target 'GKNavigationBarViewControllerDemo' do
+  use_frameworks!
+
+pod "GKNavigationBarViewController"
+
+end

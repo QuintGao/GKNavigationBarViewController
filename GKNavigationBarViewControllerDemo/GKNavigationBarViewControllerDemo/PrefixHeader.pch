@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  GKNavigationBarViewControllerDemo
+//
+//  Created by QuintGao on 2017/8/18.
+//  Copyright © 2017年 高坤. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
+
+#endif /* PrefixHeader_pch */
