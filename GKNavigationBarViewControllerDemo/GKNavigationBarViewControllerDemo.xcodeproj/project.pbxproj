@@ -11,7 +11,8 @@
 		798844DB1F46731F00CD3B62 /* btn_back_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D71F46731F00CD3B62 /* btn_back_black@3x.png */; };
 		798844DC1F46731F00CD3B62 /* btn_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D81F46731F00CD3B62 /* btn_back_white@2x.png */; };
 		798844DD1F46731F00CD3B62 /* btn_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D91F46731F00CD3B62 /* btn_back_white@3x.png */; };
-		798844DF1F46735200CD3B62 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */; };
+		798844E11F46755400CD3B62 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 798844E01F46755400CD3B62 /* GKNavigationBarViewController.podspec */; };
+		798844E31F46755B00CD3B62 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 798844E21F46755B00CD3B62 /* README.md */; };
 		799613ED1F0F7F8200264130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EC1F0F7F8200264130 /* main.m */; };
 		799613F01F0F7F8200264130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EF1F0F7F8200264130 /* AppDelegate.m */; };
 		799613F61F0F7F8200264130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799613F41F0F7F8200264130 /* Main.storyboard */; };
@@ -86,7 +87,8 @@
 		798844D71F46731F00CD3B62 /* btn_back_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_black@3x.png"; sourceTree = "<group>"; };
 		798844D81F46731F00CD3B62 /* btn_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@2x.png"; sourceTree = "<group>"; };
 		798844D91F46731F00CD3B62 /* btn_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@3x.png"; sourceTree = "<group>"; };
-		798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
+		798844E01F46755400CD3B62 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GKNavigationBarViewController.podspec; path = ../../GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
+		798844E21F46755B00CD3B62 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		799613E81F0F7F8200264130 /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799613EC1F0F7F8200264130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		799613EE1F0F7F8200264130 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -248,7 +250,7 @@
 		799613EA1F0F7F8200264130 /* GKNavigationBarViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */,
+				798844E01F46755400CD3B62 /* GKNavigationBarViewController.podspec */,
 				7996141F1F0F7FAB00264130 /* GKNavigationBarViewController */,
 				799614491F10B17E00264130 /* Demo */,
 				799613EE1F0F7F8200264130 /* AppDelegate.h */,
@@ -262,6 +264,7 @@
 		799613EB1F0F7F8200264130 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				798844E21F46755B00CD3B62 /* README.md */,
 				799613F71F0F7F8200264130 /* Assets.xcassets */,
 				799613F91F0F7F8200264130 /* LaunchScreen.storyboard */,
 				799613FC1F0F7F8200264130 /* Info.plist */,
@@ -594,7 +597,7 @@
 				798844DA1F46731F00CD3B62 /* btn_back_black@2x.png in Resources */,
 				798844DC1F46731F00CD3B62 /* btn_back_white@2x.png in Resources */,
 				799613F61F0F7F8200264130 /* Main.storyboard in Resources */,
-				798844DF1F46735200CD3B62 /* GKNavigationBarViewController.podspec in Resources */,
+				798844E11F46755400CD3B62 /* GKNavigationBarViewController.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +630,7 @@
 				799614A21F126F4700264130 /* GKToutiaoViewController.m in Sources */,
 				799614BC1F1292E100264130 /* GKWYMusicMineViewController.m in Sources */,
 				799614D41F147CDC00264130 /* UIScrollView+GKCategory.m in Sources */,
+				798844E31F46755B00CD3B62 /* README.md in Sources */,
 				799613F01F0F7F8200264130 /* AppDelegate.m in Sources */,
 				7996142F1F0F7FF900264130 /* UIViewController+GKCategory.m in Sources */,
 				799614C81F13514500264130 /* GKWYMusicDetailViewController.m in Sources */,
