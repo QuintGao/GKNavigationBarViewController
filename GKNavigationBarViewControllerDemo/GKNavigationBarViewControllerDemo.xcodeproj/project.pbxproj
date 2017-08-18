@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		798844DA1F46731F00CD3B62 /* btn_back_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D61F46731F00CD3B62 /* btn_back_black@2x.png */; };
+		798844DB1F46731F00CD3B62 /* btn_back_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D71F46731F00CD3B62 /* btn_back_black@3x.png */; };
+		798844DC1F46731F00CD3B62 /* btn_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D81F46731F00CD3B62 /* btn_back_white@2x.png */; };
+		798844DD1F46731F00CD3B62 /* btn_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798844D91F46731F00CD3B62 /* btn_back_white@3x.png */; };
+		798844DF1F46735200CD3B62 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */; };
 		799613ED1F0F7F8200264130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EC1F0F7F8200264130 /* main.m */; };
 		799613F01F0F7F8200264130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EF1F0F7F8200264130 /* AppDelegate.m */; };
 		799613F61F0F7F8200264130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799613F41F0F7F8200264130 /* Main.storyboard */; };
@@ -18,8 +23,6 @@
 		7996142F1F0F7FF900264130 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614241F0F7FF900264130 /* UIViewController+GKCategory.m */; };
 		799614311F0F7FF900264130 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614291F0F7FF900264130 /* GKDelegateHandler.m */; };
 		799614361F0F824D00264130 /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614351F0F824D00264130 /* GKNavigationBarViewController.m */; };
-		799614441F0FA06100264130 /* btn_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 799614421F0FA06100264130 /* btn_back_white@2x.png */; };
-		799614451F0FA06100264130 /* btn_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 799614431F0FA06100264130 /* btn_back_white@3x.png */; };
 		799614481F0FA07600264130 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614471F0FA07600264130 /* UIBarButtonItem+GKCategory.m */; };
 		7996144C1F10B42000264130 /* GKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7996144B1F10B42000264130 /* GKMainViewController.m */; };
 		799614681F10B5EB00264130 /* GKDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7996144F1F10B5EB00264130 /* GKDemoBaseViewController.m */; };
@@ -59,8 +62,6 @@
 		799614EA1F14C40300264130 /* GKWYNewsProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614E91F14C40300264130 /* GKWYNewsProfileViewController.m */; };
 		799614ED1F14CA2000264130 /* GKWYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614EC1F14CA2000264130 /* GKWYNewsDetailViewController.m */; };
 		799614F01F14CA2B00264130 /* GKWYNewsCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614EF1F14CA2B00264130 /* GKWYNewsCommentViewController.m */; };
-		799614F71F150D5300264130 /* btn_back_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 799614F51F150D5300264130 /* btn_back_black@2x.png */; };
-		799614F81F150D5300264130 /* btn_back_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 799614F61F150D5300264130 /* btn_back_black@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		798844D61F46731F00CD3B62 /* btn_back_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_black@2x.png"; sourceTree = "<group>"; };
+		798844D71F46731F00CD3B62 /* btn_back_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_black@3x.png"; sourceTree = "<group>"; };
+		798844D81F46731F00CD3B62 /* btn_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@2x.png"; sourceTree = "<group>"; };
+		798844D91F46731F00CD3B62 /* btn_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@3x.png"; sourceTree = "<group>"; };
+		798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
 		799613E81F0F7F8200264130 /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799613EC1F0F7F8200264130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		799613EE1F0F7F8200264130 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,8 +109,6 @@
 		799614291F0F7FF900264130 /* GKDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDelegateHandler.m; sourceTree = "<group>"; };
 		799614341F0F824D00264130 /* GKNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarViewController.h; sourceTree = "<group>"; };
 		799614351F0F824D00264130 /* GKNavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewController.m; sourceTree = "<group>"; };
-		799614421F0FA06100264130 /* btn_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@2x.png"; sourceTree = "<group>"; };
-		799614431F0FA06100264130 /* btn_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_white@3x.png"; sourceTree = "<group>"; };
 		799614461F0FA07600264130 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
 		799614471F0FA07600264130 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
 		7996144A1F10B42000264130 /* GKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMainViewController.h; sourceTree = "<group>"; };
@@ -183,8 +187,6 @@
 		799614EC1F14CA2000264130 /* GKWYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsDetailViewController.m; sourceTree = "<group>"; };
 		799614EE1F14CA2B00264130 /* GKWYNewsCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsCommentViewController.h; sourceTree = "<group>"; };
 		799614EF1F14CA2B00264130 /* GKWYNewsCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsCommentViewController.m; sourceTree = "<group>"; };
-		799614F51F150D5300264130 /* btn_back_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_black@2x.png"; sourceTree = "<group>"; };
-		799614F61F150D5300264130 /* btn_back_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_black@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		798844D51F46731F00CD3B62 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				798844D61F46731F00CD3B62 /* btn_back_black@2x.png */,
+				798844D71F46731F00CD3B62 /* btn_back_black@3x.png */,
+				798844D81F46731F00CD3B62 /* btn_back_white@2x.png */,
+				798844D91F46731F00CD3B62 /* btn_back_white@3x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		799613DF1F0F7F8200264130 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +248,7 @@
 		799613EA1F0F7F8200264130 /* GKNavigationBarViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				798844DE1F46735200CD3B62 /* GKNavigationBarViewController.podspec */,
 				7996141F1F0F7FAB00264130 /* GKNavigationBarViewController */,
 				799614491F10B17E00264130 /* Demo */,
 				799613EE1F0F7F8200264130 /* AppDelegate.h */,
@@ -283,7 +297,7 @@
 				799614CA1F13710300264130 /* GKNavigationBarConfigure.m */,
 				799614201F0F7FF900264130 /* Category */,
 				799614271F0F7FF900264130 /* TransitionAnimation */,
-				799614411F0FA06100264130 /* Resources */,
+				798844D51F46731F00CD3B62 /* Resource */,
 			);
 			name = GKNavigationBarViewController;
 			path = ../../GKNavigationBarViewController;
@@ -315,17 +329,6 @@
 				799614D01F1387C200264130 /* GKPopTransitionAnimation.m */,
 			);
 			path = TransitionAnimation;
-			sourceTree = "<group>";
-		};
-		799614411F0FA06100264130 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				799614421F0FA06100264130 /* btn_back_white@2x.png */,
-				799614431F0FA06100264130 /* btn_back_white@3x.png */,
-				799614F51F150D5300264130 /* btn_back_black@2x.png */,
-				799614F61F150D5300264130 /* btn_back_black@3x.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		799614491F10B17E00264130 /* Demo */ = {
@@ -585,12 +588,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				799613FB1F0F7F8200264130 /* LaunchScreen.storyboard in Resources */,
+				798844DD1F46731F00CD3B62 /* btn_back_white@3x.png in Resources */,
 				799613F81F0F7F8200264130 /* Assets.xcassets in Resources */,
-				799614441F0FA06100264130 /* btn_back_white@2x.png in Resources */,
+				798844DB1F46731F00CD3B62 /* btn_back_black@3x.png in Resources */,
+				798844DA1F46731F00CD3B62 /* btn_back_black@2x.png in Resources */,
+				798844DC1F46731F00CD3B62 /* btn_back_white@2x.png in Resources */,
 				799613F61F0F7F8200264130 /* Main.storyboard in Resources */,
-				799614F71F150D5300264130 /* btn_back_black@2x.png in Resources */,
-				799614451F0FA06100264130 /* btn_back_white@3x.png in Resources */,
-				799614F81F150D5300264130 /* btn_back_black@3x.png in Resources */,
+				798844DF1F46735200CD3B62 /* GKNavigationBarViewController.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +905,7 @@
 				799614171F0F7F8300264130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		799614181F0F7F8300264130 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -909,6 +914,7 @@
 				7996141A1F0F7F8300264130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7996141B1F0F7F8300264130 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -917,6 +923,7 @@
 				7996141D1F0F7F8300264130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
