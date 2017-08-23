@@ -11,6 +11,12 @@
 #import "UIBarButtonItem+GKCategory.h"
 #import <objc/runtime.h>
 
+#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
+
 @implementation UINavigationController (GKCategory)
 
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {
@@ -122,7 +128,7 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
         // 设置返回按钮
         if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil imageName:@"btn_back_black" target:self action:@selector(goBack)];
+            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:GKImage(@"btn_back_black" ) target:self action:@selector(goBack)];
         }
     }
     if (![self.viewControllers containsObject:viewController]) {

@@ -21,6 +21,17 @@
     return [[self alloc] initWithCustomView:btn];
 }
 
++ (instancetype)itemWithTitle:(NSString *)title image:(UIImage *)image target:(id)target action:(SEL)action {
+    
+    UIButton *btn = [UIButton new];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return [[self alloc] initWithCustomView:btn];
+}
+
 + (instancetype)itemWithImageName:(NSString *)imageName target:(id)target action:(SEL)action {
     UIButton *btn = [UIButton new];
     [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
