@@ -33,18 +33,41 @@
     return _gk_navigationItem;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // 设置自定义导航栏
-    [self setupCustomNavBar];
-    
-    // 设置导航栏外观
-    [self setupNavBarAppearance];
+- (instancetype)init {
+    if (self = [super init]) {
+        // 设置自定义导航栏
+        [self setupCustomNavBar];
+        
+        // 设置导航栏外观
+        [self setupNavBarAppearance];
+    }
+    return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // 设置自定义导航栏
+        [self setupCustomNavBar];
+        
+        // 设置导航栏外观
+        [self setupNavBarAppearance];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        // 设置自定义导航栏
+        [self setupCustomNavBar];
+        
+        // 设置导航栏外观
+        [self setupNavBarAppearance];
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     if (self.gk_navigationBar && !self.gk_navigationBar.hidden) {
         [self.view bringSubviewToFront:self.gk_navigationBar];
@@ -69,10 +92,24 @@
  设置导航栏外观
  */
 - (void)setupNavBarAppearance {
-    self.gk_navBarTintColor = [GKNavigationBarConfigure sharedInstance].barTintColor;
-    self.gk_navTintColor    = [GKNavigationBarConfigure sharedInstance].tintColor;
-    self.gk_navTitleColor   = [GKNavigationBarConfigure sharedInstance].titleColor;
-    self.gk_navTitleFont    = [GKNavigationBarConfigure sharedInstance].titleFont;
+    
+    GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
+    
+    if (configure.barTintColor) {
+        self.gk_navBarTintColor = configure.barTintColor;
+    }
+    
+    if (configure.tintColor) {
+        self.gk_navTintColor = configure.tintColor;
+    }
+    
+    if (configure.titleColor) {
+        self.gk_navTitleColor = configure.titleColor;
+    }
+    
+    if (configure.titleFont) {
+        self.gk_navTitleFont = configure.titleFont;
+    }
 }
 
 #pragma mark - setter
