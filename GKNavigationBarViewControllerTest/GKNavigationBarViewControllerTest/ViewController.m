@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "GKNavigationBarViewController.h"
 
 @interface ViewController ()
 
@@ -18,15 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor   = [UIColor redColor];
     
-    self.gk_navBackgroundColor = [UIColor clearColor];
+//    self.gk_navBarTintColor     = [UIColor clearColor];
+//    self.gk_navBackgroundColor  = [UIColor clearColor];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    ViewController *vc = [ViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+//    ViewController *vc = [ViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

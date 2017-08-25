@@ -23,13 +23,13 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.scrollView.delegate = self;
     self.scrollView.backgroundColor = [UIColor grayColor];
-    self.scrollView.contentSize = CGSizeMake(0, self.view.frame.size.height + 200);
+    self.scrollView.contentSize = CGSizeMake(0, self.view.frame.size.height + 500);
 //    [self.view addSubview:self.scrollView];
     [self.view insertSubview:self.scrollView atIndex:0];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.gk_navBarTintColor = [UIColor brownColor];
+    self.gk_navBarTintColor = [UIColor redColor];
     self.gk_navBarAlpha     = 0.0;
     
     self.title = @"控制器002";

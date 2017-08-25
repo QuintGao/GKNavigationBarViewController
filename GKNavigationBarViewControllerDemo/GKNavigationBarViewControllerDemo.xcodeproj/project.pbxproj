@@ -800,7 +800,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.navbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
-				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
+				PROVISIONING_PROFILE_SPECIFIER = jvtalking___test;
 			};
 			name = Debug;
 		};
@@ -816,7 +816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.navbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
-				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
+				PROVISIONING_PROFILE_SPECIFIER = jvtalking___test;
 			};
 			name = Release;
 		};

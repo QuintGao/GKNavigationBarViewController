@@ -25,53 +25,6 @@
 
 @implementation GKNavigationBarViewController
 
-- (UINavigationBar *)gk_navigationBar {
-    if (!_gk_navigationBar) {
-        _gk_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
-    }
-    return _gk_navigationBar;
-}
-
-- (UINavigationItem *)gk_navigationItem {
-    if (!_gk_navigationItem) {
-        _gk_navigationItem = [UINavigationItem new];
-    }
-    return _gk_navigationItem;
-}
-
-//- (instancetype)init {
-//    if (self = [super init]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
-
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-//    if (self = [super initWithCoder:aDecoder]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
-
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -90,6 +43,8 @@
     }
 }
 
+
+#pragma mark - private methods
 /**
  设置自定义导航条
  */
@@ -98,8 +53,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.view addSubview:self.gk_navigationBar];
-    
-    self.gk_navigationBar.translucent = NO;
     
     self.gk_navigationBar.items = @[self.gk_navigationItem];
 }
@@ -126,6 +79,21 @@
     if (configure.titleFont) {
         self.gk_navTitleFont = configure.titleFont;
     }
+}
+
+#pragma mark - 懒加载
+- (UINavigationBar *)gk_navigationBar {
+    if (!_gk_navigationBar) {
+        _gk_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+    }
+    return _gk_navigationBar;
+}
+
+- (UINavigationItem *)gk_navigationItem {
+    if (!_gk_navigationItem) {
+        _gk_navigationItem = [UINavigationItem new];
+    }
+    return _gk_navigationItem;
 }
 
 #pragma mark - setter

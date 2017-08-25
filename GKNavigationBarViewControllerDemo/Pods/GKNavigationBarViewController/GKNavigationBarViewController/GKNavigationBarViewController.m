@@ -9,6 +9,12 @@
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
 
+#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
+
 @interface GKNavigationBarViewController ()
 
 @property (nonatomic, strong) UINavigationBar *gk_navigationBar;
@@ -33,6 +39,39 @@
     return _gk_navigationItem;
 }
 
+//- (instancetype)init {
+//    if (self = [super init]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
+
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+//    if (self = [super initWithCoder:aDecoder]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
+
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -43,8 +82,8 @@
     [self setupNavBarAppearance];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     if (self.gk_navigationBar && !self.gk_navigationBar.hidden) {
         [self.view bringSubviewToFront:self.gk_navigationBar];
@@ -60,7 +99,7 @@
     
     [self.view addSubview:self.gk_navigationBar];
     
-    self.gk_navigationBar.translucent = NO;
+//    self.gk_navigationBar.translucent = NO;
     
     self.gk_navigationBar.items = @[self.gk_navigationItem];
 }
@@ -69,10 +108,24 @@
  设置导航栏外观
  */
 - (void)setupNavBarAppearance {
-    self.gk_navBarTintColor = [GKNavigationBarConfigure sharedInstance].barTintColor;
-    self.gk_navTintColor    = [GKNavigationBarConfigure sharedInstance].tintColor;
-    self.gk_navTitleColor   = [GKNavigationBarConfigure sharedInstance].titleColor;
-    self.gk_navTitleFont    = [GKNavigationBarConfigure sharedInstance].titleFont;
+    
+    GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
+    
+    if (configure.barTintColor) {
+        self.gk_navBarTintColor = configure.barTintColor;
+    }
+    
+    if (configure.tintColor) {
+        self.gk_navTintColor = configure.tintColor;
+    }
+    
+    if (configure.titleColor) {
+        self.gk_navTitleColor = configure.titleColor;
+    }
+    
+    if (configure.titleFont) {
+        self.gk_navTitleFont = configure.titleFont;
+    }
 }
 
 #pragma mark - setter
@@ -89,7 +142,12 @@
 - (void)setGk_navBackgroundColor:(UIColor *)gk_navBackgroundColor {
     _gk_navBackgroundColor = gk_navBackgroundColor;
     
-    [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    if (gk_navBackgroundColor == [UIColor clearColor]) {
+        [self.gk_navigationBar setBackgroundImage:GKImage(@"transparent_bg") forBarMetrics:UIBarMetricsDefault];
+        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor clearColor]];
+    }else {
+        [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (void)setGk_navBackgroundImage:(UIImage *)gk_navBackgroundImage {
