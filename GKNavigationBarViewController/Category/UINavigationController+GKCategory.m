@@ -128,9 +128,12 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
         // 设置返回按钮
         if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:GKImage(@"btn_back_black" ) target:self action:@selector(goBack)];
+            
+            UIImage *backImage = self.visibleViewController.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(goBack)];
         }
     }
+    
     if (![self.viewControllers containsObject:viewController]) {
         [self gk_pushViewController:viewController animated:animated];
     }
@@ -138,6 +141,15 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 
 - (void)goBack {
     [self popViewControllerAnimated:YES];
+}
+
+#pragma mark - StatusBar
+- (BOOL)prefersStatusBarHidden {
+    return self.visibleViewController.gk_StatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.visibleViewController.gk_statusBarStyle;
 }
 
 #pragma mark - getter

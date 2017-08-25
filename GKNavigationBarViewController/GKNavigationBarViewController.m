@@ -79,6 +79,23 @@
     if (configure.titleFont) {
         self.gk_navTitleFont = configure.titleFont;
     }
+    
+    self.gk_StatusBarHidden = configure.statusBarHidden;
+    self.gk_statusBarStyle  = configure.statusBarStyle;
+    
+    self.gk_backStyle       = configure.backStyle;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    CGFloat width  = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    
+    // 导航栏高度：横屏(状态栏显示：52，状态栏隐藏：32) 竖屏64
+    CGFloat navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
+    
+    self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
 }
 
 #pragma mark - 懒加载

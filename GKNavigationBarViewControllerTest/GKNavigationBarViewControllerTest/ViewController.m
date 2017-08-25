@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 
@@ -19,14 +20,16 @@
     
     self.view.backgroundColor   = [UIColor redColor];
     
-//    self.gk_navBarTintColor     = [UIColor clearColor];
-//    self.gk_navBackgroundColor  = [UIColor clearColor];
+    self.gk_navBackgroundColor = [UIColor blueColor];
+    
+    self.gk_navigationItem.title = @"你好啊";
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    ViewController *vc = [ViewController new];
-//    [self.navigationController pushViewController:vc animated:YES];
+    SecondViewController *vc = [SecondViewController new];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

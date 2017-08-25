@@ -25,6 +25,7 @@
 		7927C41D1F4DB8F60078AD96 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C40F1F4DB8F60078AD96 /* GKPopTransitionAnimation.m */; };
 		7927C41E1F4DB8F60078AD96 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4111F4DB8F60078AD96 /* GKPushTransitionAnimation.m */; };
 		7927C4201F4DB92F0078AD96 /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7927C41F1F4DB92F0078AD96 /* GKNavigationBarViewController.bundle */; };
+		7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4501F4FD6D10078AD96 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		7927C4101F4DB8F60078AD96 /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPushTransitionAnimation.h; sourceTree = "<group>"; };
 		7927C4111F4DB8F60078AD96 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushTransitionAnimation.m; sourceTree = "<group>"; };
 		7927C41F1F4DB92F0078AD96 /* GKNavigationBarViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKNavigationBarViewController.bundle; sourceTree = "<group>"; };
+		7927C44F1F4FD6D10078AD96 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		7927C4501F4FD6D10078AD96 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				7927C3C91F4DB8E80078AD96 /* AppDelegate.m */,
 				7927C3CB1F4DB8E80078AD96 /* ViewController.h */,
 				7927C3CC1F4DB8E80078AD96 /* ViewController.m */,
+				7927C44F1F4FD6D10078AD96 /* SecondViewController.h */,
+				7927C4501F4FD6D10078AD96 /* SecondViewController.m */,
 				7927C3CE1F4DB8E80078AD96 /* Main.storyboard */,
 				7927C3D11F4DB8E80078AD96 /* Assets.xcassets */,
 				7927C3D31F4DB8E80078AD96 /* LaunchScreen.storyboard */,
@@ -351,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7927C41D1F4DB8F60078AD96 /* GKPopTransitionAnimation.m in Sources */,
+				7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */,
 				7927C4121F4DB8F60078AD96 /* UIBarButtonItem+GKCategory.m in Sources */,
 				7927C4141F4DB8F60078AD96 /* UIScrollView+GKCategory.m in Sources */,
 				7927C41E1F4DB8F60078AD96 /* GKPushTransitionAnimation.m in Sources */,
@@ -599,6 +605,7 @@
 				7927C3F11F4DB8E80078AD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7927C3F21F4DB8E80078AD96 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerTestTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +614,7 @@
 				7927C3F41F4DB8E80078AD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7927C3F51F4DB8E80078AD96 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -615,6 +623,7 @@
 				7927C3F71F4DB8E80078AD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
