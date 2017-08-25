@@ -9,6 +9,12 @@
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
 
+#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
+
 @interface GKNavigationBarViewController ()
 
 @property (nonatomic, strong) UINavigationBar *gk_navigationBar;
@@ -33,37 +39,47 @@
     return _gk_navigationItem;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        // 设置自定义导航栏
-        [self setupCustomNavBar];
-        
-        // 设置导航栏外观
-        [self setupNavBarAppearance];
-    }
-    return self;
-}
+//- (instancetype)init {
+//    if (self = [super init]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        // 设置自定义导航栏
-        [self setupCustomNavBar];
-        
-        // 设置导航栏外观
-        [self setupNavBarAppearance];
-    }
-    return self;
-}
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+//    if (self = [super initWithCoder:aDecoder]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // 设置自定义导航栏
-        [self setupCustomNavBar];
-        
-        // 设置导航栏外观
-        [self setupNavBarAppearance];
-    }
-    return self;
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//        // 设置自定义导航栏
+//        [self setupCustomNavBar];
+//        
+//        // 设置导航栏外观
+//        [self setupNavBarAppearance];
+//    }
+//    return self;
+//}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // 设置自定义导航栏
+    [self setupCustomNavBar];
+    
+    // 设置导航栏外观
+    [self setupNavBarAppearance];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -126,7 +142,12 @@
 - (void)setGk_navBackgroundColor:(UIColor *)gk_navBackgroundColor {
     _gk_navBackgroundColor = gk_navBackgroundColor;
     
-    [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    if (gk_navBackgroundColor == [UIColor clearColor]) {
+        [self.gk_navigationBar setBackgroundImage:GKImage(@"transparent_bg") forBarMetrics:UIBarMetricsDefault];
+        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor clearColor]];
+    }else {
+        [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (void)setGk_navBackgroundImage:(UIImage *)gk_navBackgroundImage {
