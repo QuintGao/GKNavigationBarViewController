@@ -125,6 +125,8 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 
 - (void)setGk_StatusBarHidden:(BOOL)gk_StatusBarHidden {
     objc_setAssociatedObject(self, GKStatusBarHiddenKey, @(gk_StatusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (GKNavigationBarBackStyle)gk_backStyle {
