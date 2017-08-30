@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, assign) BOOL show;
+
 @end
 
 @implementation ViewController
@@ -18,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor   = [UIColor redColor];
-    
-//    self.gk_navBackgroundColor = [UIColor blueColor];
-    
+    self.view.backgroundColor   = [UIColor whiteColor];
+        
     self.gk_navigationItem.title = @"你好啊";
+    
+    self.show = YES;
 }
 
 
@@ -30,7 +32,18 @@
     SecondViewController *vc = [SecondViewController new];
     
 //    [self.navigationController pushViewController:vc animated:YES];
-    self.gk_StatusBarHidden = !self.gk_StatusBarHidden;
+//    self.gk_StatusBarHidden = !self.gk_StatusBarHidden;
+    if (self.show) {
+        self.show = NO;
+        
+        [self hideNavLine];
+        
+    }else {
+        self.show = YES;
+        
+        [self showNavLine];
+    }
+    
 }
 
 

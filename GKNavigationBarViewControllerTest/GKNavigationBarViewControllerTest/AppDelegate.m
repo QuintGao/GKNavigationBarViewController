@@ -18,15 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-////    [[GKNavigationBarConfigure sharedInstance] setupDefaultConfigure];
-//    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
-//        configure.titleColor        = [UIColor whiteColor];
-//        configure.statusBarHidden   = NO;
-//        configure.titleFont         = [UIFont systemFontOfSize:18];
-//        configure.statusBarStyle    = UIStatusBarStyleLightContent;
-//        
-//        configure.backStyle         = GKNavigationBarBackStyleWhite;
-//    }];
+//    [[GKNavigationBarConfigure sharedInstance] setupDefaultConfigure];
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.titleColor        = [UIColor whiteColor];
+        configure.statusBarHidden   = NO;
+        configure.titleFont         = [UIFont systemFontOfSize:18];
+        configure.statusBarStyle    = UIStatusBarStyleDefault;
+        
+        configure.backStyle         = GKNavigationBarBackStyleBlack;
+    }];
     
     // Override point for customization after application launch.
     return YES;

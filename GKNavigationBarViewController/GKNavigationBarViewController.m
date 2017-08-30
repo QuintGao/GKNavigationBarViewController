@@ -43,8 +43,28 @@
     }
 }
 
+#pragma mark - Public Methods
+- (void)showNavLine {
+    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
+    
+    for (UIView *view in backgroundView.subviews) {
+        if (view.frame.size.height < 1.0) {
+            view.hidden = NO;
+        }
+    }
+}
 
-#pragma mark - private methods
+- (void)hideNavLine {
+    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
+    
+    for (UIView *view in backgroundView.subviews) {
+        if (view.frame.size.height < 1.0) {
+            view.hidden = YES;
+        }
+    }
+}
+
+#pragma mark - private Methods
 /**
  设置自定义导航条
  */
@@ -64,12 +84,8 @@
     
     GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
     
-    if (configure.barTintColor) {
-        self.gk_navBarTintColor = configure.barTintColor;
-    }
-    
-    if (configure.tintColor) {
-        self.gk_navTintColor = configure.tintColor;
+    if (configure.backgroundColor) {
+        self.gk_navBackgroundColor = configure.backgroundColor;
     }
     
     if (configure.titleColor) {

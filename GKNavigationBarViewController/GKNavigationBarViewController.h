@@ -43,4 +43,14 @@
 @property (nonatomic, strong) UIBarButtonItem *gk_navRightBarButtonItem;
 @property (nonatomic, strong) NSArray<UIBarButtonItem *> *gk_navRightBarButtonItems;
 
+
+/**
+ 显示导航栏分割线
+ */
+- (void)showNavLine;
+/**
+ 隐藏导航栏分割线
+ */
+- (void)hideNavLine;
+
 @end

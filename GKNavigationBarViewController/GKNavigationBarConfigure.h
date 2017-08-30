@@ -18,10 +18,7 @@ typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
 @interface GKNavigationBarConfigure : NSObject
 
 /** 导航栏背景色 */
-@property (nonatomic, strong) UIColor *barTintColor;
-
-/** 导航栏颜色 */
-@property (nonatomic, strong) UIColor *tintColor;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 /** 导航栏标题颜色 */
 @property (nonatomic, strong) UIColor *titleColor;

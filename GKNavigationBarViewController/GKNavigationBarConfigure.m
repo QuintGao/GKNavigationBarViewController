@@ -24,9 +24,7 @@ static GKNavigationBarConfigure *instance = nil;
 // 设置默认的导航栏外观
 - (void)setupDefaultConfigure {
     
-    self.barTintColor    = [UIColor whiteColor];
-    
-    self.tintColor       = [UIColor blackColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     self.titleColor      = [UIColor blackColor];
     
