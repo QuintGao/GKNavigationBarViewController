@@ -15,10 +15,6 @@
 
 #define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
 
-
-
-
-
 #define GKConfigure [GKNavigationBarConfigure sharedInstance]
 
 typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
@@ -53,5 +49,8 @@ typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
 
 // 自定义
 - (void)setupCustomConfigure:(void (^)(GKNavigationBarConfigure *configure))block;
+
+// 获取当前显示的控制器
+- (UIViewController *)visibleController;
 
 @end

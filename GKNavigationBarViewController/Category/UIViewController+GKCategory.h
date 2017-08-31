@@ -45,4 +45,9 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 /** push代理 */
 @property (nonatomic, assign) id<GKViewControllerPushDelegate> gk_pushDelegate;
 
+/**
+ 返回显示的控制器
+ */
+- (UIViewController *)gk_visibleViewControllerIfExist;
+
 @end

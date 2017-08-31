@@ -181,4 +181,26 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     navBar.clipsToBounds = alpha == 0.0;
 }
 
+- (UIViewController *)gk_visibleViewControllerIfExist {
+    
+    if (self.presentedViewController) {
+        return [self.presentedViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isKindOfClass:[UINavigationController class]]) {
+        return [((UINavigationController *)self).topViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isKindOfClass:[UITabBarController class]]) {
+        return [((UITabBarController *)self).selectedViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isViewLoaded] && self.view.window) {
+        return self;
+    }else {
+        NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
+        return nil;
+    }
+}
+
 @end

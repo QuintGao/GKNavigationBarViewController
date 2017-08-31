@@ -8,6 +8,7 @@
 
 #import "GKNavigationBarConfigure.h"
 #import "UIBarButtonItem+GKCategory.h"
+#import "UIViewController+GKCategory.h"
 
 @implementation GKNavigationBarConfigure
 
@@ -43,6 +44,11 @@ static GKNavigationBarConfigure *instance = nil;
     [self setupDefaultConfigure];
     
     !block ? : block(self);
+}
+
+// 获取当前显示的控制器
+- (UIViewController *)visibleController {
+    return [[UIApplication sharedApplication].keyWindow.rootViewController gk_visibleViewControllerIfExist];
 }
 
 @end
