@@ -26,6 +26,8 @@
 		7927C41E1F4DB8F60078AD96 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4111F4DB8F60078AD96 /* GKPushTransitionAnimation.m */; };
 		7927C4201F4DB92F0078AD96 /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7927C41F1F4DB92F0078AD96 /* GKNavigationBarViewController.bundle */; };
 		7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4501F4FD6D10078AD96 /* SecondViewController.m */; };
+		794F3A9E1F57E36600A98D2C /* UITabBarController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 794F3A9D1F57E36600A98D2C /* UITabBarController+GKRotation.m */; };
+		794F3AA11F57E38500A98D2C /* UINavigationController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 794F3AA01F57E38500A98D2C /* UINavigationController+GKRotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,11 @@
 		7927C41F1F4DB92F0078AD96 /* GKNavigationBarViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKNavigationBarViewController.bundle; sourceTree = "<group>"; };
 		7927C44F1F4FD6D10078AD96 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		7927C4501F4FD6D10078AD96 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		794F3A9C1F57E36600A98D2C /* UITabBarController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+GKRotation.h"; sourceTree = "<group>"; };
+		794F3A9D1F57E36600A98D2C /* UITabBarController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+GKRotation.m"; sourceTree = "<group>"; };
+		794F3A9F1F57E38500A98D2C /* UINavigationController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKRotation.h"; sourceTree = "<group>"; };
+		794F3AA01F57E38500A98D2C /* UINavigationController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKRotation.m"; sourceTree = "<group>"; };
+		794F3AA21F57E3D000A98D2C /* GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +200,7 @@
 		7927C3F91F4DB8F60078AD96 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				794F3AA21F57E3D000A98D2C /* GKCategory.h */,
 				7927C3FA1F4DB8F60078AD96 /* UIBarButtonItem+GKCategory.h */,
 				7927C3FB1F4DB8F60078AD96 /* UIBarButtonItem+GKCategory.m */,
 				7927C3FC1F4DB8F60078AD96 /* UINavigationController+GKCategory.h */,
@@ -201,6 +209,10 @@
 				7927C3FF1F4DB8F60078AD96 /* UIScrollView+GKCategory.m */,
 				7927C4001F4DB8F60078AD96 /* UIViewController+GKCategory.h */,
 				7927C4011F4DB8F60078AD96 /* UIViewController+GKCategory.m */,
+				794F3A9F1F57E38500A98D2C /* UINavigationController+GKRotation.h */,
+				794F3AA01F57E38500A98D2C /* UINavigationController+GKRotation.m */,
+				794F3A9C1F57E36600A98D2C /* UITabBarController+GKRotation.h */,
+				794F3A9D1F57E36600A98D2C /* UITabBarController+GKRotation.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -364,9 +376,11 @@
 				7927C4131F4DB8F60078AD96 /* UINavigationController+GKCategory.m in Sources */,
 				7927C3CD1F4DB8E80078AD96 /* ViewController.m in Sources */,
 				7927C3CA1F4DB8E80078AD96 /* AppDelegate.m in Sources */,
+				794F3AA11F57E38500A98D2C /* UINavigationController+GKRotation.m in Sources */,
 				7927C4151F4DB8F60078AD96 /* UIViewController+GKCategory.m in Sources */,
 				7927C41C1F4DB8F60078AD96 /* GKDelegateHandler.m in Sources */,
 				7927C4161F4DB8F60078AD96 /* GKNavigationBarConfigure.m in Sources */,
+				794F3A9E1F57E36600A98D2C /* UITabBarController+GKRotation.m in Sources */,
 				7927C3C71F4DB8E80078AD96 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

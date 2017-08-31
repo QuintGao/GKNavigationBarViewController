@@ -8,10 +8,7 @@
 //  基本原理就是为每一个控制器添加自定义导航条，做到导航条与控制器相连的效果
 
 #import <UIKit/UIKit.h>
-
-#import "UINavigationController+GKCategory.h"
-#import "UIViewController+GKCategory.h"
-#import "UIScrollView+GKCategory.h"
+#import "GKCategory.h"
 
 #import "GKNavigationBarConfigure.h"
 

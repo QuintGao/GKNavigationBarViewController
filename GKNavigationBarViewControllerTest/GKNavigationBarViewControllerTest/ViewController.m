@@ -31,18 +31,18 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     SecondViewController *vc = [SecondViewController new];
     
-//    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 //    self.gk_StatusBarHidden = !self.gk_StatusBarHidden;
-    if (self.show) {
-        self.show = NO;
-        
-        [self hideNavLine];
-        
-    }else {
-        self.show = YES;
-        
-        [self showNavLine];
-    }
+//    if (self.show) {
+//        self.show = NO;
+//        
+//        [self hideNavLine];
+//        
+//    }else {
+//        self.show = YES;
+//        
+//        [self showNavLine];
+//    }
     
 }
 

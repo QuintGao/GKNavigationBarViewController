@@ -11,12 +11,6 @@
 #import "UIBarButtonItem+GKCategory.h"
 #import <objc/runtime.h>
 
-#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
-
 @implementation UINavigationController (GKCategory)
 
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {

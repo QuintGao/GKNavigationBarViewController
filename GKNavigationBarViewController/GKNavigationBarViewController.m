@@ -9,12 +9,6 @@
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
 
-#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
-
 @interface GKNavigationBarViewController ()
 
 @property (nonatomic, strong) UINavigationBar *gk_navigationBar;
@@ -112,6 +106,19 @@
     CGFloat navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
+}
+
+#pragma mark - 控制屏幕旋转的方法
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
 }
 
 #pragma mark - 懒加载

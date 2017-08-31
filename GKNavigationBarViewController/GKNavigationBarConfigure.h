@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+// 图片路径
+#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
+
+#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
+
+
+
+
+
 #define GKConfigure [GKNavigationBarConfigure sharedInstance]
 
 typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
