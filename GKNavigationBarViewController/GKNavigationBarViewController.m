@@ -164,6 +164,18 @@
     [self.gk_navigationBar setBackgroundImage:gk_navBackgroundImage forBarMetrics:UIBarMetricsDefault];
 }
 
+- (void)setGk_navShadowColor:(UIColor *)gk_navShadowColor {
+    _gk_navShadowColor = gk_navShadowColor;
+    
+    self.gk_navigationBar.shadowImage = [self imageWithColor:gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
+}
+
+- (void)setGk_navShadowImage:(UIImage *)gk_navShadowImage {
+    _gk_navShadowImage = gk_navShadowImage;
+    
+    self.gk_navigationBar.shadowImage = gk_navShadowImage;
+}
+
 - (void)setGk_navTintColor:(UIColor *)gk_navTintColor {
     _gk_navTintColor = gk_navTintColor;
     
