@@ -10,9 +10,12 @@
 #endif
 #endif
 
+#import "GKCategory.h"
 #import "UIBarButtonItem+GKCategory.h"
 #import "UINavigationController+GKCategory.h"
+#import "UINavigationController+GKRotation.h"
 #import "UIScrollView+GKCategory.h"
+#import "UITabBarController+GKRotation.h"
 #import "UIViewController+GKCategory.h"
 #import "GKNavigationBarConfigure.h"
 #import "GKNavigationBarViewController.h"

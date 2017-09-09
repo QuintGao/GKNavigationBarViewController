@@ -34,6 +34,8 @@
     [self.view addSubview:btn];
     
     self.gk_pushDelegate = self;
+    
+    self.gk_statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 
@@ -52,9 +54,24 @@
 }
 
 - (void)btnAction {
-    GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
-    demo002VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:demo002VC animated:YES];
+//    GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
+//    demo002VC.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:demo002VC animated:YES];
+    
+//    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"111" message:@"11" preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    [alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    
+//    [self presentViewController:alertVC animated:YES completion:nil];
+    
+    UIView *redView = [UIView new];
+    redView.backgroundColor = [UIColor redColor];
+    redView.gk_size = CGSizeMake(KScreenW, 300);
+    
+    [GKCover coverHideStatusBarWithContentView:redView style:GKCoverStyleTranslucent showStyle:GKCoverShowStyleBottom showAnimStyle:GKCoverShowAnimStyleBottom hideAnimStyle:GKCoverHideAnimStyleBottom notClick:NO showBlock:nil hideBlock:nil];
+    
 }
 
 #pragma mark - GKNavigationItemCustomProtocol

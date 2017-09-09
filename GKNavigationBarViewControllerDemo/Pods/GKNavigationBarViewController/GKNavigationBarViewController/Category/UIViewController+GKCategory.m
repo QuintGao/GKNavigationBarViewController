@@ -12,11 +12,14 @@
 
 NSString *const GKViewControllerPropertyChangedNotification = @"GKViewControllerPropertyChangedNotification";
 
-static const void* GKInteractivePopKey = @"GKInteractivePopKey";
-static const void* GKFullScreenPopKey  = @"GKFullScreenPopKey";
-static const void* GKPopMaxDistanceKey = @"GKPopMaxDistanceKey";
-static const void* GKNavBarAlphaKey    = @"GKNavBarAlphaKey";
-static const void* GKPushDelegateKey   = @"GKPushDelegateKey";
+static const void* GKInteractivePopKey  = @"GKInteractivePopKey";
+static const void* GKFullScreenPopKey   = @"GKFullScreenPopKey";
+static const void* GKPopMaxDistanceKey  = @"GKPopMaxDistanceKey";
+static const void* GKNavBarAlphaKey     = @"GKNavBarAlphaKey";
+static const void* GKStatusBarStyleKey  = @"GKStatusBarStyleKey";
+static const void* GKStatusBarHiddenKey = @"GKStatusBarHiddenKey";
+static const void* GKBackStyleKey       = @"GKBackStyleKey";
+static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 @implementation UIViewController (GKCategory)
 
@@ -52,6 +55,16 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     [self gk_viewDidAppear:animated];
 }
 
+#pragma mark - StatusBar 
+- (BOOL)prefersStatusBarHidden {
+    return self.gk_StatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.gk_statusBarStyle;
+}
+
+#pragma mark - Added Property
 - (BOOL)gk_interactivePopDisabled {
     return [objc_getAssociatedObject(self, GKInteractivePopKey) boolValue];
 }
@@ -95,6 +108,37 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     [self setNavBarAlpha:gk_navBarAlpha];
 }
 
+- (UIStatusBarStyle)gk_statusBarStyle {
+    id style = objc_getAssociatedObject(self, GKStatusBarStyleKey);
+    return (style != nil) ? [style integerValue] : UIStatusBarStyleDefault;
+}
+
+- (void)setGk_statusBarStyle:(UIStatusBarStyle)gk_statusBarStyle {
+    objc_setAssociatedObject(self, GKStatusBarStyleKey, @(gk_statusBarStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (BOOL)gk_StatusBarHidden {
+    return [objc_getAssociatedObject(self, GKStatusBarHiddenKey) boolValue];
+}
+
+- (void)setGk_StatusBarHidden:(BOOL)gk_StatusBarHidden {
+    objc_setAssociatedObject(self, GKStatusBarHiddenKey, @(gk_StatusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (GKNavigationBarBackStyle)gk_backStyle {
+    id style = objc_getAssociatedObject(self, GKBackStyleKey);
+    
+    return (style != nil) ? [style integerValue] : GKNavigationBarBackStyleBlack;
+}
+
+- (void)setGk_backStyle:(GKNavigationBarBackStyle)gk_backStyle {
+    objc_setAssociatedObject(self, GKBackStyleKey, @(gk_backStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (id<GKViewControllerPushDelegate>)gk_pushDelegate {
     return objc_getAssociatedObject(self, GKPushDelegateKey);
 }
@@ -135,7 +179,28 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     }
     // 底部分割线
     navBar.clipsToBounds = alpha == 0.0;
+}
+
+- (UIViewController *)gk_visibleViewControllerIfExist {
     
+    if (self.presentedViewController) {
+        return [self.presentedViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isKindOfClass:[UINavigationController class]]) {
+        return [((UINavigationController *)self).topViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isKindOfClass:[UITabBarController class]]) {
+        return [((UITabBarController *)self).selectedViewController gk_visibleViewControllerIfExist];
+    }
+    
+    if ([self isViewLoaded] && self.view.window) {
+        return self;
+    }else {
+        NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
+        return nil;
+    }
 }
 
 @end

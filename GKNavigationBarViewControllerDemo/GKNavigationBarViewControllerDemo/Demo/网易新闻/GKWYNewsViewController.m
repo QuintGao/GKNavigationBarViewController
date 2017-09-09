@@ -31,7 +31,7 @@
     [configure setupDefaultConfigure];
     
     // 设置自定义样式
-    configure.barTintColor = [UIColor colorWithRed:(212 / 255.0) green:(25 /255.0) blue:(37 / 255.0) alpha:1.0];
+    configure.backgroundColor = [UIColor colorWithRed:(212 / 255.0) green:(25 /255.0) blue:(37 / 255.0) alpha:1.0];
     configure.titleColor = [UIColor whiteColor];
     configure.titleFont  = [UIFont systemFontOfSize:18];
     

@@ -7,6 +7,7 @@
 //  使用运行时为UIViewController添加分类
 
 #import <UIKit/UIKit.h>
+#import "GKNavigationBarConfigure.h"
 
 extern NSString *const GKViewControllerPropertyChangedNotification;
 
@@ -32,7 +33,21 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 /** 设置导航栏的透明度 */
 @property (nonatomic, assign) CGFloat gk_navBarAlpha;
 
+/** 设置状态栏类型 */
+@property (nonatomic, assign) UIStatusBarStyle gk_statusBarStyle;
+
+/** 设置状态栏是否显示(default is NO 即不隐藏) */
+@property (nonatomic, assign) BOOL gk_StatusBarHidden;
+
+/** 设置返回按钮的类型 */
+@property (nonatomic, assign) GKNavigationBarBackStyle gk_backStyle;
+
 /** push代理 */
 @property (nonatomic, assign) id<GKViewControllerPushDelegate> gk_pushDelegate;
+
+/**
+ 返回显示的控制器
+ */
+- (UIViewController *)gk_visibleViewControllerIfExist;
 
 @end

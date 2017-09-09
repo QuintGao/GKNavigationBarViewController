@@ -64,6 +64,13 @@
     return YES;
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([otherGestureRecognizer isKindOfClass:NSClassFromString(@"UIPanGestureRecognizer")]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
 
 @interface GKNavigationControllerDelegate()

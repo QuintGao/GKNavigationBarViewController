@@ -11,12 +11,6 @@
 #import "UIBarButtonItem+GKCategory.h"
 #import <objc/runtime.h>
 
-#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
-
 @implementation UINavigationController (GKCategory)
 
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {
@@ -128,9 +122,12 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
         // 设置返回按钮
         if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:GKImage(@"btn_back_black" ) target:self action:@selector(goBack)];
+            
+            UIImage *backImage = self.visibleViewController.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(goBack)];
         }
     }
+    
     if (![self.viewControllers containsObject:viewController]) {
         [self gk_pushViewController:viewController animated:animated];
     }
@@ -138,6 +135,26 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 
 - (void)goBack {
     [self popViewControllerAnimated:YES];
+}
+
+#pragma mark - StatusBar
+- (BOOL)prefersStatusBarHidden {
+    return self.visibleViewController.gk_StatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.visibleViewController.gk_statusBarStyle;
+}
+
+- (UIViewController *)childViewControllerForStatusBarHidden {
+    return self.visibleViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    
+    NSLog(@"%zd", self.visibleViewController.preferredStatusBarStyle);
+    
+    return self.visibleViewController;
 }
 
 #pragma mark - getter

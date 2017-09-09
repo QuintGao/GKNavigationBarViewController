@@ -10,5 +10,6 @@
 #define PrefixHeader_pch
 
 #import <GKNavigationBarViewController/GKNavigationBarViewController.h>
+#import <GKCover/GKCover.h>
 
 #endif /* PrefixHeader_pch */

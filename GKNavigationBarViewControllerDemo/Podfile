@@ -3,6 +3,7 @@ platform :ios, '8.0'
 target 'GKNavigationBarViewControllerDemo' do
   use_frameworks!
 
-pod "GKNavigationBarViewController", "~> 1.0.7"
+pod "GKNavigationBarViewController"
+pod 'GKCover'
 
 end

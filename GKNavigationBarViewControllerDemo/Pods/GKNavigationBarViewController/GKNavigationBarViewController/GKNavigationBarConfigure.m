@@ -8,6 +8,7 @@
 
 #import "GKNavigationBarConfigure.h"
 #import "UIBarButtonItem+GKCategory.h"
+#import "UIViewController+GKCategory.h"
 
 @implementation GKNavigationBarConfigure
 
@@ -21,17 +22,33 @@ static GKNavigationBarConfigure *instance = nil;
     return instance;
 }
 
+// 设置默认的导航栏外观
 - (void)setupDefaultConfigure {
-    // 统一设置导航栏默认的背景色、标题颜色、字体、返回按钮
-    self.barTintColor = [UIColor whiteColor];
     
-    self.tintColor    = [UIColor blackColor];
+    self.backgroundColor = [UIColor whiteColor];
     
-    self.titleColor   = [UIColor blackColor];
+    self.titleColor      = [UIColor blackColor];
     
-    self.titleFont    = [UIFont boldSystemFontOfSize:17.0];
+    self.titleFont       = [UIFont boldSystemFontOfSize:17.0];
+    
+    self.statusBarHidden = NO;
+    
+    self.statusBarStyle  = UIStatusBarStyleDefault;
+    
+    self.backStyle       = GKNavigationBarBackStyleBlack;
     
     // 待添加
+}
+
+- (void)setupCustomConfigure:(void (^)(GKNavigationBarConfigure *))block {
+    [self setupDefaultConfigure];
+    
+    !block ? : block(self);
+}
+
+// 获取当前显示的控制器
+- (UIViewController *)visibleController {
+    return [[UIApplication sharedApplication].keyWindow.rootViewController gk_visibleViewControllerIfExist];
 }
 
 @end

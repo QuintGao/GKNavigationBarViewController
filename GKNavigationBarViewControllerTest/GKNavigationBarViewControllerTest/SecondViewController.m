@@ -26,6 +26,10 @@
     self.gk_navigationItem.title = @"😁😁😁";
 }
 
+- (void)dealloc {
+    NSLog(@"SecondViewController 销毁了");
+}
+
 - (BOOL)shouldAutorotate {
     return YES;
 }

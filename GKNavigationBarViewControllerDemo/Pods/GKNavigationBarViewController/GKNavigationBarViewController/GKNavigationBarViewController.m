@@ -9,12 +9,6 @@
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
 
-#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
-
 @interface GKNavigationBarViewController ()
 
 @property (nonatomic, strong) UINavigationBar *gk_navigationBar;
@@ -24,53 +18,6 @@
 @end
 
 @implementation GKNavigationBarViewController
-
-- (UINavigationBar *)gk_navigationBar {
-    if (!_gk_navigationBar) {
-        _gk_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
-    }
-    return _gk_navigationBar;
-}
-
-- (UINavigationItem *)gk_navigationItem {
-    if (!_gk_navigationItem) {
-        _gk_navigationItem = [UINavigationItem new];
-    }
-    return _gk_navigationItem;
-}
-
-//- (instancetype)init {
-//    if (self = [super init]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
-
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-//    if (self = [super initWithCoder:aDecoder]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
-
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        // 设置自定义导航栏
-//        [self setupCustomNavBar];
-//        
-//        // 设置导航栏外观
-//        [self setupNavBarAppearance];
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +37,28 @@
     }
 }
 
+#pragma mark - Public Methods
+- (void)showNavLine {
+    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
+    
+    for (UIView *view in backgroundView.subviews) {
+        if (view.frame.size.height < 1.0) {
+            view.hidden = NO;
+        }
+    }
+}
+
+- (void)hideNavLine {
+    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
+    
+    for (UIView *view in backgroundView.subviews) {
+        if (view.frame.size.height < 1.0) {
+            view.hidden = YES;
+        }
+    }
+}
+
+#pragma mark - private Methods
 /**
  设置自定义导航条
  */
@@ -98,8 +67,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.view addSubview:self.gk_navigationBar];
-    
-//    self.gk_navigationBar.translucent = NO;
     
     self.gk_navigationBar.items = @[self.gk_navigationItem];
 }
@@ -111,12 +78,8 @@
     
     GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
     
-    if (configure.barTintColor) {
-        self.gk_navBarTintColor = configure.barTintColor;
-    }
-    
-    if (configure.tintColor) {
-        self.gk_navTintColor = configure.tintColor;
+    if (configure.backgroundColor) {
+        self.gk_navBackgroundColor = configure.backgroundColor;
     }
     
     if (configure.titleColor) {
@@ -126,6 +89,51 @@
     if (configure.titleFont) {
         self.gk_navTitleFont = configure.titleFont;
     }
+    
+    self.gk_StatusBarHidden = configure.statusBarHidden;
+    self.gk_statusBarStyle  = configure.statusBarStyle;
+    
+    self.gk_backStyle       = configure.backStyle;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    CGFloat width  = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    
+    // 导航栏高度：横屏(状态栏显示：52，状态栏隐藏：32) 竖屏64
+    CGFloat navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
+    
+    self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
+}
+
+#pragma mark - 控制屏幕旋转的方法
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+#pragma mark - 懒加载
+- (UINavigationBar *)gk_navigationBar {
+    if (!_gk_navigationBar) {
+        _gk_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+    }
+    return _gk_navigationBar;
+}
+
+- (UINavigationItem *)gk_navigationItem {
+    if (!_gk_navigationItem) {
+        _gk_navigationItem = [UINavigationItem new];
+    }
+    return _gk_navigationItem;
 }
 
 #pragma mark - setter
