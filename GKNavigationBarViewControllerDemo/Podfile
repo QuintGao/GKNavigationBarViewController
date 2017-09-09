@@ -4,6 +4,5 @@ target 'GKNavigationBarViewControllerDemo' do
   use_frameworks!
 
 pod "GKNavigationBarViewController"
-pod 'GKCover'
 
 end
