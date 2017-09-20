@@ -28,6 +28,7 @@
 		7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4501F4FD6D10078AD96 /* SecondViewController.m */; };
 		794F3A9E1F57E36600A98D2C /* UITabBarController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 794F3A9D1F57E36600A98D2C /* UITabBarController+GKRotation.m */; };
 		794F3AA11F57E38500A98D2C /* UINavigationController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 794F3AA01F57E38500A98D2C /* UINavigationController+GKRotation.m */; };
+		79F89D5E1F72325D002C5A61 /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F89D5D1F72325D002C5A61 /* GKNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		794F3A9F1F57E38500A98D2C /* UINavigationController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKRotation.h"; sourceTree = "<group>"; };
 		794F3AA01F57E38500A98D2C /* UINavigationController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKRotation.m"; sourceTree = "<group>"; };
 		794F3AA21F57E3D000A98D2C /* GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
+		79F89D5C1F72325D002C5A61 /* GKNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
+		79F89D5D1F72325D002C5A61 /* GKNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				7927C41F1F4DB92F0078AD96 /* GKNavigationBarViewController.bundle */,
 				7927C4021F4DB8F60078AD96 /* GKNavigationBarConfigure.h */,
 				7927C4031F4DB8F60078AD96 /* GKNavigationBarConfigure.m */,
+				79F89D5C1F72325D002C5A61 /* GKNavigationBar.h */,
+				79F89D5D1F72325D002C5A61 /* GKNavigationBar.m */,
 				7927C4041F4DB8F60078AD96 /* GKNavigationBarViewController.h */,
 				7927C4051F4DB8F60078AD96 /* GKNavigationBarViewController.m */,
 				7927C3F91F4DB8F60078AD96 /* Category */,
@@ -297,8 +302,8 @@
 				TargetAttributes = {
 					7927C3C11F4DB8E80078AD96 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 85SKD6C7ZZ;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 9J2ZLU6Z7U;
+						ProvisioningStyle = Manual;
 					};
 					7927C3DA1F4DB8E80078AD96 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -370,6 +375,7 @@
 				7927C41D1F4DB8F60078AD96 /* GKPopTransitionAnimation.m in Sources */,
 				7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */,
 				7927C4121F4DB8F60078AD96 /* UIBarButtonItem+GKCategory.m in Sources */,
+				79F89D5E1F72325D002C5A61 /* GKNavigationBar.m in Sources */,
 				7927C4141F4DB8F60078AD96 /* UIScrollView+GKCategory.m in Sources */,
 				7927C41E1F4DB8F60078AD96 /* GKPushTransitionAnimation.m in Sources */,
 				7927C4171F4DB8F60078AD96 /* GKNavigationBarViewController.m in Sources */,
@@ -530,11 +536,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 85SKD6C7ZZ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9J2ZLU6Z7U;
 				INFOPLIST_FILE = GKNavigationBarViewControllerTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maserati.swift.GKNavigationBarViewControllerTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.test000;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
+				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
 			};
 			name = Debug;
 		};
@@ -542,11 +551,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 85SKD6C7ZZ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9J2ZLU6Z7U;
 				INFOPLIST_FILE = GKNavigationBarViewControllerTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maserati.swift.GKNavigationBarViewControllerTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.test000;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
+				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
 			};
 			name = Release;
 		};

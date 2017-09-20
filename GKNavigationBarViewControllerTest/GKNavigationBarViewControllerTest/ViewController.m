@@ -24,9 +24,10 @@
         
     self.gk_navigationItem.title = @"你好啊";
     
+    self.gk_navBackgroundColor = [UIColor blueColor];
+    
     self.show = YES;
 }
-
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     SecondViewController *vc = [SecondViewController new];

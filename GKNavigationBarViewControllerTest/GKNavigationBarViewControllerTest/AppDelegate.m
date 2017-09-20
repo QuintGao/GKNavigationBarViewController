@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GKNavigationBarViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,15 +19,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    [[GKNavigationBarConfigure sharedInstance] setupDefaultConfigure];
+    // 必须放在window之前设置
     [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
         configure.titleColor        = [UIColor whiteColor];
         configure.statusBarHidden   = NO;
         configure.titleFont         = [UIFont systemFontOfSize:18];
         configure.statusBarStyle    = UIStatusBarStyleDefault;
-        
+        configure.backgroundColor   = [UIColor whiteColor];
         configure.backStyle         = GKNavigationBarBackStyleBlack;
     }];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = [UINavigationController rootVC:[ViewController new] translationScale:YES];
+    
+    [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
     return YES;

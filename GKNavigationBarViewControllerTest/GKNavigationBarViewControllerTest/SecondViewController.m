@@ -17,11 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navBackgroundColor   = [UIColor brownColor];
+    self.view.backgroundColor    = [UIColor whiteColor];
     
-    self.view.backgroundColor    = [UIColor lightGrayColor];
+    self.gk_navBackgroundColor   = [UIColor redColor];
     
-    self.gk_statusBarStyle       = UIStatusBarStyleDefault;
+//    self.gk_navigationBar.backgroundColor = [UIColor redColor];
+    
+    self.gk_statusBarStyle    = UIStatusBarStyleDefault;
     
     self.gk_navigationItem.title = @"😁😁😁";
 }
