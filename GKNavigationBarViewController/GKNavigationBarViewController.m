@@ -43,7 +43,7 @@
     UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height < 1.0) {
+        if (view.frame.size.height <= 1.0) {
             view.hidden = NO;
         }
     }
@@ -53,7 +53,7 @@
     UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height < 1.0) {
+        if (view.frame.size.height <= 1.0) {
             view.hidden = YES;
         }
     }
