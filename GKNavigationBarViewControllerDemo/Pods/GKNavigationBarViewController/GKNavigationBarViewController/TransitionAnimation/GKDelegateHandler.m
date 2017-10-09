@@ -40,7 +40,7 @@
         }
     }else {
         // 上下滑动
-        if (transition.x == 0) return NO;
+//        if (transition.x == 0) return NO;
         
         // 忽略超出手势区域
         CGPoint beginningLocation = [gestureRecognizer locationInView:gestureRecognizer.view];

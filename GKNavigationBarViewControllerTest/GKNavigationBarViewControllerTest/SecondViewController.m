@@ -26,6 +26,8 @@
     self.gk_statusBarStyle    = UIStatusBarStyleDefault;
     
     self.gk_navigationItem.title = @"😁😁😁";
+    
+    self.gk_fullScreenPopDisabled = YES;
 }
 
 - (void)dealloc {
