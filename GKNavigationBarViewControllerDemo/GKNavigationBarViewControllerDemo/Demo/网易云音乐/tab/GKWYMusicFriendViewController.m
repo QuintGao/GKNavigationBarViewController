@@ -20,7 +20,7 @@
     
     self.title = @"朋友";
     
-    self.gk_navBarTintColor = [UIColor colorWithRed:(200 / 255.0) green:(39 / 255.0) blue:(39 / 255.0) alpha:1.0];
+    self.gk_navBackgroundColor = [UIColor colorWithRed:(200 / 255.0) green:(39 / 255.0) blue:(39 / 255.0) alpha:1.0];
     
     UIBarButtonItem *backItem = [UIBarButtonItem itemWithTitle:@"返回" imageName:@"btn_back_white" target:self action:@selector(backAction)];
     

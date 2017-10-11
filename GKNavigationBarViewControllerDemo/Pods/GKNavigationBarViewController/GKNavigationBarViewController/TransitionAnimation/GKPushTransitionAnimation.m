@@ -68,7 +68,14 @@
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         if (self.scale) {
-            fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+//            fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+            CGRect frame = fromVC.view.frame;
+            frame.origin.x     = 5;
+            frame.origin.y     = 5;
+            frame.size.height -= 10;
+            
+            fromVC.view.frame = frame;
+            
         }else {
             fromVC.view.frame = CGRectMake(- (0.3 * kScreenW), 0, kScreenW, kScreenH);
         }

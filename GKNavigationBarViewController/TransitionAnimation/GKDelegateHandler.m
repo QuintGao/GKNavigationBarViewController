@@ -16,7 +16,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
     
-    // 忽略跟控制器
+    // 忽略根控制器
     if (self.navigationController.viewControllers.count <= 1) {
         return NO;
     }
@@ -66,13 +66,6 @@
     }
     
     return YES;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if ([otherGestureRecognizer isKindOfClass:NSClassFromString(@"UIPanGestureRecognizer")]) {
-        return YES;
-    }
-    return NO;
 }
 
 @end

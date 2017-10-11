@@ -44,10 +44,10 @@
     
     self.title = @"MainVC";
         
-    self.gk_navBarTintColor = [UIColor redColor];
+    self.gk_navBackgroundColor = [UIColor redColor];
     
-    self.gk_navTitleFont  = [UIFont systemFontOfSize:18];
-    self.gk_navTitleColor = [UIColor grayColor];
+    self.gk_navTitleFont    = [UIFont systemFontOfSize:18];
+    self.gk_navTitleColor   = [UIColor grayColor];
     
     [self setupTableView];
 }

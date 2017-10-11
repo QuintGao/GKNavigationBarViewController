@@ -21,8 +21,8 @@
     
     self.title = @"控制器001";
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.gk_navBarTintColor   = [UIColor blueColor];
+    self.view.backgroundColor    = [UIColor whiteColor];
+    self.gk_navBackgroundColor   = [UIColor blueColor];
     
     self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
     

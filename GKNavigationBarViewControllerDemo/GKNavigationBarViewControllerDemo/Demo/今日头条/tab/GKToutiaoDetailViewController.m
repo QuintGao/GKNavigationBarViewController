@@ -19,7 +19,7 @@
     
     self.title = @"头条详情";
     
-    self.gk_navBarTintColor = [UIColor whiteColor];
+    self.gk_navBackgroundColor = [UIColor whiteColor];
     
     self.view.backgroundColor = [UIColor whiteColor];
 }

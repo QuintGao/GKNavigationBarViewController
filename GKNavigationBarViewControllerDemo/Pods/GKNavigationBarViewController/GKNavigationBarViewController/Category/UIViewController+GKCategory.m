@@ -155,8 +155,13 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
         GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
         navBar = vc.gk_navigationBar;
         
-        UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
-        barBackgroundView.alpha = alpha;
+        // 暂时修复iOS11bug
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (navBar.subviews.count > 0) {
+                UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
+                barBackgroundView.alpha = alpha;
+            }
+        });
         
     }else {
         navBar = self.navigationController.navigationBar;

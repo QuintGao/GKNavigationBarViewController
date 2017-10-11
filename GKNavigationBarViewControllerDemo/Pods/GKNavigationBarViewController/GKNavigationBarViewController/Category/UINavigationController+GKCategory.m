@@ -138,23 +138,20 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 }
 
 #pragma mark - StatusBar
+- (UIViewController *)childViewControllerForStatusBarHidden {
+    return self.visibleViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return self.visibleViewController;
+}
+
 - (BOOL)prefersStatusBarHidden {
     return self.visibleViewController.gk_StatusBarHidden;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.visibleViewController.gk_statusBarStyle;
-}
-
-- (UIViewController *)childViewControllerForStatusBarHidden {
-    return self.visibleViewController;
-}
-
-- (UIViewController *)childViewControllerForStatusBarStyle {
-    
-    NSLog(@"%zd", self.visibleViewController.preferredStatusBarStyle);
-    
-    return self.visibleViewController;
 }
 
 #pragma mark - getter

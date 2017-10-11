@@ -25,10 +25,14 @@
 @property (nonatomic, strong, readonly) UINavigationItem *gk_navigationItem;
 
 #pragma mark - 额外的快速设置导航栏的属性
-@property (nonatomic, strong) UIColor *gk_navBarTintColor;
+//@property (nonatomic, strong) UIColor *gk_navBarTintColor;
 /** 设置导航栏背景，[UIColor clearColor]可设置为透明 */
 @property (nonatomic, strong) UIColor *gk_navBackgroundColor;
 @property (nonatomic, strong) UIImage *gk_navBackgroundImage;
+/** 设置导航栏分割线颜色或图片 */
+@property (nonatomic, strong) UIColor *gk_navShadowColor;
+@property (nonatomic, strong) UIImage *gk_navShadowImage;
+
 @property (nonatomic, strong) UIColor *gk_navTintColor;
 @property (nonatomic, strong) UIView *gk_navTitleView;
 @property (nonatomic, strong) UIColor *gk_navTitleColor;

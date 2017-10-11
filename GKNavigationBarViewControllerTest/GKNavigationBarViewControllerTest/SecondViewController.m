@@ -28,6 +28,17 @@
     self.gk_navigationItem.title = @"😁😁😁";
     
     self.gk_fullScreenPopDisabled = YES;
+    
+    
+    
+    for (NSInteger i = 0; i < 5; i++) {
+        UIViewController *vc = [UIViewController new];
+        vc.view.backgroundColor = [UIColor redColor];
+        [self addChildViewController:vc];
+        [self.view addSubview:vc.view];
+        
+        vc.view.frame = CGRectMake(100, 100, 100, 100);
+    }
 }
 
 - (void)dealloc {

@@ -10,6 +10,8 @@
 
 @implementation UIScrollView (GKCategory)
 
+#pragma mark - 解决全屏滑动时的手势冲突
+// 当UIScrollView在水平方向滑动到第一个时，默认是不能全屏滑动返回的，通过下面的方法可实现其滑动返回。
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if ([self panBack:gestureRecognizer]) {
         return NO;
@@ -17,8 +19,7 @@
     return YES;
 }
 
-
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     if ([self panBack:gestureRecognizer]) {
         return YES;
@@ -44,5 +45,28 @@
     }
     return NO;
 }
+
+#pragma mark - 解决UIScrollView与边缘滑动手势的冲突
+// 通过下面的方法可解决边缘滑动时不响应UIScrollView的手势
+//以下两个成对的方法比较有趣（实现其一即可）
+//返回YES －前面失效后面生效    返回NO－前面生效后面失效
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+////返回YES-前面生效后面失效    返回NO-前面失效后面生效
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+//
+//    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+//        return YES;
+//    }
+//
+//    return NO;
+//}
 
 @end

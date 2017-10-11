@@ -39,8 +39,12 @@
             return NO;
         }
     }else {
-        // 上下滑动
-//        if (transition.x == 0) return NO;
+        
+        // 全屏滑动时起作用
+        if (!topVC.gk_fullScreenPopDisabled) {
+            // 上下滑动
+            if (transition.x == 0) return NO;
+        }
         
         // 忽略超出手势区域
         CGPoint beginningLocation = [gestureRecognizer locationInView:gestureRecognizer.view];
@@ -63,6 +67,13 @@
     
     return YES;
 }
+
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+//    if ([otherGestureRecognizer isKindOfClass:NSClassFromString(@"UIPanGestureRecognizer")]) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 @end
 

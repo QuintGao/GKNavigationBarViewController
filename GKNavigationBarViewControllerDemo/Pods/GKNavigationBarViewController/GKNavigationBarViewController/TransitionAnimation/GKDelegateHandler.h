@@ -22,9 +22,9 @@
 @property (nonatomic, weak) UINavigationController *navigationController;
 
 // 系统返回手势的target
-@property (nonatomic, strong) id systemTarget;
+@property (nonatomic, weak) id systemTarget;
 
-@property (nonatomic, strong) GKNavigationControllerDelegate *customTarget;
+@property (nonatomic, weak) GKNavigationControllerDelegate *customTarget;
 
 @end
 

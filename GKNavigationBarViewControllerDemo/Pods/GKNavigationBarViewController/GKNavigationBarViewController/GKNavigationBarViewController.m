@@ -8,10 +8,11 @@
 
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
+#import "GKNavigationBar.h"
 
 @interface GKNavigationBarViewController ()
 
-@property (nonatomic, strong) UINavigationBar *gk_navigationBar;
+@property (nonatomic, strong) GKNavigationBar *gk_navigationBar;
 
 @property (nonatomic, strong) UINavigationItem *gk_navigationItem;
 
@@ -42,7 +43,7 @@
     UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height < 1.0) {
+        if (view.frame.size.height <= 1.0) {
             view.hidden = NO;
         }
     }
@@ -52,7 +53,7 @@
     UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height < 1.0) {
+        if (view.frame.size.height <= 1.0) {
             view.hidden = YES;
         }
     }
@@ -102,8 +103,20 @@
     CGFloat width  = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
+    CGFloat systemVersion = [UIDevice currentDevice].systemVersion.floatValue;
+    
+    // 状态栏高度
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    
     // 导航栏高度：横屏(状态栏显示：52，状态栏隐藏：32) 竖屏64
-    CGFloat navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
+    CGFloat navBarH = 0;
+    
+    // 适配iOS11 iPhone X
+    if (systemVersion >= 11.0) {
+        navBarH = ((width > height) ? 32 : 44) + statusBarHeight;
+    }else {
+        navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
+    }
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
 }
@@ -121,10 +134,19 @@
     return UIInterfaceOrientationPortrait;
 }
 
+#pragma mark - 控制状态栏的方法
+- (BOOL)prefersStatusBarHidden {
+    return self.gk_StatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.gk_statusBarStyle;
+}
+
 #pragma mark - 懒加载
-- (UINavigationBar *)gk_navigationBar {
+- (GKNavigationBar *)gk_navigationBar {
     if (!_gk_navigationBar) {
-        _gk_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+        _gk_navigationBar = [[GKNavigationBar alloc] initWithFrame:CGRectZero];
     }
     return _gk_navigationBar;
 }
@@ -141,11 +163,11 @@
     self.gk_navigationItem.title = title;
 }
 
-- (void)setGk_navBarTintColor:(UIColor *)gk_navBarTintColor {
-    _gk_navBarTintColor = gk_navBarTintColor;
-    
-    self.gk_navigationBar.barTintColor = gk_navBarTintColor;
-}
+//- (void)setGk_navBarTintColor:(UIColor *)gk_navBarTintColor {
+//    _gk_navBarTintColor = gk_navBarTintColor;
+//    
+//    self.gk_navigationBar.barTintColor = gk_navBarTintColor;
+//}
 
 - (void)setGk_navBackgroundColor:(UIColor *)gk_navBackgroundColor {
     _gk_navBackgroundColor = gk_navBackgroundColor;
@@ -162,6 +184,18 @@
     _gk_navBackgroundImage = gk_navBackgroundImage;
     
     [self.gk_navigationBar setBackgroundImage:gk_navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)setGk_navShadowColor:(UIColor *)gk_navShadowColor {
+    _gk_navShadowColor = gk_navShadowColor;
+    
+    self.gk_navigationBar.shadowImage = [self imageWithColor:gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
+}
+
+- (void)setGk_navShadowImage:(UIImage *)gk_navShadowImage {
+    _gk_navShadowImage = gk_navShadowImage;
+    
+    self.gk_navigationBar.shadowImage = gk_navShadowImage;
 }
 
 - (void)setGk_navTintColor:(UIColor *)gk_navTintColor {

@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     self.title = @"UITableView";
-    self.gk_navBarTintColor = [UIColor orangeColor];
+    self.gk_navBackgroundColor = [UIColor orangeColor];
     
     self.gk_navRightBarButtonItem = self.editButtonItem;
     

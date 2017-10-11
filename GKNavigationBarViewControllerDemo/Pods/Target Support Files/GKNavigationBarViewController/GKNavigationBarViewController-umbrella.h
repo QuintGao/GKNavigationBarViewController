@@ -17,6 +17,7 @@
 #import "UIScrollView+GKCategory.h"
 #import "UITabBarController+GKRotation.h"
 #import "UIViewController+GKCategory.h"
+#import "GKNavigationBar.h"
 #import "GKNavigationBarConfigure.h"
 #import "GKNavigationBarViewController.h"
 #import "GKDelegateHandler.h"

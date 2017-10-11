@@ -29,7 +29,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.gk_navBarTintColor = [UIColor redColor];
+//    self.gk_navBackgroundColor = [UIColor redColor];
     self.gk_navBarAlpha     = 0.0;
     
     self.title = @"控制器002";
@@ -42,6 +42,12 @@
     [btn setTitle:@"Push" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"%@", self.gk_navigationBar.subviews);
 }
 
 - (void)btnAction {

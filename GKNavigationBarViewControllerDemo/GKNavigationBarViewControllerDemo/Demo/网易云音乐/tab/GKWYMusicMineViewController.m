@@ -24,7 +24,7 @@
     
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
     
-    self.gk_navBarTintColor = [UIColor colorWithRed:(200 / 255.0) green:(39 / 255.0) blue:(39 / 255.0) alpha:1.0];
+    self.gk_navBackgroundColor = [UIColor colorWithRed:(200 / 255.0) green:(39 / 255.0) blue:(39 / 255.0) alpha:1.0];
     
     self.gk_navTitleColor = [UIColor whiteColor];
     self.gk_navTitleFont  = [UIFont systemFontOfSize:18];
