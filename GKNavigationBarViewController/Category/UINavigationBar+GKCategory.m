@@ -25,9 +25,7 @@
 - (void)gk_layoutSubviews {
     [self gk_layoutSubviews];
     
-    if (GKDeviceVersion >= 11.0) {
-        NSLog(@"间距===%f", GKConfigure.navItem_space);
-        
+    if (GKDeviceVersion >= 11.0) {        
         self.layoutMargins = UIEdgeInsetsZero;
         CGFloat space = gk_tempFixSpace != 0 ? gk_tempFixSpace : GKConfigure.navItem_space;
         

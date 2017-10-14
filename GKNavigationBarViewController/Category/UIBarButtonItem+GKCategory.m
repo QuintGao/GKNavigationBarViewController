@@ -47,8 +47,6 @@
             btn.bounds = CGRectMake(0, 0, 44, 44);
         }
     }
-//    btn.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
-    btn.backgroundColor = [UIColor redColor];
     
     return [[self alloc] initWithCustomView:btn];
 }
@@ -65,9 +63,7 @@
     [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highLightImageName] forState:UIControlStateHighlighted];
     [btn sizeToFit];
-    
-    btn.backgroundColor = [UIColor redColor];
-    
+        
     if (btn.bounds.size.width < 44) {
         CGFloat width = 44 / btn.bounds.size.height * btn.bounds.size.width;
         btn.bounds = CGRectMake(0, 0, width, 44);
