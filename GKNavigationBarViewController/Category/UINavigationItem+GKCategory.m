@@ -10,6 +10,34 @@
 #import "GKCommon.h"
 #import "GKNavigationBarConfigure.h"
 
+@implementation UIImagePickerController (GKFixSpace)
+
++ (void)load {
+    // 保证其只执行一次
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+        
+        gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
+        
+        gk_swizzled_method(class, @selector(viewWillDisappear:), @selector(gk_viewWillDisappear:));
+    });
+}
+
+- (void)gk_viewWillAppear:(BOOL)animated {
+    if (GKDeviceVersion >= 11.0) {
+        gk_disableFixSpace = YES;
+    }
+    [self gk_viewWillAppear:animated];
+}
+
+- (void)gk_viewWillDisappear:(BOOL)animated {
+    gk_disableFixSpace = NO;
+    [self gk_viewWillDisappear:animated];
+}
+
+@end
+
 @implementation UINavigationItem (GKCategory)
 
 + (void)load {
@@ -30,56 +58,48 @@
 
 - (void)gk_setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
     if (GKDeviceVersion >= 11.0) {
-        if (leftBarButtonItem.customView) {
-            gk_tempFixSpace = 0;
-            [self gk_setLeftBarButtonItem:leftBarButtonItem];
-        }else {
-            gk_tempFixSpace = 20;
-            [self gk_setLeftBarButtonItem:leftBarButtonItem];
-        }
+        [self gk_setLeftBarButtonItem:leftBarButtonItem];
     }else {
-        if (leftBarButtonItem.customView) {
-            [self gk_setLeftBarButtonItem:nil];
+        if (!gk_disableFixSpace && leftBarButtonItem) {
             [self setLeftBarButtonItems:@[leftBarButtonItem]];
         }else {
-            [self setLeftBarButtonItems:nil];
             [self gk_setLeftBarButtonItem:leftBarButtonItem];
         }
     }
 }
 
 - (void)gk_setLeftBarButtonItems:(NSArray<UIBarButtonItem *> *)leftBarButtonItems {
-    NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.navItem_space - 20]]; // 修复iOS11之前的偏移
-
-    [items addObjectsFromArray:leftBarButtonItems];
-
-    [self gk_setLeftBarButtonItems:items];
+    if (leftBarButtonItems.count) {
+        NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.navItem_space - 20]]; // 修复iOS11之前的偏移
+        
+        [items addObjectsFromArray:leftBarButtonItems];
+        
+        [self gk_setLeftBarButtonItems:items];
+    }else {
+        [self gk_setLeftBarButtonItems:leftBarButtonItems];
+    }
 }
 
 - (void)gk_setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
     if (GKDeviceVersion >= 11.0) {
-        if (rightBarButtonItem.customView) {
-            gk_tempFixSpace = 0;
-            [self gk_setRightBarButtonItem:rightBarButtonItem];
-        }else {
-            gk_tempFixSpace = 20;
-            [self gk_setRightBarButtonItem:rightBarButtonItem];
-        }
+        [self gk_setRightBarButtonItem:rightBarButtonItem];
     }else {
-        if (rightBarButtonItem.customView) {
-            [self gk_setRightBarButtonItem:nil];
+        if (!gk_disableFixSpace && rightBarButtonItem) {
             [self setRightBarButtonItems:@[rightBarButtonItem]];
         }else {
-            [self setRightBarButtonItems:nil];
             [self gk_setRightBarButtonItem:rightBarButtonItem];
         }
     }
 }
 
 - (void)gk_setRightBarButtonItems:(NSArray<UIBarButtonItem *> *)rightBarButtonItems {
-    NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.navItem_space - 20]]; // 可修正iOS11之前的偏移
-    [items addObjectsFromArray:rightBarButtonItems];
-    [self gk_setRightBarButtonItems:items];
+    if (rightBarButtonItems.count) {
+        NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.navItem_space - 20]]; // 可修正iOS11之前的偏移
+        [items addObjectsFromArray:rightBarButtonItems];
+        [self gk_setRightBarButtonItems:items];
+    }else {
+        [self gk_setLeftBarButtonItems:rightBarButtonItems];
+    }
 }
 
 - (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width {

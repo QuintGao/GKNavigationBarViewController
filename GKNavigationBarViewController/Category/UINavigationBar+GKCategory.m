@@ -25,9 +25,9 @@
 - (void)gk_layoutSubviews {
     [self gk_layoutSubviews];
     
-    if (GKDeviceVersion >= 11.0) {        
+    if (GKDeviceVersion >= 11.0 && !gk_disableFixSpace) {
         self.layoutMargins = UIEdgeInsetsZero;
-        CGFloat space = gk_tempFixSpace != 0 ? gk_tempFixSpace : GKConfigure.navItem_space;
+        CGFloat space = GKConfigure.navItem_space;
         
         for (UIView *subview in self.subviews) {
             if ([NSStringFromClass(subview.class) containsString:@"ContentView"]) {

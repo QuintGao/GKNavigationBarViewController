@@ -47,6 +47,7 @@
             btn.bounds = CGRectMake(0, 0, 44, 44);
         }
     }
+    btn.backgroundColor = [UIColor redColor];
     
     return [[self alloc] initWithCustomView:btn];
 }
