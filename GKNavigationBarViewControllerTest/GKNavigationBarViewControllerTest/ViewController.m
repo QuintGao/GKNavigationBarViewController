@@ -54,6 +54,8 @@
         [self presentViewController:pickerVC animated:YES completion:^{
             pickerVC.delegate = self;
         }];
+        
+        pickerVC.navigationBar.hidden = NO;
     }
 }
 

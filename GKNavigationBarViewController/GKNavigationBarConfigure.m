@@ -37,7 +37,17 @@ static GKNavigationBarConfigure *instance = nil;
     
     self.backStyle       = GKNavigationBarBackStyleBlack;
     
+    self.navItem_space   = 0;
+    
     // 待添加
+}
+
+- (void)setNavItem_space:(CGFloat)navItem_space {
+    if (GKDeviceVersion >= 11.0) {
+        _navItem_space = navItem_space;
+    }else {
+        _navItem_space = navItem_space + 4;
+    }
 }
 
 - (void)setupCustomConfigure:(void (^)(GKNavigationBarConfigure *))block {

@@ -174,9 +174,11 @@
     
     if (gk_navBackgroundColor == [UIColor clearColor]) {
         [self.gk_navigationBar setBackgroundImage:GKImage(@"transparent_bg") forBarMetrics:UIBarMetricsDefault];
-        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor clearColor]];
+//        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor clearColor]];
+        self.gk_navShadowImage = [self imageWithColor:[UIColor clearColor]];
     }else {
         [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor grayColor]];
     }
 }
 

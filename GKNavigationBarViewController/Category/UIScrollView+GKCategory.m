@@ -46,27 +46,4 @@
     return NO;
 }
 
-#pragma mark - 解决UIScrollView与边缘滑动手势的冲突
-// 通过下面的方法可解决边缘滑动时不响应UIScrollView的手势
-//以下两个成对的方法比较有趣（实现其一即可）
-//返回YES －前面失效后面生效    返回NO－前面生效后面失效
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    
-    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-////返回YES-前面生效后面失效    返回NO-前面失效后面生效
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-//
-//    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
-//        return YES;
-//    }
-//
-//    return NO;
-//}
-
 @end

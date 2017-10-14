@@ -19,7 +19,7 @@
     
     self.view.backgroundColor    = [UIColor whiteColor];
     
-    self.gk_navBackgroundColor   = [UIColor redColor];
+//    self.gk_navBackgroundColor   = [UIColor blueColor];
     
 //    self.gk_navigationBar.backgroundColor = [UIColor redColor];
     
@@ -29,8 +29,6 @@
     
     self.gk_fullScreenPopDisabled = YES;
     
-    
-    
     for (NSInteger i = 0; i < 5; i++) {
         UIViewController *vc = [UIViewController new];
         vc.view.backgroundColor = [UIColor redColor];
@@ -39,6 +37,8 @@
         
         vc.view.frame = CGRectMake(100, 100, 100, 100);
     }
+    
+    self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:[UIImage imageNamed:@"info_white"] target:nil action:nil];
 }
 
 - (void)dealloc {

@@ -7,20 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-// 图片路径
-#define GKSrcName(file) [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKFrameworkSrcName(file) [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:file]
-
-#define GKImage(file)  [UIImage imageNamed:GKSrcName(file)] ? : [UIImage imageNamed:GKFrameworkSrcName(file)]
-
-#define GKConfigure [GKNavigationBarConfigure sharedInstance]
-
-typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
-    GKNavigationBarBackStyleBlack,   // 黑色返回按钮
-    GKNavigationBarBackStyleWhite    // 白色返回按钮
-};
+#import "GKCommon.h"
 
 @interface GKNavigationBarConfigure : NSObject
 
@@ -41,6 +28,9 @@ typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
 
 /** 返回按钮类型 */
 @property (nonatomic, assign) GKNavigationBarBackStyle backStyle;
+
+/** 导航栏左右按钮距屏幕左右的间距，默认是0，可自行调整 */
+@property (nonatomic, assign) CGFloat navItem_space;
 
 + (instancetype)sharedInstance;
 

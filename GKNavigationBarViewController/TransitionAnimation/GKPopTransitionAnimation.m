@@ -7,6 +7,7 @@
 //
 
 #import "GKPopTransitionAnimation.h"
+#import "GKCommon.h"
 
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
@@ -55,13 +56,17 @@
         
         [toVC.view addSubview:self.shadowView];
         
-        CGRect frame = toVC.view.frame;
-        frame.origin.x     = 5;
-        frame.origin.y     = 5;
-        frame.size.height -= 10;
-        
-        toVC.view.frame = frame;
-//        toVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+        if (GKDeviceVersion >= 11.0) {
+            CGRect frame = toVC.view.frame;
+            frame.origin.x     = 5;
+            frame.origin.y     = 5;
+            frame.size.height -= 10;
+            
+            toVC.view.frame = frame;
+        }else {
+            toVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+        }
+
     }else {
         fromVC.view.frame = CGRectMake(- (0.3 * kScreenW), 0, kScreenW, kScreenH);
     }
@@ -73,10 +78,14 @@
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
-        fromVC.view.frame = CGRectMake(kScreenW, 0, kScreenW, kScreenH);
-//        toVC.view.transform = CGAffineTransformIdentity;
         
-        toVC.view.frame = CGRectMake(0, 0, kScreenW, kScreenH);
+        fromVC.view.frame = CGRectMake(kScreenW, 0, kScreenW, kScreenH);
+        
+        if (GKDeviceVersion >= 11.0) {
+            toVC.view.frame = CGRectMake(0, 0, kScreenW, kScreenH);
+        }else {
+            toVC.view.transform = CGAffineTransformIdentity;
+        }
     }completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         [self.shadowView removeFromSuperview];

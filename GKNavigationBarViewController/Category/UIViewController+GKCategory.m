@@ -23,19 +23,6 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 @implementation UIViewController (GKCategory)
 
-// 使用static inline创建静态内联函数，方便调用
-static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swizzledSelector) {
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-    
-    BOOL isAdd = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-    if (isAdd) {
-        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    }else {
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
-}
-
 // 方法交换
 + (void)load {
     // 保证其只执行一次

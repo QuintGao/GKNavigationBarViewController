@@ -7,6 +7,7 @@
 //
 
 #import "GKPushTransitionAnimation.h"
+#import "GKCommon.h"
 
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
@@ -68,13 +69,17 @@
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         if (self.scale) {
-//            fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
-            CGRect frame = fromVC.view.frame;
-            frame.origin.x     = 5;
-            frame.origin.y     = 5;
-            frame.size.height -= 10;
             
-            fromVC.view.frame = frame;
+            if (GKDeviceVersion >= 11.0) {
+                CGRect frame = fromVC.view.frame;
+                frame.origin.x     = 5;
+                frame.origin.y     = 5;
+                frame.size.height -= 10;
+                
+                fromVC.view.frame = frame;
+            }else {
+                fromVC.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+            }
             
         }else {
             fromVC.view.frame = CGRectMake(- (0.3 * kScreenW), 0, kScreenW, kScreenH);
@@ -89,34 +94,3 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

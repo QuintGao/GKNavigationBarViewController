@@ -9,7 +9,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GKCategory.h"
-
 #import "GKNavigationBarConfigure.h"
 
 @interface GKNavigationBarViewController : UIViewController
