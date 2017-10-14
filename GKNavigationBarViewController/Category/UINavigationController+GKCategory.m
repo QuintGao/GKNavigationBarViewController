@@ -106,12 +106,14 @@
 - (void)gk_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 设置默认值
     if (self.viewControllers.count > 0) {
-        // 设置返回按钮
-        if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
-            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
-            
-            UIImage *backImage = self.visibleViewController.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(goBack)];
+        if (self.visibleViewController.gk_backStyle != GKNavigationBarBackStyleNone) {
+            // 设置返回按钮
+            if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
+                GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
+                
+                UIImage *backImage = self.visibleViewController.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+                vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(goBack)];
+            }
         }
     }
     

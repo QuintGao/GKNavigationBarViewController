@@ -25,6 +25,7 @@
 //#define GK_DefultFixSpace GKDeviceVersion >= 11.0 ? 0 : 4
 
 typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
+    GKNavigationBarBackStyleNone,    // 无返回按钮，可自行设置
     GKNavigationBarBackStyleBlack,   // 黑色返回按钮
     GKNavigationBarBackStyleWhite    // 白色返回按钮
 };
