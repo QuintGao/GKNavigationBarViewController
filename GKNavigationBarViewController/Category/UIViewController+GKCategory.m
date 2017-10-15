@@ -44,12 +44,6 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     [self gk_viewDidAppear:animated];
 }
 
-- (void)gk_viewWillAppear:(BOOL)animated {
-    self.gk_navBarAlpha = gk_navAlpha;
-    
-    [self gk_viewWillAppear:animated];
-}
-
 #pragma mark - StatusBar 
 - (BOOL)prefersStatusBarHidden {
     return self.gk_StatusBarHidden;
