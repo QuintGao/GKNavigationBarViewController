@@ -60,7 +60,7 @@
 
 - (void)setupTableView {
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.gk_navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.gk_navigationBar.frame.size.height) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
     [self.view addSubview:self.tableView];

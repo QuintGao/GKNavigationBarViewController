@@ -1,12 +1,33 @@
 //
-//  UITabBarController+GKRotation.m
+//  UIViewController+GKRotation.m
 //  GKNavigationBarViewControllerTest
 //
-//  Created by QuintGao on 2017/8/31.
+//  Created by QuintGao on 2017/10/15.
 //  Copyright © 2017年 高坤. All rights reserved.
 //
 
-#import "UITabBarController+GKRotation.h"
+#import "UIViewController+GKRotation.h"
+
+@implementation UIViewController (GKRotation)
+
+@end
+
+@implementation UINavigationController (GKRotation)
+
+#pragma mark - 控制屏幕旋转的方法
+- (BOOL)shouldAutorotate {
+    return self.visibleViewController.shouldAutorotate;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return self.visibleViewController.supportedInterfaceOrientations;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return self.visibleViewController.preferredInterfaceOrientationForPresentation;
+}
+
+@end
 
 @implementation UITabBarController (GKRotation)
 

@@ -16,6 +16,8 @@
 
 + (instancetype)itemWithImageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
++ (instancetype)itemWithImageName:(NSString *)imageName highLightImageName:(NSString *)highLightImageName target:(id)target action:(SEL)action;
+
 + (instancetype)itemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
 @end

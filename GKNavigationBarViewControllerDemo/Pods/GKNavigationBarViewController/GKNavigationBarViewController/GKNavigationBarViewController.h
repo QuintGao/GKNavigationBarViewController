@@ -9,15 +9,15 @@
 
 #import <UIKit/UIKit.h>
 #import "GKCategory.h"
-
 #import "GKNavigationBarConfigure.h"
+#import "GKNavigationBar.h"
 
 @interface GKNavigationBarViewController : UIViewController
 
 /**
  自定义导航条
  */
-@property (nonatomic, strong, readonly) UINavigationBar *gk_navigationBar;
+@property (nonatomic, strong, readonly) GKNavigationBar *gk_navigationBar;
 
 /**
  自定义导航栏栏目
@@ -25,7 +25,7 @@
 @property (nonatomic, strong, readonly) UINavigationItem *gk_navigationItem;
 
 #pragma mark - 额外的快速设置导航栏的属性
-//@property (nonatomic, strong) UIColor *gk_navBarTintColor;
+@property (nonatomic, strong) UIColor *gk_navBarTintColor;
 /** 设置导航栏背景，[UIColor clearColor]可设置为透明 */
 @property (nonatomic, strong) UIColor *gk_navBackgroundColor;
 @property (nonatomic, strong) UIImage *gk_navBackgroundImage;

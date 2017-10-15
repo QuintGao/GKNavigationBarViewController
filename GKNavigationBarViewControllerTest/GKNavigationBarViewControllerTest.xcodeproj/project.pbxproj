@@ -18,11 +18,10 @@
 		7927C3E01F4DB8E80078AD96 /* GKNavigationBarViewControllerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3DF1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestTests.m */; };
 		7927C3EB1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3EA1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestUITests.m */; };
 		7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4501F4FD6D10078AD96 /* SecondViewController.m */; };
+		798F2DB51F933B0B0098A183 /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 798F2DB41F933B0B0098A183 /* UIViewController+GKRotation.m */; };
 		79A8A31B1F74E0C000649469 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3021F74E0BF00649469 /* UIBarButtonItem+GKCategory.m */; };
 		79A8A31C1F74E0C000649469 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3041F74E0BF00649469 /* UINavigationController+GKCategory.m */; };
-		79A8A31D1F74E0C000649469 /* UINavigationController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3061F74E0BF00649469 /* UINavigationController+GKRotation.m */; };
 		79A8A31E1F74E0C000649469 /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3081F74E0BF00649469 /* UIScrollView+GKCategory.m */; };
-		79A8A31F1F74E0C000649469 /* UITabBarController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A30A1F74E0BF00649469 /* UITabBarController+GKRotation.m */; };
 		79A8A3201F74E0C000649469 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A30C1F74E0BF00649469 /* UIViewController+GKCategory.m */; };
 		79A8A3211F74E0C000649469 /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A30E1F74E0BF00649469 /* GKNavigationBar.m */; };
 		79A8A3221F74E0C000649469 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3101F74E0BF00649469 /* GKNavigationBarConfigure.m */; };
@@ -74,17 +73,15 @@
 		7927C3EC1F4DB8E80078AD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7927C44F1F4FD6D10078AD96 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		7927C4501F4FD6D10078AD96 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		798F2DB31F933B0B0098A183 /* UIViewController+GKRotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKRotation.h"; sourceTree = "<group>"; };
+		798F2DB41F933B0B0098A183 /* UIViewController+GKRotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKRotation.m"; sourceTree = "<group>"; };
 		79A8A3001F74E0BF00649469 /* GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
 		79A8A3011F74E0BF00649469 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
 		79A8A3021F74E0BF00649469 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
 		79A8A3031F74E0BF00649469 /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
 		79A8A3041F74E0BF00649469 /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
-		79A8A3051F74E0BF00649469 /* UINavigationController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKRotation.h"; sourceTree = "<group>"; };
-		79A8A3061F74E0BF00649469 /* UINavigationController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKRotation.m"; sourceTree = "<group>"; };
 		79A8A3071F74E0BF00649469 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
 		79A8A3081F74E0BF00649469 /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
-		79A8A3091F74E0BF00649469 /* UITabBarController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+GKRotation.h"; sourceTree = "<group>"; };
-		79A8A30A1F74E0BF00649469 /* UITabBarController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+GKRotation.m"; sourceTree = "<group>"; };
 		79A8A30B1F74E0BF00649469 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKCategory.h"; sourceTree = "<group>"; };
 		79A8A30C1F74E0BF00649469 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCategory.m"; sourceTree = "<group>"; };
 		79A8A30D1F74E0BF00649469 /* GKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
@@ -222,14 +219,12 @@
 				7913CDA51F90AE3A0000FDF9 /* UINavigationItem+GKCategory.m */,
 				79A8A3031F74E0BF00649469 /* UINavigationController+GKCategory.h */,
 				79A8A3041F74E0BF00649469 /* UINavigationController+GKCategory.m */,
-				79A8A3051F74E0BF00649469 /* UINavigationController+GKRotation.h */,
-				79A8A3061F74E0BF00649469 /* UINavigationController+GKRotation.m */,
 				79A8A3071F74E0BF00649469 /* UIScrollView+GKCategory.h */,
 				79A8A3081F74E0BF00649469 /* UIScrollView+GKCategory.m */,
-				79A8A3091F74E0BF00649469 /* UITabBarController+GKRotation.h */,
-				79A8A30A1F74E0BF00649469 /* UITabBarController+GKRotation.m */,
 				79A8A30B1F74E0BF00649469 /* UIViewController+GKCategory.h */,
 				79A8A30C1F74E0BF00649469 /* UIViewController+GKCategory.m */,
+				798F2DB31F933B0B0098A183 /* UIViewController+GKRotation.h */,
+				798F2DB41F933B0B0098A183 /* UIViewController+GKRotation.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -391,14 +386,13 @@
 				79A8A31C1F74E0C000649469 /* UINavigationController+GKCategory.m in Sources */,
 				79A8A3221F74E0C000649469 /* GKNavigationBarConfigure.m in Sources */,
 				79A8A3201F74E0C000649469 /* UIViewController+GKCategory.m in Sources */,
-				79A8A31D1F74E0C000649469 /* UINavigationController+GKRotation.m in Sources */,
-				79A8A31F1F74E0C000649469 /* UITabBarController+GKRotation.m in Sources */,
 				79A8A3211F74E0C000649469 /* GKNavigationBar.m in Sources */,
 				7927C3CD1F4DB8E80078AD96 /* ViewController.m in Sources */,
 				7927C3CA1F4DB8E80078AD96 /* AppDelegate.m in Sources */,
 				7913CDA91F90AE3C0000FDF9 /* UINavigationItem+GKCategory.m in Sources */,
 				7927C3C71F4DB8E80078AD96 /* main.m in Sources */,
 				79A8A31B1F74E0C000649469 /* UIBarButtonItem+GKCategory.m in Sources */,
+				798F2DB51F933B0B0098A183 /* UIViewController+GKRotation.m in Sources */,
 				7913CDAA1F90AE3C0000FDF9 /* UINavigationBar+GKCategory.m in Sources */,
 				79A8A31E1F74E0C000649469 /* UIScrollView+GKCategory.m in Sources */,
 				79A8A3251F74E0C000649469 /* GKDelegateHandler.m in Sources */,

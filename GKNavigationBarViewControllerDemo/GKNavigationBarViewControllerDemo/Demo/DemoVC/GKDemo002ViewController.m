@@ -47,6 +47,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+//    self.gk_navBarAlpha = 0.0;
     NSLog(@"%@", self.gk_navigationBar.subviews);
 }
 

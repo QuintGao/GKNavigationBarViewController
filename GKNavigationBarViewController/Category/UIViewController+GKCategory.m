@@ -12,6 +12,8 @@
 
 NSString *const GKViewControllerPropertyChangedNotification = @"GKViewControllerPropertyChangedNotification";
 
+static CGFloat gk_navAlpha = 1.0;
+
 static const void* GKInteractivePopKey  = @"GKInteractivePopKey";
 static const void* GKFullScreenPopKey   = @"GKFullScreenPopKey";
 static const void* GKPopMaxDistanceKey  = @"GKPopMaxDistanceKey";
@@ -40,6 +42,12 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     [[NSNotificationCenter defaultCenter] postNotificationName:GKViewControllerPropertyChangedNotification object:@{@"viewController": self}];
     
     [self gk_viewDidAppear:animated];
+}
+
+- (void)gk_viewWillAppear:(BOOL)animated {
+    self.gk_navBarAlpha = gk_navAlpha;
+    
+    [self gk_viewWillAppear:animated];
 }
 
 #pragma mark - StatusBar 
@@ -135,6 +143,8 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 }
 
 - (void)setNavBarAlpha:(CGFloat)alpha {
+    
+    gk_navAlpha = alpha;
     
     UINavigationBar *navBar = nil;
     

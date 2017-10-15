@@ -23,19 +23,6 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 @implementation UIViewController (GKCategory)
 
-// 使用static inline创建静态内联函数，方便调用
-static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swizzledSelector) {
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-    
-    BOOL isAdd = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-    if (isAdd) {
-        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    }else {
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
-}
-
 // 方法交换
 + (void)load {
     // 保证其只执行一次
@@ -43,8 +30,33 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
     dispatch_once(&onceToken, ^{
         Class class = [self class];
         
+        gk_swizzled_method(class, @selector(viewDidLoad), @selector(gk_viewDidLoad));
+        
+        gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
+        
+        gk_swizzled_method(class, @selector(viewWillDisappear:), @selector(gk_viewWillDisappear:));
+        
         gk_swizzled_method(class, @selector(viewDidAppear:) ,@selector(gk_viewDidAppear:));
     });
+}
+
+- (void)gk_viewDidLoad {
+//    gk_navBar = 1.0;
+    
+    [self gk_viewDidLoad];
+}
+
+- (void)gk_viewWillAppear:(BOOL)animated {
+//    self.gk_navBarAlpha = gk_navBar;
+    
+    [self gk_viewWillAppear:animated];
+}
+
+- (void)gk_viewWillDisappear:(BOOL)animated {
+    
+//    self.gk_navBarAlpha = gk_navBar;
+    
+    [self gk_viewWillDisappear:animated];
 }
 
 - (void)gk_viewDidAppear:(BOOL)animated {
@@ -149,26 +161,26 @@ static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swi
 
 - (void)setNavBarAlpha:(CGFloat)alpha {
     
+    gk_navBar = alpha;
+    
     UINavigationBar *navBar = nil;
     
     if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
         GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-        navBar = vc.gk_navigationBar;
+//        navBar = vc.gk_navigationBar;
+////
+//        UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
+//        barBackgroundView.alpha = alpha;
         
-        // 暂时修复iOS11bug
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (navBar.subviews.count > 0) {
-                UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
-                barBackgroundView.alpha = alpha;
-            }
-        });
+        
+        vc.gk_navigationBar.gk_navBarBackgroundAlpha = alpha;
         
     }else {
         navBar = self.navigationController.navigationBar;
         
         UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
         UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
-        
+
         if (navBar.isTranslucent) {
             if (backgroundImageView != nil && backgroundImageView.image != nil) {
                 barBackgroundView.alpha = alpha;

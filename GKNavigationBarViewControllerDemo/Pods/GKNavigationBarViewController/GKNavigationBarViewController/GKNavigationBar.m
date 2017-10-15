@@ -10,6 +10,13 @@
 
 @implementation GKNavigationBar
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.gk_navBarBackgroundAlpha = 1.0;
+    }
+    return self;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -32,6 +39,22 @@
             }
         }];
     }
+    
+    self.gk_navBarBackgroundAlpha = self.gk_navBarBackgroundAlpha;
+}
+
+- (void)setGk_navBarBackgroundAlpha:(CGFloat)gk_navBarBackgroundAlpha {
+    _gk_navBarBackgroundAlpha = gk_navBarBackgroundAlpha;
+    
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                obj.alpha = gk_navBarBackgroundAlpha;
+            });
+        }
+    }];
+    
+    self.clipsToBounds = gk_navBarBackgroundAlpha == 0.0;
 }
 
 @end

@@ -8,7 +8,6 @@
 
 #import "GKNavigationBarViewController.h"
 #import "GKNavigationBarConfigure.h"
-#import "GKNavigationBar.h"
 
 @interface GKNavigationBarViewController ()
 
@@ -69,6 +68,8 @@
     
     [self.view addSubview:self.gk_navigationBar];
     
+    [self setupNavBarFrame];
+    
     self.gk_navigationBar.items = @[self.gk_navigationItem];
 }
 
@@ -100,6 +101,10 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
+    [self setupNavBarFrame];
+}
+
+- (void)setupNavBarFrame {
     CGFloat width  = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
@@ -174,11 +179,20 @@
     
     if (gk_navBackgroundColor == [UIColor clearColor]) {
         [self.gk_navigationBar setBackgroundImage:GKImage(@"transparent_bg") forBarMetrics:UIBarMetricsDefault];
-//        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor clearColor]];
         self.gk_navShadowImage = [self imageWithColor:[UIColor clearColor]];
     }else {
         [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-        self.gk_navigationBar.shadowImage = [self imageWithColor:[UIColor grayColor]];
+        
+        UIImage *shadowImage = nil;
+        
+        if (self.gk_navShadowImage) {
+            shadowImage = self.gk_navShadowImage;
+        }else if (self.gk_navShadowColor) {
+            shadowImage = [self imageWithColor:self.gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
+        }else {
+            shadowImage = [self imageWithColor:[UIColor blackColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
+        }
+        self.gk_navShadowImage = shadowImage;
     }
 }
 
@@ -275,3 +289,4 @@
 }
 
 @end
+

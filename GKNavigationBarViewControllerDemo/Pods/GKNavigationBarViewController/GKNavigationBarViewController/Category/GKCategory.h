@@ -11,9 +11,16 @@
 
 #import "UINavigationController+GKCategory.h"
 #import "UIViewController+GKCategory.h"
+
+// 与UISCrollView的手势冲突
 #import "UIScrollView+GKCategory.h"
+
+// 导航栏item
+#import "UINavigationBar+GKCategory.h"
+#import "UINavigationItem+GKCategory.h"
 #import "UIBarButtonItem+GKCategory.h"
 
+// 屏幕旋转
 #import "UINavigationController+GKRotation.h"
 #import "UITabBarController+GKRotation.h"
 

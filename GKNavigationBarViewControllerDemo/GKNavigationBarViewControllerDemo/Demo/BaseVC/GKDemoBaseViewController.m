@@ -35,7 +35,7 @@
     label1.textColor = [UIColor blackColor];
     label1.text = @"侧滑返回手势：开";
     [label1 sizeToFit];
-    label1.frame = CGRectMake(20, 84, label1.width, label1.height);
+    label1.frame = CGRectMake(20, self.gk_navigationBar.bottom + 20, label1.width, label1.height);
     [self.view addSubview:label1];
     self.label1 = label1;
     

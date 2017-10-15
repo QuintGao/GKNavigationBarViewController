@@ -10,4 +10,7 @@
 
 @interface GKNavigationBar : UINavigationBar
 
+/** 导航栏背景色透明度，默认是1.0 */
+@property (nonatomic, assign) CGFloat gk_navBarBackgroundAlpha;
+
 @end
