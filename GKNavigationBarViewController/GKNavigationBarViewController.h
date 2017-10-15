@@ -17,7 +17,7 @@
 /**
  自定义导航条
  */
-@property (nonatomic, strong, readonly) UINavigationBar *gk_navigationBar;
+@property (nonatomic, strong, readonly) GKNavigationBar *gk_navigationBar;
 
 /**
  自定义导航栏栏目

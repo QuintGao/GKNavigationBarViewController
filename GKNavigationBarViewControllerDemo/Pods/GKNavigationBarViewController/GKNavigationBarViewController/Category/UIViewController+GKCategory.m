@@ -30,33 +30,8 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     dispatch_once(&onceToken, ^{
         Class class = [self class];
         
-        gk_swizzled_method(class, @selector(viewDidLoad), @selector(gk_viewDidLoad));
-        
-        gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
-        
-        gk_swizzled_method(class, @selector(viewWillDisappear:), @selector(gk_viewWillDisappear:));
-        
         gk_swizzled_method(class, @selector(viewDidAppear:) ,@selector(gk_viewDidAppear:));
     });
-}
-
-- (void)gk_viewDidLoad {
-//    gk_navBar = 1.0;
-    
-    [self gk_viewDidLoad];
-}
-
-- (void)gk_viewWillAppear:(BOOL)animated {
-//    self.gk_navBarAlpha = gk_navBar;
-    
-    [self gk_viewWillAppear:animated];
-}
-
-- (void)gk_viewWillDisappear:(BOOL)animated {
-    
-//    self.gk_navBarAlpha = gk_navBar;
-    
-    [self gk_viewWillDisappear:animated];
 }
 
 - (void)gk_viewDidAppear:(BOOL)animated {
@@ -167,14 +142,8 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     
     if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
         GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-//        navBar = vc.gk_navigationBar;
-////
-//        UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
-//        barBackgroundView.alpha = alpha;
-        
         
         vc.gk_navigationBar.gk_navBarBackgroundAlpha = alpha;
-        
     }else {
         navBar = self.navigationController.navigationBar;
         

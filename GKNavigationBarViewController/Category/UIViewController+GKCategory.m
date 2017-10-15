@@ -12,8 +12,6 @@
 
 NSString *const GKViewControllerPropertyChangedNotification = @"GKViewControllerPropertyChangedNotification";
 
-static CGFloat gk_navAlpha = 1.0;
-
 static const void* GKInteractivePopKey  = @"GKInteractivePopKey";
 static const void* GKFullScreenPopKey   = @"GKFullScreenPopKey";
 static const void* GKPopMaxDistanceKey  = @"GKPopMaxDistanceKey";
@@ -44,7 +42,7 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     [self gk_viewDidAppear:animated];
 }
 
-#pragma mark - StatusBar 
+#pragma mark - StatusBar
 - (BOOL)prefersStatusBarHidden {
     return self.gk_StatusBarHidden;
 }
@@ -138,17 +136,12 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 - (void)setNavBarAlpha:(CGFloat)alpha {
     
-    gk_navAlpha = alpha;
-    
     UINavigationBar *navBar = nil;
     
     if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
         GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-        navBar = vc.gk_navigationBar;
         
-        UIView *barBackgroundView = [navBar.subviews objectAtIndex:0];
-        barBackgroundView.alpha = alpha;
-        
+        vc.gk_navigationBar.gk_navBarBackgroundAlpha = alpha;
     }else {
         navBar = self.navigationController.navigationBar;
         
