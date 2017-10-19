@@ -9,7 +9,6 @@
 #import "UINavigationBar+GKCategory.h"
 #import "GKCommon.h"
 #import "GKNavigationBarConfigure.h"
-#import <objc/runtime.h>
 
 @implementation UINavigationBar (GKCategory)
 

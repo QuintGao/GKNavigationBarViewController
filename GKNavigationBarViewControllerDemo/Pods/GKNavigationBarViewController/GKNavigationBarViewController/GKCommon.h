@@ -33,9 +33,6 @@ typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
 //static CGFloat gk_tempFixSpace = 0;
 static BOOL gk_disableFixSpace = NO;
 
-// 默认导航栏
-static CGFloat gk_navBar = 1.0;
-
 // 使用static inline创建静态内联函数，方便调用
 static inline void gk_swizzled_method(Class class ,SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);

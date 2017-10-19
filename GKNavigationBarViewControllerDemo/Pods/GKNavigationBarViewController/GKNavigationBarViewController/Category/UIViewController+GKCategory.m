@@ -42,7 +42,7 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
     [self gk_viewDidAppear:animated];
 }
 
-#pragma mark - StatusBar 
+#pragma mark - StatusBar
 - (BOOL)prefersStatusBarHidden {
     return self.gk_StatusBarHidden;
 }
@@ -136,8 +136,6 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 - (void)setNavBarAlpha:(CGFloat)alpha {
     
-    gk_navBar = alpha;
-    
     UINavigationBar *navBar = nil;
     
     if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
@@ -149,7 +147,7 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
         
         UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
         UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
-
+        
         if (navBar.isTranslucent) {
             if (backgroundImageView != nil && backgroundImageView.image != nil) {
                 barBackgroundView.alpha = alpha;

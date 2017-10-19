@@ -189,9 +189,8 @@
             shadowImage = self.gk_navShadowImage;
         }else if (self.gk_navShadowColor) {
             shadowImage = [self imageWithColor:self.gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
-        }else {
-            shadowImage = [self imageWithColor:[UIColor blackColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
         }
+        
         self.gk_navShadowImage = shadowImage;
     }
 }

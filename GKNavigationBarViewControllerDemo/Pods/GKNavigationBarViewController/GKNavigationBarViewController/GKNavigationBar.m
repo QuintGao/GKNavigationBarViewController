@@ -12,6 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        // 设置默认透明度
         self.gk_navBarBackgroundAlpha = 1.0;
     }
     return self;
@@ -40,6 +41,7 @@
         }];
     }
     
+    // 重新设置透明度，解决iOS11的bug
     self.gk_navBarBackgroundAlpha = self.gk_navBarBackgroundAlpha;
 }
 

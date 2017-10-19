@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = "GKNavigationBarViewController"
-  s.version                 = "1.3.6"
+  s.version                 = "1.3.7"
   s.summary                 = "自定义导航栏--导航栏联动"
   s.homepage                = "https://github.com/QuintGao/GKNavigationBarViewController"
   s.license                 = "MIT"

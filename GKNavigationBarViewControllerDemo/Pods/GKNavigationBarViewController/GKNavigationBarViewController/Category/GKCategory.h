@@ -21,7 +21,6 @@
 #import "UIBarButtonItem+GKCategory.h"
 
 // 屏幕旋转
-#import "UINavigationController+GKRotation.h"
-#import "UITabBarController+GKRotation.h"
+#import "UIViewController+GKRotation.h"
 
 #endif /* GKCategory_h */
