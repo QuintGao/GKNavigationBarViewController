@@ -1,12 +1,12 @@
 PODS:
-  - GKNavigationBarViewController (1.3.6)
+  - GKNavigationBarViewController (1.3.7)
 
 DEPENDENCIES:
-  - GKNavigationBarViewController (~> 1.3.6)
+  - GKNavigationBarViewController (~> 1.3.7)
 
 SPEC CHECKSUMS:
-  GKNavigationBarViewController: 156ae902faa0d5667720804619722da782789170
+  GKNavigationBarViewController: 11709ffa7fb4a6a166a50ec429f4e94600a43528
 
-PODFILE CHECKSUM: 8ed9672b5cc407b3db9b6446984c94d62c1fb60e
+PODFILE CHECKSUM: 7990da1f83aaabb2509e7c222221806a6b81268e
 
 COCOAPODS: 1.4.0.beta.1
