@@ -213,7 +213,6 @@
 				799614491F10B17E00264130 /* Demo */,
 				799613EE1F0F7F8200264130 /* AppDelegate.h */,
 				799613EF1F0F7F8200264130 /* AppDelegate.m */,
-				799613F41F0F7F8200264130 /* Main.storyboard */,
 				799613EB1F0F7F8200264130 /* Supporting Files */,
 			);
 			path = GKNavigationBarViewControllerDemo;
@@ -222,6 +221,7 @@
 		799613EB1F0F7F8200264130 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				799613F41F0F7F8200264130 /* Main.storyboard */,
 				798844E21F46755B00CD3B62 /* README.md */,
 				799613F71F0F7F8200264130 /* Assets.xcassets */,
 				799613F91F0F7F8200264130 /* LaunchScreen.storyboard */,
