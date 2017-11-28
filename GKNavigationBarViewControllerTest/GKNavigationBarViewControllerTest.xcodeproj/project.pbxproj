@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7913CDA91F90AE3C0000FDF9 /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7913CDA51F90AE3A0000FDF9 /* UINavigationItem+GKCategory.m */; };
 		7913CDAA1F90AE3C0000FDF9 /* UINavigationBar+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7913CDA71F90AE3B0000FDF9 /* UINavigationBar+GKCategory.m */; };
+		791EB6091FA0636A00DEA01F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EB6081FA0636A00DEA01F /* ThirdViewController.m */; };
 		7927C3C71F4DB8E80078AD96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3C61F4DB8E80078AD96 /* main.m */; };
 		7927C3CA1F4DB8E80078AD96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3C91F4DB8E80078AD96 /* AppDelegate.m */; };
 		7927C3CD1F4DB8E80078AD96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3CC1F4DB8E80078AD96 /* ViewController.m */; };
@@ -55,6 +56,8 @@
 		7913CDA61F90AE3A0000FDF9 /* UINavigationBar+GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+GKCategory.h"; sourceTree = "<group>"; };
 		7913CDA71F90AE3B0000FDF9 /* UINavigationBar+GKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+GKCategory.m"; sourceTree = "<group>"; };
 		7913CDA81F90AE3B0000FDF9 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
+		791EB6071FA0636A00DEA01F /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		791EB6081FA0636A00DEA01F /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		7927C3C21F4DB8E80078AD96 /* GKNavigationBarViewControllerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7927C3C61F4DB8E80078AD96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7927C3C81F4DB8E80078AD96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				7927C3CC1F4DB8E80078AD96 /* ViewController.m */,
 				7927C44F1F4FD6D10078AD96 /* SecondViewController.h */,
 				7927C4501F4FD6D10078AD96 /* SecondViewController.m */,
+				791EB6071FA0636A00DEA01F /* ThirdViewController.h */,
+				791EB6081FA0636A00DEA01F /* ThirdViewController.m */,
 				7927C3CE1F4DB8E80078AD96 /* Main.storyboard */,
 				7927C3D11F4DB8E80078AD96 /* Assets.xcassets */,
 				7927C3D31F4DB8E80078AD96 /* LaunchScreen.storyboard */,
@@ -193,15 +198,15 @@
 			isa = PBXGroup;
 			children = (
 				79A8A2FF1F74E0BF00649469 /* Category */,
+				79A8A3141F74E0BF00649469 /* TransitionAnimation */,
 				7913CD5D1F9087150000FDF9 /* GKCommon.h */,
 				79A8A30D1F74E0BF00649469 /* GKNavigationBar.h */,
 				79A8A30E1F74E0BF00649469 /* GKNavigationBar.m */,
 				79A8A30F1F74E0BF00649469 /* GKNavigationBarConfigure.h */,
 				79A8A3101F74E0BF00649469 /* GKNavigationBarConfigure.m */,
-				79A8A3111F74E0BF00649469 /* GKNavigationBarViewController.bundle */,
 				79A8A3121F74E0BF00649469 /* GKNavigationBarViewController.h */,
 				79A8A3131F74E0BF00649469 /* GKNavigationBarViewController.m */,
-				79A8A3141F74E0BF00649469 /* TransitionAnimation */,
+				79A8A3111F74E0BF00649469 /* GKNavigationBarViewController.bundle */,
 			);
 			name = GKNavigationBarViewController;
 			path = ../../GKNavigationBarViewController;
@@ -393,6 +398,7 @@
 				7927C3C71F4DB8E80078AD96 /* main.m in Sources */,
 				79A8A31B1F74E0C000649469 /* UIBarButtonItem+GKCategory.m in Sources */,
 				798F2DB51F933B0B0098A183 /* UIViewController+GKRotation.m in Sources */,
+				791EB6091FA0636A00DEA01F /* ThirdViewController.m in Sources */,
 				7913CDAA1F90AE3C0000FDF9 /* UINavigationBar+GKCategory.m in Sources */,
 				79A8A31E1F74E0C000649469 /* UIScrollView+GKCategory.m in Sources */,
 				79A8A3251F74E0C000649469 /* GKDelegateHandler.m in Sources */,

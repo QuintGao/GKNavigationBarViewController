@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
 
 @interface SecondViewController ()
 
@@ -44,13 +45,14 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (self.change) {
-        self.change = NO;
-        self.gk_navShadowImage = nil;
-    }else {
-        self.change = YES;
-        self.gk_navShadowColor = [UIColor blackColor];
-    }
+//    if (self.change) {
+//        self.change = NO;
+//        self.gk_navShadowImage = nil;
+//    }else {
+//        self.change = YES;
+//        self.gk_navShadowColor = [UIColor blackColor];
+//    }
+    [self.navigationController pushViewController:[ThirdViewController new] animated:YES];
 }
 
 - (void)dealloc {

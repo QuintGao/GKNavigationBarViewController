@@ -37,13 +37,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    // 隐藏导航栏
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
 #pragma mark - Public Methods
 - (void)showNavLine {
     UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
