@@ -11,8 +11,10 @@
 #import "GKMainViewController.h"
 #import "GKDemo004ViewController.h"
 #import "GKNavigationBarConfigure.h"
+#import <UserNotifications/UserNotifications.h>
+#import "GKDemo001ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
@@ -35,35 +37,88 @@
     
     [self.window makeKeyAndVisible];
     
+    // 授权推送通知
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            NSLog(@"授权成功");
+            [self sendLocalNotification];
+        }else {
+            NSLog(@"授权失败");
+        }
+    }];
+    
     return YES;
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+/**
+ 发送本地通知
+ */
+- (void)sendLocalNotification {
+    // 延时5s发送一个本地通知
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 创建通知
+        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+        // 主标题
+        content.title = [NSString localizedUserNotificationStringForKey:@"通知标题" arguments:nil];
+        // 副标题
+        content.subtitle = [NSString localizedUserNotificationStringForKey:@"通知副标题" arguments:nil];
+        // 内容
+        content.body = [NSString localizedUserNotificationStringForKey:@"通知内容" arguments:nil];
+        // 通知提示音
+        content.sound = [UNNotificationSound defaultSound];
+        
+        content.userInfo = @{@"id": @"123"};
+        
+        // 设置触发时间
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+        
+        // 创建一个发送请求
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"local_notification" content:content trigger:trigger];
+        
+        // 发送通知
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center addNotificationRequest:request withCompletionHandler:nil];
+    });
 }
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+#pragma mark - UNUserNotificationCenterDelegate
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于前台时的远程推送接收
+    }else{
+        //应用处于前台时的本地推送接收
+        NSLog(@"%@", userInfo);
+        
+        UIViewController *currentVC = GKConfigure.visibleController;
+        
+        [currentVC.navigationController pushViewController:[GKDemo001ViewController new] animated:YES];
+    }
 }
 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于后台时的远程推送接收
+    }else {
+        //应用处于后台时的本地推送接收
+        
+        NSLog(@"%@", userInfo);
+        // 接收到通知后的跳转方法
+        // 方法一：
+        UIViewController *currentVC = GKConfigure.visibleController;
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        [currentVC.navigationController pushViewController:[GKDemo001ViewController new] animated:YES];
+        
+        // 方法二
+        [self.window.rootViewController.navigationController pushViewController:[GKDemo001ViewController new] animated:YES];
+    }
+    
+    completionHandler();
 }
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 
 @end
