@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "FourViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -42,6 +43,28 @@
     redView.frame = CGRectMake(0, 0, 100, 44);
     
     self.gk_navTitleView = redView;
+    
+    UIButton *leftBtn = [UIButton new];
+    [leftBtn setTitle:@"push" forState:UIControlStateNormal];
+    leftBtn.backgroundColor = [UIColor redColor];
+    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    
+    UIButton *rightBtn = [UIButton new];
+    [rightBtn setTitle:@"present" forState:UIControlStateNormal];
+    rightBtn.backgroundColor = [UIColor redColor];
+    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    [rightBtn addTarget:self action:@selector(presentAction) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)pushAction {
+    
+}
+
+- (void)presentAction {
+    FourViewController *fourVC = [FourViewController new];
+    
+    UINavigationController *nav = [UINavigationController rootVC:fourVC translationScale:NO];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)click {
@@ -54,8 +77,6 @@
         [self presentViewController:pickerVC animated:YES completion:^{
             pickerVC.delegate = self;
         }];
-        
-        pickerVC.navigationBar.hidden = NO;
     }
 }
 

@@ -41,6 +41,8 @@
         vc.view.frame = CGRectMake(100, 100, 100, 100);
     }
     
+    self.navItem_space = 10.0f;
+    
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:[UIImage imageNamed:@"info_white"] target:nil action:nil];
 }
 

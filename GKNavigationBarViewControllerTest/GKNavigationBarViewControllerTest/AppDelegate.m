@@ -27,7 +27,7 @@
         configure.statusBarStyle    = UIStatusBarStyleDefault;
         configure.backgroundColor   = [UIColor whiteColor];
         configure.backStyle         = GKNavigationBarBackStyleBlack;
-//        configure.navItem_space     = 4;
+        configure.navItem_space     = 10;
     }];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

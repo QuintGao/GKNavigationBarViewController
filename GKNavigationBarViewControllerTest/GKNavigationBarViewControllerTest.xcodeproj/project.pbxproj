@@ -19,6 +19,7 @@
 		7927C3E01F4DB8E80078AD96 /* GKNavigationBarViewControllerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3DF1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestTests.m */; };
 		7927C3EB1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C3EA1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestUITests.m */; };
 		7927C4511F4FD6D10078AD96 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927C4501F4FD6D10078AD96 /* SecondViewController.m */; };
+		793120052050D9A300BB8D2C /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793120042050D9A300BB8D2C /* FourViewController.m */; };
 		795FA62B1FF34F740057BDB0 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 795FA62A1FF34F730057BDB0 /* GKNavigationBarViewController.podspec */; };
 		798F2DB51F933B0B0098A183 /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 798F2DB41F933B0B0098A183 /* UIViewController+GKRotation.m */; };
 		79A8A31B1F74E0C000649469 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3021F74E0BF00649469 /* UIBarButtonItem+GKCategory.m */; };
@@ -77,6 +78,8 @@
 		7927C3EC1F4DB8E80078AD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7927C44F1F4FD6D10078AD96 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		7927C4501F4FD6D10078AD96 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		793120032050D9A300BB8D2C /* FourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		793120042050D9A300BB8D2C /* FourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		795FA62A1FF34F730057BDB0 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GKNavigationBarViewController.podspec; path = ../../GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
 		798F2DB31F933B0B0098A183 /* UIViewController+GKRotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKRotation.h"; sourceTree = "<group>"; };
 		798F2DB41F933B0B0098A183 /* UIViewController+GKRotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKRotation.m"; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				7927C4501F4FD6D10078AD96 /* SecondViewController.m */,
 				791EB6071FA0636A00DEA01F /* ThirdViewController.h */,
 				791EB6081FA0636A00DEA01F /* ThirdViewController.m */,
+				793120032050D9A300BB8D2C /* FourViewController.h */,
+				793120042050D9A300BB8D2C /* FourViewController.m */,
 				7927C3CE1F4DB8E80078AD96 /* Main.storyboard */,
 				7927C3D11F4DB8E80078AD96 /* Assets.xcassets */,
 				7927C3D31F4DB8E80078AD96 /* LaunchScreen.storyboard */,
@@ -404,6 +409,7 @@
 				798F2DB51F933B0B0098A183 /* UIViewController+GKRotation.m in Sources */,
 				791EB6091FA0636A00DEA01F /* ThirdViewController.m in Sources */,
 				7913CDAA1F90AE3C0000FDF9 /* UINavigationBar+GKCategory.m in Sources */,
+				793120052050D9A300BB8D2C /* FourViewController.m in Sources */,
 				79A8A31E1F74E0C000649469 /* UIScrollView+GKCategory.m in Sources */,
 				79A8A3251F74E0C000649469 /* GKDelegateHandler.m in Sources */,
 			);
