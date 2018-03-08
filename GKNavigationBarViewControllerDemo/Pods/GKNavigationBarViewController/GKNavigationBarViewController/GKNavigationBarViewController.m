@@ -11,9 +11,11 @@
 
 @interface GKNavigationBarViewController ()
 
-@property (nonatomic, strong) GKNavigationBar *gk_navigationBar;
+@property (nonatomic, strong) GKNavigationBar   *gk_navigationBar;
 
-@property (nonatomic, strong) UINavigationItem *gk_navigationItem;
+@property (nonatomic, strong) UINavigationItem  *gk_navigationItem;
+
+@property (nonatomic, assign) CGFloat           lastNavItem_sapce;
 
 @end
 
@@ -32,9 +34,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // 隐藏系统导航栏
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    // 将自定义导航栏放置顶层
     if (self.gk_navigationBar && !self.gk_navigationBar.hidden) {
         [self.view bringSubviewToFront:self.gk_navigationBar];
     }
+    
+    // 重置navitem_space
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.navItem_space = self.navItem_space;
+    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    // 重置navitem_space
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.navItem_space = self.lastNavItem_sapce;
+    }];
 }
 
 #pragma mark - Public Methods
@@ -96,6 +116,9 @@
     self.gk_statusBarStyle  = configure.statusBarStyle;
     
     self.gk_backStyle       = configure.backStyle;
+    
+    self.navItem_space      = configure.navItem_space;
+    self.lastNavItem_sapce  = configure.navItem_space;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -263,6 +286,10 @@
     _gk_navRightBarButtonItems = gk_navRightBarButtonItems;
     
     self.gk_navigationItem.rightBarButtonItems = gk_navRightBarButtonItems;
+}
+
+- (void)setNavItem_space:(CGFloat)navItem_space {
+    _navItem_space = navItem_space;
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color {

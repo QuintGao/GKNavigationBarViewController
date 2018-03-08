@@ -39,7 +39,7 @@
 - (void)gk_viewDidLoad {
     // 隐藏系统导航栏
     if (![self isKindOfClass:[UIImagePickerController class]]) {
-        [self setNavigationBarHidden:YES animated:NO];
+//        [self setNavigationBarHidden:YES animated:NO];
         // 设置背景色
         self.view.backgroundColor = [UIColor blackColor];
         
