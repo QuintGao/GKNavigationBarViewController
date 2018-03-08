@@ -43,7 +43,7 @@
     }
     
     // 重置navitem_space
-    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
         configure.navItem_space = self.navItem_space;
     }];
 }
@@ -52,7 +52,7 @@
     [super viewWillDisappear:animated];
     
     // 重置navitem_space
-    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
         configure.navItem_space = self.lastNavItem_sapce;
     }];
 }
