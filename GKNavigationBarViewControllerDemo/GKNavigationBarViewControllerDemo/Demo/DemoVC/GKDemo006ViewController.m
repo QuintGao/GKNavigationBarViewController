@@ -26,7 +26,7 @@
     
     self.gk_navRightBarButtonItem = self.editButtonItem;
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NAVBAR_HEIGHT, self.view.frame.size.width, self.view.frame.size.height - NAVBAR_HEIGHT) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
     
