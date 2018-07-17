@@ -27,6 +27,7 @@
 //    self.gk_navigationBar.backgroundColor = [UIColor redColor];
     
     self.gk_statusBarStyle    = UIStatusBarStyleDefault;
+    self.gk_statusBarHidden   = YES;
     
     self.gk_navigationItem.title = @"😁😁😁";
     
@@ -54,7 +55,18 @@
 //        self.change = YES;
 //        self.gk_navShadowColor = [UIColor blackColor];
 //    }
-    [self.navigationController pushViewController:[ThirdViewController new] animated:YES];
+    
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            UIViewController *vc = [UIViewController new];
+            
+            [[GKConfigure visibleController] presentViewController:vc animated:NO completion:^{
+                [vc dismissViewControllerAnimated:NO completion:nil];
+            }];
+        }];
+    }else {
+        [self.navigationController pushViewController:[ThirdViewController new] animated:YES];
+    }
 }
 
 - (void)dealloc {

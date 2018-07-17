@@ -33,6 +33,7 @@
 		79A8A3251F74E0C000649469 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3161F74E0BF00649469 /* GKDelegateHandler.m */; };
 		79A8A3261F74E0C000649469 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A3181F74E0BF00649469 /* GKPopTransitionAnimation.m */; };
 		79A8A3271F74E0C000649469 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A8A31A1F74E0BF00649469 /* GKPushTransitionAnimation.m */; };
+		883B28DD7E76B4EC6C0B4981 /* Pods_GKNavigationBarViewControllerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81CF735B2AA0FABB3690879 /* Pods_GKNavigationBarViewControllerTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,9 @@
 		79A8A3181F74E0BF00649469 /* GKPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPopTransitionAnimation.m; sourceTree = "<group>"; };
 		79A8A3191F74E0BF00649469 /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPushTransitionAnimation.h; sourceTree = "<group>"; };
 		79A8A31A1F74E0BF00649469 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushTransitionAnimation.m; sourceTree = "<group>"; };
+		99D54F17AB469032BFAC0150 /* Pods-GKNavigationBarViewControllerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerTest/Pods-GKNavigationBarViewControllerTest.release.xcconfig"; sourceTree = "<group>"; };
+		A17175D2E5E3807AB05FE40E /* Pods-GKNavigationBarViewControllerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerTest/Pods-GKNavigationBarViewControllerTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A81CF735B2AA0FABB3690879 /* Pods_GKNavigationBarViewControllerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883B28DD7E76B4EC6C0B4981 /* Pods_GKNavigationBarViewControllerTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +144,8 @@
 				7927C3DE1F4DB8E80078AD96 /* GKNavigationBarViewControllerTestTests */,
 				7927C3E91F4DB8E80078AD96 /* GKNavigationBarViewControllerTestUITests */,
 				7927C3C31F4DB8E80078AD96 /* Products */,
+				D9FC772C44846F408623CD98 /* Pods */,
+				FBA73228D5BAC9BCA6243063 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +262,23 @@
 			path = TransitionAnimation;
 			sourceTree = "<group>";
 		};
+		D9FC772C44846F408623CD98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A17175D2E5E3807AB05FE40E /* Pods-GKNavigationBarViewControllerTest.debug.xcconfig */,
+				99D54F17AB469032BFAC0150 /* Pods-GKNavigationBarViewControllerTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FBA73228D5BAC9BCA6243063 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A81CF735B2AA0FABB3690879 /* Pods_GKNavigationBarViewControllerTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7927C3EF1F4DB8E80078AD96 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerTest" */;
 			buildPhases = (
+				064135E37ABEE59AD596B438 /* [CP] Check Pods Manifest.lock */,
 				7927C3BE1F4DB8E80078AD96 /* Sources */,
 				7927C3BF1F4DB8E80078AD96 /* Frameworks */,
 				7927C3C01F4DB8E80078AD96 /* Resources */,
+				6596697E01E60B68C2629CA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +343,7 @@
 		7927C3BA1F4DB8E80078AD96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "高坤";
 				TargetAttributes = {
 					7927C3C11F4DB8E80078AD96 = {
@@ -387,6 +413,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		064135E37ABEE59AD596B438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GKNavigationBarViewControllerTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6596697E01E60B68C2629CA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GKNavigationBarViewControllerTest/Pods-GKNavigationBarViewControllerTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKNavigationBarViewControllerTest/Pods-GKNavigationBarViewControllerTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7927C3BE1F4DB8E80078AD96 /* Sources */ = {
@@ -480,6 +545,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -487,6 +553,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -534,6 +601,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -541,6 +609,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -570,6 +639,7 @@
 		};
 		7927C3F01F4DB8E80078AD96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17175D2E5E3807AB05FE40E /* Pods-GKNavigationBarViewControllerTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -585,6 +655,7 @@
 		};
 		7927C3F11F4DB8E80078AD96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99D54F17AB469032BFAC0150 /* Pods-GKNavigationBarViewControllerTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

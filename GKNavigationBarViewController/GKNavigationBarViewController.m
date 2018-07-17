@@ -112,7 +112,7 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
-    self.gk_StatusBarHidden = configure.statusBarHidden;
+    self.gk_statusBarHidden = configure.statusBarHidden;
     self.gk_statusBarStyle  = configure.statusBarStyle;
     
     self.gk_backStyle       = configure.backStyle;
@@ -143,7 +143,7 @@
     if (systemVersion >= 11.0) {
         navBarH = ((width > height) ? 32 : 44) + statusBarHeight;
     }else {
-        navBarH = (width > height) ? (self.gk_StatusBarHidden ? 32 : 52) : (self.gk_StatusBarHidden ? 44 : 64);
+        navBarH = (width > height) ? (self.gk_statusBarHidden ? 32 : 52) : (self.gk_statusBarHidden ? 44 : 64);
     }
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
@@ -164,7 +164,7 @@
 
 #pragma mark - 控制状态栏的方法
 - (BOOL)prefersStatusBarHidden {
-    return self.gk_StatusBarHidden;
+    return self.gk_statusBarHidden;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

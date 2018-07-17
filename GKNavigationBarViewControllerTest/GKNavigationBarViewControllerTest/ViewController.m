@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "SecondViewController.h"
 #import "FourViewController.h"
+#import <TZImagePickerController/TZImagePickerController.h>
 
-@interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, TZImagePickerControllerDelegate>
 
 @property (nonatomic, assign) BOOL show;
 
@@ -56,6 +57,16 @@
     [rightBtn addTarget:self action:@selector(presentAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    self.gk_StatusBarHidden = NO;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self viewWillLayoutSubviews];
+//        [self.gk_navigationBar layoutIfNeeded];
+//    });
+}
+
 - (void)pushAction {
     
 }
@@ -68,16 +79,23 @@
 }
 
 - (void)click {
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        UIImagePickerController *pickerVC = [[UIImagePickerController alloc] init];
-        pickerVC.delegate = self;
-        pickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        
-        [self presentViewController:pickerVC animated:YES completion:^{
-            pickerVC.delegate = self;
-        }];
-    }
+
+    TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    [self presentViewController:pickerVC animated:YES completion:nil];
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+//        UIImagePickerController *pickerVC = [[UIImagePickerController alloc] init];
+//        pickerVC.delegate = self;
+//        pickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//
+//        [self presentViewController:pickerVC animated:YES completion:^{
+//            pickerVC.delegate = self;
+//        }];
+//    }
+}
+
+#pragma mark - TZImagePickerControllerDelegate
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    NSLog(@"%@", photos);
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -92,7 +110,9 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     SecondViewController *vc = [SecondViewController new];
 
-    [self.navigationController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+//    [self.navigationController pushViewController:vc animated:YES];
 //    self.gk_StatusBarHidden = !self.gk_StatusBarHidden;
 //    if (self.show) {
 //        self.show = NO;

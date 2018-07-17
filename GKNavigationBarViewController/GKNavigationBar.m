@@ -31,7 +31,6 @@
                 frame.size.height = self.frame.size.height;
                 obj.frame = frame;
             }else {
-                
                 CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
         
                 CGRect frame   = obj.frame;
