@@ -95,6 +95,13 @@
 
 #pragma mark - TZImagePickerControllerDelegate
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    UIViewController *vc = [UIViewController new];
+    
+    [[GKConfigure visibleController] presentViewController:vc animated:NO completion:^{
+        [vc dismissViewControllerAnimated:NO completion:nil];
+    }];
+    
+    
     NSLog(@"%@", photos);
 }
 
