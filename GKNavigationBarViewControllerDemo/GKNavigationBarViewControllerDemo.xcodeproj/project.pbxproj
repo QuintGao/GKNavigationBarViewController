@@ -49,7 +49,6 @@
 		799614EA1F14C40300264130 /* GKWYNewsProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614E91F14C40300264130 /* GKWYNewsProfileViewController.m */; };
 		799614ED1F14CA2000264130 /* GKWYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614EC1F14CA2000264130 /* GKWYNewsDetailViewController.m */; };
 		799614F01F14CA2B00264130 /* GKWYNewsCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799614EF1F14CA2B00264130 /* GKWYNewsCommentViewController.m */; };
-		BA3FC069CDEB72AFDB2FC447 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF291493129469510790382 /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +68,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		60708E342105A2100041ED2D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5EF291493129469510790382 /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		798844E21F46755B00CD3B62 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		798844E41F467D7A00CD3B62 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		799613E81F0F7F8200264130 /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +175,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3FC069CDEB72AFDB2FC447 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +203,6 @@
 				7996140F1F0F7F8300264130 /* GKNavigationBarViewControllerDemoUITests */,
 				799613E91F0F7F8200264130 /* Products */,
 				9E2A04F7EB1CC2831ABEB475 /* Pods */,
-				D2E53F269B3C5CCA1196703D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -406,14 +415,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D2E53F269B3C5CCA1196703D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5EF291493129469510790382 /* Pods_GKNavigationBarViewControllerDemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +427,7 @@
 				799613E51F0F7F8200264130 /* Frameworks */,
 				799613E61F0F7F8200264130 /* Resources */,
 				99ACB18ECD91BDD225E8AA32 /* [CP] Embed Pods Frameworks */,
+				60708E342105A2100041ED2D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -793,6 +795,7 @@
 			baseConfigurationReference = D7AF5D309C450A0E4A17F9D0 /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9J2ZLU6Z7U;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = GKNavigationBarViewControllerDemo/Info.plist;
@@ -800,7 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.navbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
-				PROVISIONING_PROFILE_SPECIFIER = jvtalking___test;
+				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
 			};
 			name = Debug;
 		};
@@ -809,6 +812,7 @@
 			baseConfigurationReference = E685F6A7ED88C98C34502955 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9J2ZLU6Z7U;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = GKNavigationBarViewControllerDemo/Info.plist;
@@ -816,7 +820,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvtalking.navbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ccbba57f-97f6-4ffe-9154-b8a209a7d9cd";
-				PROVISIONING_PROFILE_SPECIFIER = jvtalking___test;
+				PROVISIONING_PROFILE_SPECIFIER = "jvtalking___test";
 			};
 			name = Release;
 		};

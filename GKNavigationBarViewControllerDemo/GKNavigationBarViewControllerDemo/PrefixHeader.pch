@@ -10,7 +10,7 @@
 #define PrefixHeader_pch
 
 #import <GKNavigationBarViewController/GKNavigationBarViewController.h>
-#import <TZImagePickerController/TZImagePickerController.h>
+//#import <TZImagePickerController/TZImagePickerController.h>
 
 #define NAVBAR_HEIGHT       (IS_58INCH ? 88.0f : 64.0f)
 
