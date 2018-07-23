@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		60708FB02105C1D50041ED2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FAF2105C1D50041ED2D /* AppDelegate.m */; };
-		60708FB32105C1D50041ED2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FB22105C1D50041ED2D /* ViewController.m */; };
 		60708FB62105C1D50041ED2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB42105C1D50041ED2D /* Main.storyboard */; };
 		60708FB82105C1D70041ED2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB72105C1D70041ED2D /* Assets.xcassets */; };
 		60708FBB2105C1D70041ED2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB92105C1D70041ED2D /* LaunchScreen.storyboard */; };
@@ -96,6 +95,8 @@
 		607090BC2105C4480041ED2D /* GKNavigationBarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF82105C2270041ED2D /* GKNavigationBarViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090BD2105C4480041ED2D /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF92105C2270041ED2D /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090BE2105C4480041ED2D /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FFE2105C2270041ED2D /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607090C12105C8DC0041ED2D /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */; };
+		607090C22105C8DC0041ED2D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 607090C02105C8DB0041ED2D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +155,6 @@
 		60708FAB2105C1D50041ED2D /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60708FAE2105C1D50041ED2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60708FAF2105C1D50041ED2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		60708FB12105C1D50041ED2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		60708FB22105C1D50041ED2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		60708FB52105C1D50041ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60708FB72105C1D70041ED2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60708FBA2105C1D70041ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -270,6 +269,8 @@
 		6070908C2105C3800041ED2D /* GKNavigationBarViewControllerFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKNavigationBarViewControllerFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607090932105C3800041ED2D /* GKNavigationBarViewControllerFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewControllerFrameworkTests.m; sourceTree = "<group>"; };
 		607090952105C3800041ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GKNavigationBarViewController.podspec; sourceTree = SOURCE_ROOT; };
+		607090C02105C8DB0041ED2D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,14 +345,14 @@
 				6070900E2105C24E0041ED2D /* Demo */,
 				60708FAE2105C1D50041ED2D /* AppDelegate.h */,
 				60708FAF2105C1D50041ED2D /* AppDelegate.m */,
-				60708FB12105C1D50041ED2D /* ViewController.h */,
-				60708FB22105C1D50041ED2D /* ViewController.m */,
 				60708FB42105C1D50041ED2D /* Main.storyboard */,
 				60708FB72105C1D70041ED2D /* Assets.xcassets */,
 				60708FB92105C1D70041ED2D /* LaunchScreen.storyboard */,
 				60708FBC2105C1D70041ED2D /* Info.plist */,
 				60708FBD2105C1D70041ED2D /* main.m */,
 				6070907E2105C27D0041ED2D /* PrefixHeader.pch */,
+				607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */,
+				607090C02105C8DB0041ED2D /* README.md */,
 			);
 			path = GKNavigationBarViewControllerDemo;
 			sourceTree = "<group>";
@@ -766,10 +767,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607090C22105C8DC0041ED2D /* README.md in Resources */,
 				60708FBB2105C1D70041ED2D /* LaunchScreen.storyboard in Resources */,
 				60708FB82105C1D70041ED2D /* Assets.xcassets in Resources */,
 				6070900B2105C2270041ED2D /* GKNavigationBarViewController.bundle in Resources */,
 				60708FB62105C1D50041ED2D /* Main.storyboard in Resources */,
+				607090C12105C8DC0041ED2D /* GKNavigationBarViewController.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,7 +819,6 @@
 				607090632105C24E0041ED2D /* GKToutiaoViewController.m in Sources */,
 				6070907D2105C24E0041ED2D /* GKDemo003ViewController.m in Sources */,
 				607090792105C24E0041ED2D /* GKDemo007ViewController.m in Sources */,
-				60708FB32105C1D50041ED2D /* ViewController.m in Sources */,
 				607090042105C2270041ED2D /* UIViewController+GKRotation.m in Sources */,
 				6070900A2105C2270041ED2D /* GKNavigationBar.m in Sources */,
 				6070905C2105C24E0041ED2D /* GKMainViewController.m in Sources */,
