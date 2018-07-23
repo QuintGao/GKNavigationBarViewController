@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  GKNavigationBarViewControllerDemo
 //
-//  Created by QuintGao on 2017/7/7.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by gaokun on 2018/7/23.
+//  Copyright © 2018年 gaokun. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -111,7 +111,7 @@
         // 接收到通知后的跳转方法
         // 方法一：
         UIViewController *currentVC = GKConfigure.visibleController;
-
+        
         [currentVC.navigationController pushViewController:[GKDemo001ViewController new] animated:YES];
         
         // 方法二

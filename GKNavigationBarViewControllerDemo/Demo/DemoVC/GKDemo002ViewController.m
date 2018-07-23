@@ -34,8 +34,6 @@
     
     self.title = @"控制器002";
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
     UIButton *btn = [UIButton new];
     btn.frame = CGRectMake(100, 400, 60, 20);
     btn.backgroundColor = [UIColor blackColor];

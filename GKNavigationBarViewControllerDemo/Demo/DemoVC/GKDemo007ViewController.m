@@ -43,7 +43,6 @@
 }
 
 - (void)setupUI {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.delegate        = self;

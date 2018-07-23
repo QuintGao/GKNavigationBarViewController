@@ -3,7 +3,7 @@
 //  GKNavigationBarViewControllerFrameworkTests
 //
 //  Created by gaokun on 2018/7/23.
-//  Copyright © 2018年 高坤. All rights reserved.
+//  Copyright © 2018年 gaokun. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
