@@ -27,6 +27,35 @@
 		60708F802105B6FF0041ED2D /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60708F702105B6FF0041ED2D /* GKNavigationBarViewController.bundle */; };
 		60708F812105B6FF0041ED2D /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F712105B6FF0041ED2D /* GKNavigationBarViewController.m */; };
 		60708F822105B6FF0041ED2D /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F742105B6FF0041ED2D /* GKNavigationBarConfigure.m */; };
+		60708F852105BDD00041ED2D /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F582105B6FF0041ED2D /* GKDelegateHandler.m */; };
+		60708F862105BDD00041ED2D /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F572105B6FF0041ED2D /* GKPushTransitionAnimation.m */; };
+		60708F872105BDD00041ED2D /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F592105B6FF0041ED2D /* GKPopTransitionAnimation.m */; };
+		60708F882105BDD00041ED2D /* UINavigationBar+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F692105B6FF0041ED2D /* UINavigationBar+GKCategory.m */; };
+		60708F892105BDD00041ED2D /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F622105B6FF0041ED2D /* UIBarButtonItem+GKCategory.m */; };
+		60708F8A2105BDD00041ED2D /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F642105B6FF0041ED2D /* UIScrollView+GKCategory.m */; };
+		60708F8B2105BDD00041ED2D /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F672105B6FF0041ED2D /* UINavigationItem+GKCategory.m */; };
+		60708F8C2105BDD00041ED2D /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F5E2105B6FF0041ED2D /* UINavigationController+GKCategory.m */; };
+		60708F8D2105BDD00041ED2D /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F5F2105B6FF0041ED2D /* UIViewController+GKRotation.m */; };
+		60708F8E2105BDD00041ED2D /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F6C2105B6FF0041ED2D /* UIViewController+GKCategory.m */; };
+		60708F8F2105BDD00041ED2D /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F712105B6FF0041ED2D /* GKNavigationBarViewController.m */; };
+		60708F902105BDD00041ED2D /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F742105B6FF0041ED2D /* GKNavigationBarConfigure.m */; };
+		60708F912105BDD00041ED2D /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708F6F2105B6FF0041ED2D /* GKNavigationBar.m */; };
+		60708F922105BDE20041ED2D /* GKDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F5B2105B6FF0041ED2D /* GKDelegateHandler.h */; };
+		60708F932105BDE20041ED2D /* GKPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F5A2105B6FF0041ED2D /* GKPushTransitionAnimation.h */; };
+		60708F942105BDE20041ED2D /* GKPopTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F5C2105B6FF0041ED2D /* GKPopTransitionAnimation.h */; };
+		60708F952105BDE20041ED2D /* GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F652105B6FF0041ED2D /* GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F962105BDE20041ED2D /* UINavigationBar+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F612105B6FF0041ED2D /* UINavigationBar+GKCategory.h */; };
+		60708F972105BDE20041ED2D /* UIBarButtonItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F6A2105B6FF0041ED2D /* UIBarButtonItem+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F982105BDE20041ED2D /* UIScrollView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F6B2105B6FF0041ED2D /* UIScrollView+GKCategory.h */; };
+		60708F992105BDE20041ED2D /* UINavigationItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F602105B6FF0041ED2D /* UINavigationItem+GKCategory.h */; };
+		60708F9A2105BDE20041ED2D /* UINavigationController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F682105B6FF0041ED2D /* UINavigationController+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F9B2105BDE20041ED2D /* UIViewController+GKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F662105B6FF0041ED2D /* UIViewController+GKRotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F9C2105BDE20041ED2D /* UIViewController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F632105B6FF0041ED2D /* UIViewController+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F9D2105BDE20041ED2D /* GKCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F722105B6FF0041ED2D /* GKCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F9E2105BDE20041ED2D /* GKNavigationBarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F6D2105B6FF0041ED2D /* GKNavigationBarViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708F9F2105BDE20041ED2D /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F6E2105B6FF0041ED2D /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708FA02105BDE20041ED2D /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708F732105B6FF0041ED2D /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60708FA12105BDEC0041ED2D /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60708F702105B6FF0041ED2D /* GKNavigationBarViewController.bundle */; };
 		799613ED1F0F7F8200264130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EC1F0F7F8200264130 /* main.m */; };
 		799613F01F0F7F8200264130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 799613EF1F0F7F8200264130 /* AppDelegate.m */; };
 		799613F61F0F7F8200264130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799613F41F0F7F8200264130 /* Main.storyboard */; };
@@ -309,14 +338,14 @@
 			children = (
 				60708F562105B6FF0041ED2D /* TransitionAnimation */,
 				60708F5D2105B6FF0041ED2D /* Category */,
+				60708F722105B6FF0041ED2D /* GKCommon.h */,
 				60708F6D2105B6FF0041ED2D /* GKNavigationBarViewController.h */,
+				60708F712105B6FF0041ED2D /* GKNavigationBarViewController.m */,
 				60708F6E2105B6FF0041ED2D /* GKNavigationBarConfigure.h */,
+				60708F742105B6FF0041ED2D /* GKNavigationBarConfigure.m */,
+				60708F732105B6FF0041ED2D /* GKNavigationBar.h */,
 				60708F6F2105B6FF0041ED2D /* GKNavigationBar.m */,
 				60708F702105B6FF0041ED2D /* GKNavigationBarViewController.bundle */,
-				60708F712105B6FF0041ED2D /* GKNavigationBarViewController.m */,
-				60708F722105B6FF0041ED2D /* GKCommon.h */,
-				60708F732105B6FF0041ED2D /* GKNavigationBar.h */,
-				60708F742105B6FF0041ED2D /* GKNavigationBarConfigure.m */,
 			);
 			path = GKNavigationBarViewController;
 			sourceTree = SOURCE_ROOT;
@@ -324,12 +353,12 @@
 		60708F562105B6FF0041ED2D /* TransitionAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				60708F572105B6FF0041ED2D /* GKPushTransitionAnimation.m */,
-				60708F582105B6FF0041ED2D /* GKDelegateHandler.m */,
-				60708F592105B6FF0041ED2D /* GKPopTransitionAnimation.m */,
-				60708F5A2105B6FF0041ED2D /* GKPushTransitionAnimation.h */,
 				60708F5B2105B6FF0041ED2D /* GKDelegateHandler.h */,
+				60708F582105B6FF0041ED2D /* GKDelegateHandler.m */,
+				60708F5A2105B6FF0041ED2D /* GKPushTransitionAnimation.h */,
+				60708F572105B6FF0041ED2D /* GKPushTransitionAnimation.m */,
 				60708F5C2105B6FF0041ED2D /* GKPopTransitionAnimation.h */,
+				60708F592105B6FF0041ED2D /* GKPopTransitionAnimation.m */,
 			);
 			path = TransitionAnimation;
 			sourceTree = "<group>";
@@ -337,20 +366,20 @@
 		60708F5D2105B6FF0041ED2D /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				60708F5E2105B6FF0041ED2D /* UINavigationController+GKCategory.m */,
-				60708F5F2105B6FF0041ED2D /* UIViewController+GKRotation.m */,
-				60708F602105B6FF0041ED2D /* UINavigationItem+GKCategory.h */,
-				60708F612105B6FF0041ED2D /* UINavigationBar+GKCategory.h */,
-				60708F622105B6FF0041ED2D /* UIBarButtonItem+GKCategory.m */,
-				60708F632105B6FF0041ED2D /* UIViewController+GKCategory.h */,
-				60708F642105B6FF0041ED2D /* UIScrollView+GKCategory.m */,
 				60708F652105B6FF0041ED2D /* GKCategory.h */,
-				60708F662105B6FF0041ED2D /* UIViewController+GKRotation.h */,
-				60708F672105B6FF0041ED2D /* UINavigationItem+GKCategory.m */,
-				60708F682105B6FF0041ED2D /* UINavigationController+GKCategory.h */,
+				60708F612105B6FF0041ED2D /* UINavigationBar+GKCategory.h */,
 				60708F692105B6FF0041ED2D /* UINavigationBar+GKCategory.m */,
 				60708F6A2105B6FF0041ED2D /* UIBarButtonItem+GKCategory.h */,
+				60708F622105B6FF0041ED2D /* UIBarButtonItem+GKCategory.m */,
 				60708F6B2105B6FF0041ED2D /* UIScrollView+GKCategory.h */,
+				60708F642105B6FF0041ED2D /* UIScrollView+GKCategory.m */,
+				60708F602105B6FF0041ED2D /* UINavigationItem+GKCategory.h */,
+				60708F672105B6FF0041ED2D /* UINavigationItem+GKCategory.m */,
+				60708F682105B6FF0041ED2D /* UINavigationController+GKCategory.h */,
+				60708F5E2105B6FF0041ED2D /* UINavigationController+GKCategory.m */,
+				60708F662105B6FF0041ED2D /* UIViewController+GKRotation.h */,
+				60708F5F2105B6FF0041ED2D /* UIViewController+GKRotation.m */,
+				60708F632105B6FF0041ED2D /* UIViewController+GKCategory.h */,
 				60708F6C2105B6FF0041ED2D /* UIViewController+GKCategory.m */,
 			);
 			path = Category;
@@ -589,6 +618,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60708F952105BDE20041ED2D /* GKCategory.h in Headers */,
+				60708F972105BDE20041ED2D /* UIBarButtonItem+GKCategory.h in Headers */,
+				60708F9A2105BDE20041ED2D /* UINavigationController+GKCategory.h in Headers */,
+				60708F9B2105BDE20041ED2D /* UIViewController+GKRotation.h in Headers */,
+				60708F9C2105BDE20041ED2D /* UIViewController+GKCategory.h in Headers */,
+				60708F9D2105BDE20041ED2D /* GKCommon.h in Headers */,
+				60708F9E2105BDE20041ED2D /* GKNavigationBarViewController.h in Headers */,
+				60708F9F2105BDE20041ED2D /* GKNavigationBarConfigure.h in Headers */,
+				60708FA02105BDE20041ED2D /* GKNavigationBar.h in Headers */,
+				60708F922105BDE20041ED2D /* GKDelegateHandler.h in Headers */,
+				60708F932105BDE20041ED2D /* GKPushTransitionAnimation.h in Headers */,
+				60708F942105BDE20041ED2D /* GKPopTransitionAnimation.h in Headers */,
+				60708F962105BDE20041ED2D /* UINavigationBar+GKCategory.h in Headers */,
+				60708F982105BDE20041ED2D /* UIScrollView+GKCategory.h in Headers */,
+				60708F992105BDE20041ED2D /* UINavigationItem+GKCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +796,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60708FA12105BDEC0041ED2D /* GKNavigationBarViewController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +841,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60708F852105BDD00041ED2D /* GKDelegateHandler.m in Sources */,
+				60708F862105BDD00041ED2D /* GKPushTransitionAnimation.m in Sources */,
+				60708F872105BDD00041ED2D /* GKPopTransitionAnimation.m in Sources */,
+				60708F882105BDD00041ED2D /* UINavigationBar+GKCategory.m in Sources */,
+				60708F892105BDD00041ED2D /* UIBarButtonItem+GKCategory.m in Sources */,
+				60708F8A2105BDD00041ED2D /* UIScrollView+GKCategory.m in Sources */,
+				60708F8B2105BDD00041ED2D /* UINavigationItem+GKCategory.m in Sources */,
+				60708F8C2105BDD00041ED2D /* UINavigationController+GKCategory.m in Sources */,
+				60708F8D2105BDD00041ED2D /* UIViewController+GKRotation.m in Sources */,
+				60708F8E2105BDD00041ED2D /* UIViewController+GKCategory.m in Sources */,
+				60708F8F2105BDD00041ED2D /* GKNavigationBarViewController.m in Sources */,
+				60708F902105BDD00041ED2D /* GKNavigationBarConfigure.m in Sources */,
+				60708F912105BDD00041ED2D /* GKNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
