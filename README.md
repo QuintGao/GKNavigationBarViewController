@@ -1,4 +1,9 @@
-## GKNavigationBarViewController --- iOS自定义导航栏-导航栏联动（二）
+## GKNavigationBarViewController
+[![CocoaPods](https://img.shields.io/cocoapods/v/GKNavigationBarViewController.svg?style=flat)](https://github.com/QuintGao/GKNavigationBarViewController)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+
+iOS自定义导航栏 - 导航栏联动效果
 
 ## 导航栏联动的实现方法
   [iOS自定义导航栏-导航栏联动（一）](http://www.jianshu.com/p/5662cdf4393e),[GKNavigationController](https://github.com/QuintGao/GKNavigationController)

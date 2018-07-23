@@ -80,14 +80,14 @@
 		607090AD2105C4280041ED2D /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FFF2105C2270041ED2D /* GKNavigationBarConfigure.m */; };
 		607090AE2105C4280041ED2D /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FFA2105C2270041ED2D /* GKNavigationBar.m */; };
 		607090AF2105C4370041ED2D /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60708FFB2105C2270041ED2D /* GKNavigationBarViewController.bundle */; };
-		607090B02105C4480041ED2D /* GKDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FE62105C2270041ED2D /* GKDelegateHandler.h */; };
+		607090B02105C4480041ED2D /* GKDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FE62105C2270041ED2D /* GKDelegateHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090B12105C4480041ED2D /* GKPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FE52105C2270041ED2D /* GKPushTransitionAnimation.h */; };
 		607090B22105C4480041ED2D /* GKPopTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FE72105C2270041ED2D /* GKPopTransitionAnimation.h */; };
 		607090B32105C4480041ED2D /* GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF02105C2270041ED2D /* GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090B42105C4480041ED2D /* UIBarButtonItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF52105C2270041ED2D /* UIBarButtonItem+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		607090B52105C4480041ED2D /* UIScrollView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF62105C2270041ED2D /* UIScrollView+GKCategory.h */; };
-		607090B62105C4480041ED2D /* UINavigationBar+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FEC2105C2270041ED2D /* UINavigationBar+GKCategory.h */; };
-		607090B72105C4480041ED2D /* UINavigationItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FEB2105C2270041ED2D /* UINavigationItem+GKCategory.h */; };
+		607090B52105C4480041ED2D /* UIScrollView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF62105C2270041ED2D /* UIScrollView+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607090B62105C4480041ED2D /* UINavigationBar+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FEC2105C2270041ED2D /* UINavigationBar+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607090B72105C4480041ED2D /* UINavigationItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FEB2105C2270041ED2D /* UINavigationItem+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090B82105C4480041ED2D /* UINavigationController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF32105C2270041ED2D /* UINavigationController+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090B92105C4480041ED2D /* UIViewController+GKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FF12105C2270041ED2D /* UIViewController+GKRotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090BA2105C4480041ED2D /* UIViewController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FEE2105C2270041ED2D /* UIViewController+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -608,11 +608,11 @@
 				607090BD2105C4480041ED2D /* GKNavigationBarConfigure.h in Headers */,
 				607090BE2105C4480041ED2D /* GKNavigationBar.h in Headers */,
 				607090B02105C4480041ED2D /* GKDelegateHandler.h in Headers */,
-				607090B12105C4480041ED2D /* GKPushTransitionAnimation.h in Headers */,
-				607090B22105C4480041ED2D /* GKPopTransitionAnimation.h in Headers */,
 				607090B52105C4480041ED2D /* UIScrollView+GKCategory.h in Headers */,
 				607090B62105C4480041ED2D /* UINavigationBar+GKCategory.h in Headers */,
 				607090B72105C4480041ED2D /* UINavigationItem+GKCategory.h in Headers */,
+				607090B12105C4480041ED2D /* GKPushTransitionAnimation.h in Headers */,
+				607090B22105C4480041ED2D /* GKPopTransitionAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
