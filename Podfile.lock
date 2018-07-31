@@ -1,0 +1,16 @@
+PODS:
+  - TZImagePickerController (2.2.2)
+
+DEPENDENCIES:
+  - TZImagePickerController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - TZImagePickerController
+
+SPEC CHECKSUMS:
+  TZImagePickerController: 233a868727a813b4ca810a15035320b3bcb94ead
+
+PODFILE CHECKSUM: 582866d8dd1cd7dd159972b65743d298d9e8db50
+
+COCOAPODS: 1.5.3
