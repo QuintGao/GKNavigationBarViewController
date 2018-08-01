@@ -42,9 +42,6 @@
 
 @property (nonatomic, assign) double progress;
 @property (strong, nonatomic) id alertView;
-
-@property (nonatomic, assign) BOOL hideStatusBar;
-
 @end
 
 @implementation TZPhotoPreviewController
@@ -83,10 +80,6 @@
     if (iOS7Later) [UIApplication sharedApplication].statusBarHidden = YES;
     if (_currentIndex) [_collectionView setContentOffset:CGPointMake((self.view.tz_width + 20) * _currentIndex, 0) animated:NO];
     [self refreshNaviBarAndBottomBarState];
-    
-    self.hideStatusBar = YES;
-    
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -97,14 +90,10 @@
         [UIApplication sharedApplication].statusBarHidden = NO;
     }
     [TZImageManager manager].shouldFixOrientation = NO;
-    
-    self.hideStatusBar = NO;
-    
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return self.hideStatusBar;
+    return YES;
 }
 
 - (void)configCustomNaviBar {
