@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B891E03812B03DEF914ED31 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 		60708FB02105C1D50041ED2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FAF2105C1D50041ED2D /* AppDelegate.m */; };
-		60708FB62105C1D50041ED2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB42105C1D50041ED2D /* Main.storyboard */; };
 		60708FB82105C1D70041ED2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB72105C1D70041ED2D /* Assets.xcassets */; };
 		60708FBB2105C1D70041ED2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60708FB92105C1D70041ED2D /* LaunchScreen.storyboard */; };
 		60708FBE2105C1D70041ED2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FBD2105C1D70041ED2D /* main.m */; };
@@ -64,8 +64,6 @@
 		6070907D2105C24E0041ED2D /* GKDemo003ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6070905A2105C24E0041ED2D /* GKDemo003ViewController.m */; };
 		6070908D2105C3800041ED2D /* GKNavigationBarViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607090842105C3800041ED2D /* GKNavigationBarViewController.framework */; };
 		607090942105C3800041ED2D /* GKNavigationBarViewControllerFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607090932105C3800041ED2D /* GKNavigationBarViewControllerFrameworkTests.m */; };
-		607090992105C3800041ED2D /* GKNavigationBarViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607090842105C3800041ED2D /* GKNavigationBarViewController.framework */; };
-		6070909A2105C3800041ED2D /* GKNavigationBarViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607090842105C3800041ED2D /* GKNavigationBarViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		607090A22105C4280041ED2D /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FE32105C2270041ED2D /* GKDelegateHandler.m */; };
 		607090A32105C4280041ED2D /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FE22105C2270041ED2D /* GKPushTransitionAnimation.m */; };
 		607090A42105C4280041ED2D /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60708FE42105C2270041ED2D /* GKPopTransitionAnimation.m */; };
@@ -97,6 +95,7 @@
 		607090BE2105C4480041ED2D /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 60708FFE2105C2270041ED2D /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		607090C12105C8DC0041ED2D /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */; };
 		607090C22105C8DC0041ED2D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 607090C02105C8DB0041ED2D /* README.md */; };
+		7946174321109C36001E2425 /* GKDemo008ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946174221109C36001E2425 /* GKDemo008ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,34 +127,13 @@
 			remoteGlobalIDString = 60708FAA2105C1D50041ED2D;
 			remoteInfo = GKNavigationBarViewControllerDemo;
 		};
-		607090972105C3800041ED2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60708FA32105C1D50041ED2D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607090832105C3800041ED2D;
-			remoteInfo = GKNavigationBarViewControllerFramework;
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		6070909E2105C3800041ED2D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6070909A2105C3800041ED2D /* GKNavigationBarViewController.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60708FAB2105C1D50041ED2D /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60708FAE2105C1D50041ED2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60708FAF2105C1D50041ED2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		60708FB52105C1D50041ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60708FB72105C1D70041ED2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60708FBA2105C1D70041ED2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60708FBC2105C1D70041ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -271,6 +249,10 @@
 		607090952105C3800041ED2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GKNavigationBarViewController.podspec; sourceTree = SOURCE_ROOT; };
 		607090C02105C8DB0041ED2D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		7946174121109C36001E2425 /* GKDemo008ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo008ViewController.h; sourceTree = "<group>"; };
+		7946174221109C36001E2425 /* GKDemo008ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo008ViewController.m; sourceTree = "<group>"; };
+		BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CBEC36FF8F005E5482663EA8 /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,7 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607090992105C3800041ED2D /* GKNavigationBarViewController.framework in Frameworks */,
+				0B891E03812B03DEF914ED31 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +305,8 @@
 				607090852105C3800041ED2D /* GKNavigationBarViewControllerFramework */,
 				607090922105C3800041ED2D /* GKNavigationBarViewControllerFrameworkTests */,
 				60708FAC2105C1D50041ED2D /* Products */,
+				C2121F925C046231A66078DA /* Pods */,
+				B962C1AC876F65BAAEC6EBDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,7 +329,6 @@
 				6070900E2105C24E0041ED2D /* Demo */,
 				60708FAE2105C1D50041ED2D /* AppDelegate.h */,
 				60708FAF2105C1D50041ED2D /* AppDelegate.m */,
-				60708FB42105C1D50041ED2D /* Main.storyboard */,
 				60708FB72105C1D70041ED2D /* Assets.xcassets */,
 				60708FB92105C1D70041ED2D /* LaunchScreen.storyboard */,
 				60708FBC2105C1D70041ED2D /* Info.plist */,
@@ -445,12 +428,12 @@
 		607090102105C24E0041ED2D /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				607090112105C24E0041ED2D /* GKDemoBaseViewController.h */,
 				607090122105C24E0041ED2D /* UIView+Extension.h */,
-				607090132105C24E0041ED2D /* GKTabBaseViewController.m */,
-				607090142105C24E0041ED2D /* GKDemoBaseViewController.m */,
 				607090152105C24E0041ED2D /* UIView+Extension.m */,
+				607090112105C24E0041ED2D /* GKDemoBaseViewController.h */,
+				607090142105C24E0041ED2D /* GKDemoBaseViewController.m */,
 				607090162105C24E0041ED2D /* GKTabBaseViewController.h */,
+				607090132105C24E0041ED2D /* GKTabBaseViewController.m */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -458,12 +441,12 @@
 		607090172105C24E0041ED2D /* TabVC */ = {
 			isa = PBXGroup;
 			children = (
-				607090182105C24E0041ED2D /* GKTab003ViewController.h */,
-				607090192105C24E0041ED2D /* GKTab002ViewController.h */,
-				6070901A2105C24E0041ED2D /* GKTab001ViewController.m */,
-				6070901B2105C24E0041ED2D /* GKTab003ViewController.m */,
-				6070901C2105C24E0041ED2D /* GKTab002ViewController.m */,
 				6070901D2105C24E0041ED2D /* GKTab001ViewController.h */,
+				6070901A2105C24E0041ED2D /* GKTab001ViewController.m */,
+				607090192105C24E0041ED2D /* GKTab002ViewController.h */,
+				6070901C2105C24E0041ED2D /* GKTab002ViewController.m */,
+				607090182105C24E0041ED2D /* GKTab003ViewController.h */,
+				6070901B2105C24E0041ED2D /* GKTab003ViewController.m */,
 			);
 			path = TabVC;
 			sourceTree = "<group>";
@@ -471,9 +454,9 @@
 		6070901E2105C24E0041ED2D /* 今日头条 */ = {
 			isa = PBXGroup;
 			children = (
+				6070902B2105C24E0041ED2D /* GKToutiaoViewController.h */,
 				6070901F2105C24E0041ED2D /* GKToutiaoViewController.m */,
 				607090202105C24E0041ED2D /* tab */,
-				6070902B2105C24E0041ED2D /* GKToutiaoViewController.h */,
 			);
 			path = "今日头条";
 			sourceTree = "<group>";
@@ -481,16 +464,16 @@
 		607090202105C24E0041ED2D /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				607090212105C24E0041ED2D /* GKToutiaoMineViewController.m */,
-				607090222105C24E0041ED2D /* GKToutiaoMicroViewController.h */,
-				607090232105C24E0041ED2D /* GKToutiaoDetailViewController.m */,
-				607090242105C24E0041ED2D /* GKToutiaoVideoViewController.m */,
 				607090252105C24E0041ED2D /* GKToutiaoHomeViewController.h */,
-				607090262105C24E0041ED2D /* GKToutiaoMicroViewController.m */,
-				607090272105C24E0041ED2D /* GKToutiaoMineViewController.h */,
-				607090282105C24E0041ED2D /* GKToutiaoDetailViewController.h */,
-				607090292105C24E0041ED2D /* GKToutiaoVideoViewController.h */,
 				6070902A2105C24E0041ED2D /* GKToutiaoHomeViewController.m */,
+				607090292105C24E0041ED2D /* GKToutiaoVideoViewController.h */,
+				607090242105C24E0041ED2D /* GKToutiaoVideoViewController.m */,
+				607090282105C24E0041ED2D /* GKToutiaoDetailViewController.h */,
+				607090232105C24E0041ED2D /* GKToutiaoDetailViewController.m */,
+				607090262105C24E0041ED2D /* GKToutiaoMicroViewController.m */,
+				607090222105C24E0041ED2D /* GKToutiaoMicroViewController.h */,
+				607090272105C24E0041ED2D /* GKToutiaoMineViewController.h */,
+				607090212105C24E0041ED2D /* GKToutiaoMineViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -499,8 +482,8 @@
 			isa = PBXGroup;
 			children = (
 				6070902D2105C24E0041ED2D /* GKWYMusicViewController.h */,
-				6070902E2105C24E0041ED2D /* tab */,
 				607090392105C24E0041ED2D /* GKWYMusicViewController.m */,
+				6070902E2105C24E0041ED2D /* tab */,
 			);
 			path = "网易云音乐";
 			sourceTree = "<group>";
@@ -508,16 +491,16 @@
 		6070902E2105C24E0041ED2D /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				6070902F2105C24E0041ED2D /* GKWYMusicMineViewController.h */,
 				607090302105C24E0041ED2D /* GKWYMusicFindViewController.h */,
-				607090312105C24E0041ED2D /* GKWYMusicFriendViewController.h */,
-				607090322105C24E0041ED2D /* GKWYMusicAccountViewController.h */,
-				607090332105C24E0041ED2D /* GKWYMusicDetailViewController.m */,
-				607090342105C24E0041ED2D /* GKWYMusicFriendViewController.m */,
 				607090352105C24E0041ED2D /* GKWYMusicFindViewController.m */,
+				6070902F2105C24E0041ED2D /* GKWYMusicMineViewController.h */,
 				607090362105C24E0041ED2D /* GKWYMusicMineViewController.m */,
-				607090372105C24E0041ED2D /* GKWYMusicDetailViewController.h */,
+				607090312105C24E0041ED2D /* GKWYMusicFriendViewController.h */,
+				607090342105C24E0041ED2D /* GKWYMusicFriendViewController.m */,
+				607090322105C24E0041ED2D /* GKWYMusicAccountViewController.h */,
 				607090382105C24E0041ED2D /* GKWYMusicAccountViewController.m */,
+				607090372105C24E0041ED2D /* GKWYMusicDetailViewController.h */,
+				607090332105C24E0041ED2D /* GKWYMusicDetailViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -525,9 +508,9 @@
 		6070903A2105C24E0041ED2D /* 网易新闻 */ = {
 			isa = PBXGroup;
 			children = (
+				6070904B2105C24E0041ED2D /* GKWYNewsViewController.h */,
 				6070903B2105C24E0041ED2D /* GKWYNewsViewController.m */,
 				6070903C2105C24E0041ED2D /* tab */,
-				6070904B2105C24E0041ED2D /* GKWYNewsViewController.h */,
 			);
 			path = "网易新闻";
 			sourceTree = "<group>";
@@ -535,20 +518,20 @@
 		6070903C2105C24E0041ED2D /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				6070903D2105C24E0041ED2D /* GKWYNewsDetailViewController.h */,
-				6070903E2105C24E0041ED2D /* GKWYNewsHomeViewController.m */,
-				6070903F2105C24E0041ED2D /* GKWYNewsNewViewController.m */,
-				607090402105C24E0041ED2D /* GKWYNewsProfileViewController.m */,
-				607090412105C24E0041ED2D /* GKWYNewsVideoViewController.h */,
-				607090422105C24E0041ED2D /* GKWYNewsCommentViewController.m */,
-				607090432105C24E0041ED2D /* GKWYNewsLiveViewController.h */,
 				607090442105C24E0041ED2D /* GKWYNewsHomeViewController.h */,
-				607090452105C24E0041ED2D /* GKWYNewsDetailViewController.m */,
-				607090462105C24E0041ED2D /* GKWYNewsProfileViewController.h */,
+				6070903E2105C24E0041ED2D /* GKWYNewsHomeViewController.m */,
 				607090472105C24E0041ED2D /* GKWYNewsNewViewController.h */,
-				607090482105C24E0041ED2D /* GKWYNewsCommentViewController.h */,
-				607090492105C24E0041ED2D /* GKWYNewsVideoViewController.m */,
+				6070903F2105C24E0041ED2D /* GKWYNewsNewViewController.m */,
+				607090432105C24E0041ED2D /* GKWYNewsLiveViewController.h */,
 				6070904A2105C24E0041ED2D /* GKWYNewsLiveViewController.m */,
+				607090412105C24E0041ED2D /* GKWYNewsVideoViewController.h */,
+				607090492105C24E0041ED2D /* GKWYNewsVideoViewController.m */,
+				607090462105C24E0041ED2D /* GKWYNewsProfileViewController.h */,
+				607090402105C24E0041ED2D /* GKWYNewsProfileViewController.m */,
+				6070903D2105C24E0041ED2D /* GKWYNewsDetailViewController.h */,
+				607090452105C24E0041ED2D /* GKWYNewsDetailViewController.m */,
+				607090482105C24E0041ED2D /* GKWYNewsCommentViewController.h */,
+				607090422105C24E0041ED2D /* GKWYNewsCommentViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -556,20 +539,22 @@
 		6070904D2105C24E0041ED2D /* DemoVC */ = {
 			isa = PBXGroup;
 			children = (
-				6070904E2105C24E0041ED2D /* GKDemo006ViewController.m */,
-				6070904F2105C24E0041ED2D /* GKDemo002ViewController.h */,
-				607090502105C24E0041ED2D /* GKDemo005ViewController.h */,
-				607090512105C24E0041ED2D /* GKDemo001ViewController.m */,
-				607090522105C24E0041ED2D /* GKDemo004ViewController.h */,
-				607090532105C24E0041ED2D /* GKDemo007ViewController.m */,
-				607090542105C24E0041ED2D /* GKDemo003ViewController.h */,
-				607090552105C24E0041ED2D /* GKDemo002ViewController.m */,
-				607090562105C24E0041ED2D /* GKDemo006ViewController.h */,
 				607090572105C24E0041ED2D /* GKDemo001ViewController.h */,
-				607090582105C24E0041ED2D /* GKDemo005ViewController.m */,
-				607090592105C24E0041ED2D /* GKDemo004ViewController.m */,
+				607090512105C24E0041ED2D /* GKDemo001ViewController.m */,
+				6070904F2105C24E0041ED2D /* GKDemo002ViewController.h */,
+				607090552105C24E0041ED2D /* GKDemo002ViewController.m */,
+				607090542105C24E0041ED2D /* GKDemo003ViewController.h */,
 				6070905A2105C24E0041ED2D /* GKDemo003ViewController.m */,
+				607090522105C24E0041ED2D /* GKDemo004ViewController.h */,
+				607090592105C24E0041ED2D /* GKDemo004ViewController.m */,
+				607090502105C24E0041ED2D /* GKDemo005ViewController.h */,
+				607090582105C24E0041ED2D /* GKDemo005ViewController.m */,
+				607090562105C24E0041ED2D /* GKDemo006ViewController.h */,
+				6070904E2105C24E0041ED2D /* GKDemo006ViewController.m */,
 				6070905B2105C24E0041ED2D /* GKDemo007ViewController.h */,
+				607090532105C24E0041ED2D /* GKDemo007ViewController.m */,
+				7946174121109C36001E2425 /* GKDemo008ViewController.h */,
+				7946174221109C36001E2425 /* GKDemo008ViewController.m */,
 			);
 			path = DemoVC;
 			sourceTree = "<group>";
@@ -589,6 +574,23 @@
 				607090952105C3800041ED2D /* Info.plist */,
 			);
 			path = GKNavigationBarViewControllerFrameworkTests;
+			sourceTree = "<group>";
+		};
+		B962C1AC876F65BAAEC6EBDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2121F925C046231A66078DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBEC36FF8F005E5482663EA8 /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */,
+				BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,15 +625,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60708FD72105C1D70041ED2D /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerDemo" */;
 			buildPhases = (
+				4DF867799B20E00FD3B60DDB /* [CP] Check Pods Manifest.lock */,
 				60708FA72105C1D50041ED2D /* Sources */,
 				60708FA82105C1D50041ED2D /* Frameworks */,
 				60708FA92105C1D50041ED2D /* Resources */,
-				6070909E2105C3800041ED2D /* Embed Frameworks */,
+				E466DFAEFF8FEADD5835C774 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				607090982105C3800041ED2D /* PBXTargetDependency */,
 			);
 			name = GKNavigationBarViewControllerDemo;
 			productName = GKNavigationBarViewControllerDemo;
@@ -771,7 +773,6 @@
 				60708FBB2105C1D70041ED2D /* LaunchScreen.storyboard in Resources */,
 				60708FB82105C1D70041ED2D /* Assets.xcassets in Resources */,
 				6070900B2105C2270041ED2D /* GKNavigationBarViewController.bundle in Resources */,
-				60708FB62105C1D50041ED2D /* Main.storyboard in Resources */,
 				607090C12105C8DC0041ED2D /* GKNavigationBarViewController.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +807,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DF867799B20E00FD3B60DDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GKNavigationBarViewControllerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E466DFAEFF8FEADD5835C774 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60708FA72105C1D50041ED2D /* Sources */ = {
@@ -850,6 +890,7 @@
 				607090092105C2270041ED2D /* UIViewController+GKCategory.m in Sources */,
 				607090012105C2270041ED2D /* GKDelegateHandler.m in Sources */,
 				607090082105C2270041ED2D /* UINavigationBar+GKCategory.m in Sources */,
+				7946174321109C36001E2425 /* GKDemo008ViewController.m in Sources */,
 				6070906E2105C24E0041ED2D /* GKWYMusicViewController.m in Sources */,
 				607090702105C24E0041ED2D /* GKWYNewsHomeViewController.m in Sources */,
 				60708FB02105C1D50041ED2D /* AppDelegate.m in Sources */,
@@ -931,22 +972,9 @@
 			target = 60708FAA2105C1D50041ED2D /* GKNavigationBarViewControllerDemo */;
 			targetProxy = 607090902105C3800041ED2D /* PBXContainerItemProxy */;
 		};
-		607090982105C3800041ED2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607090832105C3800041ED2D /* GKNavigationBarViewControllerFramework */;
-			targetProxy = 607090972105C3800041ED2D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		60708FB42105C1D50041ED2D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60708FB52105C1D50041ED2D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		60708FB92105C1D70041ED2D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1070,6 +1098,7 @@
 		};
 		60708FD82105C1D70041ED2D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEC36FF8F005E5482663EA8 /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1087,6 +1116,7 @@
 		};
 		60708FD92105C1D70041ED2D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
