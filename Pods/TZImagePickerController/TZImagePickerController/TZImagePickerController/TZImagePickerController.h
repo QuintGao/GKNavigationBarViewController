@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 15/12/24.
 //  Copyright © 2015年 谭真. All rights reserved.
-//  version 2.2.3 - 2018.07.26
+//  version 3.0.4 - 2018.09.04
 //  更多信息，请前往项目的github地址：https://github.com/banchichen/TZImagePickerController
 
 /*
@@ -25,9 +25,6 @@
 #import "TZLocationManager.h"
 #import "TZPhotoPreviewController.h"
 
-#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
-#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
-
 @class TZAlbumCell, TZAssetCell;
 @protocol TZImagePickerControllerDelegate;
 @interface TZImagePickerController : UINavigationController
@@ -40,7 +37,7 @@
 /// This init method just for previewing photos / 用这个初始化方法以预览图片
 - (instancetype)initWithSelectedAssets:(NSMutableArray *)selectedAssets selectedPhotos:(NSMutableArray *)selectedPhotos index:(NSInteger)index;
 /// This init method for crop photo / 用这个初始化方法以裁剪图片
-- (instancetype)initCropTypeWithAsset:(id)asset photo:(UIImage *)photo completion:(void (^)(UIImage *cropImage,id asset))completion;
+- (instancetype)initCropTypeWithAsset:(PHAsset *)asset photo:(UIImage *)photo completion:(void (^)(UIImage *cropImage,PHAsset *asset))completion;
 
 #pragma mark -
 /// Default is 9 / 默认最大可选9张图片
@@ -75,7 +72,7 @@
 /// Default is YES, if set NO, user can't picking video.
 /// 默认为YES，如果设置为NO,用户将不能选择视频
 @property (nonatomic, assign) BOOL allowPickingVideo;
-/// Default is NO / 默认为NO，为YES时可以多选视频/gif图片，和照片共享最大可选张数maxImagesCount的限制
+/// Default is NO / 默认为NO，为YES时可以多选视频/gif/图片，和照片共享最大可选张数maxImagesCount的限制
 @property (nonatomic, assign) BOOL allowPickingMultipleVideo;
 
 /// Default is NO, if set YES, user can picking gif image.
@@ -133,6 +130,9 @@
 /// 默认是NO，如果设置为YES，内部不会缩放图片到photoWidth像素宽
 @property (assign, nonatomic) BOOL notScaleImage;
 
+/// 默认是NO，如果设置为YES，导出视频时会修正转向（慎重设为YES，可能导致部分安卓下拍的视频导出失败）
+@property (assign, nonatomic) BOOL needFixComposition;
+
 /// The photos user have selected
 /// 用户选中过的图片数组
 @property (nonatomic, strong) NSMutableArray *selectedAssets;
@@ -182,8 +182,8 @@
 @property (nonatomic, copy) void (^albumCellDidLayoutSubviewsBlock)(TZAlbumCell *cell, UIImageView *posterImageView, UILabel *titleLabel);
 
 #pragma mark -
-- (id)showAlertWithTitle:(NSString *)title;
-- (void)hideAlertView:(id)alertView;
+- (UIAlertController *)showAlertWithTitle:(NSString *)title;
+- (void)hideAlertView:(UIAlertController *)alertView;
 - (void)showProgressHUD;
 - (void)hideProgressHUD;
 @property (nonatomic, assign) BOOL isSelectOriginalPhoto;
@@ -244,10 +244,8 @@
 @property (nonatomic, copy) void (^imagePickerControllerDidCancelHandle)(void);
 
 // If user picking a video, this handle will be called.
-// If system version > iOS8,asset is kind of PHAsset class, else is ALAsset class.
 // 如果用户选择了一个视频，下面的handle会被执行
-// 如果系统版本大于iOS8，asset是PHAsset类的对象，否则是ALAsset类的对象
-@property (nonatomic, copy) void (^didFinishPickingVideoHandle)(UIImage *coverImage,id asset);
+@property (nonatomic, copy) void (^didFinishPickingVideoHandle)(UIImage *coverImage,PHAsset *asset);
 
 // If user picking a gif image, this callback will be called.
 // 如果用户选择了一个gif图片，下面的handle会被执行
@@ -276,22 +274,20 @@
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker;
 
 // If user picking a video, this callback will be called.
-// If system version > iOS8,asset is kind of PHAsset class, else is ALAsset class.
 // 如果用户选择了一个视频，下面的handle会被执行
-// 如果系统版本大于iOS8，asset是PHAsset类的对象，否则是ALAsset类的对象
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset;
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(PHAsset *)asset;
 
 // If user picking a gif image, this callback will be called.
 // 如果用户选择了一个gif图片，下面的handle会被执行
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingGifImage:(UIImage *)animatedImage sourceAssets:(id)asset;
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingGifImage:(UIImage *)animatedImage sourceAssets:(PHAsset *)asset;
 
 // Decide album show or not't
 // 决定相册显示与否 albumName:相册名字 result:相册原始数据
-- (BOOL)isAlbumCanSelect:(NSString *)albumName result:(id)result;
+- (BOOL)isAlbumCanSelect:(NSString *)albumName result:(PHFetchResult *)result;
 
 // Decide asset show or not't
 // 决定照片显示与否
-- (BOOL)isAssetCanSelect:(id)asset;
+- (BOOL)isAssetCanSelect:(PHAsset *)asset;
 @end
 
 
@@ -304,12 +300,6 @@
 
 @interface UIImage (MyBundle)
 + (UIImage *)imageNamedFromMyBundle:(NSString *)name;
-@end
-
-
-@interface NSString (TzExtension)
-- (BOOL)tz_containsString:(NSString *)string;
-- (CGSize)tz_calculateSizeWithAttributes:(NSDictionary *)attributes maxSize:(CGSize)maxSize;
 @end
 
 
@@ -332,4 +322,5 @@
 @property (assign, nonatomic) BOOL showSelectedIndex;
 @property (assign, nonatomic) BOOL showPhotoCannotSelectLayer;
 @property (assign, nonatomic) BOOL notScaleImage;
+@property (assign, nonatomic) BOOL needFixComposition;
 @end

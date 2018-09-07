@@ -42,6 +42,15 @@
     
     // 重新设置透明度，解决iOS11的bug
     self.gk_navBarBackgroundAlpha = self.gk_navBarBackgroundAlpha;
+    
+    // 隐藏分割线
+    UIView *backgroundView = self.subviews.firstObject;
+    
+    for (UIView *view in backgroundView.subviews) {
+        if (view.frame.size.height <= 1.0) {
+            view.hidden = self.gk_navLineHidden;
+        }
+    }
 }
 
 - (void)setGk_navBarBackgroundAlpha:(CGFloat)gk_navBarBackgroundAlpha {

@@ -59,23 +59,11 @@
 
 #pragma mark - Public Methods
 - (void)showNavLine {
-    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
-    
-    for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height <= 1.0) {
-            view.hidden = NO;
-        }
-    }
+    self.gk_navLineHidden = NO;
 }
 
 - (void)hideNavLine {
-    UIView *backgroundView = self.gk_navigationBar.subviews.firstObject;
-    
-    for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height <= 1.0) {
-            view.hidden = YES;
-        }
-    }
+    self.gk_navLineHidden = YES;
 }
 
 #pragma mark - private Methods
@@ -187,8 +175,10 @@
 }
 
 #pragma mark - setter
-- (void)setTitle:(NSString *)title {
-    self.gk_navigationItem.title = title;
+- (void)setGk_navTitle:(NSString *)gk_navTitle {
+    _gk_navTitle = gk_navTitle;
+    
+    self.gk_navigationItem.title = gk_navTitle;
 }
 
 - (void)setGk_navBarTintColor:(UIColor *)gk_navBarTintColor {
@@ -290,6 +280,12 @@
 
 - (void)setNavItem_space:(CGFloat)navItem_space {
     _navItem_space = navItem_space;
+}
+
+- (void)setGk_navLineHidden:(BOOL)gk_navLineHidden {
+    _gk_navLineHidden = gk_navLineHidden;
+    
+    self.gk_navigationBar.gk_navLineHidden = gk_navLineHidden;
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color {

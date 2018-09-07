@@ -50,7 +50,7 @@
     [self presentViewController:vc animated:NO completion:^{
         [vc dismissViewControllerAnimated:NO completion:nil];
     }];
-    
+
     NSLog(@"%@", photos);
 }
 

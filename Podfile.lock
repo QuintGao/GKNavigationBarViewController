@@ -1,5 +1,5 @@
 PODS:
-  - TZImagePickerController (2.2.3)
+  - TZImagePickerController (3.0.4)
 
 DEPENDENCIES:
   - TZImagePickerController
@@ -9,7 +9,7 @@ SPEC REPOS:
     - TZImagePickerController
 
 SPEC CHECKSUMS:
-  TZImagePickerController: 5374a30df056b33428802c8112ed44011fe2596a
+  TZImagePickerController: 534fa8d35d555015c013209ed32e67c8a3c4e701
 
 PODFILE CHECKSUM: 582866d8dd1cd7dd159972b65743d298d9e8db50
 
