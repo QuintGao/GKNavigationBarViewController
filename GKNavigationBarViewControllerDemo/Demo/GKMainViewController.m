@@ -33,6 +33,7 @@
                         @"push一个UITableView",
                         @"push一个UIScrollView",
                         @"嵌套TZImagePickerController",
+                        @"嵌套控制器",
                         @"今日头条",
                         @"网易云音乐",
                         @"网易新闻"];
@@ -43,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"MainVC";
+    self.gk_navTitle = @"MainVC";
         
     self.gk_navBackgroundColor = [UIColor redColor];
     
@@ -102,7 +103,7 @@
         return;
     }
     
-    if (indexPath.row == 8) {
+    if (indexPath.row == 9) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
         
         // 根控制器是导航控制器，需要缩放
@@ -111,7 +112,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 9) {
+    }else if (indexPath.row == 10) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
         // 根视图控制器是UITabBarController,不缩放
@@ -119,7 +120,7 @@
         
         
         return;
-    }else if (indexPath.row == 10) {
+    }else if (indexPath.row == 11) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
         [self presentViewController:newsVC animated:YES completion:nil];

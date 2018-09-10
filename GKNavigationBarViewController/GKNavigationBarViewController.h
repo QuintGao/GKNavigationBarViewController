@@ -45,7 +45,8 @@
 @property (nonatomic, strong) NSArray<UIBarButtonItem *>    *gk_navRightBarButtonItems;
 
 /** 导航栏左右按钮距离屏幕边缘的距离 */
-@property (nonatomic, assign) CGFloat                       navItem_space;
+@property (nonatomic, assign) CGFloat                       gk_navItemLeftSpace;
+@property (nonatomic, assign) CGFloat                       gk_navItemRightSpace;
 
 /** 页面标题-快速设置 */
 @property (nonatomic, copy) NSString                        *gk_navTitle;

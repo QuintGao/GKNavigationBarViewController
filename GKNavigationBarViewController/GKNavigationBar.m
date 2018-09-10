@@ -7,6 +7,7 @@
 //
 
 #import "GKNavigationBar.h"
+#import "GKCommon.h"
 
 @implementation GKNavigationBar
 
@@ -43,7 +44,24 @@
     // 重新设置透明度，解决iOS11的bug
     self.gk_navBarBackgroundAlpha = self.gk_navBarBackgroundAlpha;
     
-    // 隐藏分割线
+    // 显隐分割线
+    [self gk_navLineHideOrShow];
+    
+    // 设置导航item偏移量
+    if (GKDeviceVersion >= 11.0 && !GKConfigure.gk_disableFixSpace) {
+        self.layoutMargins = UIEdgeInsetsZero;
+        
+        for (UIView *subview in self.subviews) {
+            if ([NSStringFromClass(subview.class) containsString:@"ContentView"]) {
+                // 修复iOS11 之后的偏移
+                subview.layoutMargins = UIEdgeInsetsMake(0, self.gk_navItemLeftSpace, 0, self.gk_navItemRightSpace);
+                break;
+            }
+        }
+    }
+}
+
+- (void)gk_navLineHideOrShow {
     UIView *backgroundView = self.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {

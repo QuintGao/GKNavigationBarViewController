@@ -15,4 +15,11 @@
 
 @property (nonatomic, assign) BOOL      gk_navLineHidden;
 
+// 左边item间距
+@property (nonatomic, assign) CGFloat   gk_navItemLeftSpace;
+// 右边item间距
+@property (nonatomic, assign) CGFloat   gk_navItemRightSpace;
+
+- (void)gk_navLineHideOrShow;
+
 @end
