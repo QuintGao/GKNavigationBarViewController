@@ -7,7 +7,7 @@
 //
 
 #import "GKNavigationBar.h"
-#import "GKCommon.h"
+#import "GKNavigationBarConfigure.h"
 
 @implementation GKNavigationBar
 
