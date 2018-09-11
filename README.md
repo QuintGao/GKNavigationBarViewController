@@ -31,6 +31,7 @@ iOS自定义导航栏 - 导航栏联动效果
 ![网易云音乐](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/Demo/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.gif)
 
 ![网易新闻](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/Demo/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB.gif)
+
 ![抖音](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/Demo/douyin.gif)
 
 
