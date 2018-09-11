@@ -93,6 +93,11 @@
 		607090C12105C8DC0041ED2D /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 607090BF2105C8DB0041ED2D /* GKNavigationBarViewController.podspec */; };
 		607090C22105C8DC0041ED2D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 607090C02105C8DB0041ED2D /* README.md */; };
 		6076AE7F214621FE00723854 /* GKDemo009ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE7E214621FE00723854 /* GKDemo009ViewController.m */; };
+		6076AE9621476CB400723854 /* GKDouyinHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9521476CB400723854 /* GKDouyinHomeViewController.m */; };
+		6076AE9921476CC400723854 /* GKDouyinHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9821476CC400723854 /* GKDouyinHomeSearchViewController.m */; };
+		6076AE9C21476CF300723854 /* GKDouyinHomePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9B21476CF300723854 /* GKDouyinHomePlayerViewController.m */; };
+		6076AE9F21476D0C00723854 /* GKDouyinPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9E21476D0C00723854 /* GKDouyinPersonalViewController.m */; };
+		6076AEA221476D3B00723854 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AEA121476D3B00723854 /* GKDouyinScrollView.m */; };
 		7946174321109C36001E2425 /* GKDemo008ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946174221109C36001E2425 /* GKDemo008ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +252,16 @@
 		607090C02105C8DB0041ED2D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6076AE7D214621FE00723854 /* GKDemo009ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo009ViewController.h; sourceTree = "<group>"; };
 		6076AE7E214621FE00723854 /* GKDemo009ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo009ViewController.m; sourceTree = "<group>"; };
+		6076AE9421476CB400723854 /* GKDouyinHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeViewController.h; sourceTree = "<group>"; };
+		6076AE9521476CB400723854 /* GKDouyinHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeViewController.m; sourceTree = "<group>"; };
+		6076AE9721476CC400723854 /* GKDouyinHomeSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeSearchViewController.h; sourceTree = "<group>"; };
+		6076AE9821476CC400723854 /* GKDouyinHomeSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeSearchViewController.m; sourceTree = "<group>"; };
+		6076AE9A21476CF300723854 /* GKDouyinHomePlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomePlayerViewController.h; sourceTree = "<group>"; };
+		6076AE9B21476CF300723854 /* GKDouyinHomePlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomePlayerViewController.m; sourceTree = "<group>"; };
+		6076AE9D21476D0C00723854 /* GKDouyinPersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinPersonalViewController.h; sourceTree = "<group>"; };
+		6076AE9E21476D0C00723854 /* GKDouyinPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinPersonalViewController.m; sourceTree = "<group>"; };
+		6076AEA021476D3B00723854 /* GKDouyinScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinScrollView.h; sourceTree = "<group>"; };
+		6076AEA121476D3B00723854 /* GKDouyinScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinScrollView.m; sourceTree = "<group>"; };
 		7946174121109C36001E2425 /* GKDemo008ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo008ViewController.h; sourceTree = "<group>"; };
 		7946174221109C36001E2425 /* GKDemo008ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo008ViewController.m; sourceTree = "<group>"; };
 		BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -413,6 +428,7 @@
 				6070900F2105C24E0041ED2D /* GKMainViewController.m */,
 				607090102105C24E0041ED2D /* BaseVC */,
 				607090172105C24E0041ED2D /* TabVC */,
+				6076AE9021476A6800723854 /* 抖音 */,
 				6070901E2105C24E0041ED2D /* 今日头条 */,
 				6070902C2105C24E0041ED2D /* 网易云音乐 */,
 				6070903A2105C24E0041ED2D /* 网易新闻 */,
@@ -572,6 +588,23 @@
 				607090952105C3800041ED2D /* Info.plist */,
 			);
 			path = GKNavigationBarViewControllerFrameworkTests;
+			sourceTree = "<group>";
+		};
+		6076AE9021476A6800723854 /* 抖音 */ = {
+			isa = PBXGroup;
+			children = (
+				6076AE9421476CB400723854 /* GKDouyinHomeViewController.h */,
+				6076AE9521476CB400723854 /* GKDouyinHomeViewController.m */,
+				6076AE9721476CC400723854 /* GKDouyinHomeSearchViewController.h */,
+				6076AE9821476CC400723854 /* GKDouyinHomeSearchViewController.m */,
+				6076AE9A21476CF300723854 /* GKDouyinHomePlayerViewController.h */,
+				6076AE9B21476CF300723854 /* GKDouyinHomePlayerViewController.m */,
+				6076AE9D21476D0C00723854 /* GKDouyinPersonalViewController.h */,
+				6076AE9E21476D0C00723854 /* GKDouyinPersonalViewController.m */,
+				6076AEA021476D3B00723854 /* GKDouyinScrollView.h */,
+				6076AEA121476D3B00723854 /* GKDouyinScrollView.m */,
+			);
+			path = "抖音";
 			sourceTree = "<group>";
 		};
 		B962C1AC876F65BAAEC6EBDD /* Frameworks */ = {
@@ -862,6 +895,7 @@
 				607090742105C24E0041ED2D /* GKWYNewsDetailViewController.m in Sources */,
 				6070906F2105C24E0041ED2D /* GKWYNewsViewController.m in Sources */,
 				607090062105C2270041ED2D /* UIScrollView+GKCategory.m in Sources */,
+				6076AE9621476CB400723854 /* GKDouyinHomeViewController.m in Sources */,
 				607090732105C24E0041ED2D /* GKWYNewsCommentViewController.m in Sources */,
 				607090022105C2270041ED2D /* GKPopTransitionAnimation.m in Sources */,
 				607090712105C24E0041ED2D /* GKWYNewsNewViewController.m in Sources */,
@@ -872,7 +906,11 @@
 				607090752105C24E0041ED2D /* GKWYNewsVideoViewController.m in Sources */,
 				607090772105C24E0041ED2D /* GKDemo006ViewController.m in Sources */,
 				607090762105C24E0041ED2D /* GKWYNewsLiveViewController.m in Sources */,
+				6076AE9C21476CF300723854 /* GKDouyinHomePlayerViewController.m in Sources */,
+				6076AE9F21476D0C00723854 /* GKDouyinPersonalViewController.m in Sources */,
 				607090622105C24E0041ED2D /* GKTab002ViewController.m in Sources */,
+				6076AE9921476CC400723854 /* GKDouyinHomeSearchViewController.m in Sources */,
+				6076AEA221476D3B00723854 /* GKDouyinScrollView.m in Sources */,
 				6070906D2105C24E0041ED2D /* GKWYMusicAccountViewController.m in Sources */,
 				607090052105C2270041ED2D /* UIBarButtonItem+GKCategory.m in Sources */,
 				607090782105C24E0041ED2D /* GKDemo001ViewController.m in Sources */,
@@ -1097,15 +1135,20 @@
 			baseConfigurationReference = CBEC36FF8F005E5482663EA8 /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xinjun zhang (DNJGV7XB9Q)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = X52753HQNM;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = GKNavigationBarViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKNavigationBarViewControllerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.gknavigationbarviewcontroller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1fe1af09-c71e-4300-94d8-76d14cec2eb4";
+				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1115,15 +1158,20 @@
 			baseConfigurationReference = BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xinjun zhang (DNJGV7XB9Q)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = X52753HQNM;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = GKNavigationBarViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKNavigationBarViewControllerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.gknavigationbarviewcontroller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1fe1af09-c71e-4300-94d8-76d14cec2eb4";
+				PROVISIONING_PROFILE_SPECIFIER = aystfm_dev_test;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
