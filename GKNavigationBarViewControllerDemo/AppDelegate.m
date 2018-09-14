@@ -37,18 +37,18 @@
     
     [self.window makeKeyAndVisible];
     
-    // 授权推送通知
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    center.delegate = self;
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) {
-            NSLog(@"授权成功");
-            [self sendLocalNotification];
-        }else {
-            NSLog(@"授权失败");
-        }
-    }];
-    
+//    // 授权推送通知
+//    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+//    center.delegate = self;
+//    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+//        if (granted) {
+//            NSLog(@"授权成功");
+//            [self sendLocalNotification];
+//        }else {
+//            NSLog(@"授权失败");
+//        }
+//    }];
+//    
     return YES;
 }
 

@@ -19,10 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"控制器001";
+    self.gk_navTitle = @"控制器001";
     
     self.view.backgroundColor    = [UIColor whiteColor];
-    self.gk_navBackgroundColor   = [UIColor blueColor];
+    self.gk_navBackgroundColor   = [UIColor grayColor];
+    
+    self.gk_navLineHidden   = YES;
     
     self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
     
@@ -37,7 +39,6 @@
     
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
 }
-
 
 #pragma mark - GKNavigationControllerPushDelegate
 - (void)pushToNextViewController {

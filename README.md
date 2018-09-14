@@ -32,6 +32,8 @@ iOS自定义导航栏 - 导航栏联动效果
 
 ![网易新闻](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/Demo/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB.gif)
 
+![抖音](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/Demo/douyin.gif)
+
 
 ## 使用说明
 
@@ -140,10 +142,12 @@ pod 'GKNavigationBarViewController'
 
 
 ## 时间记录(倒序)
-
+* 2018.9.11   -- 2.1.0 解决根控制器开启左滑push无效的问题
+* 2018.9.10   -- 2.0.8 拆分左右间距设置属性，可分别设置导航栏左右间距
+* 2018.9.7     -- 2.0.6发布，增加设置导航栏标题和隐藏分割线的属性
 * 2018.3.8     -- 2.0.1发布，修复bug，控制器新增设置导航栏左右按钮间距的属性
 * 2018.3.5     -- 2.0.0发布，修复bug，解决崩溃问题
-* 2017.10.11 -- 1.3.0版本,修复bug，解决手势冲突问题
+* 2017.10.11 -- 1.3.0版本,   修复bug，解决手势冲突问题
 * 2017.9.20   -- 1.2.6版本  适配iOS11，iPhone X
 * 2017.8.31   --
     1. 新增控制器旋转的方法，可以很好的控制单个控制器的旋转问题
