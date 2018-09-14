@@ -26,6 +26,10 @@
     [self addChildVCs];
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)addChildVCs {
     
     [self addChildVC:[GKWYMusicFindViewController new]  title:@"发现音乐" imageName:@"discovery"];

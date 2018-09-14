@@ -43,7 +43,7 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 @property (nonatomic, assign) GKNavigationBarBackStyle gk_backStyle;
 
 /** push代理 */
-@property (nonatomic, assign) id<GKViewControllerPushDelegate> gk_pushDelegate;
+@property (nonatomic, weak) id<GKViewControllerPushDelegate> gk_pushDelegate;
 
 /**
  返回显示的控制器

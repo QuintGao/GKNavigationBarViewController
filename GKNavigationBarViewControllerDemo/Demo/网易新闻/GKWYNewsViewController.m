@@ -39,6 +39,10 @@
     [self addChildVCs];
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)addChildVCs {
     [self addChildVC:[GKWYNewsHomeViewController new] title:@"首页" imageName:@"Home"];
     [self addChildVC:[GKWYNewsNewViewController new] title:@"要闻" imageName:@"Home"];

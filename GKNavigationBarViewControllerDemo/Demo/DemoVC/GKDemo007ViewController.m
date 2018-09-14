@@ -42,6 +42,10 @@
     [self setupUI];
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)setupUI {
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];

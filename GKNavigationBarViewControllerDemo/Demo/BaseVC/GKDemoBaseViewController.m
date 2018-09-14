@@ -30,6 +30,10 @@
     
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)setupUI {
     UILabel *label1 = [UILabel new];
     label1.textColor = [UIColor blackColor];
@@ -87,7 +91,6 @@
     [self.view addSubview:areaView];
     self.areaView = areaView;
 }
-
 
 #pragma mark - User Action
 

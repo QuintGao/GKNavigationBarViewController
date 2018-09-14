@@ -26,6 +26,10 @@
     [self addChildVCs];
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)addChildVCs {
     
     [self addChildVC:[GKToutiaoHomeViewController new]  title:@"首页" imageName:@"Home"];

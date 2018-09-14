@@ -62,6 +62,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.gk_pushDelegate = nil;
+}
+
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     GKDouyinPersonalViewController *personalVC = [GKDouyinPersonalViewController new];

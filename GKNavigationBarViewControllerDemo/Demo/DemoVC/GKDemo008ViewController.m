@@ -38,6 +38,10 @@
     [self presentViewController:pickerVC animated:YES completion:nil];
 }
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 #pragma mark - TZImagePickerControllerDelegate
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
     

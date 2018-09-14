@@ -40,6 +40,13 @@
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    // 这里在控制器消失时，将push代理设置为nil，防止控制器不能释放
+    self.gk_pushDelegate = nil;
+}
+
 #pragma mark - GKNavigationControllerPushDelegate
 - (void)pushToNextViewController {
     GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
