@@ -22,7 +22,7 @@
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
     
     UIImageView *pageImage = [UIImageView new];
-    pageImage.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 49);
+    pageImage.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TABBAR_HEIGHT);
     pageImage.image = [UIImage imageNamed:@"video_page"];
     [self.view addSubview:pageImage];
     

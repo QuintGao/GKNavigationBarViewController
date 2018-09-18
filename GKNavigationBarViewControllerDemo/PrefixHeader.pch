@@ -11,12 +11,30 @@
 
 #import "GKNavigationBarViewController.h"
 
-#define NAVBAR_HEIGHT       (IS_58INCH ? 88.0f : 64.0f)
+#define NAVBAR_HEIGHT       (IS_iPhoneX ? 88.0f : 64.0f)
+#define TABBAR_HEIGHT       (IS_iPhoneX ? 83.0f : 49.0f)
+
+#define IS_iPhoneX      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?\
+(\
+CGSizeEqualToSize(CGSizeMake(375, 812),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(812, 375),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(414, 896),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
+:\
+NO)
 
 #define IS_35INCH       [UIScreen mainScreen].bounds.size.height == 480.0f
 #define IS_40INCH       [UIScreen mainScreen].bounds.size.height == 568.0f
 #define IS_47INCH       [UIScreen mainScreen].bounds.size.height == 667.0f
 #define IS_55INCH       [UIScreen mainScreen].bounds.size.height == 736.0f
+// iPhone X，iPhone XS
 #define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
+// iPhone XR
+#define IS_61INCH       [UIScreen mainScreen].bounds.size.height == 896.0f
+// iPhone XS Max
+#define IS_65INCH       [UIScreen mainScreen].bounds.size.height == 896.0f
 
 #endif /* PrefixHeader_pch */

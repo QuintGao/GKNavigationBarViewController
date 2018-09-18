@@ -315,7 +315,7 @@ static dispatch_once_t onceToken;
 
 - (int32_t)getPhotoWithAsset:(PHAsset *)asset completion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed {
     CGFloat fullScreenWidth = TZScreenWidth;
-    if (fullScreenWidth > _photoPreviewMaxWidth) {
+    if (_photoPreviewMaxWidth > 0 && fullScreenWidth > _photoPreviewMaxWidth) {
         fullScreenWidth = _photoPreviewMaxWidth;
     }
     return [self getPhotoWithAsset:asset photoWidth:fullScreenWidth completion:completion progressHandler:progressHandler networkAccessAllowed:networkAccessAllowed];
@@ -385,7 +385,7 @@ static dispatch_once_t onceToken;
             options.networkAccessAllowed = YES;
             options.resizeMode = PHImageRequestOptionsResizeModeFast;
             [[PHImageManager defaultManager] requestImageDataForAsset:asset options:options resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-                UIImage *resultImage = [UIImage imageWithData:imageData scale:0.1];
+                UIImage *resultImage = [UIImage imageWithData:imageData];
                 if (![TZImagePickerConfig sharedInstance].notScaleImage) {
                     resultImage = [self scaleImage:resultImage toSize:imageSize];
                 }
@@ -464,25 +464,12 @@ static dispatch_once_t onceToken;
 - (void)savePhotoWithImage:(UIImage *)image location:(CLLocation *)location completion:(void (^)(PHAsset *asset, NSError *error))completion {
     __block NSString *localIdentifier = nil;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        if (@available(iOS 9, *)) {
-            NSData *data = UIImageJPEGRepresentation(image, 0.9);
-            PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
-            options.shouldMoveFile = YES;
-            PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
-            localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
-            [request addResourceWithType:PHAssetResourceTypePhoto data:data options:options];
-            if (location) {
-                request.location = location;
-            }
-            request.creationDate = [NSDate date];
-        } else {
-            PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-            localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
-            if (location) {
-                request.location = location;
-            }
-            request.creationDate = [NSDate date];
+        PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
+        if (location) {
+            request.location = location;
         }
+        request.creationDate = [NSDate date];
     } completionHandler:^(BOOL success, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success && completion) {
@@ -507,24 +494,12 @@ static dispatch_once_t onceToken;
 - (void)saveVideoWithUrl:(NSURL *)url location:(CLLocation *)location completion:(void (^)(PHAsset *asset, NSError *error))completion {
     __block NSString *localIdentifier = nil;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        if (@available(iOS 9, *)) {
-            PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
-            options.shouldMoveFile = YES;
-            PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
-            localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
-            [request addResourceWithType:PHAssetResourceTypeVideo fileURL:url options:options];
-            if (location) {
-                request.location = location;
-            }
-            request.creationDate = [NSDate date];
-        } else {
-            PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:url];
-            localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
-            if (location) {
-                request.location = location;
-            }
-            request.creationDate = [NSDate date];
+        PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:url];
+        localIdentifier = request.placeholderForCreatedAsset.localIdentifier;
+        if (location) {
+            request.location = location;
         }
+        request.creationDate = [NSDate date];
     } completionHandler:^(BOOL success, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success && completion) {
