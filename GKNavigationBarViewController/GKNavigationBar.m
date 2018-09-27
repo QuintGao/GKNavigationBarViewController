@@ -42,10 +42,10 @@
                     if (GK_IS_iPhoneX) {
                         y = 0;
                     }else {
-                        y = self.vc.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
+                        y = self.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
                     }
                 }else {
-                    y = self.vc.gk_statusBarHidden ? GK_SAVEAREA_TOP : GK_STATUSBAR_HEIGHT;
+                    y = self.gk_statusBarHidden ? GK_SAVEAREA_TOP : GK_STATUSBAR_HEIGHT;
                 }
         
                 CGRect frame   = obj.frame;

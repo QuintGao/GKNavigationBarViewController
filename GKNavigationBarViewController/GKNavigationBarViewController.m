@@ -48,6 +48,9 @@
         configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
         configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
     }];
+    
+    // 获取状态
+    self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -169,7 +172,6 @@
 - (GKNavigationBar *)gk_navigationBar {
     if (!_gk_navigationBar) {
         _gk_navigationBar = [[GKNavigationBar alloc] initWithFrame:CGRectZero];
-        _gk_navigationBar.vc = self;
     }
     return _gk_navigationBar;
 }
