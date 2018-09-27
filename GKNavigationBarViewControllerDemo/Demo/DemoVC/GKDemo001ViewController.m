@@ -37,6 +37,7 @@
     
     self.gk_pushDelegate = self;
     
+    self.gk_statusBarHidden = YES;
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
 }
 
@@ -45,6 +46,14 @@
     
     // 这里在控制器消失时，将push代理设置为nil，防止控制器不能释放
     self.gk_pushDelegate = nil;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark - GKNavigationControllerPushDelegate

@@ -13,6 +13,7 @@
 #import "GKDelegateHandler.h"
 #import "GKWYNewsViewController.h"
 #import "GKDouyinHomeViewController.h"
+#import <Masonry/Masonry.h>
 
 @interface GKMainViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,7 @@
                         @"push一个UITableView",
                         @"push一个UIScrollView",
                         @"嵌套TZImagePickerController",
-                        @"嵌套控制器",
+                        @"调用系统相册或相机",
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
@@ -64,12 +65,25 @@
 
 - (void)setupTableView {
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.gk_navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.gk_navigationBar.frame.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
     [self.view addSubview:self.tableView];
     
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(self.gk_navigationBar.mas_bottom);
+    }];
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark - UITableViewDataSource

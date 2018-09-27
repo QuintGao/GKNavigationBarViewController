@@ -33,10 +33,23 @@
                 frame.size.height = self.frame.size.height;
                 obj.frame = frame;
             }else {
-                CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
+                CGFloat width = [UIScreen mainScreen].bounds.size.width;
+                CGFloat height = [UIScreen mainScreen].bounds.size.height;
+                
+                CGFloat y = 0;
+                
+                if (width > height) {   // 横屏
+                    if (GK_IS_iPhoneX) {
+                        y = 0;
+                    }else {
+                        y = self.vc.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
+                    }
+                }else {
+                    y = self.vc.gk_statusBarHidden ? GK_SAVEAREA_TOP : GK_STATUSBAR_HEIGHT;
+                }
         
                 CGRect frame   = obj.frame;
-                frame.origin.y += statusBarFrame.size.height;
+                frame.origin.y = y;
                 obj.frame      = frame;
             }
         }];
@@ -66,7 +79,7 @@
     UIView *backgroundView = self.subviews.firstObject;
     
     for (UIView *view in backgroundView.subviews) {
-        if (view.frame.size.height <= 1.0) {
+        if (view.frame.size.height <= 1.0 && view.frame.size.height > 0) {
             view.hidden = self.gk_navLineHidden;
         }
     }

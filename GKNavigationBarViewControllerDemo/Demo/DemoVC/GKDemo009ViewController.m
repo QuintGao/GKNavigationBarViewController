@@ -9,7 +9,7 @@
 #import "GKDemo009ViewController.h"
 #import "GKDemo001ViewController.h"
 
-@interface GKDemo009ViewController ()
+@interface GKDemo009ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, assign) BOOL isHideLine;
 
@@ -40,16 +40,34 @@
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"完成" target:self action:@selector(itemClick)];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.gk_statusBarHidden = NO;
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (self.isHideLine) {
-        self.isHideLine = NO;
-        
-        [self showNavLine];
-    }else {
-        self.isHideLine = YES;
-        
-        [self hideNavLine];
-    }
+//    if (self.isHideLine) {
+//        self.isHideLine = NO;
+//
+//        [self showNavLine];
+//    }else {
+//        self.isHideLine = YES;
+//
+//        [self hideNavLine];
+//    }
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsEditing = YES;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc {

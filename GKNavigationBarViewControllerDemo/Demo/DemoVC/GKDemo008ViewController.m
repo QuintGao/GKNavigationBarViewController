@@ -7,7 +7,7 @@
 //
 
 #import "GKDemo008ViewController.h"
-#import <TZImagePickerController/TZImagePickerController.h>
+#import "TZImagePickerController.h"
 
 @interface GKDemo008ViewController ()<TZImagePickerControllerDelegate>
 
