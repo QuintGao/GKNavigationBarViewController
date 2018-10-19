@@ -89,7 +89,11 @@
     _gk_navBarBackgroundAlpha = gk_navBarBackgroundAlpha;
     
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+        if (GKDeviceVersion >= 10.0f && [obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                obj.alpha = gk_navBarBackgroundAlpha;
+            });
+        }else if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 obj.alpha = gk_navBarBackgroundAlpha;
             });
