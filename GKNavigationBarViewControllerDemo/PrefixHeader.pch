@@ -10,6 +10,7 @@
 #define PrefixHeader_pch
 
 #import "GKNavigationBarViewController.h"
+#import <Masonry/Masonry.h>
 
 #define IS_35INCH       [UIScreen mainScreen].bounds.size.height == 480.0f
 #define IS_40INCH       [UIScreen mainScreen].bounds.size.height == 568.0f

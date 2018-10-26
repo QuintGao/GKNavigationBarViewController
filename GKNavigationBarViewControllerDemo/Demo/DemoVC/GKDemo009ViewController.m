@@ -28,54 +28,82 @@
     
     self.gk_navTitle = @"GKDemo009";
     
-    GKDemo001ViewController *deom001 = [GKDemo001ViewController new];
-    [self.view addSubview:deom001.view];
+    UIButton *photoBtn = [UIButton new];
+    [photoBtn setTitle:@"相册" forState:UIControlStateNormal];
+    photoBtn.backgroundColor = [UIColor blackColor];
+    [photoBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [photoBtn addTarget:self action:@selector(photoBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:photoBtn];
     
-    [self addChildViewController:deom001];
+    UIButton *cameraBtn = [UIButton new];
+    [cameraBtn setTitle:@"相机" forState:UIControlStateNormal];
+    cameraBtn.backgroundColor = [UIColor blackColor];
+    [cameraBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [cameraBtn addTarget:self action:@selector(cameraBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:cameraBtn];
     
-    self.gk_navItemLeftSpace = 40.0f;
+    [photoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(40.0f);
+        make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(80.0f);
+        make.width.mas_equalTo(80.0f);
+        make.height.mas_equalTo(30.0f);
+    }];
     
-    self.gk_navItemRightSpace = 4.0f;
+    [cameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).offset(-40.0f);
+        make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(80.0f);
+        make.width.mas_equalTo(80.0f);
+        make.height.mas_equalTo(30.0f);
+    }];
+}
+
+- (void)photoBtnClick:(id)sender {
+    if (TARGET_IPHONE_SIMULATOR) {
+        NSLog(@"模拟器不支持调用相机");
+        return;
+    }
     
-    self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"完成" target:self action:@selector(itemClick)];
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)cameraBtnClick:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.gk_statusBarHidden = NO;
+//    self.gk_statusBarHidden = NO;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    if (self.isHideLine) {
-//        self.isHideLine = NO;
-//
-//        [self showNavLine];
-//    }else {
-//        self.isHideLine = YES;
-//
-//        [self hideNavLine];
-//    }
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.allowsEditing = YES;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
+#pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        self.gk_statusBarHidden = NO;
+    }];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        self.gk_statusBarHidden = NO;
+    }];
+    
+//    NSLog(@"%@", info[UIImagePickerControllerEditedImage]);
 }
 
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
-}
-
-- (void)itemClick {
-    
 }
 
 @end

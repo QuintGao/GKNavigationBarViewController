@@ -6,8 +6,8 @@
 //  Copyright © 2018年 gaokun. All rights reserved.
 //
 
-#import "GKDemoBaseViewController.h"
+#import "GKNavigationBarViewController.h"
 
-@interface GKDemo009ViewController : GKDemoBaseViewController
+@interface GKDemo009ViewController : GKNavigationBarViewController
 
 @end

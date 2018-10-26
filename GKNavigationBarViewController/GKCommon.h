@@ -23,6 +23,8 @@
 #define GKDeviceVersion [[[UIDevice currentDevice] systemVersion] floatValue]
 
 // 屏幕相关
+#define GK_SCREEN_WIDTH                 [UIScreen mainScreen].bounds.size.width
+#define GK_SCREEN_HEIGHT                [UIScreen mainScreen].bounds.size.height
 #define GK_SAVEAREA_TOP                 (GK_IS_iPhoneX ? 24.0f : 0.0f)   // 顶部安全区域
 #define GK_SAVEAREA_BTM                 (GK_IS_iPhoneX ? 34.0f : 0.0f)   // 底部安全区域
 #define GK_STATUSBAR_HEIGHT             (GK_IS_iPhoneX ? 44.0f : 20.0f)  // 状态栏高度
