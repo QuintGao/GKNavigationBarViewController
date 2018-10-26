@@ -11,29 +11,6 @@
 
 #import "GKNavigationBarViewController.h"
 #import <Masonry/Masonry.h>
-#import <SDWebImage/UIImageView+WebCache.h>
-#import <AFNetworking/AFNetworking.h>
-#import <YYModel/YYModel.h>
-
-#define SCREEN_WIDTH        [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
-
-#define ADAPTATIONRATIO     SCREEN_WIDTH / 750.0f
-
-#define NAVBAR_HEIGHT       (IS_iPhoneX ? 88.0f : 64.0f)
-#define TABBAR_HEIGHT       (IS_iPhoneX ? 83.0f : 49.0f)
-
-#define IS_iPhoneX      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?\
-(\
-CGSizeEqualToSize(CGSizeMake(375, 812),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(812, 375),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(414, 896),[UIScreen mainScreen].bounds.size)\
-||\
-CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
-:\
-NO)
 
 #define IS_35INCH       [UIScreen mainScreen].bounds.size.height == 480.0f
 #define IS_40INCH       [UIScreen mainScreen].bounds.size.height == 568.0f

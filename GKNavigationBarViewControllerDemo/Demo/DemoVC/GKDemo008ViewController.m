@@ -7,7 +7,7 @@
 //
 
 #import "GKDemo008ViewController.h"
-#import <TZImagePickerController/TZImagePickerController.h>
+#import "TZImagePickerController.h"
 
 @interface GKDemo008ViewController ()<TZImagePickerControllerDelegate>
 
@@ -21,6 +21,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.gk_navigationItem.title = @"嵌套TZImagePickerController";
+    
+    self.gk_statusBarStyle = UIStatusBarStyleDefault;
     
     UILabel *label = [UILabel new];
     label.font = [UIFont systemFontOfSize:16.0f];
@@ -44,7 +46,11 @@
 
 #pragma mark - TZImagePickerControllerDelegate
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
-    
+    // 这里为了解决TZImagePickerController选取图片dismiss后状态栏不显示的问题,效果不是太好
+    UIViewController *vc = [UIViewController new];
+    [self presentViewController:vc animated:NO completion:^{
+        [vc dismissViewControllerAnimated:NO completion:nil];
+    }];
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {

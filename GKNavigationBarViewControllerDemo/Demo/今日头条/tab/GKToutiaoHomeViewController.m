@@ -25,7 +25,7 @@
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
     
     UIImageView *pageImage = [UIImageView new];
-    pageImage.frame = CGRectMake(0, NAVBAR_HEIGHT, self.view.frame.size.width, self.view.frame.size.height - NAVBAR_HEIGHT - TABBAR_HEIGHT);
+    pageImage.frame = CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, self.view.frame.size.width, self.view.frame.size.height - GK_STATUSBAR_NAVBAR_HEIGHT - GK_TABBAR_HEIGHT);
     pageImage.image = [UIImage imageNamed:@"home_page"];
     [self.view addSubview:pageImage];
     

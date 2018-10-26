@@ -32,40 +32,30 @@
     self.gk_navBackgroundColor = [UIColor clearColor];
     self.gk_statusBarHidden = YES;
     
-//    GKDouyinVideoControlView *controlView = [GKDouyinVideoControlView new];
-//    [self.view addSubview:controlView];
-//    [controlView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
-
-    
+    self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
     
     [self.view addSubview:self.scrollView];
     self.scrollView.frame = self.view.bounds;
-
+    
     self.childVCs = @[self.searchVC, self.playerVC];
-
+    
     CGFloat w = self.view.frame.size.width;
     CGFloat h = self.view.frame.size.height;
-
+    
     [self.childVCs enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:vc];
         [self.scrollView addSubview:vc.view];
-
+        
         vc.view.frame = CGRectMake(idx * w, 0, w, h);
     }];
-
+    
     self.scrollView.contentSize = CGSizeMake(self.childVCs.count * w, 0);
-
+    
     // 默认显示播放器页
     self.scrollView.contentOffset = CGPointMake(w, 0);
     
-    UIButton *btn = [UIButton new];
-    btn.frame = CGRectMake(SCREEN_WIDTH - 60, IS_iPhoneX ? 51 : 27, 60, 30);
-    [btn addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"关闭" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.view addSubview:btn];
+    // 设置左滑push代理
+    self.gk_pushDelegate = self;
 }
 
 - (void)closeAction {
@@ -75,20 +65,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // 设置左滑push代理
     self.gk_pushDelegate = self;
+    
+    self.gk_statusBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    self.gk_statusBarHidden = NO;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    
     self.gk_pushDelegate = nil;
+    
+    self.gk_statusBarHidden = NO;
 }
 
 - (void)dealloc {

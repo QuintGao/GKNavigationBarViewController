@@ -37,20 +37,21 @@
 }
 
 - (void)gk_viewDidLoad {
-    // 隐藏系统导航栏
-    if (![self isKindOfClass:[UIImagePickerController class]]) {
-//        [self setNavigationBarHidden:YES animated:NO];
-        // 设置背景色
-        self.view.backgroundColor = [UIColor blackColor];
-        
-        // 设置代理
-        self.delegate = self.navDelegate;
-        
-        // 注册通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
-        
-        [self gk_viewDidLoad];
-    }
+    // 处理特殊控制器
+    if ([self isKindOfClass:[UIImagePickerController class]]) return;
+    if ([self isKindOfClass:[UIVideoEditorController class]]) return;
+    
+    // 设置代理和通知
+    // 设置背景色
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    // 设置代理
+    self.delegate = self.navDelegate;
+    
+    // 注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
+    
+    [self gk_viewDidLoad];
 }
 
 - (void)dealloc {

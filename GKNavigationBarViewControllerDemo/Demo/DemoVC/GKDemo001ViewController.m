@@ -35,16 +35,30 @@
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    self.gk_pushDelegate = self;
-    
+    self.gk_statusBarHidden = YES;
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    // 这里在控制器消失时，将push代理设置为nil，防止控制器不能释放
+    // 设置左滑push代理
+    self.gk_pushDelegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    // 取消左滑push代理
     self.gk_pushDelegate = nil;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark - GKNavigationControllerPushDelegate
