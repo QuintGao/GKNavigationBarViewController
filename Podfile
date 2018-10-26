@@ -4,5 +4,7 @@ target 'GKNavigationBarViewControllerDemo' do
   use_frameworks!
 
   pod 'TZImagePickerController'
+  
+  pod 'Masonry'
 
 end

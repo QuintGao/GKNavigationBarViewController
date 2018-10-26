@@ -1,8 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController" "${PODS_CONFIGURATION_BUILD_DIR}/YYModel" "${PODS_ROOT}/TXLiteAVSDK_Player/TXLiteAVSDK_Player/SDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) ${PODS_ROOT}/TXLiteAVSDK_Player/TXLiteAVSDK_Player/SDK/TXLiteAVSDK_Player.framework/Headers/
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Photos" -framework "TZImagePickerController"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/TZImagePickerController/TZImagePickerController.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"iconv" -l"resolv" -l"sqlite3" -l"stdc++" -l"z" -framework "AFNetworking" -framework "AVFoundation" -framework "Accelerate" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Masonry" -framework "SDWebImage" -framework "SystemConfiguration" -framework "TXLiteAVSDK_Player" -framework "TZImagePickerController" -framework "VideoToolbox" -framework "YYModel"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
