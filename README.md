@@ -142,6 +142,7 @@ pod 'GKNavigationBarViewController'
 
 
 ## 时间记录(倒序)
+* 2018.10.28 -- 2.1.4 移除对UIVideoEditorController的控制
 * 2018.10.19 -- 2.1.3 修复设置透明导航栏在iOS10以前无效的问题
 * 2018.9.27   -- 2.1.1 全面适配iPhone X系列机型，修复bug
 * 2018.9.11   -- 2.1.0 解决根控制器开启左滑push无效的问题

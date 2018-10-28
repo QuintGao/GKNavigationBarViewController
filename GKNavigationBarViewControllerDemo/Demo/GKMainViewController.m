@@ -13,7 +13,6 @@
 #import "GKDelegateHandler.h"
 #import "GKWYNewsViewController.h"
 #import "GKDouyinHomeViewController.h"
-#import "GKWBPersonalViewController.h"
 #import <Masonry/Masonry.h>
 
 @interface GKMainViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -38,7 +37,6 @@
                         @"嵌套TZImagePickerController",
                         @"调用系统相册或相机",
                         @"抖音左右滑动",
-                        @"UIScrollView嵌套滑动",
                         @"今日头条",
                         @"网易云音乐",
                         @"网易新闻"];
@@ -134,12 +132,6 @@
         
         return;
     }else if (indexPath.row == 10) {
-        GKWBPersonalViewController *personalVC = [GKWBPersonalViewController new];
-        
-        [self.navigationController pushViewController:personalVC animated:YES];
-        
-        return;
-    }else if (indexPath.row == 11) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
         
         // 根控制器是导航控制器，需要缩放
@@ -148,7 +140,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 12) {
+    }else if (indexPath.row == 11) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
         // 根视图控制器是UITabBarController,不缩放
@@ -156,7 +148,7 @@
         
         
         return;
-    }else if (indexPath.row == 13) {
+    }else if (indexPath.row == 12) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
         [self presentViewController:newsVC animated:YES completion:nil];
