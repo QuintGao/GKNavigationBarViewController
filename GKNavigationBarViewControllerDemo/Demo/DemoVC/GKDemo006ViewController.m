@@ -26,7 +26,7 @@
     
     self.gk_navRightBarButtonItem = self.editButtonItem;
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, GK_STATUSBAR_HEIGHT, self.view.frame.size.width, self.view.frame.size.height - GK_STATUSBAR_NAVBAR_HEIGHT) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, self.view.frame.size.width, self.view.frame.size.height - GK_STATUSBAR_NAVBAR_HEIGHT) style:UITableViewStylePlain];
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {

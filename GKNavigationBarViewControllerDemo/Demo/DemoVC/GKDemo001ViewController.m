@@ -22,9 +22,7 @@
     self.gk_navTitle = @"控制器001";
     
     self.view.backgroundColor    = [UIColor whiteColor];
-    self.gk_navBackgroundColor   = [UIColor whiteColor];
-    
-    self.gk_navLineHidden   = YES;
+    self.gk_navBackgroundColor   = [UIColor grayColor];
     
     self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
     
@@ -39,7 +37,7 @@
     
     self.gk_navShadowColor = [UIColor clearColor];
     
-    self.gk_navShadowImage = [UIImage new];
+//    self.gk_navShadowImage = [UIImage new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,16 +84,6 @@
     GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
     demo002VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:demo002VC animated:YES];
-}
-
-#pragma mark - GKNavigationItemCustomProtocol
-- (UIBarButtonItem *)gk_customBackItemWithTarget:(id)target action:(SEL)action {
-    UIButton *backBtn  = [UIButton new];
-    [backBtn setImage:[UIImage imageNamed:@"btn_back_white"] forState:UIControlStateNormal];
-    [backBtn sizeToFit];
-    [backBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-    
-    return [[UIBarButtonItem alloc] initWithCustomView:backBtn];
 }
 
 @end

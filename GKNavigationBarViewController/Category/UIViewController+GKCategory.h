@@ -50,4 +50,9 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
  */
 - (UIViewController *)gk_visibleViewControllerIfExist;
 
+/**
+ 返回按钮点击
+ */
+- (void)backItemClick:(id)sender;
+
 @end

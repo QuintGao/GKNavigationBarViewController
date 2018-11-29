@@ -134,6 +134,17 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
 
 - (void)setGk_backStyle:(GKNavigationBarBackStyle)gk_backStyle {
     objc_setAssociatedObject(self, GKBackStyleKey, @(gk_backStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (self.navigationController.childViewControllers.count <= 1) return;
+    
+    if (self.gk_backStyle != GKNavigationBarBackStyleNone) {
+        UIImage *backImage = self.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+        
+        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
+            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
+            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(backItemClick:)];
+        }
+    }
 }
 
 - (id<GKViewControllerPushDelegate>)gk_pushDelegate {
@@ -195,6 +206,10 @@ static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
         NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
         return nil;
     }
+}
+
+- (void)backItemClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

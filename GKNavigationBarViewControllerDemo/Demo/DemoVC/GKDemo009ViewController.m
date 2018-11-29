@@ -58,6 +58,14 @@
 }
 
 - (void)photoBtnClick:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)cameraBtnClick:(id)sender {
     if (TARGET_IPHONE_SIMULATOR) {
         NSLog(@"模拟器不支持调用相机");
         return;
@@ -66,14 +74,6 @@
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)cameraBtnClick:(id)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.allowsEditing = YES;
     picker.delegate = self;
     [self presentViewController:picker animated:YES completion:nil];
