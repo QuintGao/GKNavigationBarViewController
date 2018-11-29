@@ -22,7 +22,7 @@
     self.gk_navTitle = @"控制器001";
     
     self.view.backgroundColor    = [UIColor whiteColor];
-    self.gk_navBackgroundColor   = [UIColor grayColor];
+    self.gk_navBackgroundColor   = [UIColor whiteColor];
     
     self.gk_navLineHidden   = YES;
     
@@ -35,8 +35,11 @@
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    self.gk_statusBarHidden = YES;
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
+    
+    self.gk_navShadowColor = [UIColor clearColor];
+    
+    self.gk_navShadowImage = [UIImage new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,6 +62,10 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.gk_navLineHidden = !self.gk_navLineHidden;
 }
 
 #pragma mark - GKNavigationControllerPushDelegate

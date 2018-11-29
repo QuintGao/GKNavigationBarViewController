@@ -54,7 +54,7 @@
     self.gk_navTitleFont    = [UIFont systemFontOfSize:18];
     self.gk_navTitleColor   = [UIColor grayColor];
     
-    self.gk_navLineHidden   = YES;
+//    self.gk_navLineHidden   = YES;
     
     [self setupTableView];
 }

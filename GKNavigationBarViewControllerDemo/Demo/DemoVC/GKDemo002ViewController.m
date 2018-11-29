@@ -32,6 +32,8 @@
     self.gk_navBackgroundColor = [UIColor redColor];
     self.gk_navBarAlpha     = 0.0;
     
+    self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    
     self.title = @"控制器002";
     
     UIButton *btn = [UIButton new];
