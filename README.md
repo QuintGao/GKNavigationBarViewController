@@ -142,6 +142,7 @@ pod 'GKNavigationBarViewController'
 
 
 ## 时间记录(倒序)
+* 2018.12.2   -- 2.1.6 导航栏处理优化，可在viewDidLoad中使用gk_navLineHidden来隐藏分割线
 * 2018.11.29 -- 2.1.5 修复在控制器中设置gk_backStyle无效的问题，其他细节微调
 * 2018.10.28 -- 2.1.4 移除对UIVideoEditorController的控制
 * 2018.10.19 -- 2.1.3 修复设置透明导航栏在iOS10以前无效的问题

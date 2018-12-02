@@ -304,6 +304,11 @@
     
     self.gk_navigationBar.gk_navLineHidden = gk_navLineHidden;
     
+    // 暂时的处理方法
+    if (GKDeviceVersion >= 11.0) {
+        self.gk_navShadowImage = gk_navLineHidden ? [UIImage new] : self.gk_navShadowImage;
+    }
+    
     [self.gk_navigationBar layoutSubviews];
 }
 

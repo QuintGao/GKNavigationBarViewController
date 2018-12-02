@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     self.view.userInteractionEnabled = YES;
-//    self.navigationController.navigationBar.hidden = YES;
+    
     self.gk_navigationBar.hidden = YES;
     
     self.navigationItem.title = @"控制器003";

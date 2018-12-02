@@ -35,9 +35,9 @@
     
     self.gk_statusBarStyle = UIStatusBarStyleLightContent;
     
-    self.gk_navShadowColor = [UIColor clearColor];
+    self.gk_backStyle = GKNavigationBarBackStyleWhite;
     
-//    self.gk_navShadowImage = [UIImage new];
+    self.gk_navLineHidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,10 +60,6 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.gk_navLineHidden = !self.gk_navLineHidden;
 }
 
 #pragma mark - GKNavigationControllerPushDelegate

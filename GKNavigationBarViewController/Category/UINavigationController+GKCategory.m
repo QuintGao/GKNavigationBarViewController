@@ -32,7 +32,19 @@
         Class class = [self class];
         
         gk_swizzled_method(class, @selector(viewDidLoad), @selector(gk_viewDidLoad));
-        gk_swizzled_method(class, @selector(pushViewController:animated:), @selector(gk_pushViewController:animated:));
+        
+        // FIXME: 修复iOS11之后push或pop动画为NO，系统不主动调用UINavigationBar的layoutSubviews方法
+        if (GKDeviceVersion >= 11.0) {
+            gk_swizzled_method(class, @selector(pushViewController:animated:), @selector(gk_pushViewController:animated:));
+            
+            gk_swizzled_method(class, @selector(popViewControllerAnimated:), @selector(gk_popViewControllerAnimated:));
+            
+            gk_swizzled_method(class, @selector(popToViewController:animated:), @selector(gk_popToViewController:animated:));
+            
+            gk_swizzled_method(class, @selector(popToRootViewControllerAnimated:), @selector(gk_popToRootViewControllerAnimated:));
+            
+            gk_swizzled_method(class, @selector(setViewControllers:animated:), @selector(gk_setViewControllers:animated:));
+        }
     });
 }
 
@@ -52,6 +64,66 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
     
     [self gk_viewDidLoad];
+}
+
+// FIXME: 修复iOS11之后push或pop动画为NO，系统不主动调用UINavigationBar的layoutSubviews方法
+- (void)gk_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [self gk_pushViewController:viewController animated:animated];
+    if (!GKConfigure.gk_disableFixSpace) {
+        if (!animated) {
+            [self layoutNavBarWithViewController:viewController];
+        }
+    }
+}
+
+- (nullable UIViewController *)gk_popViewControllerAnimated:(BOOL)animated {
+    UIViewController *vc = [self gk_popViewControllerAnimated:animated];
+    if (!GKConfigure.gk_disableFixSpace) {
+        if (!animated) {
+            [self layoutNavBarWithViewController:vc];
+        }
+    }
+    return vc;
+}
+
+- (nullable NSArray<__kindof UIViewController *> *)gk_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    NSArray *vcs = [self gk_popToViewController:viewController animated:animated];
+    if (!GKConfigure.gk_disableFixSpace) {
+        if (!animated) {
+            [self layoutNavBarWithViewController:self.visibleViewController];
+        }
+    }
+    return vcs;
+}
+
+- (NSArray<UIViewController *> *)gk_popToRootViewControllerAnimated:(BOOL)animated {
+    NSArray *vcs = [self gk_popToRootViewControllerAnimated:animated];
+    if (!GKConfigure.gk_disableFixSpace) {
+        if (!animated) {
+            [self layoutNavBarWithViewController:self.visibleViewController];
+        }
+    }
+    return vcs;
+}
+
+- (void)gk_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
+    [self gk_setViewControllers:viewControllers animated:animated];
+    if (!GKConfigure.gk_disableFixSpace) {
+        if (!animated) {
+            [self layoutNavBarWithViewController:self.visibleViewController];
+        }
+    }
+}
+
+- (void)layoutNavBarWithViewController:(UIViewController *)viewController {
+    UINavigationBar *navBar = nil;
+    if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
+        GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
+        navBar = vc.gk_navigationBar;
+    }else {
+        navBar = self.navigationBar;
+    }
+    [navBar layoutSubviews];
 }
 
 - (void)dealloc {
@@ -102,32 +174,6 @@
             [self.panGesture addTarget:[self systemTarget] action:internalAction];
         }
     }
-}
-
-- (void)gk_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // 设置默认值
-    if (self.viewControllers.count > 0) {
-        if (self.visibleViewController.gk_backStyle != GKNavigationBarBackStyleNone) {
-            // 设置返回按钮
-            if ([viewController isKindOfClass:[GKNavigationBarViewController class]]) {
-                GKNavigationBarViewController *vc = (GKNavigationBarViewController *)viewController;
-                
-                UIImage *backImage = self.visibleViewController.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
-                
-                if (vc.gk_navLeftBarButtonItem == nil && vc.gk_navLeftBarButtonItems == nil) {
-                    vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(goBack)];
-                }
-            }
-        }
-    }
-    
-    if (![self.viewControllers containsObject:viewController]) {
-        [self gk_pushViewController:viewController animated:animated];
-    }
-}
-
-- (void)goBack {
-    [self popViewControllerAnimated:YES];
 }
 
 #pragma mark - StatusBar

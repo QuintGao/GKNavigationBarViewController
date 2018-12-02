@@ -29,7 +29,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.gk_navBackgroundColor = [UIColor redColor];
+    self.gk_navBackgroundColor = [UIColor whiteColor];
     
     self.gk_backStyle = GKNavigationBarBackStyleWhite;
     
