@@ -24,9 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 配置导航栏属性
-    [[GKNavigationBarConfigure sharedInstance] setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_disableFixSpace = YES;
-    }];
+    [[GKNavigationBarConfigure sharedInstance] setupDefaultConfigure];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
