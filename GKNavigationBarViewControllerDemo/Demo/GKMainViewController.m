@@ -36,6 +36,7 @@
                         @"push一个UIScrollView",
                         @"嵌套TZImagePickerController",
                         @"调用系统相册或相机",
+                        @"导航条按钮测试",
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
@@ -104,7 +105,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *className = [[NSString alloc] initWithFormat:@"GKDemo00%zdViewController", indexPath.row + 1];
+    NSString *className = [[NSString alloc] initWithFormat:@"GKDemo0%02zdViewController", indexPath.row + 1];
     
     Class class = NSClassFromString(className);
     
@@ -121,7 +122,7 @@
         return;
     }
     
-    if (indexPath.row == 9) {
+    if (indexPath.row == 10) {
         GKDouyinHomeViewController *douyinVC = [GKDouyinHomeViewController new];
         
         // 设置导航控制器并开启左滑push
@@ -131,7 +132,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 10) {
+    }else if (indexPath.row == 11) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
         
         // 根控制器是导航控制器，需要缩放
@@ -140,7 +141,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 11) {
+    }else if (indexPath.row == 12) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
         // 根视图控制器是UITabBarController,不缩放
@@ -148,7 +149,7 @@
         
         
         return;
-    }else if (indexPath.row == 12) {
+    }else if (indexPath.row == 13) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
         [self presentViewController:newsVC animated:YES completion:nil];

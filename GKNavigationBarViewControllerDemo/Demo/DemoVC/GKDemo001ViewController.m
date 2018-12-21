@@ -24,7 +24,8 @@
     self.view.backgroundColor    = [UIColor whiteColor];
     self.gk_navBackgroundColor   = [UIColor grayColor];
     
-    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
+    UIBarButtonItem *cancelBtn = [UIBarButtonItem itemWithTitle:@"取消" target:self action:@selector(dismiss)];
+    self.gk_navRightBarButtonItem = cancelBtn;
     
     UIButton *btn = [UIButton new];
     btn.frame = CGRectMake(100, 400, 60, 20);

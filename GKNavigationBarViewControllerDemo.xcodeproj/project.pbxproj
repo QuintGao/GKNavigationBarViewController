@@ -144,6 +144,7 @@
 		6076AE9C21476CF300723854 /* GKDouyinHomePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9B21476CF300723854 /* GKDouyinHomePlayerViewController.m */; };
 		6076AE9F21476D0C00723854 /* GKDouyinPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AE9E21476D0C00723854 /* GKDouyinPersonalViewController.m */; };
 		6076AEA221476D3B00723854 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076AEA121476D3B00723854 /* GKDouyinScrollView.m */; };
+		60C6E0AE21CC73DF00C12F93 /* GKDemo010ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C6E0AD21CC73DF00C12F93 /* GKDemo010ViewController.m */; };
 		7946174321109C36001E2425 /* GKDemo008ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946174221109C36001E2425 /* GKDemo008ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -402,6 +403,8 @@
 		6076AE9E21476D0C00723854 /* GKDouyinPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinPersonalViewController.m; sourceTree = "<group>"; };
 		6076AEA021476D3B00723854 /* GKDouyinScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDouyinScrollView.h; sourceTree = "<group>"; };
 		6076AEA121476D3B00723854 /* GKDouyinScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDouyinScrollView.m; sourceTree = "<group>"; };
+		60C6E0AC21CC73DF00C12F93 /* GKDemo010ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo010ViewController.h; sourceTree = "<group>"; };
+		60C6E0AD21CC73DF00C12F93 /* GKDemo010ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo010ViewController.m; sourceTree = "<group>"; };
 		7946174121109C36001E2425 /* GKDemo008ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo008ViewController.h; sourceTree = "<group>"; };
 		7946174221109C36001E2425 /* GKDemo008ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo008ViewController.m; sourceTree = "<group>"; };
 		BD550D71DF69B18635A90113 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -891,6 +894,8 @@
 				7946174221109C36001E2425 /* GKDemo008ViewController.m */,
 				6076AE7D214621FE00723854 /* GKDemo009ViewController.h */,
 				6076AE7E214621FE00723854 /* GKDemo009ViewController.m */,
+				60C6E0AC21CC73DF00C12F93 /* GKDemo010ViewController.h */,
+				60C6E0AD21CC73DF00C12F93 /* GKDemo010ViewController.m */,
 			);
 			path = DemoVC;
 			sourceTree = "<group>";
@@ -1221,6 +1226,7 @@
 				606A77D0215CC4E900DC2F63 /* TZLocationManager.m in Sources */,
 				607090042105C2270041ED2D /* UIViewController+GKRotation.m in Sources */,
 				6070900A2105C2270041ED2D /* GKNavigationBar.m in Sources */,
+				60C6E0AE21CC73DF00C12F93 /* GKDemo010ViewController.m in Sources */,
 				606A77CD215CC4E900DC2F63 /* TZPhotoPickerController.m in Sources */,
 				6070905C2105C24E0041ED2D /* GKMainViewController.m in Sources */,
 				607090742105C24E0041ED2D /* GKWYNewsDetailViewController.m in Sources */,
