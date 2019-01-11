@@ -32,14 +32,18 @@
     
     SEL action = NSSelectorFromString(@"handleNavigationTransition:");
     
-    if (transition.x < 0) {
-        if (self.navigationController.gk_openScrollLeftPush) {
+    if (transition.x < 0) { // 左滑处理
+        // 开启了左滑push并设置了代理
+        if (self.navigationController.gk_openScrollLeftPush && topVC.gk_pushDelegate) {
             [gestureRecognizer removeTarget:self.systemTarget action:action];
             [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureAction:)];
         }else {
             return NO;
         }
-    }else {
+    }else { // 右滑处理
+        // 解决根控制器右滑时出现的卡死情况
+        if (self.navigationController.viewControllers.count <= 1) return NO;
+        
         // 全屏滑动时起作用
         if (!topVC.gk_fullScreenPopDisabled) {
             // 上下滑动

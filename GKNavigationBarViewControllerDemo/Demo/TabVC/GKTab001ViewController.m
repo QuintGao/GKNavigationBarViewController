@@ -9,7 +9,7 @@
 #import "GKTab001ViewController.h"
 #import "GKDemo001ViewController.h"
 
-@interface GKTab001ViewController ()
+@interface GKTab001ViewController ()<GKViewControllerPushDelegate>
 
 @end
 
@@ -24,6 +24,18 @@
     self.contentText = @"我禁止了UITabBarController的滑动返回手势。\n我push的时候不隐藏tabbar";
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+//    self.gk_pushDelegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+//    self.gk_pushDelegate = nil;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -32,6 +44,12 @@
 }
 
 - (void)pushAction {
+    GKDemo001ViewController *demo001VC = [GKDemo001ViewController new];
+    [self.navigationController pushViewController:demo001VC animated:YES];
+}
+
+#pragma mark - GKViewControllerPushDelegate
+- (void)pushToNextViewController {
     GKDemo001ViewController *demo001VC = [GKDemo001ViewController new];
     [self.navigationController pushViewController:demo001VC animated:YES];
 }

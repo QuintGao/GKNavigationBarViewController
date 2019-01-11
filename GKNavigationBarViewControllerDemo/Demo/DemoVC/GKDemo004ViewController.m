@@ -24,9 +24,22 @@
     
     self.delegate = self;
     
-    [self addChildVC:[GKTab001ViewController new] title:@"首页" imageName:@"Home"];
-    [self addChildVC:[GKTab002ViewController new] title:@"活动" imageName:@"Activity"];
-    [self addChildVC:[GKTab003ViewController new] title:@"我的" imageName:@"Mine"];
+//    [self addChildVC:[GKTab001ViewController new] title:@"首页" imageName:@"Home"];
+//    [self addChildVC:[GKTab002ViewController new] title:@"活动" imageName:@"Activity"];
+//    [self addChildVC:[GKTab003ViewController new] title:@"我的" imageName:@"Mine"];
+    
+    UINavigationController *nav0 = [UINavigationController rootVC:[GKTab001ViewController new] translationScale:NO];
+    nav0.gk_openScrollLeftPush = YES;
+    
+    UINavigationController *nav1 = [UINavigationController rootVC:[GKTab002ViewController new] translationScale:NO];
+    nav1.gk_openScrollLeftPush = YES;
+    
+    UINavigationController *nav2 = [UINavigationController rootVC:[GKTab003ViewController new] translationScale:NO];
+    nav2.gk_openScrollLeftPush = YES;
+    
+    [self addChildVC:nav0 title:@"首页" imageName:@"Home"];
+    [self addChildVC:nav1 title:@"活动" imageName:@"Activity"];
+    [self addChildVC:nav2 title:@"我的" imageName:@"Mine"];
 }
 
 - (void)dealloc {
@@ -39,7 +52,7 @@
     vc.tabBarItem.selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected", name]];
 
 //    UINavigationController *nav = [UINavigationController rootVC:vc translationScale:NO];
-    
+//    nav.gk_openScrollLeftPush = YES;
     
     [self addChildViewController:vc];
 }
