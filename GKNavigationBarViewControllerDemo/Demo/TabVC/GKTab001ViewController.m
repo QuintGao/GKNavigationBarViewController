@@ -27,20 +27,20 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    self.gk_pushDelegate = self;
+    self.gk_pushDelegate = self;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-//    self.gk_pushDelegate = nil;
+    self.gk_pushDelegate = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     // 注意，这里必须在viewDidAppear中设置
-    self.tabBarController.gk_interactivePopDisabled = YES;
+//    self.tabBarController.gk_interactivePopDisabled = YES;
 }
 
 - (void)pushAction {
@@ -51,6 +51,7 @@
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     GKDemo001ViewController *demo001VC = [GKDemo001ViewController new];
+    demo001VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:demo001VC animated:YES];
 }
 

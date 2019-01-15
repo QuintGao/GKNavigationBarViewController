@@ -142,7 +142,8 @@ pod 'GKNavigationBarViewController'
 
 
 ## 时间记录(倒序)
-* 2018.1.11   -- 2.1.7 解决开启左滑push功能，在根控制器多次左右滑动后出现卡死的问题
+* 2019.1.15   -- 2.1.8 优化在UITabBarController里左滑push时UITabBar位置不准确问题
+* 2019.1.11   -- 2.1.7 解决开启左滑push功能，在根控制器多次左右滑动后出现卡死的问题
 * 2018.12.2   -- 2.1.6 导航栏处理优化，可在viewDidLoad中使用gk_navLineHidden来隐藏分割线
 * 2018.11.29 -- 2.1.5 修复在控制器中设置gk_backStyle无效的问题，其他细节微调
 * 2018.10.28 -- 2.1.4 移除对UIVideoEditorController的控制
