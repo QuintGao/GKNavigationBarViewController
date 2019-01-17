@@ -66,6 +66,7 @@
 #pragma mark - GKNavigationControllerPushDelegate
 - (void)pushToNextViewController {
     GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
+    demo002VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:demo002VC animated:YES];
 }
 

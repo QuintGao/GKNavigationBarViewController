@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView            *shadowView;
 
-@property (nonatomic, strong) UIImageView       *fromImgView;
-
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
 
 @property (nonatomic, weak) UIView              *containerView;

@@ -13,19 +13,7 @@
 @implementation GKPushTransitionAnimation
 
 - (void)animateTransition {
-    UIImage *fromImage = [self.fromViewController.view.window gk_captureCurrentView];
-    self.fromImgView.image = fromImage;
-    self.fromImgView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
-    [self.fromViewController.view addSubview:self.fromImgView];
-    
     [self.containerView addSubview:self.toViewController.view];
-    
-    // tabbar处理
-    BOOL isHideTabBar = self.toViewController.hidesBottomBarWhenPushed;
-    
-    if (isHideTabBar) {
-        [self getCurrentTabBar].hidden = YES;
-    }
     
     // 设置转场前的frame
     self.toViewController.view.frame = CGRectMake(GK_SCREEN_WIDTH, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
@@ -65,12 +53,27 @@
     }completion:^(BOOL finished) {
         [self completeTransition];
         [self.shadowView removeFromSuperview];
-        [self.fromImgView removeFromSuperview];
-        
-        if (isHideTabBar) {
-            [self getCurrentTabBar].hidden = NO;
-        }
     }];
+}
+
+- (BOOL)isInTabBar {
+    UINavigationController *navVC = self.toViewController.navigationController;
+    
+    UITabBarController *tabbarVC = self.toViewController.tabBarController;
+    
+    if (navVC) {
+        if ([tabbarVC.childViewControllers containsObject:navVC]) {
+            // 判断fromViewController是否是navVC的根控制器
+            if (self.fromViewController == navVC.childViewControllers.firstObject) {
+                return YES;
+            }
+        }
+        
+        if ([tabbarVC.childViewControllers containsObject:self.fromViewController]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

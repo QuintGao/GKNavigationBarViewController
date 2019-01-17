@@ -24,6 +24,8 @@
     
     self.delegate = self;
     
+//    [self setValue:[GKTabBar new] forKey:@"tabBar"];
+    
 //    [self addChildVC:[GKTab001ViewController new] title:@"首页" imageName:@"Home"];
 //    [self addChildVC:[GKTab002ViewController new] title:@"活动" imageName:@"Activity"];
 //    [self addChildVC:[GKTab003ViewController new] title:@"我的" imageName:@"Mine"];

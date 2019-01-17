@@ -45,6 +45,7 @@
 
 - (void)pushAction {
     GKDemo001ViewController *demo001VC = [GKDemo001ViewController new];
+    demo001VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:demo001VC animated:YES];
 }
 

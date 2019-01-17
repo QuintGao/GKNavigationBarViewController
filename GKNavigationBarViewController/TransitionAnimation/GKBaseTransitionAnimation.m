@@ -56,20 +56,4 @@
     [self.transitionContext completeTransition:!self.transitionContext.transitionWasCancelled];
 }
 
-- (UITabBar *)getCurrentTabBar {
-    if (!self.toViewController) return nil;
-    UITabBarController *tabbarVC = self.toViewController.tabBarController;
-    if (tabbarVC) {
-        return tabbarVC.tabBar;
-    }
-    return nil;
-}
-
-- (UIImageView *)fromImgView {
-    if (!_fromImgView) {
-        _fromImgView = [UIImageView new];
-    }
-    return _fromImgView;
-}
-
 @end
