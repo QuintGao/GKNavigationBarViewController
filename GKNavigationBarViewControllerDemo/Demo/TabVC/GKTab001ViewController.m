@@ -40,7 +40,7 @@
     [super viewDidAppear:animated];
     
     // 注意，这里必须在viewDidAppear中设置
-//    self.tabBarController.gk_interactivePopDisabled = YES;
+    self.tabBarController.gk_interactivePopDisabled = YES;
 }
 
 - (void)pushAction {

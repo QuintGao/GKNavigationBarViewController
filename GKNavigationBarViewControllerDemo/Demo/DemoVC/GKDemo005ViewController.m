@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     self.tabBar.tintColor = [UIColor redColor];
+    self.tabBar.translucent = NO;
     
     [self addChildVC:[GKTab001ViewController new] title:@"首页" imageName:@"Home"];
     [self addChildVC:[GKTab002ViewController new] title:@"活动" imageName:@"Activity"];

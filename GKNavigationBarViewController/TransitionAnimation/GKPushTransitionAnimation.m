@@ -56,24 +56,4 @@
     }];
 }
 
-- (BOOL)isInTabBar {
-    UINavigationController *navVC = self.toViewController.navigationController;
-    
-    UITabBarController *tabbarVC = self.toViewController.tabBarController;
-    
-    if (navVC) {
-        if ([tabbarVC.childViewControllers containsObject:navVC]) {
-            // 判断fromViewController是否是navVC的根控制器
-            if (self.fromViewController == navVC.childViewControllers.firstObject) {
-                return YES;
-            }
-        }
-        
-        if ([tabbarVC.childViewControllers containsObject:self.fromViewController]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
 @end

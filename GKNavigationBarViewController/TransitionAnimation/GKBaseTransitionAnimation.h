@@ -34,13 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)transitionWithScale:(BOOL)scale;
 
 /**
- 获取当前控制器对应的tabbar，如果存在的话
-
- @return tabbar
- */
-- (UITabBar *)getCurrentTabBar;
-
-/**
  动画
  */
 - (void)animateTransition;

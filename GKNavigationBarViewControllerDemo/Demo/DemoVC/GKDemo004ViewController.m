@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     self.tabBar.tintColor = [UIColor redColor];
+    self.tabBar.translucent = NO;
     
     self.delegate = self;
     
