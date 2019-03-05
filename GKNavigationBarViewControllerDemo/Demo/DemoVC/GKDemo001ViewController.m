@@ -47,7 +47,12 @@
     
     // 设置左滑push代理
     self.gk_pushDelegate = self;
-    self.gk_popDelegate  = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.gk_popDelegate = self;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
