@@ -5,5 +5,7 @@ target 'GKNavigationBarViewControllerDemo' do
 
 #  pod 'TZImagePickerController'
   pod 'Masonry'
+  pod 'JXCategoryView'
+  pod 'MJRefresh'
 
 end

@@ -37,6 +37,7 @@
                         @"嵌套TZImagePickerController",
                         @"调用系统相册或相机",
                         @"导航条按钮测试",
+                        @"分页滑动",
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
@@ -122,7 +123,7 @@
         return;
     }
     
-    if (indexPath.row == 10) {
+    if (indexPath.row == 11) {
         GKDouyinHomeViewController *douyinVC = [GKDouyinHomeViewController new];
         
         // 设置导航控制器并开启左滑push
@@ -132,7 +133,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 11) {
+    }else if (indexPath.row == 12) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
         
         // 根控制器是导航控制器，需要缩放
@@ -141,7 +142,7 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 12) {
+    }else if (indexPath.row == 13) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
         // 根视图控制器是UITabBarController,不缩放
@@ -149,7 +150,7 @@
         
         
         return;
-    }else if (indexPath.row == 13) {
+    }else if (indexPath.row == 14) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
         [self presentViewController:newsVC animated:YES completion:nil];
