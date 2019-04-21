@@ -38,7 +38,9 @@ static GKNavigationBarConfigure *instance = nil;
     
     self.gk_navItemLeftSpace   = 0;
     self.gk_navItemRightSpace  = 0;
-    // 待添加
+    
+    self.gk_pushTransitionCriticalValue = 0.3;
+    self.gk_popTransitionCriticalValue  = 0.5;
 }
 
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {

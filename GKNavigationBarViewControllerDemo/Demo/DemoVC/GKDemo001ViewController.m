@@ -45,6 +45,17 @@
     
     // 设置左滑push代理
     self.gk_pushDelegate = self;
+    
+    UIView *v = [UIView new];
+    v.backgroundColor = [UIColor redColor];
+    v.frame = CGRectMake(100, 10, 44, 34);
+    [self.gk_navigationBar addSubview:v];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

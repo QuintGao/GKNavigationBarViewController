@@ -37,6 +37,12 @@
 /** 是否禁止调整间距，默认NO */
 @property (nonatomic, assign) BOOL      gk_disableFixSpace;
 
+/** 左滑push过渡临界值，默认0.3，大于此值完成push操作 */
+@property (nonatomic, assign) CGFloat   gk_pushTransitionCriticalValue;
+
+/** 右滑pop过渡临界值，默认0.5，大于此值完成pop操作 */
+@property (nonatomic, assign) CGFloat   gk_popTransitionCriticalValue;
+
 + (instancetype)sharedInstance;
 
 // 统一配置导航栏外观，最好在AppDelegate中配置

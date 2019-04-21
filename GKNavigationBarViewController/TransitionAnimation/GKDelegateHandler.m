@@ -155,14 +155,14 @@
     }else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
         if (self.isGesturePush) {
             if (self.navigationController.gk_openScrollLeftPush) {
-                if (progress > 0.3) {
+                if (progress > GKConfigure.gk_pushTransitionCriticalValue) {
                     [self.pushTransition finishInteractiveTransition];
                 }else {
                     [self.pushTransition cancelInteractiveTransition];
                 }
             }
         }else {
-            if (progress > 0.5) {
+            if (progress > GKConfigure.gk_popTransitionCriticalValue) {
                 [self.popTransition finishInteractiveTransition];
             }else {
                 [self.popTransition cancelInteractiveTransition];
