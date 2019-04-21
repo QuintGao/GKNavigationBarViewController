@@ -9,7 +9,7 @@
 #import "GKToutiaoHomeViewController.h"
 #import "GKToutiaoDetailViewController.h"
 
-@interface GKToutiaoHomeViewController ()
+@interface GKToutiaoHomeViewController ()<GKViewControllerPushDelegate>
 
 @end
 
@@ -31,6 +31,12 @@
     
     pageImage.userInteractionEnabled = YES;
     [pageImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageAction)]];
+    
+    self.gk_pushDelegate = self;
+}
+
+- (void)pushToNextViewController {
+    [self pageAction];
 }
 
 - (void)pageAction {

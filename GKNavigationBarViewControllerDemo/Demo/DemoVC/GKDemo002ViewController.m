@@ -29,9 +29,10 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.gk_navBackgroundColor = [UIColor whiteColor];
+    self.gk_navBackgroundColor = [UIColor blackColor];
     
     self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    self.gk_statusBarStyle = UIStatusBarStyleDefault;
     
     self.title = @"控制器002";
     
@@ -44,9 +45,10 @@
 }
 
 - (void)btnAction {
-    GKDemo003ViewController *demo003VC = [GKDemo003ViewController new];
-    demo003VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:demo003VC animated:YES];
+//    GKDemo003ViewController *demo003VC = [GKDemo003ViewController new];
+//    demo003VC.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:demo003VC animated:YES];
+    self.gk_statusBarHidden = YES;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -55,22 +57,22 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat contentY = scrollView.contentOffset.y;
     
-    if (contentY <= 0) {
-        self.gk_navBarAlpha = 0;
-        return;
-    }
-    
-    // 渐变区间 (0 - 80)
-    if (contentY > 0 && contentY < 160) {
-        CGFloat alpha = contentY / (160 - 0);
-        
-        self.gk_navBarAlpha = alpha;
-        self.gk_backStyle = GKNavigationBarBackStyleWhite;
-    }else {
-        self.gk_navBarAlpha = 1.0;
-        
-        self.gk_backStyle = GKNavigationBarBackStyleBlack;
-    }
+//    if (contentY <= 0) {
+//        self.gk_navBarAlpha = 0;
+//        return;
+//    }
+//    
+//    // 渐变区间 (0 - 80)
+//    if (contentY > 0 && contentY < 160) {
+//        CGFloat alpha = contentY / (160 - 0);
+//        
+//        self.gk_navBarAlpha = alpha;
+//        self.gk_backStyle = GKNavigationBarBackStyleWhite;
+//    }else {
+//        self.gk_navBarAlpha = 1.0;
+//        
+//        self.gk_backStyle = GKNavigationBarBackStyleBlack;
+//    }
 }
 
 @end

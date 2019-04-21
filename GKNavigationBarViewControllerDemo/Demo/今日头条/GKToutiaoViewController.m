@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     self.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBar.translucent = NO;
     
     [self addChildVCs];
 }

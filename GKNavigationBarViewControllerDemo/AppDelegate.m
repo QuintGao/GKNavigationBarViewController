@@ -32,6 +32,8 @@
     
     UINavigationController *nav = [UINavigationController rootVC:[GKMainViewController new] translationScale:NO];
     nav.gk_openScrollLeftPush = YES;
+
+//    UINavigationController *nav = [UINavigationController rootVC:[GKDemo001ViewController new] translationScale:NO];
     
     self.window.rootViewController = nav;
     
