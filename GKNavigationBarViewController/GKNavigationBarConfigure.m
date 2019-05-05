@@ -41,6 +41,11 @@ static GKNavigationBarConfigure *instance = nil;
     
     self.gk_pushTransitionCriticalValue = 0.3;
     self.gk_popTransitionCriticalValue  = 0.5;
+    
+    self.gk_translationX = 5.0f;
+    self.gk_translationY = 5.0f;
+    self.gk_scaleX = 0.95;
+    self.gk_scaleY = 0.97;
 }
 
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {

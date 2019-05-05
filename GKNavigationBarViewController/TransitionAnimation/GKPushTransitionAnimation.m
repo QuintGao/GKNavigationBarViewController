@@ -33,18 +33,16 @@
     [UIView animateWithDuration:[self transitionDuration:self.transitionContext] animations:^{
         self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         if (self.scale) {
-            
             if (GKDeviceVersion >= 11.0) {
                 CGRect frame = self.fromViewController.view.frame;
-                frame.origin.x     = 5;
-                frame.origin.y     = 5;
-                frame.size.height -= 10;
+                frame.origin.x     = GKConfigure.gk_translationX;
+                frame.origin.y     = GKConfigure.gk_translationY;
+                frame.size.height -= 2 * GKConfigure.gk_translationY;
                 
                 self.fromViewController.view.frame = frame;
             }else {
-                self.fromViewController.view.transform = CGAffineTransformMakeScale(0.95, 0.97);
+                self.fromViewController.view.transform = CGAffineTransformMakeScale(GKConfigure.gk_scaleX, GKConfigure.gk_scaleY);
             }
-            
         }else {
             self.fromViewController.view.frame = CGRectMake(- (0.3 * GK_SCREEN_WIDTH), 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
         }

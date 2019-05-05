@@ -39,12 +39,12 @@
     
     // 获取转场前后的控制器
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    self.containerView = containerView;
+    self.containerView      = containerView;
     self.fromViewController = fromVC;
-    self.toViewController = toVC;
-    self.transitionContext = transitionContext;
+    self.toViewController   = toVC;
+    self.transitionContext  = transitionContext;
     
     [self animateTransition];
 }
