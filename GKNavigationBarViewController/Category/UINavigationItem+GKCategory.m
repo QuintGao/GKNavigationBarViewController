@@ -1,6 +1,6 @@
 //
 //  UINavigationItem+GKCategory.m
-//  GKNavigationBarViewControllerTest
+//  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/10/13.
 //  Copyright © 2017年 高坤. All rights reserved.
@@ -10,190 +10,103 @@
 #import "GKCommon.h"
 #import "GKNavigationBarConfigure.h"
 
-@implementation UIImagePickerController (GKFixSpace)
-
-+ (void)load {
-    // 保证其只执行一次
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
-        
-        gk_swizzled_method(class, @selector(viewWillDisappear:), @selector(gk_viewWillDisappear:));
-    });
-}
-
-- (void)gk_viewWillAppear:(BOOL)animated {
-    if (GKDeviceVersion >= 11.0) {
-        GKConfigure.gk_disableFixSpace = YES;
-    }
-    [self gk_viewWillAppear:animated];
-}
-
-- (void)gk_viewWillDisappear:(BOOL)animated {
-    GKConfigure.gk_disableFixSpace = NO;
-    [self gk_viewWillDisappear:animated];
-}
-
-@end
-
 @implementation UINavigationItem (GKCategory)
 
 + (void)load {
-    // 保证其只执行一次
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-
-        gk_swizzled_method(class, @selector(setLeftBarButtonItem:), @selector(gk_setLeftBarButtonItem:));
-
-        gk_swizzled_method(class, @selector(setLeftBarButtonItems:), @selector(gk_setLeftBarButtonItems:));
-        
-        gk_swizzled_method(class, @selector(setLeftBarButtonItem:animated:), @selector(gk_setLeftBarButtonItem:animated:));
-        
-        gk_swizzled_method(class, @selector(setLeftBarButtonItems:animated:), @selector(gk_setLeftBarButtonItems:animated:));
-
-        gk_swizzled_method(class, @selector(setRightBarButtonItem:), @selector(gk_setRightBarButtonItem:));
-
-        gk_swizzled_method(class, @selector(setRightBarButtonItems:), @selector(gk_setRightBarButtonItems:));
-        
-        gk_swizzled_method(class, @selector(setRightBarButtonItem:animated:), @selector(gk_setRightBarButtonItem:animated:));
-        
-        gk_swizzled_method(class, @selector(setRightBarButtonItems:animated:), @selector(gk_setRightBarButtonItems:animated:));
-    });
+    if (@available(iOS 11.0, *)) {} else {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            NSArray <NSString *>*oriSels = @[@"setLeftBarButtonItem:",
+                                             @"setLeftBarButtonItem:animated:",
+                                             @"setLeftBarButtonItems:",
+                                             @"setLeftBarButtonItems:animated:",
+                                             @"setRightBarButtonItem:",
+                                             @"setRightBarButtonItem:animated:",
+                                             @"setRightBarButtonItems:",
+                                             @"setRightBarButtonItems:animated:"];
+            
+            [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *swiSel = [NSString stringWithFormat:@"gk_%@", oriSel];
+                gk_swizzled_method([self class], NSSelectorFromString(oriSel), NSSelectorFromString(swiSel));
+            }];
+        });
+    }
 }
 
 - (void)gk_setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setLeftBarButtonItem:leftBarButtonItem];
-    }else {
-        if (!GKConfigure.gk_disableFixSpace && leftBarButtonItem) {
-            [self setLeftBarButtonItems:@[leftBarButtonItem]];
-        }else {
-            [self gk_setLeftBarButtonItem:leftBarButtonItem];
-        }
-    }
-}
-
-- (void)gk_setLeftBarButtonItems:(NSArray<UIBarButtonItem *> *)leftBarButtonItems {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setLeftBarButtonItems:leftBarButtonItems];
-    }else {
-        if (leftBarButtonItems.count) {
-            UIBarButtonItem *firstItem = leftBarButtonItems.firstObject;
-            if (firstItem != nil && firstItem.image == nil && firstItem.title == nil && firstItem.customView == nil) { // 第一个item为space
-                [self gk_setLeftBarButtonItems:leftBarButtonItems];
-            }else {
-                NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.gk_navItemLeftSpace - 20]]; // 修复iOS11之前的偏移
-                
-                [items addObjectsFromArray:leftBarButtonItems];
-                
-                [self gk_setLeftBarButtonItems:items];
-            }
-        }else {
-            [self gk_setLeftBarButtonItems:leftBarButtonItems];
-        }
-    }
+    [self setLeftBarButtonItem:leftBarButtonItem animated:NO];
 }
 
 - (void)gk_setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem animated:(BOOL)animated {
-    if (GKDeviceVersion >= 11.0) {
+    if (!GKConfigure.gk_disableFixSpace && leftBarButtonItem) {//存在按钮且需要调节
+        [self setLeftBarButtonItems:@[leftBarButtonItem] animated:animated];
+    } else {//不存在按钮,或者不需要调节
         [self gk_setLeftBarButtonItem:leftBarButtonItem animated:animated];
-    }else {
-        if (!GKConfigure.gk_disableFixSpace && leftBarButtonItem) {
-            [self setLeftBarButtonItems:@[leftBarButtonItem] animated:animated];
-        }else {
-            [self gk_setLeftBarButtonItem:leftBarButtonItem animated:animated];
-        }
     }
+}
+
+
+- (void)gk_setLeftBarButtonItems:(NSArray<UIBarButtonItem *> *)leftBarButtonItems {
+    [self setLeftBarButtonItems:leftBarButtonItems animated:NO];
 }
 
 - (void)gk_setLeftBarButtonItems:(NSArray<UIBarButtonItem *> *)leftBarButtonItems animated:(BOOL)animated {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setLeftBarButtonItems:leftBarButtonItems animated:animated];
-    }else {
-        if (leftBarButtonItems.count) {
-            UIBarButtonItem *firstItem = leftBarButtonItems.firstObject;
-            if (firstItem != nil && firstItem.image == nil && firstItem.title == nil && firstItem.customView == nil) {
-                [self gk_setLeftBarButtonItems:leftBarButtonItems animated:animated];
-            }else {
-                NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.gk_navItemLeftSpace - 20]];
-                [items addObjectsFromArray:leftBarButtonItems];
-                [self gk_setLeftBarButtonItems:items animated:animated];
-            }
-        }else {
+    if (!GKConfigure.gk_disableFixSpace && leftBarButtonItems.count) {//存在按钮且需要调节
+        UIBarButtonItem *firstItem = leftBarButtonItems.firstObject;
+        CGFloat width = GKConfigure.gk_navItemLeftSpace - self.fixedSpace;
+        if (firstItem.width == width) {//已经存在space
             [self gk_setLeftBarButtonItems:leftBarButtonItems animated:animated];
+        } else {
+            NSMutableArray *items = [NSMutableArray arrayWithArray:leftBarButtonItems];
+            [items insertObject:[self fixedSpaceWithWidth:width] atIndex:0];
+            [self gk_setLeftBarButtonItems:items animated:animated];
         }
+    } else {//不存在按钮,或者不需要调节
+        [self gk_setLeftBarButtonItems:leftBarButtonItems animated:animated];
     }
 }
 
-- (void)gk_setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setRightBarButtonItem:rightBarButtonItem];
-    }else {
-        if (!GKConfigure.gk_disableFixSpace && rightBarButtonItem) {
-            [self setRightBarButtonItems:@[rightBarButtonItem]];
-        }else {
-            [self gk_setRightBarButtonItem:rightBarButtonItem];
-        }
-    }
-}
-
-- (void)gk_setRightBarButtonItems:(NSArray<UIBarButtonItem *> *)rightBarButtonItems {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setRightBarButtonItems:rightBarButtonItems];
-    }else {
-        if (rightBarButtonItems.count) {
-            UIBarButtonItem *firstItem = rightBarButtonItems.firstObject;
-            if (firstItem != nil && firstItem.image == nil && firstItem.title == nil && firstItem.customView == nil) {
-                [self gk_setRightBarButtonItems:rightBarButtonItems];
-            }else {
-                NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.gk_navItemRightSpace - 20]]; // 可修正iOS11之前的偏移
-                [items addObjectsFromArray:rightBarButtonItems];
-                [self gk_setRightBarButtonItems:items];
-            }
-        }else {
-            [self gk_setRightBarButtonItems:rightBarButtonItems];
-        }
-    }
+- (void)gk_setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem{
+    [self setRightBarButtonItem:rightBarButtonItem animated:NO];
 }
 
 - (void)gk_setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem animated:(BOOL)animated {
-    if (GKDeviceVersion >= 11.0) {
+    if (!GKConfigure.gk_disableFixSpace && rightBarButtonItem) {//存在按钮且需要调节
+        [self setRightBarButtonItems:@[rightBarButtonItem] animated:animated];
+    } else {//不存在按钮,或者不需要调节
         [self gk_setRightBarButtonItem:rightBarButtonItem animated:animated];
-    }else {
-        if (!GKConfigure.gk_disableFixSpace && rightBarButtonItem) {
-            [self setRightBarButtonItems:@[rightBarButtonItem] animated:animated];
-        }else {
-            [self gk_setRightBarButtonItem:rightBarButtonItem animated:animated];
-        }
     }
 }
 
+- (void)gk_setRightBarButtonItems:(NSArray<UIBarButtonItem *> *)rightBarButtonItems{
+    [self setRightBarButtonItems:rightBarButtonItems animated:NO];
+}
+
 - (void)gk_setRightBarButtonItems:(NSArray<UIBarButtonItem *> *)rightBarButtonItems animated:(BOOL)animated {
-    if (GKDeviceVersion >= 11.0) {
-        [self gk_setRightBarButtonItems:rightBarButtonItems animated:animated];
-    }else {
-        if (rightBarButtonItems.count) {
-            UIBarButtonItem *firstItem = rightBarButtonItems.firstObject;
-            if (firstItem != nil && firstItem.image == nil && firstItem.title == nil && firstItem.customView == nil) {
-                [self gk_setRightBarButtonItems:rightBarButtonItems animated:animated];
-            }else {
-                NSMutableArray *items = [NSMutableArray arrayWithObject:[self fixedSpaceWithWidth:GKConfigure.gk_navItemRightSpace - 20]]; // 可修正iOS11之前的偏移
-                [items addObjectsFromArray:rightBarButtonItems];
-                [self gk_setRightBarButtonItems:items animated:animated];
-            }
-        }else {
+    if (!GKConfigure.gk_disableFixSpace && rightBarButtonItems.count) {//存在按钮且需要调节
+        UIBarButtonItem *firstItem = rightBarButtonItems.firstObject;
+        CGFloat width = GKConfigure.gk_navItemRightSpace - self.fixedSpace;
+        if (firstItem.width == width) {//已经存在space
             [self gk_setRightBarButtonItems:rightBarButtonItems animated:animated];
+        } else {
+            NSMutableArray *items = [NSMutableArray arrayWithArray:rightBarButtonItems];
+            [items insertObject:[self fixedSpaceWithWidth:width] atIndex:0];
+            [self gk_setRightBarButtonItems:items animated:animated];
         }
+    } else {//不存在按钮,或者不需要调节
+        [self gk_setRightBarButtonItems:rightBarButtonItems animated:animated];
     }
 }
 
 - (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width {
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedSpace.width = width;
     return fixedSpace;
+}
+
+- (CGFloat)fixedSpace {
+    CGSize screentSize = [UIScreen mainScreen].bounds.size;
+    return MIN(screentSize.width, screentSize.height) > 375 ? 20 : 16;
 }
 
 @end

@@ -172,6 +172,7 @@
 - (GKNavigationBar *)gk_navigationBar {
     if (!_gk_navigationBar) {
         _gk_navigationBar = [[GKNavigationBar alloc] initWithFrame:CGRectZero];
+        _gk_navigationBar.barStyle = UIBarStyleBlack;
     }
     return _gk_navigationBar;
 }

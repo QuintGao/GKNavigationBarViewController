@@ -1,6 +1,6 @@
 //
 //  GKBaseTransitionAnimation.m
-//  GKNavigationBarViewControllerDemo
+//  GKNavigationBarViewController
 //
 //  Created by gaokun on 2019/1/15.
 //  Copyright © 2019 gaokun. All rights reserved.

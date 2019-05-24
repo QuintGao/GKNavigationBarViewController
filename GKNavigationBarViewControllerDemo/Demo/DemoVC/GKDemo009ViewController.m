@@ -62,6 +62,7 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.allowsEditing = YES;
     picker.delegate = self;
+    GKConfigure.gk_disableFixSpace = YES;
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -82,11 +83,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-//    self.gk_statusBarHidden = NO;
 }
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    GKConfigure.gk_disableFixSpace = NO;
     
     [picker dismissViewControllerAnimated:YES completion:^{
         self.gk_statusBarHidden = NO;
@@ -95,11 +96,11 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     
+    GKConfigure.gk_disableFixSpace = NO;
+    
     [picker dismissViewControllerAnimated:YES completion:^{
         self.gk_statusBarHidden = NO;
     }];
-    
-//    NSLog(@"%@", info[UIImagePickerControllerEditedImage]);
 }
 
 - (void)dealloc {

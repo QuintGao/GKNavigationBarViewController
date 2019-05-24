@@ -1,6 +1,6 @@
 //
 //  GKNavigationBarConfigure.h
-//  GKNavigationBarViewControllerDemo
+//  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/10.
 //  Copyright © 2017年 高坤. All rights reserved.
@@ -36,6 +36,7 @@
 
 /** 是否禁止调整间距，默认NO */
 @property (nonatomic, assign) BOOL      gk_disableFixSpace;
+@property (nonatomic, assign, readonly) BOOL gk_lastDisableFixSpace;
 
 /** 左滑push过渡临界值，默认0.3，大于此值完成push操作 */
 @property (nonatomic, assign) CGFloat   gk_pushTransitionCriticalValue;
@@ -51,6 +52,9 @@
 // 手机系统小于11.0，使用下面的值控制x、y轴的缩放程度，默认（0.95，0.97）
 @property (nonatomic, assign) CGFloat   gk_scaleX;
 @property (nonatomic, assign) CGFloat   gk_scaleY;
+
+// 禁止修复导航栏item间距的控制器名称
+@property (nonatomic, strong) NSArray   *gk_disableFixSpaceClassNames;
 
 + (instancetype)sharedInstance;
 

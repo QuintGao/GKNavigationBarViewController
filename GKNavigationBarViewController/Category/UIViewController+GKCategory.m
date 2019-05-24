@@ -1,6 +1,6 @@
 //
 //  UIViewController+GKCategory.m
-//  GKCustomNavigationBar
+//  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/7.
 //  Copyright © 2017年 高坤. All rights reserved.
@@ -32,7 +32,24 @@ static const void* GKPopDelegateKey     = @"GKPopDelegateKey";
         Class class = [self class];
         
         gk_swizzled_method(class, @selector(viewDidAppear:) ,@selector(gk_viewDidAppear:));
+        
+        if (@available(iOS 11.0, *)) {
+            gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
+        }
     });
+}
+
+- (void)gk_viewWillAppear:(BOOL)animated {
+    if (!animated) {
+        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
+            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
+            [vc.gk_navigationBar setNeedsLayout];
+        }else if (self.navigationController) {
+            [self.navigationController.navigationBar setNeedsLayout];
+        }
+    }
+    
+    [self gk_viewWillAppear:animated];
 }
 
 - (void)gk_viewDidAppear:(BOOL)animated {

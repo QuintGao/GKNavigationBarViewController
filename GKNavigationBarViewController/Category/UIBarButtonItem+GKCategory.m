@@ -47,6 +47,7 @@
             btn.bounds = CGRectMake(0, 0, 44, 44);
         }
     }
+    btn.backgroundColor = [UIColor redColor];
     
     return [[self alloc] initWithCustomView:btn];
 }
@@ -86,6 +87,7 @@
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [btn sizeToFit];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    btn.backgroundColor = [UIColor redColor];
     
     return [[self alloc] initWithCustomView:btn];
 }
