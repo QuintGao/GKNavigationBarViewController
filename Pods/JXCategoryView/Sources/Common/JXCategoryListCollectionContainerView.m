@@ -16,13 +16,10 @@
 @property (nonatomic, assign) BOOL willRemoveFromWindow;
 @property (nonatomic, assign) BOOL isFirstMoveToWindow;
 @property (nonatomic, strong) JXCategoryListCollectionContainerView *retainedSelf;
+@property (nonatomic, assign) BOOL isFirstLayoutSubviews;
 @end
 
 @implementation JXCategoryListCollectionContainerView
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -30,11 +27,18 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMemoryWarningNotification:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
         _isFirstMoveToWindow = YES;
+        _isFirstLayoutSubviews = YES;
         _validListDict = [NSMutableDictionary dictionary];
         _lock = [[NSLock alloc] init];
         [self initializeViews];
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (newSuperview == nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
 }
 
 - (void)willMoveToWindow:(UIWindow *)newWindow {
@@ -105,6 +109,10 @@
     [super layoutSubviews];
 
     self.collectionView.frame = self.bounds;
+    if (self.isFirstLayoutSubviews) {
+        self.isFirstLayoutSubviews = NO;
+        [self.collectionView setContentOffset:CGPointMake(self.collectionView.bounds.size.width*self.defaultSelectedIndex, 0) animated:NO];
+    }
 }
 
 #pragma mark - Private
@@ -207,7 +215,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     id<JXCategoryListCollectionContentViewDelegate> list = _validListDict[@(indexPath.item)];
-    if (list && [list respondsToSelector:@selector(listDidAppear)]) {
+    if (list && [list respondsToSelector:@selector(listDidDisappear)]) {
         [list listDidDisappear];
     }
 }
