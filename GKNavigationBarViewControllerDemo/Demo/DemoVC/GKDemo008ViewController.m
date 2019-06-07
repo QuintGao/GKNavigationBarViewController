@@ -37,6 +37,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    GKConfigure.gk_disableFixSpace = YES;
     [self presentViewController:pickerVC animated:YES completion:nil];
 }
 
@@ -46,6 +47,8 @@
 
 #pragma mark - TZImagePickerControllerDelegate
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
+    GKConfigure.gk_disableFixSpace = NO;
+    
     // 这里为了解决TZImagePickerController选取图片dismiss后状态栏不显示的问题,效果不是太好
     UIViewController *vc = [UIViewController new];
     [self presentViewController:vc animated:NO completion:^{
@@ -54,6 +57,7 @@
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    GKConfigure.gk_disableFixSpace = NO;
     
     // 这里为了解决TZImagePickerController选取图片dismiss后状态栏不显示的问题,效果不是太好
     UIViewController *vc = [UIViewController new];

@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B891E03812B03DEF914ED31 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 		6001044422379FB200B4AB22 /* GKBaseTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A25C1221EDDADB000F11D9 /* GKBaseTransitionAnimation.h */; };
-		6001044522379FB200B4AB22 /* UIView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 605BF1D521EDC20D00B85461 /* UIView+GKCategory.h */; };
 		600104462237BC6A00B4AB22 /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A25C1321EDDADB000F11D9 /* GKBaseTransitionAnimation.m */; };
-		600104472237BC6A00B4AB22 /* UIView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 605BF1D621EDC20D00B85461 /* UIView+GKCategory.m */; };
 		6046BD8A223B437400108F2F /* GKDemo011ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6046BD89223B437400108F2F /* GKDemo011ViewController.m */; };
-		605BF1D721EDC20D00B85461 /* UIView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 605BF1D621EDC20D00B85461 /* UIView+GKCategory.m */; };
 		606A77C3215CC4E800DC2F63 /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A77A8215CC4E800DC2F63 /* TZImageCropManager.m */; };
 		606A77C4215CC4E900DC2F63 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A77AA215CC4E800DC2F63 /* TZAssetCell.m */; };
 		606A77C5215CC4E900DC2F63 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A77AB215CC4E800DC2F63 /* TZVideoPlayerController.m */; };
@@ -159,8 +156,6 @@
 		4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6046BD88223B437400108F2F /* GKDemo011ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo011ViewController.h; sourceTree = "<group>"; };
 		6046BD89223B437400108F2F /* GKDemo011ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo011ViewController.m; sourceTree = "<group>"; };
-		605BF1D521EDC20D00B85461 /* UIView+GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GKCategory.h"; sourceTree = "<group>"; };
-		605BF1D621EDC20D00B85461 /* UIView+GKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GKCategory.m"; sourceTree = "<group>"; };
 		606A77A6215CC4E800DC2F63 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
 		606A77A7215CC4E800DC2F63 /* TZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPickerController.h; sourceTree = "<group>"; };
 		606A77A8215CC4E800DC2F63 /* TZImageCropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageCropManager.m; sourceTree = "<group>"; };
@@ -516,8 +511,6 @@
 				60708FEA2105C2270041ED2D /* UIViewController+GKRotation.m */,
 				60708FEE2105C2270041ED2D /* UIViewController+GKCategory.h */,
 				60708FF72105C2270041ED2D /* UIViewController+GKCategory.m */,
-				605BF1D521EDC20D00B85461 /* UIView+GKCategory.h */,
-				605BF1D621EDC20D00B85461 /* UIView+GKCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -749,7 +742,6 @@
 				607090B52105C4480041ED2D /* UIScrollView+GKCategory.h in Headers */,
 				607090B72105C4480041ED2D /* UINavigationItem+GKCategory.h in Headers */,
 				6001044422379FB200B4AB22 /* GKBaseTransitionAnimation.h in Headers */,
-				6001044522379FB200B4AB22 /* UIView+GKCategory.h in Headers */,
 				607090B12105C4480041ED2D /* GKPushTransitionAnimation.h in Headers */,
 				607090B22105C4480041ED2D /* GKPopTransitionAnimation.h in Headers */,
 			);
@@ -1029,7 +1021,6 @@
 				6070906D2105C24E0041ED2D /* GKWYMusicAccountViewController.m in Sources */,
 				607090052105C2270041ED2D /* UIBarButtonItem+GKCategory.m in Sources */,
 				606A77C5215CC4E900DC2F63 /* TZVideoPlayerController.m in Sources */,
-				605BF1D721EDC20D00B85461 /* UIView+GKCategory.m in Sources */,
 				607090782105C24E0041ED2D /* GKDemo001ViewController.m in Sources */,
 				607090602105C24E0041ED2D /* GKTab001ViewController.m in Sources */,
 				6070905F2105C24E0041ED2D /* UIView+Extension.m in Sources */,
@@ -1086,7 +1077,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				600104462237BC6A00B4AB22 /* GKBaseTransitionAnimation.m in Sources */,
-				600104472237BC6A00B4AB22 /* UIView+GKCategory.m in Sources */,
 				607090A22105C4280041ED2D /* GKDelegateHandler.m in Sources */,
 				607090A32105C4280041ED2D /* GKPushTransitionAnimation.m in Sources */,
 				607090A42105C4280041ED2D /* GKPopTransitionAnimation.m in Sources */,

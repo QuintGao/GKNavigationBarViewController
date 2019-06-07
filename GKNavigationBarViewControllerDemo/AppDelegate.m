@@ -24,7 +24,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 配置导航栏属性
-    [[GKNavigationBarConfigure sharedInstance] setupDefaultConfigure];
+    [[GKNavigationBarConfigure sharedInstance] setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.gk_translationX = 15;
+        configure.gk_translationY = 20;
+        configure.gk_scaleX = 0.90;
+        configure.gk_scaleY = 0.92;
+        configure.gk_disableFixSpaceClassNames = @[@"TZImagePickerController", @"UIImagePickerController"];
+    }];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     

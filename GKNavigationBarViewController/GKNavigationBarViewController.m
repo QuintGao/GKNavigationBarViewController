@@ -106,14 +106,11 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
-    self.gk_statusBarHidden = configure.statusBarHidden;
-    self.gk_statusBarStyle  = configure.statusBarStyle;
-    
-    self.gk_backStyle       = configure.backStyle;
-    
-    self.gk_navItemLeftSpace  = configure.gk_navItemLeftSpace;
-    self.gk_navItemRightSpace = configure.gk_navItemRightSpace;
-    
+    self.gk_statusBarHidden     = configure.statusBarHidden;
+    self.gk_statusBarStyle      = configure.statusBarStyle;
+    self.gk_backStyle           = configure.backStyle;
+    self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
+    self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;
     self.last_navItemLeftSpace  = configure.gk_navItemLeftSpace;
     self.last_navItemRightSpace = configure.gk_navItemRightSpace;
 }
@@ -200,20 +197,9 @@
     _gk_navBackgroundColor = gk_navBackgroundColor;
     
     if (gk_navBackgroundColor == [UIColor clearColor]) {
-        [self.gk_navigationBar setBackgroundImage:GKImage(@"transparent_bg") forBarMetrics:UIBarMetricsDefault];
-        self.gk_navShadowImage = [self imageWithColor:[UIColor clearColor]];
+        [self.gk_navigationBar setBackgroundImage:[self imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
     }else {
         [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-        
-        UIImage *shadowImage = nil;
-        
-        if (self.gk_navShadowImage) {
-            shadowImage = self.gk_navShadowImage;
-        }else if (self.gk_navShadowColor) {
-            shadowImage = [self imageWithColor:self.gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
-        }
-        
-        self.gk_navShadowImage = shadowImage;
     }
 }
 
@@ -226,7 +212,7 @@
 - (void)setGk_navShadowColor:(UIColor *)gk_navShadowColor {
     _gk_navShadowColor = gk_navShadowColor;
     
-    self.gk_navigationBar.shadowImage = [self imageWithColor:gk_navShadowColor size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 0.5)];
+    self.gk_navigationBar.shadowImage = [self changeImage:GKImage(@"nav_line") withColor:gk_navShadowColor];
 }
 
 - (void)setGk_navShadowImage:(UIImage *)gk_navShadowImage {
@@ -332,6 +318,21 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+- (UIImage *)changeImage:(UIImage *)img withColor:(UIColor *)color {
+    UIGraphicsBeginImageContextWithOptions(img.size, NO, img.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, img.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, img.size.width, img.size.height);
+    CGContextClipToMask(context, rect, img.CGImage);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    UIImage*newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end

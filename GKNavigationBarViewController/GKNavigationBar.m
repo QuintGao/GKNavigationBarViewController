@@ -1,6 +1,6 @@
 //
 //  GKNavigationBar.m
-//  GKNavigationBarViewControllerTest
+//  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/9/20.
 //  Copyright © 2017年 高坤. All rights reserved.
