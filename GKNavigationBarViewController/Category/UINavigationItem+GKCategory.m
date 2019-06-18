@@ -41,10 +41,10 @@
     if (!GKConfigure.gk_disableFixSpace && leftBarButtonItem) {//存在按钮且需要调节
         [self setLeftBarButtonItems:@[leftBarButtonItem] animated:animated];
     } else {//不存在按钮,或者不需要调节
+        [self setLeftBarButtonItems:nil];
         [self gk_setLeftBarButtonItem:leftBarButtonItem animated:animated];
     }
 }
-
 
 - (void)gk_setLeftBarButtonItems:(NSArray<UIBarButtonItem *> *)leftBarButtonItems {
     [self setLeftBarButtonItems:leftBarButtonItems animated:NO];
@@ -74,6 +74,7 @@
     if (!GKConfigure.gk_disableFixSpace && rightBarButtonItem) {//存在按钮且需要调节
         [self setRightBarButtonItems:@[rightBarButtonItem] animated:animated];
     } else {//不存在按钮,或者不需要调节
+        [self setRightBarButtonItems:nil];
         [self gk_setRightBarButtonItem:rightBarButtonItem animated:animated];
     }
 }
