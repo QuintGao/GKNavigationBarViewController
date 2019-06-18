@@ -962,17 +962,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCategoryView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -21,8 +21,10 @@
 
 @implementation JXCategoryListContainerView
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (newSuperview == nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
 }
 
 - (instancetype)initWithDelegate:(id<JXCategoryListContainerViewDelegate>)delegate{
@@ -101,8 +103,9 @@
 
 - (void)setDefaultSelectedIndex:(NSInteger)defaultSelectedIndex {
     _defaultSelectedIndex = defaultSelectedIndex;
-
+    [_lock lock];
     self.currentIndex = defaultSelectedIndex;
+    [_lock unlock];
 }
 
 - (void)didReceiveMemoryWarningNotification:(NSNotification *)notification {
@@ -114,8 +117,10 @@
         }
     }
     id<JXCategoryListContentViewDelegate> currentList = _validListDict[@(_currentIndex)];
-    [_validListDict removeAllObjects];
-    [_validListDict setObject:currentList forKey:@(_currentIndex)];
+    if (currentList != nil) {
+        [_validListDict removeAllObjects];
+        [_validListDict setObject:currentList forKey:@(_currentIndex)];
+    }
     [_lock unlock];
 }
 
@@ -179,9 +184,8 @@
     if (count <= 0 || index >= count) {
         return;
     }
-    self.currentIndex = index;
-
     [_lock lock];
+    self.currentIndex = index;
     id<JXCategoryListContentViewDelegate> list = _validListDict[@(index)];
     [_lock unlock];
     if (list == nil) {
