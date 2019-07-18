@@ -76,6 +76,21 @@
     self.dataSource = tempArray;
 }
 
+- (CGRect)getTargetSelectedCellFrame:(NSInteger)targetIndex selectedType:(JXCategoryCellSelectedType)selectedType
+{
+    CGRect frame = [super getTargetSelectedCellFrame:targetIndex selectedType:selectedType];
+    if (selectedType == JXCategoryCellSelectedTypeClick ||
+        selectedType == JXCategoryCellSelectedTypeCode) {
+        CGFloat contentEdgeInsetScale = self.currentVerticalScale/self.maxVerticalFontScale;
+        if (targetIndex == 0) {
+            frame.origin.x += (self.maxVerticalContentEdgeInsetLeft - self.minVerticalContentEdgeInsetLeft)*contentEdgeInsetScale;
+        }else {
+            frame.origin.x -= (self.maxVerticalContentEdgeInsetLeft - self.minVerticalContentEdgeInsetLeft)*contentEdgeInsetScale;
+        }
+    }
+    return frame;
+}
+
 - (void)refreshCellModel:(JXCategoryBaseCellModel *)cellModel index:(NSInteger)index {
     [super refreshCellModel:cellModel index:index];
 

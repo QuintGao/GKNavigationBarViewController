@@ -83,8 +83,7 @@
 
 - (JXCategoryListCollectionContainerView *)containerView {
     if (!_containerView) {
-        _containerView = [[JXCategoryListCollectionContainerView alloc] init];
-        _containerView.dataSource = self;
+        _containerView = [[JXCategoryListCollectionContainerView alloc] initWithDataSource:self];
     }
     return _containerView;
 }

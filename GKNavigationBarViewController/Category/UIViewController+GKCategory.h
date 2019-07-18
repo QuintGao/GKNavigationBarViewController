@@ -12,6 +12,7 @@
 extern NSString *const GKViewControllerPropertyChangedNotification;
 
 // 交给单独控制器处理
+// push代理
 @protocol GKViewControllerPushDelegate <NSObject>
 
 @optional
@@ -19,6 +20,7 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 @end
 
+// pop代理
 @protocol GKViewControllerPopDelegate <NSObject>
 
 @optional

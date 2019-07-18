@@ -68,6 +68,9 @@
     if (vc.gk_interactivePopDisabled) { // 禁止滑动
         self.interactivePopGestureRecognizer.delegate = nil;
         self.interactivePopGestureRecognizer.enabled = NO;
+        
+        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
+        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
     }else if (vc.gk_fullScreenPopDisabled) { // 禁止全屏滑动
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
         

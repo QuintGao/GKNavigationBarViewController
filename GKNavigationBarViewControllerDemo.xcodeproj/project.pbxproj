@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0B891E03812B03DEF914ED31 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 		6001044422379FB200B4AB22 /* GKBaseTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A25C1221EDDADB000F11D9 /* GKBaseTransitionAnimation.h */; };
 		600104462237BC6A00B4AB22 /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A25C1321EDDADB000F11D9 /* GKBaseTransitionAnimation.m */; };
+		600C439722C341A200EC63A5 /* GKDemo012ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600C439622C341A200EC63A5 /* GKDemo012ViewController.m */; };
 		6046BD8A223B437400108F2F /* GKDemo011ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6046BD89223B437400108F2F /* GKDemo011ViewController.m */; };
 		606A77C3215CC4E800DC2F63 /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A77A8215CC4E800DC2F63 /* TZImageCropManager.m */; };
 		606A77C4215CC4E900DC2F63 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A77AA215CC4E800DC2F63 /* TZAssetCell.m */; };
@@ -154,6 +155,8 @@
 
 /* Begin PBXFileReference section */
 		4FFC8CB4E62EC07A36D394D4 /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		600C439522C341A200EC63A5 /* GKDemo012ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo012ViewController.h; sourceTree = "<group>"; };
+		600C439622C341A200EC63A5 /* GKDemo012ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo012ViewController.m; sourceTree = "<group>"; };
 		6046BD88223B437400108F2F /* GKDemo011ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo011ViewController.h; sourceTree = "<group>"; };
 		6046BD89223B437400108F2F /* GKDemo011ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo011ViewController.m; sourceTree = "<group>"; };
 		606A77A6215CC4E800DC2F63 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
@@ -667,6 +670,8 @@
 				60C6E0AD21CC73DF00C12F93 /* GKDemo010ViewController.m */,
 				6046BD88223B437400108F2F /* GKDemo011ViewController.h */,
 				6046BD89223B437400108F2F /* GKDemo011ViewController.m */,
+				600C439522C341A200EC63A5 /* GKDemo012ViewController.h */,
+				600C439622C341A200EC63A5 /* GKDemo012ViewController.m */,
 			);
 			path = DemoVC;
 			sourceTree = "<group>";
@@ -1019,6 +1024,7 @@
 				6076AEA221476D3B00723854 /* GKDouyinScrollView.m in Sources */,
 				606A77C4215CC4E900DC2F63 /* TZAssetCell.m in Sources */,
 				6070906D2105C24E0041ED2D /* GKWYMusicAccountViewController.m in Sources */,
+				600C439722C341A200EC63A5 /* GKDemo012ViewController.m in Sources */,
 				607090052105C2270041ED2D /* UIBarButtonItem+GKCategory.m in Sources */,
 				606A77C5215CC4E900DC2F63 /* TZVideoPlayerController.m in Sources */,
 				607090782105C24E0041ED2D /* GKDemo001ViewController.m in Sources */,

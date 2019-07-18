@@ -12,15 +12,15 @@
 
 NSString *const GKViewControllerPropertyChangedNotification = @"GKViewControllerPropertyChangedNotification";
 
-static const void* GKInteractivePopKey  = @"GKInteractivePopKey";
-static const void* GKFullScreenPopKey   = @"GKFullScreenPopKey";
-static const void* GKPopMaxDistanceKey  = @"GKPopMaxDistanceKey";
-static const void* GKNavBarAlphaKey     = @"GKNavBarAlphaKey";
-static const void* GKStatusBarStyleKey  = @"GKStatusBarStyleKey";
-static const void* GKStatusBarHiddenKey = @"GKStatusBarHiddenKey";
-static const void* GKBackStyleKey       = @"GKBackStyleKey";
-static const void* GKPushDelegateKey    = @"GKPushDelegateKey";
-static const void* GKPopDelegateKey     = @"GKPopDelegateKey";
+static const void* GKInteractivePopKey      = @"GKInteractivePopKey";
+static const void* GKFullScreenPopKey       = @"GKFullScreenPopKey";
+static const void* GKPopMaxDistanceKey      = @"GKPopMaxDistanceKey";
+static const void* GKNavBarAlphaKey         = @"GKNavBarAlphaKey";
+static const void* GKStatusBarStyleKey      = @"GKStatusBarStyleKey";
+static const void* GKStatusBarHiddenKey     = @"GKStatusBarHiddenKey";
+static const void* GKBackStyleKey           = @"GKBackStyleKey";
+static const void* GKPushDelegateKey        = @"GKPushDelegateKey";
+static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
 
 @implementation UIViewController (GKCategory)
 

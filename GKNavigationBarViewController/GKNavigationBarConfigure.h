@@ -53,9 +53,6 @@
 @property (nonatomic, assign) CGFloat   gk_scaleX;
 @property (nonatomic, assign) CGFloat   gk_scaleY;
 
-// 禁止修复导航栏item间距的控制器名称
-@property (nonatomic, strong) NSArray   *gk_disableFixSpaceClassNames;
-
 + (instancetype)sharedInstance;
 
 // 统一配置导航栏外观，最好在AppDelegate中配置

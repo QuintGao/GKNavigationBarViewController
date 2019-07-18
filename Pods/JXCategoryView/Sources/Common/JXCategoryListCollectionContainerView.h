@@ -64,12 +64,16 @@
  @return 自定义UICollectionView  Class
  */
 - (Class)collectionViewClassInListContainerView:(JXCategoryListCollectionContainerView *)listContainerView;
+
+/**
+ 控制能否初始化对应index的列表。有些业务需求，需要在某些情况才允许初始化某些列表，通过通过该代理实现控制。
+ */
+- (BOOL)listContainerView:(JXCategoryListCollectionContainerView *)listContainerView canInitListAtIndex:(NSInteger)index;
 @end
 
 
 @interface JXCategoryListCollectionContainerView : UIView
 
-@property (nonatomic, weak) id<JXCategoryListCollectionContainerViewDataSource> dataSource;
 @property (nonatomic, strong, readonly) UICollectionView *collectionView;
 @property (nonatomic, strong, readonly) NSDictionary <NSNumber *, id<JXCategoryListCollectionContentViewDelegate>> *validListDict;   //已经加载过的列表字典。key是index，value是对应的列表
 /**
@@ -77,6 +81,10 @@
  */
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithDataSource:(id<JXCategoryListCollectionContainerViewDataSource>)dataSource NS_DESIGNATED_INITIALIZER;
 - (void)reloadData;
 
 @end
