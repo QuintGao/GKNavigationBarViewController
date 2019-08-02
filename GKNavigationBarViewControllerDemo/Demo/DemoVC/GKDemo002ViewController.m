@@ -24,7 +24,7 @@
     
     self.gk_navTitle = @"控制器002";
     self.gk_navBackgroundColor = [UIColor clearColor];
-    self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    self.gk_backStyle = GKNavigationBarBackStyleBlack;
     self.gk_statusBarStyle = UIStatusBarStyleDefault;
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];

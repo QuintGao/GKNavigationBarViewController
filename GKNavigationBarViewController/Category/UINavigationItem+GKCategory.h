@@ -11,3 +11,7 @@
 @interface UINavigationItem (GKCategory)
 
 @end
+
+@interface NSObject (GKCategory)
+
+@end

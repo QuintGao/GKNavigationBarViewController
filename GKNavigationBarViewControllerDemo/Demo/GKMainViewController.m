@@ -115,11 +115,8 @@
     UIViewController *vc = [[class alloc] init];
     
     if (indexPath.row == 4) {
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
         
-        //        GKNavigationController *nav = [[GKNavigationController alloc] initWithRootViewController:vc];
-        //        nav.useSystemBackBarButtonItem = YES;
-        
-        //        [self presentViewController:nav animated:YES completion:nil];
         [self presentViewController:vc animated:YES completion:nil];
         
         return;
@@ -132,6 +129,7 @@
         UINavigationController *nav = [UINavigationController rootVC:douyinVC translationScale:NO];
         nav.gk_openScrollLeftPush = YES;
         
+        nav.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
@@ -141,18 +139,21 @@
         // 根控制器是导航控制器，需要缩放
         UINavigationController *nav = [UINavigationController rootVC:toutiaoVC translationScale:YES];
         
+        nav.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
     }else if (indexPath.row == 14) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
+        wyMusicVC.modalPresentationStyle = UIModalPresentationFullScreen;
         // 根视图控制器是UITabBarController,不缩放
         [self presentViewController:wyMusicVC animated:YES completion:nil];
         return;
     }else if (indexPath.row == 15) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
+        newsVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:newsVC animated:YES completion:nil];
         return;
     }

@@ -27,6 +27,8 @@
         configure.gk_translationY = 20;
         configure.gk_scaleX = 0.90;
         configure.gk_scaleY = 0.92;
+        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemRightSpace = 12.0f;
     }];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -35,8 +37,6 @@
     
     UINavigationController *nav = [UINavigationController rootVC:[GKMainViewController new] translationScale:NO];
     nav.gk_openScrollLeftPush = YES;
-
-//    UINavigationController *nav = [UINavigationController rootVC:[GKDemo001ViewController new] translationScale:NO];
     
     self.window.rootViewController = nav;
     

@@ -29,9 +29,7 @@
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        gk_swizzled_method(class, @selector(viewDidLoad), @selector(gk_viewDidLoad));
+        gk_swizzled_method(self, @"viewDidLoad", self);
     });
 }
 

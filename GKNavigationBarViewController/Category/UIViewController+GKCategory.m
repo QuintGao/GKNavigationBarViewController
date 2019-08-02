@@ -29,27 +29,8 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        gk_swizzled_method(class, @selector(viewDidAppear:) ,@selector(gk_viewDidAppear:));
-        
-        if (@available(iOS 11.0, *)) {
-            gk_swizzled_method(class, @selector(viewWillAppear:), @selector(gk_viewWillAppear:));
-        }
+        gk_swizzled_method(self, @"viewDidAppear:" ,self);
     });
-}
-
-- (void)gk_viewWillAppear:(BOOL)animated {
-    if (!animated) {
-        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
-            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-            [vc.gk_navigationBar setNeedsLayout];
-        }else if (self.navigationController) {
-            [self.navigationController.navigationBar setNeedsLayout];
-        }
-    }
-    
-    [self gk_viewWillAppear:animated];
 }
 
 - (void)gk_viewDidAppear:(BOOL)animated {

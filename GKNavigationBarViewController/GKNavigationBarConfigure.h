@@ -67,4 +67,7 @@
 // 获取当前显示的控制器
 - (UIViewController *)visibleController;
 
+// 间距调整
+- (CGFloat)gk_fixedSpace;
+
 @end

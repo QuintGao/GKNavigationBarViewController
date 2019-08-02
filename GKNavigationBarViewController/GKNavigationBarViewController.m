@@ -18,6 +18,8 @@
 @property (nonatomic, assign) CGFloat           last_navItemLeftSpace;
 @property (nonatomic, assign) CGFloat           last_navItemRightSpace;
 
+@property (nonatomic, assign) BOOL              isSettingItemSpace;
+
 @end
 
 @implementation GKNavigationBarViewController
@@ -109,10 +111,12 @@
     self.gk_statusBarHidden     = configure.statusBarHidden;
     self.gk_statusBarStyle      = configure.statusBarStyle;
     self.gk_backStyle           = configure.backStyle;
+    self.isSettingItemSpace     = YES;
     self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
     self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;
     self.last_navItemLeftSpace  = configure.gk_navItemLeftSpace;
     self.last_navItemRightSpace = configure.gk_navItemRightSpace;
+    self.isSettingItemSpace     = NO;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -141,6 +145,7 @@
     }
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
+    [self.gk_navigationBar layoutSubviews];
 }
 
 #pragma mark - 控制屏幕旋转的方法
@@ -158,6 +163,7 @@
 
 #pragma mark - 控制状态栏的方法
 - (BOOL)prefersStatusBarHidden {
+    [self setupNavBarFrame];
     return self.gk_statusBarHidden;
 }
 
@@ -236,7 +242,7 @@
 - (void)setGk_navTitleColor:(UIColor *)gk_navTitleColor {
     _gk_navTitleColor = gk_navTitleColor;
     
-    UIFont *titleFont = self.gk_navTitleFont ? self.gk_navTitleFont : [GKNavigationBarConfigure sharedInstance].titleFont;
+    UIFont *titleFont = self.gk_navTitleFont ? self.gk_navTitleFont : GKConfigure.titleFont;
     
     self.gk_navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: gk_navTitleColor, NSFontAttributeName: titleFont};
 }
@@ -244,7 +250,7 @@
 - (void)setGk_navTitleFont:(UIFont *)gk_navTitleFont {
     _gk_navTitleFont = gk_navTitleFont;
     
-    UIColor *titleColor = self.gk_navTitleColor ? self.gk_navTitleColor : [GKNavigationBarConfigure sharedInstance].titleColor;
+    UIColor *titleColor = self.gk_navTitleColor ? self.gk_navTitleColor : GKConfigure.titleColor;
     
     self.gk_navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: titleColor, NSFontAttributeName: gk_navTitleFont};
 }
@@ -276,13 +282,23 @@
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {
     _gk_navItemLeftSpace = gk_navItemLeftSpace;
     
-    self.gk_navigationBar.gk_navItemLeftSpace = gk_navItemLeftSpace;
+    if (self.isSettingItemSpace) return;
+    
+    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.gk_navItemLeftSpace   = gk_navItemLeftSpace;
+        configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
+    }];
 }
 
 - (void)setGk_navItemRightSpace:(CGFloat)gk_navItemRightSpace {
     _gk_navItemRightSpace = gk_navItemRightSpace;
+
+    if (self.isSettingItemSpace) return;
     
-    self.gk_navigationBar.gk_navItemRightSpace = gk_navItemRightSpace;
+    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
+        configure.gk_navItemRightSpace  = gk_navItemRightSpace;
+    }];
 }
 
 - (void)setGk_navLineHidden:(BOOL)gk_navLineHidden {
