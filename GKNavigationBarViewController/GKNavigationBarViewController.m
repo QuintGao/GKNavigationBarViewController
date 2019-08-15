@@ -145,6 +145,7 @@
     }
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
+    self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
     [self.gk_navigationBar layoutSubviews];
 }
 
