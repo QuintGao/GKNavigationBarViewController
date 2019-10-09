@@ -135,12 +135,8 @@
         return;
     }else if (indexPath.row == 13) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
-        
-        // 根控制器是导航控制器，需要缩放
-        UINavigationController *nav = [UINavigationController rootVC:toutiaoVC translationScale:YES];
-        
-        nav.modalPresentationStyle = UIModalPresentationFullScreen;
-        [self presentViewController:nav animated:YES completion:nil];
+        toutiaoVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:toutiaoVC animated:YES completion:nil];
         
         return;
     }else if (indexPath.row == 14) {

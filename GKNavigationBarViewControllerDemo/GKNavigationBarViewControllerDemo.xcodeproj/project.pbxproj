@@ -88,6 +88,8 @@
 		600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */; };
 		600EC6E423067F6800222289 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E223067F6700222289 /* GKNavigationBarViewController.podspec */; };
 		600EC6E523067F6800222289 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E323067F6800222289 /* README.md */; };
+		793A13CE234B1B380085DF82 /* UIViewController+FullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */; };
+		79D261E9234E2BDA004A3D3F /* UIViewController+GKCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D261E8234E2BDA004A3D3F /* UIViewController+GKCapture.m */; };
 		8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -273,6 +275,10 @@
 		600EC6E223067F6700222289 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GKNavigationBarViewController.podspec; path = ../../GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
 		600EC6E323067F6800222289 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		656BD2E20F7FF5D6C823AB90 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		793A13CC234B1B380085DF82 /* UIViewController+FullScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FullScreen.h"; sourceTree = "<group>"; };
+		793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FullScreen.m"; sourceTree = "<group>"; };
+		79D261E7234E2BDA004A3D3F /* UIViewController+GKCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKCapture.h"; sourceTree = "<group>"; };
+		79D261E8234E2BDA004A3D3F /* UIViewController+GKCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCapture.m"; sourceTree = "<group>"; };
 		CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -375,6 +381,8 @@
 			children = (
 				600EC5E923065FA700222289 /* GKMainViewController.h */,
 				600EC5EA23065FA700222289 /* GKMainViewController.m */,
+				793A13CC234B1B380085DF82 /* UIViewController+FullScreen.h */,
+				793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */,
 				600EC5D723065FA700222289 /* BaseVC */,
 				600EC5EB23065FA700222289 /* TabVC */,
 				600EC5DE23065FA700222289 /* 抖音 */,
@@ -447,9 +455,9 @@
 		600EC5C923065FA700222289 /* 今日头条 */ = {
 			isa = PBXGroup;
 			children = (
-				600EC5CA23065FA700222289 /* GKToutiaoViewController.m */,
 				600EC5CB23065FA700222289 /* tab */,
 				600EC5D623065FA700222289 /* GKToutiaoViewController.h */,
+				600EC5CA23065FA700222289 /* GKToutiaoViewController.m */,
 			);
 			path = "今日头条";
 			sourceTree = "<group>";
@@ -457,16 +465,16 @@
 		600EC5CB23065FA700222289 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				600EC5CC23065FA700222289 /* GKToutiaoMineViewController.m */,
-				600EC5CD23065FA700222289 /* GKToutiaoMicroViewController.h */,
-				600EC5CE23065FA700222289 /* GKToutiaoDetailViewController.m */,
-				600EC5CF23065FA700222289 /* GKToutiaoVideoViewController.m */,
 				600EC5D023065FA700222289 /* GKToutiaoHomeViewController.h */,
-				600EC5D123065FA700222289 /* GKToutiaoMicroViewController.m */,
-				600EC5D223065FA700222289 /* GKToutiaoMineViewController.h */,
-				600EC5D323065FA700222289 /* GKToutiaoDetailViewController.h */,
-				600EC5D423065FA700222289 /* GKToutiaoVideoViewController.h */,
 				600EC5D523065FA700222289 /* GKToutiaoHomeViewController.m */,
+				600EC5D423065FA700222289 /* GKToutiaoVideoViewController.h */,
+				600EC5CF23065FA700222289 /* GKToutiaoVideoViewController.m */,
+				600EC5CD23065FA700222289 /* GKToutiaoMicroViewController.h */,
+				600EC5D123065FA700222289 /* GKToutiaoMicroViewController.m */,
+				600EC5D323065FA700222289 /* GKToutiaoDetailViewController.h */,
+				600EC5CE23065FA700222289 /* GKToutiaoDetailViewController.m */,
+				600EC5D223065FA700222289 /* GKToutiaoMineViewController.h */,
+				600EC5CC23065FA700222289 /* GKToutiaoMineViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -504,12 +512,12 @@
 		600EC5EB23065FA700222289 /* TabVC */ = {
 			isa = PBXGroup;
 			children = (
-				600EC5EC23065FA700222289 /* GKTab003ViewController.h */,
-				600EC5ED23065FA700222289 /* GKTab002ViewController.h */,
-				600EC5EE23065FA700222289 /* GKTab001ViewController.m */,
-				600EC5EF23065FA700222289 /* GKTab003ViewController.m */,
-				600EC5F023065FA700222289 /* GKTab002ViewController.m */,
 				600EC5F123065FA700222289 /* GKTab001ViewController.h */,
+				600EC5EE23065FA700222289 /* GKTab001ViewController.m */,
+				600EC5ED23065FA700222289 /* GKTab002ViewController.h */,
+				600EC5F023065FA700222289 /* GKTab002ViewController.m */,
+				600EC5EC23065FA700222289 /* GKTab003ViewController.h */,
+				600EC5EF23065FA700222289 /* GKTab003ViewController.m */,
 			);
 			path = TabVC;
 			sourceTree = "<group>";
@@ -517,40 +525,32 @@
 		600EC5F223065FA700222289 /* DemoVC */ = {
 			isa = PBXGroup;
 			children = (
-				600EC5F323065FA700222289 /* GKDemo010ViewController.m */,
-				600EC5F423065FA700222289 /* GKDemo009ViewController.m */,
-				600EC5F523065FA700222289 /* GKDemo006ViewController.m */,
-				600EC5F623065FA700222289 /* GKDemo002ViewController.h */,
-				600EC5F723065FA700222289 /* GKDemo005ViewController.h */,
-				600EC5F823065FA700222289 /* GKDemo001ViewController.m */,
-				600EC5F923065FA700222289 /* GKDemo004ViewController.h */,
-				600EC5FA23065FA700222289 /* GKDemo012ViewController.h */,
-				600EC5FB23065FA700222289 /* GKDemo011ViewController.m */,
-				600EC5FC23065FA700222289 /* GKDemo008ViewController.m */,
-				600EC5FD23065FA700222289 /* GKScaleTransition */,
-				600EC5FE23065FA700222289 /* GKDemo007ViewController.m */,
-				600EC5FF23065FA700222289 /* GKDemo003ViewController.h */,
-				600EC60023065FA700222289 /* GKDemo002ViewController.m */,
-				600EC60123065FA700222289 /* GKDemo006ViewController.h */,
-				600EC60223065FA700222289 /* GKDemo009ViewController.h */,
-				600EC60323065FA700222289 /* GKDemo010ViewController.h */,
 				600EC60423065FA700222289 /* GKDemo001ViewController.h */,
-				600EC60523065FA700222289 /* GKDemo005ViewController.m */,
-				600EC60623065FA700222289 /* GKDemo012ViewController.m */,
-				600EC60723065FA700222289 /* GKDemo004ViewController.m */,
+				600EC5F823065FA700222289 /* GKDemo001ViewController.m */,
+				600EC5F623065FA700222289 /* GKDemo002ViewController.h */,
+				600EC60023065FA700222289 /* GKDemo002ViewController.m */,
+				600EC5FF23065FA700222289 /* GKDemo003ViewController.h */,
 				600EC60823065FA700222289 /* GKDemo003ViewController.m */,
+				600EC5F923065FA700222289 /* GKDemo004ViewController.h */,
+				600EC60723065FA700222289 /* GKDemo004ViewController.m */,
+				600EC5F723065FA700222289 /* GKDemo005ViewController.h */,
+				600EC60523065FA700222289 /* GKDemo005ViewController.m */,
+				600EC60123065FA700222289 /* GKDemo006ViewController.h */,
+				600EC5F523065FA700222289 /* GKDemo006ViewController.m */,
 				600EC60923065FA700222289 /* GKDemo007ViewController.h */,
+				600EC5FE23065FA700222289 /* GKDemo007ViewController.m */,
 				600EC60A23065FA700222289 /* GKDemo008ViewController.h */,
+				600EC5FC23065FA700222289 /* GKDemo008ViewController.m */,
+				600EC60223065FA700222289 /* GKDemo009ViewController.h */,
+				600EC5F423065FA700222289 /* GKDemo009ViewController.m */,
+				600EC60323065FA700222289 /* GKDemo010ViewController.h */,
+				600EC5F323065FA700222289 /* GKDemo010ViewController.m */,
 				600EC60B23065FA700222289 /* GKDemo011ViewController.h */,
+				600EC5FB23065FA700222289 /* GKDemo011ViewController.m */,
+				600EC5FA23065FA700222289 /* GKDemo012ViewController.h */,
+				600EC60623065FA700222289 /* GKDemo012ViewController.m */,
 			);
 			path = DemoVC;
-			sourceTree = "<group>";
-		};
-		600EC5FD23065FA700222289 /* GKScaleTransition */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GKScaleTransition;
 			sourceTree = "<group>";
 		};
 		600EC6382306797900222289 /* TZImagePickerController */ = {
@@ -594,14 +594,14 @@
 			children = (
 				600EC6B523067F5400222289 /* TransitionAnimation */,
 				600EC6BE23067F5400222289 /* Category */,
+				600EC6D123067F5400222289 /* GKCommon.h */,
 				600EC6CC23067F5400222289 /* GKNavigationBarViewController.h */,
+				600EC6D023067F5400222289 /* GKNavigationBarViewController.m */,
 				600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */,
+				600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */,
+				600EC6D223067F5400222289 /* GKNavigationBar.h */,
 				600EC6CE23067F5400222289 /* GKNavigationBar.m */,
 				600EC6CF23067F5400222289 /* GKNavigationBarViewController.bundle */,
-				600EC6D023067F5400222289 /* GKNavigationBarViewController.m */,
-				600EC6D123067F5400222289 /* GKCommon.h */,
-				600EC6D223067F5400222289 /* GKNavigationBar.h */,
-				600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */,
 			);
 			name = GKNavigationBarViewController;
 			path = ../../GKNavigationBarViewController;
@@ -610,14 +610,16 @@
 		600EC6B523067F5400222289 /* TransitionAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */,
-				600EC6B723067F5400222289 /* GKDelegateHandler.m */,
-				600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */,
-				600EC6B923067F5400222289 /* GKBaseTransitionAnimation.m */,
-				600EC6BA23067F5400222289 /* GKPushTransitionAnimation.h */,
 				600EC6BB23067F5400222289 /* GKDelegateHandler.h */,
+				600EC6B723067F5400222289 /* GKDelegateHandler.m */,
+				600EC6BA23067F5400222289 /* GKPushTransitionAnimation.h */,
+				600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */,
 				600EC6BC23067F5400222289 /* GKPopTransitionAnimation.h */,
+				600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */,
 				600EC6BD23067F5400222289 /* GKBaseTransitionAnimation.h */,
+				600EC6B923067F5400222289 /* GKBaseTransitionAnimation.m */,
+				79D261E7234E2BDA004A3D3F /* UIViewController+GKCapture.h */,
+				79D261E8234E2BDA004A3D3F /* UIViewController+GKCapture.m */,
 			);
 			path = TransitionAnimation;
 			sourceTree = "<group>";
@@ -625,18 +627,18 @@
 		600EC6BE23067F5400222289 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				600EC6BF23067F5400222289 /* UINavigationController+GKCategory.m */,
-				600EC6C023067F5400222289 /* UIViewController+GKRotation.m */,
-				600EC6C123067F5400222289 /* UINavigationItem+GKCategory.h */,
-				600EC6C223067F5400222289 /* UIBarButtonItem+GKCategory.m */,
-				600EC6C323067F5400222289 /* UIViewController+GKCategory.h */,
-				600EC6C423067F5400222289 /* UIScrollView+GKCategory.m */,
 				600EC6C523067F5400222289 /* GKCategory.h */,
-				600EC6C623067F5400222289 /* UIViewController+GKRotation.h */,
+				600EC6CA23067F5400222289 /* UIScrollView+GKCategory.h */,
+				600EC6C423067F5400222289 /* UIScrollView+GKCategory.m */,
+				600EC6C923067F5400222289 /* UIBarButtonItem+GKCategory.h */,
+				600EC6C223067F5400222289 /* UIBarButtonItem+GKCategory.m */,
+				600EC6C123067F5400222289 /* UINavigationItem+GKCategory.h */,
 				600EC6C723067F5400222289 /* UINavigationItem+GKCategory.m */,
 				600EC6C823067F5400222289 /* UINavigationController+GKCategory.h */,
-				600EC6C923067F5400222289 /* UIBarButtonItem+GKCategory.h */,
-				600EC6CA23067F5400222289 /* UIScrollView+GKCategory.h */,
+				600EC6BF23067F5400222289 /* UINavigationController+GKCategory.m */,
+				600EC6C623067F5400222289 /* UIViewController+GKRotation.h */,
+				600EC6C023067F5400222289 /* UIViewController+GKRotation.m */,
+				600EC6C323067F5400222289 /* UIViewController+GKCategory.h */,
 				600EC6CB23067F5400222289 /* UIViewController+GKCategory.m */,
 			);
 			path = Category;
@@ -856,6 +858,7 @@
 				600EC5582306588500222289 /* AppDelegate.m in Sources */,
 				600EC63623065FA700222289 /* GKDemo004ViewController.m in Sources */,
 				600EC60E23065FA700222289 /* GKWYMusicFindViewController.m in Sources */,
+				793A13CE234B1B380085DF82 /* UIViewController+FullScreen.m in Sources */,
 				600EC61423065FA700222289 /* GKWYNewsNewViewController.m in Sources */,
 				600EC62723065FA700222289 /* GKDouyinHomeSearchViewController.m in Sources */,
 				600EC62123065FA700222289 /* GKDemoBaseViewController.m in Sources */,
@@ -874,6 +877,7 @@
 				600EC6582306797900222289 /* TZVideoPlayerController.m in Sources */,
 				600EC60F23065FA700222289 /* GKWYMusicMineViewController.m in Sources */,
 				600EC62023065FA700222289 /* GKTabBaseViewController.m in Sources */,
+				79D261E9234E2BDA004A3D3F /* UIViewController+GKCapture.m in Sources */,
 				600EC6632306797900222289 /* TZLocationManager.m in Sources */,
 				600EC62623065FA700222289 /* GKDouyinPersonalViewController.m in Sources */,
 				600EC60C23065FA700222289 /* GKWYMusicDetailViewController.m in Sources */,

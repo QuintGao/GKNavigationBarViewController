@@ -41,7 +41,7 @@
 
 - (void)pageAction {
     GKToutiaoDetailViewController *detailVC = [GKToutiaoDetailViewController new];
-    
+    detailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

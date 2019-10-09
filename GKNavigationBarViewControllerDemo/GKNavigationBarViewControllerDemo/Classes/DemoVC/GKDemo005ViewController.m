@@ -37,7 +37,7 @@
     vc.tabBarItem.image = [UIImage imageNamed:name];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected", name]];
     
-    UINavigationController *nav = [UINavigationController rootVC:vc translationScale:NO];
+    UINavigationController *nav = [UINavigationController rootVC:vc translationScale:YES];
     nav.gk_openScrollLeftPush = YES;
     
     [self addChildViewController:nav];
