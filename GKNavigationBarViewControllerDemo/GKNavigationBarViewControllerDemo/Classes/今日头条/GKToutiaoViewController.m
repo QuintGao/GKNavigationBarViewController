@@ -50,7 +50,9 @@
     
     vc.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
     
-    [self addChildViewController:vc];
+    UINavigationController *nav = [UINavigationController rootVC:vc translationScale:YES];
+    
+    [self addChildViewController:nav];
 }
 
 @end
