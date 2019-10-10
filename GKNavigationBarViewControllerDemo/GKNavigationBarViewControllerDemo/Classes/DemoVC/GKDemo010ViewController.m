@@ -53,8 +53,10 @@
         self.gk_navLeftBarButtonItems = @[self.backBtn, self.closeBtn];
         self.gk_navRightBarButtonItems = @[self.moreBtn, self.shareBtn];
     }else {
-        self.gk_navLeftBarButtonItems = @[self.backBtn];
-        self.gk_navRightBarButtonItems = @[self.moreBtn];
+        self.gk_navLeftBarButtonItems = nil;
+        self.gk_navRightBarButtonItems = nil;
+        self.gk_navLeftBarButtonItem = self.backBtn;
+        self.gk_navRightBarButtonItem = self.moreBtn;
     }
 }
 

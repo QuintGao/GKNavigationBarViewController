@@ -115,9 +115,4 @@
     self.areaView.width = sender.value == 0 ? self.view.width : sender.value;
 }
 
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 @end

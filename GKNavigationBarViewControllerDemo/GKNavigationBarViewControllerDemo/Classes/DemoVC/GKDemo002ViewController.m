@@ -25,7 +25,6 @@
     self.gk_navTitle = @"控制器002";
     self.gk_navBackgroundColor = [UIColor clearColor];
     self.gk_backStyle = GKNavigationBarBackStyleBlack;
-    self.gk_statusBarStyle = UIStatusBarStyleDefault;
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.scrollView.delegate = self;
@@ -40,12 +39,23 @@
     [btn setTitle:@"Push" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    
+    self.gk_statusBarStyle = UIStatusBarStyleDefault;
 }
 
 - (void)btnAction {
     GKDemo003ViewController *demo003VC = [GKDemo003ViewController new];
     demo003VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:demo003VC animated:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.gk_statusBarStyle == UIStatusBarStyleDefault) {
+        self.gk_statusBarStyle = UIStatusBarStyleLightContent;
+    }else {
+        self.gk_statusBarStyle = UIStatusBarStyleDefault;
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
