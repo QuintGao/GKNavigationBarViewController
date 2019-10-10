@@ -35,6 +35,8 @@
 }
 
 - (void)setupUI {
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     UILabel *label1 = [UILabel new];
     label1.textColor = [UIColor blackColor];
     label1.text = @"侧滑返回手势：开";

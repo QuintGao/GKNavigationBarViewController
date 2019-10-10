@@ -39,6 +39,7 @@
                         @"导航条按钮测试",
                         @"分页滑动",
                         @"系统导航",
+                        @"左滑push",
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
@@ -122,7 +123,7 @@
         return;
     }
     
-    if (indexPath.row == 12) {
+    if (indexPath.row == 13) {
         GKDouyinHomeViewController *douyinVC = [GKDouyinHomeViewController new];
         
         // 设置导航控制器并开启左滑push
@@ -133,20 +134,20 @@
         [self presentViewController:nav animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 13) {
+    }else if (indexPath.row == 14) {
         GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
         toutiaoVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:toutiaoVC animated:YES completion:nil];
         
         return;
-    }else if (indexPath.row == 14) {
+    }else if (indexPath.row == 15) {
         GKWYMusicViewController *wyMusicVC = [GKWYMusicViewController new];
         
         wyMusicVC.modalPresentationStyle = UIModalPresentationFullScreen;
         // 根视图控制器是UITabBarController,不缩放
         [self presentViewController:wyMusicVC animated:YES completion:nil];
         return;
-    }else if (indexPath.row == 15) {
+    }else if (indexPath.row == 16) {
         GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
         
         newsVC.modalPresentationStyle = UIModalPresentationFullScreen;

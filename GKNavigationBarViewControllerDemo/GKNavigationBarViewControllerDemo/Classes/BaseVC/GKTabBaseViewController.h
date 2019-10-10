@@ -10,6 +10,8 @@
 
 @interface GKTabBaseViewController : GKNavigationBarViewController
 
+@property (nonatomic, assign) BOOL  isScale;
+
 @property (nonatomic, copy) NSString *contentText;
 
 - (void)showBackBtn;
