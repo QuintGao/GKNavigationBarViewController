@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+GKCapture.h"
+#import <objc/runtime.h>
 
 static const void* GKCaptureImageKey         = @"GKCaptureImage";
 
