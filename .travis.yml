@@ -1,0 +1,14 @@
+language: objective-c
+osx_image: xcode10
+script: true
+
+before_install:
+- env
+- locale
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- xcpretty --version
+- xcodebuild -version
+- xcodebuild -showsdks
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
