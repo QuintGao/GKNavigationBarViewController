@@ -87,8 +87,8 @@
 		600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */; };
 		600EC6E423067F6800222289 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E223067F6700222289 /* GKNavigationBarViewController.podspec */; };
 		600EC6E523067F6800222289 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E323067F6800222289 /* README.md */; };
-		60180AC823585A7500C48293 /* GKNavigationBarViewControllerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewControllerFramework.framework */; };
-		60180AC923585A7500C48293 /* GKNavigationBarViewControllerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewControllerFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60180AC823585A7500C48293 /* GKNavigationBarViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */; };
+		60180AC923585A7500C48293 /* GKNavigationBarViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60180AD123585B8600C48293 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B723067F5400222289 /* GKDelegateHandler.m */; };
 		60180AD223585B8600C48293 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */; };
 		60180AD323585B8600C48293 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */; };
@@ -154,7 +154,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				60180AC923585A7500C48293 /* GKNavigationBarViewControllerFramework.framework in Embed Frameworks */,
+				60180AC923585A7500C48293 /* GKNavigationBarViewController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +322,7 @@
 		600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarConfigure.m; sourceTree = "<group>"; };
 		600EC6E223067F6700222289 /* GKNavigationBarViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GKNavigationBarViewController.podspec; path = ../../GKNavigationBarViewController.podspec; sourceTree = "<group>"; };
 		600EC6E323067F6800222289 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		60180AB323585A7500C48293 /* GKNavigationBarViewControllerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKNavigationBarViewControllerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKNavigationBarViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60180AB623585A7500C48293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60180B332358669300C48293 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .travis.yml; path = ../../.travis.yml; sourceTree = "<group>"; };
 		603C8EDE234ED0A2001B4C3C /* GKDemo013ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo013ViewController.h; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60180AC823585A7500C48293 /* GKNavigationBarViewControllerFramework.framework in Frameworks */,
+				60180AC823585A7500C48293 /* GKNavigationBarViewController.framework in Frameworks */,
 				8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +394,7 @@
 			children = (
 				600EC5532306588500222289 /* GKNavigationBarViewControllerDemo.app */,
 				600EC56B2306588700222289 /* GKNavigationBarViewControllerDemoTests.xctest */,
-				60180AB323585A7500C48293 /* GKNavigationBarViewControllerFramework.framework */,
+				60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -803,7 +803,7 @@
 			);
 			name = GKNavigationBarViewControllerFramework;
 			productName = GKNavigationBarViewControllerFramework;
-			productReference = 60180AB323585A7500C48293 /* GKNavigationBarViewControllerFramework.framework */;
+			productReference = 60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1278,7 +1278,8 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKNavigationBarViewControllerFramework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = GKNavigationBarViewController;
+				PRODUCT_NAME = GKNavigationBarViewController;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
@@ -1310,7 +1311,8 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKNavigationBarViewControllerFramework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = GKNavigationBarViewController;
+				PRODUCT_NAME = GKNavigationBarViewController;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
