@@ -74,6 +74,10 @@
     self.gk_navLineHidden = YES;
 }
 
+- (void)refreshNavBar {
+    [self setupNavBarFrame];
+}
+
 #pragma mark - private Methods
 /**
  设置自定义导航条
