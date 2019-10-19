@@ -74,7 +74,7 @@
     self.gk_navLineHidden = YES;
 }
 
-- (void)refreshNavBar {
+- (void)refreshNavBarFrame {
     [self setupNavBarFrame];
 }
 
@@ -83,8 +83,6 @@
  设置自定义导航条
  */
 - (void)setupCustomNavBar {
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.view addSubview:self.gk_navigationBar];
     
@@ -145,7 +143,7 @@
             }
         }
     }else { // 竖屏
-        navBarH = self.gk_statusBarHidden ? (GK_SAVEAREA_TOP + GK_NAVBAR_HEIGHT) : GK_STATUSBAR_NAVBAR_HEIGHT;
+        navBarH = self.gk_statusBarHidden ? (GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT) : GK_STATUSBAR_NAVBAR_HEIGHT;
     }
     
     self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);

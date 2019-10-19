@@ -17,15 +17,14 @@
 /// 自定义导航条
 @property (nonatomic, strong, readonly) GKNavigationBar     *gk_navigationBar;
 
-/// 自定义导航栏栏目
+/// 自定义导航条栏目
 @property (nonatomic, strong, readonly) UINavigationItem    *gk_navigationItem;
 
 #pragma mark - 额外的快速设置导航栏的属性
 @property (nonatomic, strong) UIColor                       *gk_navBarTintColor;
-/// 设置导航栏背景
 @property (nonatomic, strong) UIColor                       *gk_navBackgroundColor;
 @property (nonatomic, strong) UIImage                       *gk_navBackgroundImage;
-/// 设置导航栏分割线颜色或图片
+/** 设置导航栏分割线颜色或图片 */
 @property (nonatomic, strong) UIColor                       *gk_navShadowColor;
 @property (nonatomic, strong) UIImage                       *gk_navShadowImage;
 
@@ -40,15 +39,17 @@
 @property (nonatomic, strong) UIBarButtonItem               *gk_navRightBarButtonItem;
 @property (nonatomic, strong) NSArray<UIBarButtonItem *>    *gk_navRightBarButtonItems;
 
-// 导航栏左右按钮距离屏幕边缘的距离，需在设置左右item之前设置此属性 
+/** 导航栏左右按钮距离屏幕边缘的距离，需在设置左右item之前设置此属性 */
 @property (nonatomic, assign) CGFloat                       gk_navItemLeftSpace;
 @property (nonatomic, assign) CGFloat                       gk_navItemRightSpace;
 
-/// 导航条标题
+/** 页面标题-快速设置 */
 @property (nonatomic, copy) NSString                        *gk_navTitle;
 
-/// 隐藏分割线
+/// 是否隐藏导航栏分割线，默认为NO
 @property (nonatomic, assign) BOOL                          gk_navLineHidden;
+
+
 
 /// 显示导航栏分割线
 - (void)showNavLine;
@@ -56,7 +57,7 @@
 /// 隐藏导航栏分割线
 - (void)hideNavLine;
 
-/// 刷新导航栏（包括frame、透明度等）
-- (void)refreshNavBar;
+/// 刷新导航栏frame
+- (void)refreshNavBarFrame;
 
 @end
