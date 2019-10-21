@@ -5,6 +5,7 @@ target 'GKNavigationBarViewControllerDemo' do
 
   pod 'Masonry'
   pod 'JXCategoryView'
-  pod 'MJRefresh'  
+  pod 'MJRefresh'
+  pod 'TXLiteAVSDK_Player'
 
 end

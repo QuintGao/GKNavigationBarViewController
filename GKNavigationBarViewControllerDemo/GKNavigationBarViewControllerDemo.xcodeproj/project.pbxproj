@@ -87,8 +87,6 @@
 		600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */; };
 		600EC6E423067F6800222289 /* GKNavigationBarViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E223067F6700222289 /* GKNavigationBarViewController.podspec */; };
 		600EC6E523067F6800222289 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 600EC6E323067F6800222289 /* README.md */; };
-		60180AC823585A7500C48293 /* GKNavigationBarViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */; };
-		60180AC923585A7500C48293 /* GKNavigationBarViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60180AD123585B8600C48293 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B723067F5400222289 /* GKDelegateHandler.m */; };
 		60180AD223585B8600C48293 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */; };
 		60180AD323585B8600C48293 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */; };
@@ -138,28 +136,7 @@
 			remoteGlobalIDString = 600EC5522306588500222289;
 			remoteInfo = GKNavigationBarViewControllerDemo;
 		};
-		60180AC623585A7500C48293 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 600EC54B2306588500222289 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 60180AB223585A7500C48293;
-			remoteInfo = GKNavigationBarViewControllerFramework;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		60180ACA23585A7500C48293 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				60180AC923585A7500C48293 /* GKNavigationBarViewController.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		269F61B4ACDBF25AE775D67A /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; path = "Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,7 +323,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60180AC823585A7500C48293 /* GKNavigationBarViewController.framework in Frameworks */,
 				8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,12 +734,10 @@
 				600EC5502306588500222289 /* Frameworks */,
 				600EC5512306588500222289 /* Resources */,
 				FD750B2577171B300714148B /* [CP] Embed Pods Frameworks */,
-				60180ACA23585A7500C48293 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				60180AC723585A7500C48293 /* PBXTargetDependency */,
 			);
 			name = GKNavigationBarViewControllerDemo;
 			productName = GKNavigationBarViewControllerDemo;
@@ -1046,11 +1020,6 @@
 			target = 600EC5522306588500222289 /* GKNavigationBarViewControllerDemo */;
 			targetProxy = 600EC56C2306588700222289 /* PBXContainerItemProxy */;
 		};
-		60180AC723585A7500C48293 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 60180AB223585A7500C48293 /* GKNavigationBarViewControllerFramework */;
-			targetProxy = 60180AC623585A7500C48293 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1270,7 +1239,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GKNavigationBarViewControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1303,7 +1272,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GKNavigationBarViewControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
