@@ -65,3 +65,17 @@
 }
 
 @end
+
+static const void* GKCaptureImageKey         = @"GKCaptureImage";
+
+@implementation UIViewController (GKCapture)
+
+- (void)setGk_captureImage:(UIImage *)gk_captureImage {
+    objc_setAssociatedObject(self, &GKCaptureImageKey, gk_captureImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIImage *)gk_captureImage{
+    return objc_getAssociatedObject(self, &GKCaptureImageKey);
+}
+
+@end

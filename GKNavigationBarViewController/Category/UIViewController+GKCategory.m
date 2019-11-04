@@ -137,7 +137,8 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
     if (self.navigationController.childViewControllers.count <= 1) return;
     
     if (self.gk_backStyle != GKNavigationBarBackStyleNone) {
-        UIImage *backImage = self.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+        NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+        UIImage *backImage = [UIImage gk_imageNamed:imageName];
         
         if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;

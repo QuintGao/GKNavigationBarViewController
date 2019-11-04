@@ -25,6 +25,7 @@
         configure.gk_scaleY = 0.92;
         configure.gk_navItemLeftSpace = 12.0f;
         configure.gk_navItemRightSpace = 12.0f;
+        configure.gk_disableFixSpace = YES;
     }];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

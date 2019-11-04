@@ -15,6 +15,10 @@ iOS自定义导航栏 - 导航栏联动效果
   [iOS自定义导航栏-导航栏联动（一）](http://www.jianshu.com/p/5662cdf4393e),[GKNavigationController](https://github.com/QuintGao/GKNavigationController)
 
   [iOS自定义导航栏-导航栏联动（二）](http://www.jianshu.com/p/5ba9b12ec933),[GKNavigationBarViewController](https://github.com/QuintGao/GKNavigationBarViewController)
+  
+## GKNavigationBar
+
+该库的另一种实现方式[GKNavigationBar](https://github.com/QuintGao/GKNavigationBar)，无侵入性，耦合度低，推荐使用
 
 ## 说明：
 
@@ -148,6 +152,7 @@ pod 'GKNavigationBarViewController'
 
 
 ## 时间记录(倒序)
+* 2019.11.04 -- 2.4.0 优化部分代码及功能
 * 2019.10.17 -- 2.3.7 优化代码，删除弃用方法，增加对Carthage的支持
 * 2019.10.10 -- 2.3.6 优化带tabbar的控制器的push、pop动画，已知bug修复
 * 2019.8.2     -- 2.3.4 适配iOS13，优化导航栏左右item间距的处理

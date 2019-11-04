@@ -143,18 +143,19 @@
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
         if (self.isGesturePush) {
-            if (self.navigationController.gk_openScrollLeftPush && [self.pushDelegate respondsToSelector:@selector(pushNext)]) {
-                self.pushTransition = [UIPercentDrivenInteractiveTransition new];
-                self.pushTransition.completionCurve = UIViewAnimationCurveEaseOut;
-                
-                [self.pushDelegate pushNext];
-                
-                [self.pushTransition updateInteractiveTransition:0];
+            if (self.navigationController.gk_openScrollLeftPush) {
+                if (visibleVC.gk_pushDelegate && [visibleVC.gk_pushDelegate respondsToSelector:@selector(pushToNextViewController)]) {
+                    self.pushTransition = [UIPercentDrivenInteractiveTransition new];
+                    self.pushTransition.completionCurve = UIViewAnimationCurveEaseOut;
+                    [self.pushTransition updateInteractiveTransition:0];
+                    
+                    [visibleVC.gk_pushDelegate pushToNextViewController];
+                }
             }
         }else {
             if (visibleVC.gk_popDelegate) {
                 if ([visibleVC.gk_popDelegate respondsToSelector:@selector(viewControllerPopScrollBegan)]) {
-                    [self.navigationController.visibleViewController.gk_popDelegate viewControllerPopScrollBegan];
+                    [visibleVC.gk_popDelegate viewControllerPopScrollBegan];
                 }
             }else {
                 self.popTransition = [UIPercentDrivenInteractiveTransition new];
@@ -163,7 +164,7 @@
         }
     }else if (gesture.state == UIGestureRecognizerStateChanged) {
         if (self.isGesturePush) {
-            if (self.navigationController.gk_openScrollLeftPush) {
+            if (self.pushTransition) {
                 [self.pushTransition updateInteractiveTransition:progress];
             }
         }else {
@@ -177,7 +178,7 @@
         }
     }else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
         if (self.isGesturePush) {
-            if (self.navigationController.gk_openScrollLeftPush) {
+            if (self.pushTransition) {
                 if (progress > GKConfigure.gk_pushTransitionCriticalValue) {
                     [self.pushTransition finishInteractiveTransition];
                 }else {
