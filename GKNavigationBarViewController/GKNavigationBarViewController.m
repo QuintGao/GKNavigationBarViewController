@@ -110,9 +110,6 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
-    self.gk_statusBarHidden     = configure.statusBarHidden;
-    self.gk_statusBarStyle      = configure.statusBarStyle;
-    self.gk_backStyle           = configure.backStyle;
     self.isSettingItemSpace     = YES;
     self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
     self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;
