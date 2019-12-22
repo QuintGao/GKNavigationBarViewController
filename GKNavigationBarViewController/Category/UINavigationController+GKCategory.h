@@ -11,7 +11,7 @@
 #import "UIBarButtonItem+GKCategory.h"
 #import "GKDelegateHandler.h"
 
-@interface UINavigationController (GKCategory)<GKViewControllerScrollPushDelegate>
+@interface UINavigationController (GKCategory)
 
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale;
 

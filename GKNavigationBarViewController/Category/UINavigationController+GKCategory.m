@@ -111,23 +111,6 @@
     }
 }
 
-#pragma mark - StatusBar
-- (UIViewController *)childViewControllerForStatusBarHidden {
-    return self.visibleViewController;
-}
-
-- (UIViewController *)childViewControllerForStatusBarStyle {
-    return self.visibleViewController;
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return self.visibleViewController.gk_statusBarHidden;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.visibleViewController.gk_statusBarStyle;
-}
-
 #pragma mark - getter
 - (BOOL)gk_translationScale {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -155,7 +138,6 @@
     if (!delegate) {
         delegate = [GKNavigationControllerDelegate new];
         delegate.navigationController = self;
-        delegate.pushDelegate         = self;
         
         objc_setAssociatedObject(self, _cmd, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -198,16 +180,6 @@
 
 - (void)setGk_openScrollLeftPush:(BOOL)gk_openScrollLeftPush {
     objc_setAssociatedObject(self, @selector(gk_openScrollLeftPush), @(gk_openScrollLeftPush), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark - GKViewControllerScrollPushDelegate
-- (void)pushNext {
-    // 获取当前控制器
-    UIViewController *currentVC = self.visibleViewController;
-    
-    if ([currentVC.gk_pushDelegate respondsToSelector:@selector(pushToNextViewController)]) {
-        [currentVC.gk_pushDelegate pushToNextViewController];
-    }
 }
 
 @end

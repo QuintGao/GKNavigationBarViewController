@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// 左滑push代理
-@protocol GKViewControllerScrollPushDelegate <NSObject>
-
-- (void)pushNext;
-
-@end
-
 @class GKNavigationControllerDelegate;
 // 此类用于处理UIGestureRecognizerDelegate的代理方法
 @interface GKPopGestureRecognizerDelegate : NSObject<UIGestureRecognizerDelegate>
@@ -32,8 +25,6 @@
 @interface GKNavigationControllerDelegate : NSObject<UINavigationControllerDelegate>
 
 @property (nonatomic, weak) UINavigationController *navigationController;
-
-@property (nonatomic, weak) id<GKViewControllerScrollPushDelegate> pushDelegate;
 
 // 手势Action
 - (void)panGestureAction:(UIPanGestureRecognizer *)gesture;

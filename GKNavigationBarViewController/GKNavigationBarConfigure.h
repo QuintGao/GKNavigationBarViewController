@@ -36,7 +36,6 @@
 
 /** 是否禁止调整间距，默认NO */
 @property (nonatomic, assign) BOOL      gk_disableFixSpace;
-@property (nonatomic, assign, readonly) BOOL gk_lastDisableFixSpace;
 
 /** 左滑push过渡临界值，默认0.3，大于此值完成push操作 */
 @property (nonatomic, assign) CGFloat   gk_pushTransitionCriticalValue;
