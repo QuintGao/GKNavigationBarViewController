@@ -201,11 +201,7 @@
 - (void)setGk_navBackgroundColor:(UIColor *)gk_navBackgroundColor {
     _gk_navBackgroundColor = gk_navBackgroundColor;
     
-    if (gk_navBackgroundColor == [UIColor clearColor]) {
-        [self.gk_navigationBar setBackgroundImage:[self imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
-    }else {
-        [self.gk_navigationBar setBackgroundImage:[self imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-    }
+    [self.gk_navigationBar setBackgroundImage:[UIImage gk_imageWithColor:gk_navBackgroundColor] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)setGk_navBackgroundImage:(UIImage *)gk_navBackgroundImage {
@@ -217,7 +213,7 @@
 - (void)setGk_navShadowColor:(UIColor *)gk_navShadowColor {
     _gk_navShadowColor = gk_navShadowColor;
     
-    self.gk_navigationBar.shadowImage = [self changeImage:[UIImage gk_imageNamed:@"nav_line"] withColor:gk_navShadowColor];
+    self.gk_navigationBar.shadowImage = [UIImage gk_changeImage:[UIImage imageNamed:@"nav_line"] color:gk_navShadowColor];
 }
 
 - (void)setGk_navShadowImage:(UIImage *)gk_navShadowImage {
@@ -313,58 +309,4 @@
     [self.gk_navigationBar layoutSubviews];
 }
 
-- (UIImage *)imageWithColor:(UIColor *)color {
-    return [self imageWithColor:color size:CGSizeMake(1.0, 1.0)];
-}
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    
-    UIGraphicsBeginImageContext(size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, color.CGColor);
-    
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-- (UIImage *)changeImage:(UIImage *)img withColor:(UIColor *)color {
-    UIGraphicsBeginImageContextWithOptions(img.size, NO, img.scale);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context, 0, img.size.height);
-    CGContextScaleCTM(context, 1.0, -1.0);
-    CGContextSetBlendMode(context, kCGBlendModeNormal);
-    CGRect rect = CGRectMake(0, 0, img.size.width, img.size.height);
-    CGContextClipToMask(context, rect, img.CGImage);
-    [color setFill];
-    CGContextFillRect(context, rect);
-    UIImage*newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
