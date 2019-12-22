@@ -16,23 +16,26 @@
 
 @implementation GKDemo001ViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.gk_statusBarStyle       = UIStatusBarStyleLightContent;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navTitle = @"控制器001";
-    
     self.view.backgroundColor    = [UIColor whiteColor];
+    self.gk_navTitle             = @"控制器001";
     self.gk_navBackgroundColor   = [UIColor orangeColor];
-    self.gk_statusBarStyle       = UIStatusBarStyleLightContent;
     self.gk_backStyle            = GKNavigationBarBackStyleWhite;
     self.gk_navLineHidden        = YES;
+    self.gk_navItemRightSpace    = 12.0f;
+    self.gk_navItemLeftSpace     = 16.0f;
     
-    self.gk_navItemRightSpace       = 12.0f;
-    self.gk_navItemLeftSpace        = 16.0f;
-    
-    UIBarButtonItem *cancelBtn = [UIBarButtonItem itemWithTitle:@"取消" target:self action:@selector(dismiss)];
-    
-    UIBarButtonItem *backBtn = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(dismiss)];
+    UIBarButtonItem *cancelBtn   = [UIBarButtonItem itemWithTitle:@"取消" target:self action:@selector(dismiss)];
+    UIBarButtonItem *backBtn     = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(dismiss)];
     self.gk_navLeftBarButtonItem    = backBtn;
     self.gk_navRightBarButtonItem   = cancelBtn;
     

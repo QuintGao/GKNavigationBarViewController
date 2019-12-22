@@ -96,7 +96,7 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
 
 - (UIStatusBarStyle)gk_statusBarStyle {
     id style = objc_getAssociatedObject(self, GKStatusBarStyleKey);
-    return (style != nil) ? [style integerValue] : UIStatusBarStyleDefault;
+    return (style != nil) ? [style integerValue] : GKConfigure.statusBarStyle;
 }
 
 - (void)setGk_statusBarStyle:(UIStatusBarStyle)gk_statusBarStyle {
@@ -104,14 +104,15 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
     
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // 调用隐藏方法
-        [self prefersStatusBarHidden];
+        [self preferredStatusBarStyle];
         
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
     }
 }
 
 - (BOOL)gk_statusBarHidden {
-    return [objc_getAssociatedObject(self, GKStatusBarHiddenKey) boolValue];
+    id objc = objc_getAssociatedObject(self, GKStatusBarHiddenKey);
+    return (objc != nil) ? [objc boolValue] : GKConfigure.statusBarHidden;
 }
 
 - (void)setGk_statusBarHidden:(BOOL)gk_statusBarHidden {
@@ -128,7 +129,7 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
 - (GKNavigationBarBackStyle)gk_backStyle {
     id style = objc_getAssociatedObject(self, GKBackStyleKey);
     
-    return (style != nil) ? [style integerValue] : GKNavigationBarBackStyleBlack;
+    return (style != nil) ? [style integerValue] : GKConfigure.backStyle;
 }
 
 - (void)setGk_backStyle:(GKNavigationBarBackStyle)gk_backStyle {
@@ -137,7 +138,8 @@ static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
     if (self.navigationController.childViewControllers.count <= 1) return;
     
     if (self.gk_backStyle != GKNavigationBarBackStyleNone) {
-        UIImage *backImage = self.gk_backStyle == GKNavigationBarBackStyleBlack ? GKImage(@"btn_back_black") : GKImage(@"btn_back_white");
+        NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+        UIImage *backImage = [UIImage gk_imageNamed:imageName];
         
         if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;

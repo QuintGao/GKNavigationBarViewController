@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GKNavigationBarConfigure.h"
-#import "UIViewController+GKCapture.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -45,6 +44,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 获取某个view的截图
 - (UIImage *)getCaptureWithView:(UIView *)view;
+
+@end
+
+@interface UIViewController (GKCapture)
+
+@property (nonatomic, strong) UIImage *gk_captureImage;
 
 @end
 

@@ -65,7 +65,7 @@
     if (!_backBtn) {
         UIButton *back = [UIButton new];
         back.frame = CGRectMake(0, 0, 44, 44);
-        [back setImage:GKImage(@"btn_back_black") forState:UIControlStateNormal];
+        [back setImage:[UIImage gk_imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
         back.backgroundColor = [UIColor redColor];
         
         _backBtn = [[UIBarButtonItem alloc] initWithCustomView:back];

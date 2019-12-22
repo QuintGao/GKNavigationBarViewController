@@ -110,9 +110,6 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
-    self.gk_statusBarHidden     = configure.statusBarHidden;
-    self.gk_statusBarStyle      = configure.statusBarStyle;
-    self.gk_backStyle           = configure.backStyle;
     self.isSettingItemSpace     = YES;
     self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
     self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;
@@ -220,7 +217,7 @@
 - (void)setGk_navShadowColor:(UIColor *)gk_navShadowColor {
     _gk_navShadowColor = gk_navShadowColor;
     
-    self.gk_navigationBar.shadowImage = [self changeImage:GKImage(@"nav_line") withColor:gk_navShadowColor];
+    self.gk_navigationBar.shadowImage = [self changeImage:[UIImage gk_imageNamed:@"nav_line"] withColor:gk_navShadowColor];
 }
 
 - (void)setGk_navShadowImage:(UIImage *)gk_navShadowImage {
@@ -354,4 +351,20 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
