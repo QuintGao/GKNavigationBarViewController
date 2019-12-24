@@ -110,6 +110,8 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
+    self.gk_backStyle           = configure.backStyle;
+    
     self.isSettingItemSpace     = YES;
     self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
     self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;

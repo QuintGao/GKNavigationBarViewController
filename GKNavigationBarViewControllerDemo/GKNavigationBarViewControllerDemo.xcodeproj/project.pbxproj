@@ -542,22 +542,18 @@
 		600EC6B423067F5300222289 /* GKNavigationBarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				600EC6B523067F5400222289 /* TransitionAnimation */,
-				600EC6BE23067F5400222289 /* Category */,
-				600EC6D123067F5400222289 /* GKCommon.h */,
 				600EC6CC23067F5400222289 /* GKNavigationBarViewController.h */,
 				600EC6D023067F5400222289 /* GKNavigationBarViewController.m */,
-				600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */,
-				600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */,
-				600EC6D223067F5400222289 /* GKNavigationBar.h */,
-				600EC6CE23067F5400222289 /* GKNavigationBar.m */,
+				602ED48023B1FEE6006696C6 /* GKConfigure */,
+				600EC6B523067F5400222289 /* GKTransition */,
+				600EC6BE23067F5400222289 /* GKCategory */,
 				600EC6CF23067F5400222289 /* GKNavigationBarViewController.bundle */,
 			);
 			name = GKNavigationBarViewController;
 			path = ../../GKNavigationBarViewController;
 			sourceTree = "<group>";
 		};
-		600EC6B523067F5400222289 /* TransitionAnimation */ = {
+		600EC6B523067F5400222289 /* GKTransition */ = {
 			isa = PBXGroup;
 			children = (
 				600EC6BB23067F5400222289 /* GKDelegateHandler.h */,
@@ -569,10 +565,10 @@
 				600EC6BD23067F5400222289 /* GKBaseTransitionAnimation.h */,
 				600EC6B923067F5400222289 /* GKBaseTransitionAnimation.m */,
 			);
-			path = TransitionAnimation;
+			path = GKTransition;
 			sourceTree = "<group>";
 		};
-		600EC6BE23067F5400222289 /* Category */ = {
+		600EC6BE23067F5400222289 /* GKCategory */ = {
 			isa = PBXGroup;
 			children = (
 				600EC6C523067F5400222289 /* GKCategory.h */,
@@ -589,7 +585,7 @@
 				60116319236FF52900622897 /* UIImage+GKCategory.h */,
 				6011631A236FF52900622897 /* UIImage+GKCategory.m */,
 			);
-			path = Category;
+			path = GKCategory;
 			sourceTree = "<group>";
 		};
 		60180AB423585A7500C48293 /* GKNavigationBarViewControllerFramework */ = {
@@ -598,6 +594,18 @@
 				60180AB623585A7500C48293 /* Info.plist */,
 			);
 			path = GKNavigationBarViewControllerFramework;
+			sourceTree = "<group>";
+		};
+		602ED48023B1FEE6006696C6 /* GKConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				600EC6D123067F5400222289 /* GKCommon.h */,
+				600EC6D223067F5400222289 /* GKNavigationBar.h */,
+				600EC6CE23067F5400222289 /* GKNavigationBar.m */,
+				600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */,
+				600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */,
+			);
+			path = GKConfigure;
 			sourceTree = "<group>";
 		};
 		D7F64A91D4217D7E5C3F0E36 /* Frameworks */ = {
