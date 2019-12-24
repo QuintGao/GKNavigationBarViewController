@@ -11,8 +11,6 @@
 
 @interface GKNavigationBarConfigure()
 
-@property (nonatomic, assign) BOOL  gk_lastDisableFixSpace;
-
 @end
 
 @implementation GKNavigationBarConfigure
@@ -52,8 +50,6 @@ static GKNavigationBarConfigure *instance = nil;
     self.gk_translationY = 5.0f;
     self.gk_scaleX = 0.95;
     self.gk_scaleY = 0.97;
-    
-    self.gk_lastDisableFixSpace = self.gk_lastDisableFixSpace;
 }
 
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {
@@ -68,15 +64,11 @@ static GKNavigationBarConfigure *instance = nil;
     [self setupDefaultConfigure];
     
     !block ? : block(self);
-    
-    self.gk_lastDisableFixSpace = self.gk_disableFixSpace;
 }
 
 // 更新配置
 - (void)updateConfigure:(void (^)(GKNavigationBarConfigure *configure))block {
     !block ? : block(self);
-    
-    self.gk_lastDisableFixSpace = self.gk_disableFixSpace;
 }
 
 // 获取当前显示的控制器

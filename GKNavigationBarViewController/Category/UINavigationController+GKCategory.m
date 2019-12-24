@@ -182,14 +182,4 @@
     objc_setAssociatedObject(self, @selector(gk_openScrollLeftPush), @(gk_openScrollLeftPush), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-#pragma mark - GKViewControllerScrollPushDelegate
-- (void)pushNext {
-    // 获取当前控制器
-    UIViewController *currentVC = self.visibleViewController;
-    
-    if ([currentVC.gk_pushDelegate respondsToSelector:@selector(pushToNextViewController)]) {
-        [currentVC.gk_pushDelegate pushToNextViewController];
-    }
-}
-
 @end
