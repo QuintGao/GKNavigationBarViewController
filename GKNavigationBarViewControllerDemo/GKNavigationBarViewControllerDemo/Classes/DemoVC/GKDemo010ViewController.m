@@ -7,6 +7,7 @@
 //
 
 #import "GKDemo010ViewController.h"
+#import "GKDemo014ViewController.h"
 
 @interface GKDemo010ViewController ()
 
@@ -31,8 +32,10 @@
     
     self.gk_navBackgroundColor = [UIColor grayColor];
     
-    self.gk_navLeftBarButtonItem = self.backBtn;
+    self.gk_navLeftBarButtonItem  = self.backBtn;
     self.gk_navRightBarButtonItem = self.moreBtn;
+    self.gk_navItemLeftSpace  = 20;
+    self.gk_navItemRightSpace = 30;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -41,11 +44,20 @@
     self.textLabel.frame = CGRectMake(50, 200, 200, 40);
     self.textLabel.textColor = [UIColor redColor];
     self.textLabel.font = [UIFont systemFontOfSize:16.0f];
+    self.textLabel.userInteractionEnabled = YES;
     [self.view addSubview:self.textLabel];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textClick)];
+    [self.textLabel addGestureRecognizer:tap];
      
     self.itemSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(250, 200, 0, 0)];
     [self.view addSubview:self.itemSwitch];
     [self.itemSwitch addTarget:self action:@selector(witchClick:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)textClick {
+    GKDemo014ViewController *demoVC = [GKDemo014ViewController new];
+    [self.navigationController pushViewController:demoVC animated:YES];
 }
 
 - (void)witchClick:(id)sender {
