@@ -15,9 +15,6 @@
 
 @property (nonatomic, strong) UINavigationItem  *gk_navigationItem;
 
-@property (nonatomic, assign) CGFloat           last_navItemLeftSpace;
-@property (nonatomic, assign) CGFloat           last_navItemRightSpace;
-
 @end
 
 @implementation GKNavigationBarViewController
@@ -66,8 +63,8 @@
     
     // 重置navitem_space
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace  = self.last_navItemLeftSpace;
-        configure.gk_navItemRightSpace = self.last_navItemRightSpace;
+        configure.gk_navItemLeftSpace  = configure.navItemLeftSpace;
+        configure.gk_navItemRightSpace = configure.navItemRightSpace;
     }];
 }
 
@@ -119,9 +116,6 @@
     
     self.gk_navItemLeftSpace    = GKNavigationBarItemSpace;
     self.gk_navItemRightSpace   = GKNavigationBarItemSpace;
-    
-    self.last_navItemLeftSpace  = configure.gk_navItemLeftSpace;
-    self.last_navItemRightSpace = configure.gk_navItemRightSpace;
 }
 
 - (void)viewWillLayoutSubviews {

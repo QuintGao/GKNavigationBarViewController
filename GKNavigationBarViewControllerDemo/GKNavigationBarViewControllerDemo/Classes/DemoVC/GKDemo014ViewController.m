@@ -9,6 +9,7 @@
 #import "GKDemo014ViewController.h"
 #import <WebKit/WebKit.h>
 #import "GKDemo001ViewController.h"
+#import "GKDemo015ViewController.h"
 
 @interface GKDemo014ViewController ()<WKNavigationDelegate>
 
@@ -38,6 +39,11 @@
     
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [self.webView loadHTMLString:htmlString baseURL:nil];
+}
+
+- (void)jump {
+    GKDemo015ViewController *vc = [GKDemo015ViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - WKNavigationDelegate
@@ -109,6 +115,7 @@
         [close setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         close.backgroundColor = [UIColor redColor];
         
+        [close addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
         _closeBtn = [[UIBarButtonItem alloc] initWithCustomView:close];
     }
     return _closeBtn;

@@ -11,6 +11,9 @@
 
 @interface GKNavigationBarConfigure()
 
+@property (nonatomic, assign) CGFloat navItemLeftSpace;
+@property (nonatomic, assign) CGFloat navItemRightSpace;
+
 @end
 
 @implementation GKNavigationBarConfigure
@@ -40,8 +43,11 @@ static GKNavigationBarConfigure *instance = nil;
     
     self.backStyle       = GKNavigationBarBackStyleBlack;
     
-    self.gk_navItemLeftSpace   = 0;
-    self.gk_navItemRightSpace  = 0;
+    self.gk_navItemLeftSpace    = 0;
+    self.gk_navItemRightSpace   = 0;
+    
+    self.navItemLeftSpace       = 0;
+    self.navItemRightSpace      = 0;
     
     self.gk_pushTransitionCriticalValue = 0.3;
     self.gk_popTransitionCriticalValue  = 0.5;
@@ -64,6 +70,9 @@ static GKNavigationBarConfigure *instance = nil;
     [self setupDefaultConfigure];
     
     !block ? : block(self);
+    
+    self.navItemLeftSpace  = self.gk_navItemLeftSpace;
+    self.navItemRightSpace = self.gk_navItemRightSpace;
 }
 
 // 更新配置

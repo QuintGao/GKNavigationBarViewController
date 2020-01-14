@@ -52,6 +52,10 @@
 @property (nonatomic, assign) CGFloat   gk_scaleX;
 @property (nonatomic, assign) CGFloat   gk_scaleY;
 
+/// 导航栏左右间距，内部使用
+@property (nonatomic, assign, readonly) CGFloat navItemLeftSpace;
+@property (nonatomic, assign, readonly) CGFloat navItemRightSpace;
+
 + (instancetype)sharedInstance;
 
 // 统一配置导航栏外观，最好在AppDelegate中配置
