@@ -15,11 +15,6 @@
 
 @property (nonatomic, strong) UINavigationItem  *gk_navigationItem;
 
-@property (nonatomic, assign) CGFloat           last_navItemLeftSpace;
-@property (nonatomic, assign) CGFloat           last_navItemRightSpace;
-
-@property (nonatomic, assign) BOOL              isSettingItemSpace;
-
 @end
 
 @implementation GKNavigationBarViewController
@@ -45,6 +40,14 @@
         [self.view bringSubviewToFront:self.gk_navigationBar];
     }
     
+    if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
+        self.gk_navItemLeftSpace = GKConfigure.gk_navItemLeftSpace;
+    }
+    
+    if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
+        self.gk_navItemRightSpace = GKConfigure.gk_navItemRightSpace;
+    }
+    
     // 重置navitem_space
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
         configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
@@ -60,8 +63,8 @@
     
     // 重置navitem_space
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace  = self.last_navItemLeftSpace;
-        configure.gk_navItemRightSpace = self.last_navItemRightSpace;
+        configure.gk_navItemLeftSpace  = configure.navItemLeftSpace;
+        configure.gk_navItemRightSpace = configure.navItemRightSpace;
     }];
 }
 
@@ -95,7 +98,6 @@
  设置导航栏外观
  */
 - (void)setupNavBarAppearance {
-    
     GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
     
     if (configure.backgroundColor) {
@@ -110,12 +112,10 @@
         self.gk_navTitleFont = configure.titleFont;
     }
     
-    self.isSettingItemSpace     = YES;
-    self.gk_navItemLeftSpace    = configure.gk_navItemLeftSpace;
-    self.gk_navItemRightSpace   = configure.gk_navItemRightSpace;
-    self.last_navItemLeftSpace  = configure.gk_navItemLeftSpace;
-    self.last_navItemRightSpace = configure.gk_navItemRightSpace;
-    self.isSettingItemSpace     = NO;
+    self.gk_backStyle           = configure.backStyle;
+    
+    self.gk_navItemLeftSpace    = GKNavigationBarItemSpace;
+    self.gk_navItemRightSpace   = GKNavigationBarItemSpace;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -277,21 +277,19 @@
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {
     _gk_navItemLeftSpace = gk_navItemLeftSpace;
     
-    if (self.isSettingItemSpace) return;
+    if (gk_navItemLeftSpace == GKNavigationBarItemSpace) return;
     
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
         configure.gk_navItemLeftSpace   = gk_navItemLeftSpace;
-        configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
     }];
 }
 
 - (void)setGk_navItemRightSpace:(CGFloat)gk_navItemRightSpace {
     _gk_navItemRightSpace = gk_navItemRightSpace;
 
-    if (self.isSettingItemSpace) return;
+    if (gk_navItemRightSpace == GKNavigationBarItemSpace) return;
     
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
         configure.gk_navItemRightSpace  = gk_navItemRightSpace;
     }];
 }

@@ -38,6 +38,9 @@ CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
 :\
 NO)
 
+// 导航栏间距，用于不同控制器之间的间距
+static const CGFloat GKNavigationBarItemSpace = -1;
+
 typedef NS_ENUM(NSUInteger, GKNavigationBarBackStyle) {
     GKNavigationBarBackStyleNone,    // 无返回按钮，可自行设置
     GKNavigationBarBackStyleBlack,   // 黑色返回按钮
