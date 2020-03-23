@@ -8,7 +8,6 @@
 
 #import "GKNavigationBarViewController.h"
 #import <JXCategoryView/JXCategoryView.h>
-#import <JXCategoryView/JXCategoryListCollectionContainerView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface GKDemoListView : UIView<JXCategoryListCollectionContentViewDelegate>
+@interface GKDemoListView : UIView<JXCategoryListContentViewDelegate>
 
 @end
 

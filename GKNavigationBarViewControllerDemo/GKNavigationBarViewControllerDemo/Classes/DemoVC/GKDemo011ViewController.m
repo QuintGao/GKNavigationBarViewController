@@ -9,11 +9,11 @@
 #import "GKDemo011ViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
-@interface GKDemo011ViewController ()<JXCategoryViewDelegate, JXCategoryListCollectionContainerViewDataSource>
+@interface GKDemo011ViewController ()<JXCategoryViewDelegate, JXCategoryListContainerViewDelegate>
 
 @property (nonatomic, strong) JXCategoryTitleView   *segmentedView;
 
-@property (nonatomic, strong) JXCategoryListCollectionContainerView *containerView;
+@property (nonatomic, strong) JXCategoryListContainerView *containerView;
 
 @property (nonatomic, strong) NSArray   *titles;
 
@@ -41,12 +41,12 @@
     }];
 }
 
-#pragma mark - JXCategoryListCollectionContainerViewDataSource
-- (NSInteger)numberOfListsInlistContainerView:(JXCategoryListCollectionContainerView *)listContainerView {
+#pragma mark - JXCategoryListContainerViewDelegate
+- (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {
     return self.titles.count;
 }
 
-- (id<JXCategoryListCollectionContentViewDelegate>)listContainerView:(JXCategoryListCollectionContainerView *)listContainerView initListForIndex:(NSInteger)index {
+- (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     GKDemoListView *listView = [GKDemoListView new];
     return listView;
 }
@@ -74,16 +74,16 @@
         lineView.lineStyle = JXCategoryIndicatorLineStyle_Lengthen;
         _segmentedView.indicators = @[lineView];
         
-        _segmentedView.contentScrollView = self.containerView.collectionView;
+        _segmentedView.listContainer = self.containerView;
         
         _segmentedView.collectionView.gk_disableGestureHandle = YES;
     }
     return _segmentedView;
 }
 
-- (JXCategoryListCollectionContainerView *)containerView {
+- (JXCategoryListContainerView *)containerView {
     if (!_containerView) {
-        _containerView = [[JXCategoryListCollectionContainerView alloc] initWithDataSource:self];
+        _containerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_CollectionView delegate:self];
     }
     return _containerView;
 }
