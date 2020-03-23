@@ -13,9 +13,6 @@
 @interface JXCategoryTitleCell ()
 @property (nonatomic, strong) CALayer *titleMaskLayer;
 @property (nonatomic, strong) CALayer *maskTitleMaskLayer;
-@property (nonatomic, strong) NSLayoutConstraint *titleLabelCenterX;
-@property (nonatomic, strong) NSLayoutConstraint *titleLabelCenterY;
-@property (nonatomic, strong) NSLayoutConstraint *maskTitleLabelCenterX;
 @property (nonatomic, strong) NSLayoutConstraint *maskTitleLabelCenterY;
 @end
 
@@ -24,7 +21,7 @@
 - (void)initializeViews
 {
     [super initializeViews];
-    
+
     _titleLabel = [[UILabel alloc] init];
     self.titleLabel.clipsToBounds = YES;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -33,7 +30,8 @@
 
     self.titleLabelCenterX = [NSLayoutConstraint constraintWithItem:self.titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     self.titleLabelCenterY = [NSLayoutConstraint constraintWithItem:self.titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-    [NSLayoutConstraint activateConstraints:@[self.titleLabelCenterX, self.titleLabelCenterY]];
+    self.titleLabelCenterX.active = YES;
+    self.titleLabelCenterY.active = YES;
 
     _titleMaskLayer = [CALayer layer];
     self.titleMaskLayer.backgroundColor = [UIColor redColor].CGColor;
@@ -46,7 +44,8 @@
 
     self.maskTitleLabelCenterX = [NSLayoutConstraint constraintWithItem:self.maskTitleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     self.maskTitleLabelCenterY = [NSLayoutConstraint constraintWithItem:self.maskTitleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-    [NSLayoutConstraint activateConstraints:@[self.maskTitleLabelCenterX, self.maskTitleLabelCenterY]];
+    self.maskTitleLabelCenterX.active = YES;
+    self.maskTitleLabelCenterY.active = YES;
 
     _maskTitleMaskLayer = [CALayer layer];
     self.maskTitleMaskLayer.backgroundColor = [UIColor redColor].CGColor;
@@ -65,10 +64,16 @@
             self.titleLabelCenterY.constant = 0 + myCellModel.titleLabelVerticalOffset;
             break;
         case JXCategoryTitleLabelAnchorPointStyleTop:
-            self.titleLabelCenterY.constant = -self.titleLabel.bounds.size.height/2 - myCellModel.titleLabelVerticalOffset;
+        {
+            CGFloat percent = (myCellModel.titleLabelCurrentZoomScale - myCellModel.titleLabelNormalZoomScale)/(myCellModel.titleLabelSelectedZoomScale - myCellModel.titleLabelNormalZoomScale);
+            self.titleLabelCenterY.constant = -self.titleLabel.bounds.size.height/2 - myCellModel.titleLabelVerticalOffset - myCellModel.titleLabelZoomSelectedVerticalOffset*percent;
+        }
             break;
         case JXCategoryTitleLabelAnchorPointStyleBottom:
-            self.titleLabelCenterY.constant = self.titleLabel.bounds.size.height/2 + myCellModel.titleLabelVerticalOffset;
+        {
+            CGFloat percent = (myCellModel.titleLabelCurrentZoomScale - myCellModel.titleLabelNormalZoomScale)/(myCellModel.titleLabelSelectedZoomScale - myCellModel.titleLabelNormalZoomScale);
+            self.titleLabelCenterY.constant = self.titleLabel.bounds.size.height/2 + myCellModel.titleLabelVerticalOffset + myCellModel.titleLabelZoomSelectedVerticalOffset*percent;
+        }
             break;
         default:
             break;
