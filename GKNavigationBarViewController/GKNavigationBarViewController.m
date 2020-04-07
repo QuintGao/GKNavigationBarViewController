@@ -311,7 +311,7 @@
         }else if (self.gk_navShadowImage) {
             shadowImage = self.gk_navShadowImage;
         }else if (self.gk_navShadowColor) {
-            shadowImage = [UIImage gk_changeImage:[UIImage imageNamed:@"nav_line"] color:self.gk_navShadowColor];
+            shadowImage = [UIImage gk_changeImage:[UIImage gk_imageNamed:@"nav_line"] color:self.gk_navShadowColor];
         }
         self.gk_navigationBar.shadowImage = shadowImage;
     }

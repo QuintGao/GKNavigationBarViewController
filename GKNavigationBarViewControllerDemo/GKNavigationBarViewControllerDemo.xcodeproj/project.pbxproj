@@ -324,12 +324,12 @@
 			children = (
 				79C48BC7243CC462000B0815 /* GKMainViewController.h */,
 				79C48BFC243CC463000B0815 /* GKMainViewController.m */,
+				79C48BF1243CC463000B0815 /* BaseVC */,
+				79C48BD6243CC462000B0815 /* DemoVC */,
 				79C48C0F243CC463000B0815 /* 抖音 */,
 				79C48BC8243CC462000B0815 /* 今日头条 */,
 				79C48BFD243CC463000B0815 /* 网易新闻 */,
 				79C48BE3243CC462000B0815 /* 网易云音乐 */,
-				79C48BF1243CC463000B0815 /* BaseVC */,
-				79C48BD6243CC462000B0815 /* DemoVC */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
