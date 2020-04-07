@@ -1,17 +1,16 @@
 //
-//  GKDemo014ViewController.m
+//  GKDemoWebViewController.m
 //  GKNavigationBarExample
 //
 //  Created by QuintGao on 2019/11/15.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "GKDemo014ViewController.h"
+#import "GKDemoWebViewController.h"
 #import <WebKit/WebKit.h>
 #import "GKDemo001ViewController.h"
-#import "GKDemo015ViewController.h"
 
-@interface GKDemo014ViewController ()<WKNavigationDelegate>
+@interface GKDemoWebViewController ()<WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -20,7 +19,7 @@
 
 @end
 
-@implementation GKDemo014ViewController
+@implementation GKDemoWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,15 +34,15 @@
         make.top.equalTo(self.gk_navigationBar.mas_bottom);
     }];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"014" ofType:@"txt"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"web" ofType:@"txt"];
     
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [self.webView loadHTMLString:htmlString baseURL:nil];
 }
 
 - (void)jump {
-    GKDemo015ViewController *vc = [GKDemo015ViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+//    GKDemo015ViewController *vc = [GKDemo015ViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - WKNavigationDelegate

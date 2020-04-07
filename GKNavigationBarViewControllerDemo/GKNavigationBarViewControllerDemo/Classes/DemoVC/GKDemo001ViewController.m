@@ -1,5 +1,5 @@
 //
-//  GKFirstViewController.m
+//  GKDemo001ViewController.m
 //  GKNavigationController
 //
 //  Created by QuintGao on 2017/6/22.
@@ -7,91 +7,63 @@
 //
 
 #import "GKDemo001ViewController.h"
-#import "GKDemo002ViewController.h"
-#import "GKDemo005ViewController.h"
 
-@interface GKDemo001ViewController ()<GKViewControllerPushDelegate, GKViewControllerPopDelegate>
+@interface GKDemo001ViewController()<UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, strong) NSArray *images;
 
 @end
 
 @implementation GKDemo001ViewController
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.gk_statusBarStyle       = UIStatusBarStyleLightContent;
+- (NSArray *)images {
+    if (!_images) {
+        NSMutableArray *images = [NSMutableArray new];
+        for (NSInteger i = 0; i < 7; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"00%zd", i + 1];
+            
+            [images addObject:[UIImage imageNamed:imageName]];
+        }
+        _images = [NSArray arrayWithArray:images];
     }
-    return self;
+    return _images;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor    = [UIColor whiteColor];
-    self.gk_navTitle             = @"控制器001";
-    self.gk_navBackgroundColor   = [UIColor orangeColor];
-    self.gk_backStyle            = GKNavigationBarBackStyleWhite;
-    self.gk_navLineHidden        = YES;
-    self.gk_navItemRightSpace    = 12.0f;
-    self.gk_navItemLeftSpace     = 16.0f;
+//    self.navigationController.navigationBar.hidden = YES;
+    self.gk_navigationBar.hidden = YES;
     
-    UIBarButtonItem *cancelBtn   = [UIBarButtonItem itemWithTitle:@"取消" target:self action:@selector(dismiss)];
-    UIBarButtonItem *backBtn     = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(dismiss)];
-    self.gk_navLeftBarButtonItem    = backBtn;
-    self.gk_navRightBarButtonItem   = cancelBtn;
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *btn = [UIButton new];
-    btn.frame = CGRectMake(100, 400, 60, 20);
-    btn.backgroundColor = [UIColor blackColor];
-    [btn setTitle:@"Push" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    [self setupUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
+- (void)setupUI {
     
-    // 设置左滑push代理
-    self.gk_pushDelegate = self;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    self.scrollView.delegate        = self;
+    self.scrollView.pagingEnabled   = YES;
+    self.scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.scrollView];
     
-    // 取消左滑push代理
-    self.gk_pushDelegate = nil;
-}
-
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
-}
-
-#pragma mark - GKNavigationControllerPushDelegate
-- (void)pushToNextViewController {
-    GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
-    demo002VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:demo002VC animated:YES];
-}
-
-- (void)dismiss {
-    if ([self.tabBarController isKindOfClass:[GKDemo005ViewController class]]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
+    CGFloat scrollW = self.scrollView.frame.size.width;
+    CGFloat scrollH = self.scrollView.frame.size.height;
+    
+    for (NSInteger i = 0; i < self.images.count; i++) {
+        UIImageView *imageView = [UIImageView new];
+        imageView.frame = CGRectMake(i * scrollW, 0, scrollW, scrollH);
+        imageView.image = self.images[i];
+        [self.scrollView addSubview:imageView];
     }
-}
-
-- (void)btnAction {
-    GKDemo002ViewController *demo002VC = [GKDemo002ViewController new];
-    demo002VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:demo002VC animated:YES];
+    [self.scrollView setContentSize:CGSizeMake(self.images.count * scrollW, 0)];
 }
 
 @end

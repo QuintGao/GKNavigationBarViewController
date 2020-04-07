@@ -15,14 +15,21 @@
 
 @implementation GKWYMusicFriendViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.gk_statusBarStyle = UIStatusBarStyleLightContent;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"朋友";
+    self.gk_navigationItem.title = @"朋友";
     
     self.gk_navBackgroundColor = [UIColor colorWithRed:(200 / 255.0) green:(39 / 255.0) blue:(39 / 255.0) alpha:1.0];
     
-    UIBarButtonItem *backItem = [UIBarButtonItem itemWithTitle:@"返回" imageName:@"btn_back_white" target:self action:@selector(backAction)];
+    UIBarButtonItem *backItem = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(backAction)];
     
     UIBarButtonItem *moreItem = [UIBarButtonItem itemWithTitle:@"更多" target:self action:@selector(moreAction)];
     
@@ -31,6 +38,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)backAction {

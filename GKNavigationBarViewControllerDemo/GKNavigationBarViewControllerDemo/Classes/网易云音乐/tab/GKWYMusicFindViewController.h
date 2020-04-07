@@ -6,8 +6,9 @@
 //  Copyright © 2017年 高坤. All rights reserved.
 //
 
-#import "GKNavigationBarViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKWYMusicFindViewController : GKNavigationBarViewController
+@interface GKWYMusicFindViewController : GKBaseViewController
 
 @end

@@ -6,8 +6,9 @@
 //  Copyright © 2018年 gaokun. All rights reserved.
 //
 
-#import "GKNavigationBarViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKDouyinHomePlayerViewController : GKNavigationBarViewController
+@interface GKDouyinHomePlayerViewController : GKBaseViewController
 
 @end

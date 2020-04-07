@@ -15,10 +15,17 @@
 
 @implementation GKWYMusicMineViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.gk_statusBarStyle = UIStatusBarStyleLightContent;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的音乐";
+    self.gk_navigationItem.title = @"我的音乐";
     
     self.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:@"更多" target:self action:@selector(hideTabBar)];
     
@@ -38,6 +45,10 @@
     
     pageImage.userInteractionEnabled = YES;
     [pageImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageAction)]];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)pageAction {

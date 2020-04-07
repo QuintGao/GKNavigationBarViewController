@@ -1,13 +1,18 @@
 //
 //  GKMainViewController.h
-//  GKNavigationBarViewControllerDemo
+//  GKNavigationBar
 //
-//  Created by QuintGao on 2017/7/8.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by gaokun on 2019/11/1.
+//  Copyright © 2019 QuintGao. All rights reserved.
 //
 
-#import "GKNavigationBarViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKMainViewController : GKNavigationBarViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface GKMainViewController : GKBaseViewController
 
 @end
+
+NS_ASSUME_NONNULL_END

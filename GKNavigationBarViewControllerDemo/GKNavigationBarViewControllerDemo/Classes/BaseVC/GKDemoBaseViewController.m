@@ -27,7 +27,6 @@
     [super viewDidLoad];
     
     [self setupUI];
-    
 }
 
 - (void)dealloc {
