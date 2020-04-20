@@ -1,13 +1,18 @@
 //
-//  GKThirdViewController.h
-//  GKNavigationController
+//  GKDemo003ViewController.h
+//  GKNavigationBarViewControllerDemo
 //
-//  Created by QuintGao on 2017/6/21.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by gaokun on 2019/6/26.
+//  Copyright © 2019 gaokun. All rights reserved.
 //
 
-#import "GKDemoBaseViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKDemo003ViewController : GKDemoBaseViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface GKDemo003ViewController : GKBaseViewController
 
 @end
+
+NS_ASSUME_NONNULL_END

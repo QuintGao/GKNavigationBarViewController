@@ -1,9 +1,9 @@
 //
-//  GKThirdViewController.m
-//  GKNavigationController
+//  GKDemo003ViewController.m
+//  GKNavigationBarViewControllerDemo
 //
-//  Created by QuintGao on 2017/6/21.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by gaokun on 2019/6/26.
+//  Copyright © 2019 gaokun. All rights reserved.
 //
 
 #import "GKDemo003ViewController.h"
@@ -14,34 +14,18 @@
 
 @implementation GKDemo003ViewController
 
-- (void)loadView {
-    [super loadView];
-    
-    self.view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"001"]];
-    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.userInteractionEnabled = YES;
-    
-    self.gk_navigationBar.hidden = YES;
-    
-    self.navigationItem.title = @"控制器003";
-    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *btn = [UIButton new];
-    btn.frame = CGRectMake(100, 400, 60, 20);
-    btn.backgroundColor = [UIColor blackColor];
-    [btn setTitle:@"Pop" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    self.navigationItem.title = @"系统导航";
 }
 
-- (void)btnAction {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 @end

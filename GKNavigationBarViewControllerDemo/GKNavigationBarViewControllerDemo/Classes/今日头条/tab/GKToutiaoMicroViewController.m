@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"微头条";
+    self.gk_navigationItem.title = @"微头条";
     
     self.gk_navTitleColor = [UIColor greenColor];
     

@@ -60,14 +60,45 @@
     [super refreshSelectedCellModel:selectedCellModel unselectedCellModel:unselectedCellModel];
 
     JXCategoryTitleCellModel *myUnselectedCellModel = (JXCategoryTitleCellModel *)unselectedCellModel;
-    myUnselectedCellModel.titleCurrentColor = myUnselectedCellModel.titleNormalColor;
-    myUnselectedCellModel.titleLabelCurrentZoomScale = myUnselectedCellModel.titleLabelNormalZoomScale;
-    myUnselectedCellModel.titleLabelCurrentStrokeWidth = myUnselectedCellModel.titleLabelNormalStrokeWidth;
-
     JXCategoryTitleCellModel *myselectedCellModel = (JXCategoryTitleCellModel *)selectedCellModel;
-    myselectedCellModel.titleCurrentColor = myUnselectedCellModel.titleSelectedColor;
-    myselectedCellModel.titleLabelCurrentZoomScale = myUnselectedCellModel.titleLabelSelectedZoomScale;
-    myselectedCellModel.titleLabelCurrentStrokeWidth = myUnselectedCellModel.titleLabelSelectedStrokeWidth;
+    if (self.isSelectedAnimationEnabled) {
+        //开启了动画过渡，且cell在屏幕内，current的属性值会在cell里面进行动画插值更新
+        //1、当unselectedCell在屏幕外的时候，还是需要在这里更新值
+        //2、当selectedCell在屏幕外的时候，还是需要在这里更新值（比如调用selectItemAtIndex方法选中的时候）
+        BOOL isUnselectedCellVisible = NO;
+        BOOL isSelectedCellVisible = NO;
+        NSArray *indexPaths = [self.collectionView indexPathsForVisibleItems];
+        for (NSIndexPath *indexPath in indexPaths) {
+            if (indexPath.item == myUnselectedCellModel.index) {
+                isUnselectedCellVisible = YES;
+                continue;
+            }else if (indexPath.item == myselectedCellModel.index) {
+                isSelectedCellVisible = YES;
+                continue;
+            }
+        }
+        if (!isUnselectedCellVisible) {
+            //但是当unselectedCell在屏幕外时，不会在cell里面通过动画插值更新，在这里直接更新
+            myUnselectedCellModel.titleCurrentColor = myUnselectedCellModel.titleNormalColor;
+            myUnselectedCellModel.titleLabelCurrentZoomScale = myUnselectedCellModel.titleLabelNormalZoomScale;
+            myUnselectedCellModel.titleLabelCurrentStrokeWidth = myUnselectedCellModel.titleLabelNormalStrokeWidth;
+        }
+        if (!isSelectedCellVisible) {
+            //但是当selectedCell在屏幕外时，不会在cell里面通过动画插值更新，在这里直接更新
+            myselectedCellModel.titleCurrentColor = myselectedCellModel.titleSelectedColor;
+            myselectedCellModel.titleLabelCurrentZoomScale = myselectedCellModel.titleLabelSelectedZoomScale;
+            myselectedCellModel.titleLabelCurrentStrokeWidth = myselectedCellModel.titleLabelSelectedStrokeWidth;
+        }
+    }else {
+        //没有开启动画，可以直接更新属性
+        myselectedCellModel.titleCurrentColor = myselectedCellModel.titleSelectedColor;
+        myselectedCellModel.titleLabelCurrentZoomScale = myselectedCellModel.titleLabelSelectedZoomScale;
+        myselectedCellModel.titleLabelCurrentStrokeWidth = myselectedCellModel.titleLabelSelectedStrokeWidth;
+
+        myUnselectedCellModel.titleCurrentColor = myUnselectedCellModel.titleNormalColor;
+        myUnselectedCellModel.titleLabelCurrentZoomScale = myUnselectedCellModel.titleLabelNormalZoomScale;
+        myUnselectedCellModel.titleLabelCurrentStrokeWidth = myUnselectedCellModel.titleLabelNormalStrokeWidth;
+    }
 }
 
 - (void)refreshLeftCellModel:(JXCategoryBaseCellModel *)leftCellModel rightCellModel:(JXCategoryBaseCellModel *)rightCellModel ratio:(CGFloat)ratio {
@@ -117,6 +148,7 @@
     model.titleLabelMaskEnabled = self.isTitleLabelMaskEnabled;
     model.titleLabelZoomEnabled = self.isTitleLabelZoomEnabled;
     model.titleLabelNormalZoomScale = 1;
+    model.titleLabelZoomSelectedVerticalOffset = self.titleLabelZoomSelectedVerticalOffset;
     model.titleLabelSelectedZoomScale = self.titleLabelZoomScale;
     model.titleLabelStrokeWidthEnabled = self.isTitleLabelStrokeWidthEnabled;
     model.titleLabelNormalStrokeWidth = 0;

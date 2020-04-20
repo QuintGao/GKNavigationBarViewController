@@ -1,8 +1,8 @@
 PODS:
-  - JXCategoryView (1.3.16)
+  - JXCategoryView (1.5.2)
   - Masonry (1.1.0)
-  - MJRefresh (3.2.0)
-  - TZImagePickerController (3.2.4)
+  - MJRefresh (3.3.1)
+  - TZImagePickerController (3.2.9)
 
 DEPENDENCIES:
   - JXCategoryView
@@ -18,10 +18,10 @@ SPEC REPOS:
     - TZImagePickerController
 
 SPEC CHECKSUMS:
-  JXCategoryView: 037618624e69d6e28c0388a7cfd9851ebf041793
+  JXCategoryView: b284d35a7a8772eada05dd78642233e1eb763ea8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  TZImagePickerController: d259369c5c2cc96299e53da868ae5be1b24353cd
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  TZImagePickerController: 1f92968aa0e98a06b9e2eccca8560acc19254257
 
 PODFILE CHECKSUM: 63d49064e0b9d80953660d434fc27d8c9b62e3ef
 

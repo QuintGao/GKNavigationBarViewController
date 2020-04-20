@@ -1,17 +1,15 @@
 //
-//  GKSecondViewController.m
-//  GKNavigationController
+//  GKDemo002ViewController.m
+//  GKNavigationBarViewControllerDemo
 //
-//  Created by QuintGao on 2017/6/21.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by QuintGao on 2018/7/31.
+//  Copyright © 2018年 gaokun. All rights reserved.
 //
 
 #import "GKDemo002ViewController.h"
-#import "GKDemo003ViewController.h"
+#import <TZImagePickerController/TZImagePickerController.h>
 
-@interface GKDemo002ViewController ()<UIScrollViewDelegate>
-
-@property (nonatomic, strong) UIScrollView *scrollView;
+@interface GKDemo002ViewController ()<TZImagePickerControllerDelegate>
 
 @end
 
@@ -22,64 +20,38 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.gk_navTitle = @"控制器002";
-    self.gk_navBackgroundColor = [UIColor clearColor];
-    self.gk_backStyle = GKNavigationBarBackStyleBlack;
-    
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.scrollView.delegate = self;
-    self.scrollView.backgroundColor = [UIColor whiteColor];
-    self.scrollView.contentSize     = CGSizeMake(0, self.view.frame.size.height + 500);
-    [self.view insertSubview:self.scrollView atIndex:0];
-    
-    
-    UIButton *btn = [UIButton new];
-    btn.frame = CGRectMake(100, 400, 60, 20);
-    btn.backgroundColor = [UIColor blackColor];
-    [btn setTitle:@"Push" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
+    self.gk_navigationItem.title = @"嵌套TZImagePickerController";
     
     self.gk_statusBarStyle = UIStatusBarStyleDefault;
-}
-
-- (void)btnAction {
-    GKDemo003ViewController *demo003VC = [GKDemo003ViewController new];
-    demo003VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:demo003VC animated:YES];
+    
+    UILabel *label = [UILabel new];
+    label.font = [UIFont systemFontOfSize:16.0f];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"点击屏幕选取图片";
+    [label sizeToFit];
+    
+    label.frame = CGRectMake(0, 200, self.view.frame.size.width, label.frame.size.height);
+    [self.view addSubview:label];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (self.gk_statusBarStyle == UIStatusBarStyleDefault) {
-        self.gk_statusBarStyle = UIStatusBarStyleLightContent;
-    }else {
-        self.gk_statusBarStyle = UIStatusBarStyleDefault;
-    }
+    TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    GKConfigure.gk_disableFixSpace = YES;
+    [self presentViewController:pickerVC animated:YES completion:nil];
 }
 
-#pragma mark - UIScrollViewDelegate
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
 
-// 渐变导航栏
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat contentY = scrollView.contentOffset.y;
-    
-    if (contentY <= 0) {
-        self.gk_navBarAlpha = 0;
-        return;
-    }
-    
-    // 渐变区间 (0 - 80)
-    if (contentY > 0 && contentY < 160) {
-        CGFloat alpha = contentY / (160 - 0);
-        
-        self.gk_navBarAlpha = alpha;
-        self.gk_backStyle = GKNavigationBarBackStyleWhite;
-    }else {
-        self.gk_navBarAlpha = 1.0;
-        
-        self.gk_backStyle = GKNavigationBarBackStyleBlack;
-    }
+#pragma mark - TZImagePickerControllerDelegate
+- (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
+    GKConfigure.gk_disableFixSpace = NO;
+}
+
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    GKConfigure.gk_disableFixSpace = NO;
 }
 
 @end

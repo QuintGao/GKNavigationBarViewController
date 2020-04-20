@@ -8,13 +8,10 @@
 
 #import "GKTabBaseViewController.h"
 #import "UIView+Extension.h"
-#import "GKDemo005ViewController.h"
 
 @interface GKTabBaseViewController ()
 
-@property (nonatomic, strong) UILabel *contentLabel;
-
-@property (nonatomic, strong) UIButton *pushBtn;
+@property (nonatomic, strong) UIBarButtonItem *closeItem;
 
 @end
 
@@ -23,58 +20,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupUI];
+    self.gk_navRightBarButtonItem = self.closeItem;
 }
 
-- (void)setupUI {
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.pushBtn = [UIButton new];
-    self.pushBtn.frame = CGRectMake(0, 199, 60, 20);
-    self.pushBtn.centerX = self.view.centerX;
-    self.pushBtn.backgroundColor = [UIColor blackColor];
-    [self.pushBtn setTitle:@"push" forState:UIControlStateNormal];
-    [self.pushBtn addTarget:self action:@selector(pushAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.pushBtn];
-    
-    self.contentLabel = [UILabel new];
-    self.contentLabel.textColor = [UIColor blackColor];
-    self.contentLabel.font = [UIFont systemFontOfSize:16.0];
-    self.contentLabel.numberOfLines = 0;
-    self.contentLabel.textAlignment = NSTextAlignmentCenter;
-    self.contentLabel.width = self.view.width - 80;
-    [self.view addSubview:self.contentLabel];
-    
-    [self showBackBtn];
+- (void)closeAction {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)showBackBtn {
-    UIButton *btn = [UIButton new];
-    [btn setImage:[UIImage imageNamed:@"btn_back_white"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [btn sizeToFit];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-}
-
-- (void)btnClick:(id)sender {
-    
-    if ([self.tabBarController isKindOfClass:[GKDemo005ViewController class]]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
+- (UIBarButtonItem *)closeItem {
+    if (!_closeItem) {
+        UIButton *btn = [UIButton new];
+        btn.frame = CGRectMake(0, 0, 44, 44);
+        [btn setTitle:@"关闭" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
+        
+        _closeItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
-}
-
-- (void)pushAction{}
-
-- (void)setContentText:(NSString *)contentText {
-    _contentText = contentText;
-    
-    self.contentLabel.text = contentText;
-    [self.contentLabel sizeToFit];
-    self.contentLabel.center = self.view.center;
+    return _closeItem;
 }
 
 @end

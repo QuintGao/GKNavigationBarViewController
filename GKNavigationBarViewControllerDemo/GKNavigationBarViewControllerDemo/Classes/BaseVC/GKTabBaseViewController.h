@@ -6,16 +6,9 @@
 //  Copyright © 2017年 高坤. All rights reserved.
 //
 
-#import "GKNavigationBarViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKTabBaseViewController : GKNavigationBarViewController
-
-@property (nonatomic, assign) BOOL  isScale;
-
-@property (nonatomic, copy) NSString *contentText;
-
-- (void)showBackBtn;
-
-- (void)pushAction;
+@interface GKTabBaseViewController : GKBaseViewController
 
 @end

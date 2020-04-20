@@ -15,7 +15,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 配置导航栏属性
     [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {

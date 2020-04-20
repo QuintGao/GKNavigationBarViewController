@@ -12,50 +12,6 @@
 		600EC5632306588700222289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600EC5612306588700222289 /* LaunchScreen.storyboard */; };
 		600EC5662306588700222289 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5652306588700222289 /* main.m */; };
 		600EC5702306588700222289 /* GKNavigationBarViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC56F2306588700222289 /* GKNavigationBarViewControllerDemoTests.m */; };
-		600EC60C23065FA700222289 /* GKWYMusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B023065FA600222289 /* GKWYMusicDetailViewController.m */; };
-		600EC60D23065FA700222289 /* GKWYMusicFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B123065FA600222289 /* GKWYMusicFriendViewController.m */; };
-		600EC60E23065FA700222289 /* GKWYMusicFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B223065FA600222289 /* GKWYMusicFindViewController.m */; };
-		600EC60F23065FA700222289 /* GKWYMusicMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B323065FA600222289 /* GKWYMusicMineViewController.m */; };
-		600EC61023065FA700222289 /* GKWYMusicAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B523065FA600222289 /* GKWYMusicAccountViewController.m */; };
-		600EC61123065FA700222289 /* GKWYMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B623065FA600222289 /* GKWYMusicViewController.m */; };
-		600EC61223065FA700222289 /* GKWYNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5B823065FA600222289 /* GKWYNewsViewController.m */; };
-		600EC61323065FA700222289 /* GKWYNewsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5BB23065FA600222289 /* GKWYNewsHomeViewController.m */; };
-		600EC61423065FA700222289 /* GKWYNewsNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5BC23065FA600222289 /* GKWYNewsNewViewController.m */; };
-		600EC61523065FA700222289 /* GKWYNewsProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5BD23065FA700222289 /* GKWYNewsProfileViewController.m */; };
-		600EC61623065FA700222289 /* GKWYNewsCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5BF23065FA700222289 /* GKWYNewsCommentViewController.m */; };
-		600EC61723065FA700222289 /* GKWYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5C223065FA700222289 /* GKWYNewsDetailViewController.m */; };
-		600EC61823065FA700222289 /* GKWYNewsVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5C623065FA700222289 /* GKWYNewsVideoViewController.m */; };
-		600EC61923065FA700222289 /* GKWYNewsLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5C723065FA700222289 /* GKWYNewsLiveViewController.m */; };
-		600EC61A23065FA700222289 /* GKToutiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5CA23065FA700222289 /* GKToutiaoViewController.m */; };
-		600EC61B23065FA700222289 /* GKToutiaoMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5CC23065FA700222289 /* GKToutiaoMineViewController.m */; };
-		600EC61C23065FA700222289 /* GKToutiaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5CE23065FA700222289 /* GKToutiaoDetailViewController.m */; };
-		600EC61D23065FA700222289 /* GKToutiaoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5CF23065FA700222289 /* GKToutiaoVideoViewController.m */; };
-		600EC61E23065FA700222289 /* GKToutiaoMicroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5D123065FA700222289 /* GKToutiaoMicroViewController.m */; };
-		600EC61F23065FA700222289 /* GKToutiaoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5D523065FA700222289 /* GKToutiaoHomeViewController.m */; };
-		600EC62023065FA700222289 /* GKTabBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5DA23065FA700222289 /* GKTabBaseViewController.m */; };
-		600EC62123065FA700222289 /* GKDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5DB23065FA700222289 /* GKDemoBaseViewController.m */; };
-		600EC62223065FA700222289 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5DC23065FA700222289 /* UIView+Extension.m */; };
-		600EC62323065FA700222289 /* GKDouyinHomePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5E323065FA700222289 /* GKDouyinHomePlayerViewController.m */; };
-		600EC62423065FA700222289 /* GKDouyinHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5E423065FA700222289 /* GKDouyinHomeViewController.m */; };
-		600EC62523065FA700222289 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5E523065FA700222289 /* GKDouyinScrollView.m */; };
-		600EC62623065FA700222289 /* GKDouyinPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5E623065FA700222289 /* GKDouyinPersonalViewController.m */; };
-		600EC62723065FA700222289 /* GKDouyinHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5E723065FA700222289 /* GKDouyinHomeSearchViewController.m */; };
-		600EC62823065FA700222289 /* GKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5EA23065FA700222289 /* GKMainViewController.m */; };
-		600EC62923065FA700222289 /* GKTab001ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5EE23065FA700222289 /* GKTab001ViewController.m */; };
-		600EC62A23065FA700222289 /* GKTab003ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5EF23065FA700222289 /* GKTab003ViewController.m */; };
-		600EC62B23065FA700222289 /* GKTab002ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5F023065FA700222289 /* GKTab002ViewController.m */; };
-		600EC62C23065FA700222289 /* GKDemo010ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5F323065FA700222289 /* GKDemo010ViewController.m */; };
-		600EC62D23065FA700222289 /* GKDemo009ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5F423065FA700222289 /* GKDemo009ViewController.m */; };
-		600EC62E23065FA700222289 /* GKDemo006ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5F523065FA700222289 /* GKDemo006ViewController.m */; };
-		600EC62F23065FA700222289 /* GKDemo001ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5F823065FA700222289 /* GKDemo001ViewController.m */; };
-		600EC63023065FA700222289 /* GKDemo011ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5FB23065FA700222289 /* GKDemo011ViewController.m */; };
-		600EC63123065FA700222289 /* GKDemo008ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5FC23065FA700222289 /* GKDemo008ViewController.m */; };
-		600EC63223065FA700222289 /* GKDemo007ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5FE23065FA700222289 /* GKDemo007ViewController.m */; };
-		600EC63323065FA700222289 /* GKDemo002ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC60023065FA700222289 /* GKDemo002ViewController.m */; };
-		600EC63423065FA700222289 /* GKDemo005ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC60523065FA700222289 /* GKDemo005ViewController.m */; };
-		600EC63523065FA700222289 /* GKDemo012ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC60623065FA700222289 /* GKDemo012ViewController.m */; };
-		600EC63623065FA700222289 /* GKDemo004ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC60723065FA700222289 /* GKDemo004ViewController.m */; };
-		600EC63723065FA700222289 /* GKDemo003ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC60823065FA700222289 /* GKDemo003ViewController.m */; };
 		600EC6D423067F5400222289 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */; };
 		600EC6D523067F5400222289 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B723067F5400222289 /* GKDelegateHandler.m */; };
 		600EC6D623067F5400222289 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */; };
@@ -100,15 +56,46 @@
 		60180AEE23585BF500C48293 /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180AEF23585BF500C48293 /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6D223067F5400222289 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180B342358669300C48293 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 60180B332358669300C48293 /* .travis.yml */; };
-		603C8EE0234ED0A2001B4C3C /* GKDemo013ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603C8EDF234ED0A2001B4C3C /* GKDemo013ViewController.m */; };
-		603C8EE3234ED4ED001B4C3C /* GKPushTab001ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603C8EE2234ED4ED001B4C3C /* GKPushTab001ViewController.m */; };
-		603C8EE6234ED4F7001B4C3C /* GKPushTab002ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603C8EE5234ED4F7001B4C3C /* GKPushTab002ViewController.m */; };
-		603C8EEC234ED5F7001B4C3C /* GKDemo013PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603C8EEB234ED5F7001B4C3C /* GKDemo013PushViewController.m */; };
-		60B2CEC823CDB42E00D57911 /* GKDemo014ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2CEC623CDB42E00D57911 /* GKDemo014ViewController.m */; };
-		60B2CEC923CDB42E00D57911 /* GKDemo015ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2CEC723CDB42E00D57911 /* GKDemo015ViewController.m */; };
 		60D0DC07236FF8B800266415 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6011631A236FF52900622897 /* UIImage+GKCategory.m */; };
 		60D0DC08236FF8C200266415 /* UIImage+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60116319236FF52900622897 /* UIImage+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		793A13CE234B1B380085DF82 /* UIViewController+FullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */; };
+		79C48C1A243CC464000B0815 /* GKToutiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BC9243CC462000B0815 /* GKToutiaoViewController.m */; };
+		79C48C1B243CC464000B0815 /* GKToutiaoMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */; };
+		79C48C1C243CC464000B0815 /* GKToutiaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */; };
+		79C48C1D243CC464000B0815 /* GKToutiaoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BCE243CC462000B0815 /* GKToutiaoVideoViewController.m */; };
+		79C48C1E243CC464000B0815 /* GKToutiaoMicroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BD0243CC462000B0815 /* GKToutiaoMicroViewController.m */; };
+		79C48C1F243CC464000B0815 /* GKToutiaoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BD4243CC462000B0815 /* GKToutiaoHomeViewController.m */; };
+		79C48C20243CC464000B0815 /* GKDemo000ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C48BD7243CC462000B0815 /* GKDemo000ViewController.xib */; };
+		79C48C21243CC464000B0815 /* GKDemo001ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BDA243CC462000B0815 /* GKDemo001ViewController.m */; };
+		79C48C22243CC464000B0815 /* GKDemo000ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BDB243CC462000B0815 /* GKDemo000ViewController.m */; };
+		79C48C23243CC464000B0815 /* GKDemo002ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BDD243CC462000B0815 /* GKDemo002ViewController.m */; };
+		79C48C24243CC464000B0815 /* GKDemoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BDF243CC462000B0815 /* GKDemoWebViewController.m */; };
+		79C48C25243CC464000B0815 /* GKDemo003ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BE1243CC462000B0815 /* GKDemo003ViewController.m */; };
+		79C48C26243CC464000B0815 /* web.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79C48BE2243CC462000B0815 /* web.txt */; };
+		79C48C27243CC464000B0815 /* GKWYMusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BEA243CC462000B0815 /* GKWYMusicDetailViewController.m */; };
+		79C48C28243CC464000B0815 /* GKWYMusicFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BEB243CC462000B0815 /* GKWYMusicFriendViewController.m */; };
+		79C48C29243CC464000B0815 /* GKWYMusicFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BEC243CC462000B0815 /* GKWYMusicFindViewController.m */; };
+		79C48C2A243CC464000B0815 /* GKWYMusicMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BED243CC462000B0815 /* GKWYMusicMineViewController.m */; };
+		79C48C2B243CC464000B0815 /* GKWYMusicAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BEF243CC462000B0815 /* GKWYMusicAccountViewController.m */; };
+		79C48C2C243CC464000B0815 /* GKWYMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BF0243CC462000B0815 /* GKWYMusicViewController.m */; };
+		79C48C2D243CC464000B0815 /* GKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BF3243CC463000B0815 /* GKBaseViewController.m */; };
+		79C48C2E243CC464000B0815 /* GKTabBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BF5243CC463000B0815 /* GKTabBaseViewController.m */; };
+		79C48C2F243CC464000B0815 /* GKDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BF7243CC463000B0815 /* GKDemoBaseViewController.m */; };
+		79C48C30243CC464000B0815 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BF9243CC463000B0815 /* UIView+Extension.m */; };
+		79C48C31243CC464000B0815 /* GKBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BFA243CC463000B0815 /* GKBaseNavigationController.m */; };
+		79C48C32243CC464000B0815 /* GKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BFC243CC463000B0815 /* GKMainViewController.m */; };
+		79C48C33243CC464000B0815 /* GKWYNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BFE243CC463000B0815 /* GKWYNewsViewController.m */; };
+		79C48C34243CC464000B0815 /* GKWYNewsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C01243CC463000B0815 /* GKWYNewsHomeViewController.m */; };
+		79C48C35243CC464000B0815 /* GKWYNewsNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C02243CC463000B0815 /* GKWYNewsNewViewController.m */; };
+		79C48C36243CC464000B0815 /* GKWYNewsProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C03243CC463000B0815 /* GKWYNewsProfileViewController.m */; };
+		79C48C37243CC464000B0815 /* GKWYNewsCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C05243CC463000B0815 /* GKWYNewsCommentViewController.m */; };
+		79C48C38243CC464000B0815 /* GKWYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C08243CC463000B0815 /* GKWYNewsDetailViewController.m */; };
+		79C48C39243CC464000B0815 /* GKWYNewsVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C0C243CC463000B0815 /* GKWYNewsVideoViewController.m */; };
+		79C48C3A243CC464000B0815 /* GKWYNewsLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C0D243CC463000B0815 /* GKWYNewsLiveViewController.m */; };
+		79C48C3B243CC464000B0815 /* GKDouyinHomePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C14243CC463000B0815 /* GKDouyinHomePlayerViewController.m */; };
+		79C48C3C243CC464000B0815 /* GKDouyinHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C15243CC463000B0815 /* GKDouyinHomeViewController.m */; };
+		79C48C3D243CC464000B0815 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C16243CC463000B0815 /* GKDouyinScrollView.m */; };
+		79C48C3E243CC464000B0815 /* GKDouyinPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C17243CC464000B0815 /* GKDouyinPersonalViewController.m */; };
+		79C48C3F243CC464000B0815 /* GKDouyinHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C18243CC464000B0815 /* GKDouyinHomeSearchViewController.m */; };
 		8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,94 +121,6 @@
 		600EC56B2306588700222289 /* GKNavigationBarViewControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKNavigationBarViewControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		600EC56F2306588700222289 /* GKNavigationBarViewControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewControllerDemoTests.m; sourceTree = "<group>"; };
 		600EC5712306588700222289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		600EC5AA23065FA600222289 /* GKWYMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicViewController.h; sourceTree = "<group>"; };
-		600EC5AC23065FA600222289 /* GKWYMusicMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicMineViewController.h; sourceTree = "<group>"; };
-		600EC5AD23065FA600222289 /* GKWYMusicFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicFindViewController.h; sourceTree = "<group>"; };
-		600EC5AE23065FA600222289 /* GKWYMusicFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicFriendViewController.h; sourceTree = "<group>"; };
-		600EC5AF23065FA600222289 /* GKWYMusicAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicAccountViewController.h; sourceTree = "<group>"; };
-		600EC5B023065FA600222289 /* GKWYMusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicDetailViewController.m; sourceTree = "<group>"; };
-		600EC5B123065FA600222289 /* GKWYMusicFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicFriendViewController.m; sourceTree = "<group>"; };
-		600EC5B223065FA600222289 /* GKWYMusicFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicFindViewController.m; sourceTree = "<group>"; };
-		600EC5B323065FA600222289 /* GKWYMusicMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicMineViewController.m; sourceTree = "<group>"; };
-		600EC5B423065FA600222289 /* GKWYMusicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicDetailViewController.h; sourceTree = "<group>"; };
-		600EC5B523065FA600222289 /* GKWYMusicAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicAccountViewController.m; sourceTree = "<group>"; };
-		600EC5B623065FA600222289 /* GKWYMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicViewController.m; sourceTree = "<group>"; };
-		600EC5B823065FA600222289 /* GKWYNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsViewController.m; sourceTree = "<group>"; };
-		600EC5BA23065FA600222289 /* GKWYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsDetailViewController.h; sourceTree = "<group>"; };
-		600EC5BB23065FA600222289 /* GKWYNewsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsHomeViewController.m; sourceTree = "<group>"; };
-		600EC5BC23065FA600222289 /* GKWYNewsNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsNewViewController.m; sourceTree = "<group>"; };
-		600EC5BD23065FA700222289 /* GKWYNewsProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsProfileViewController.m; sourceTree = "<group>"; };
-		600EC5BE23065FA700222289 /* GKWYNewsVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsVideoViewController.h; sourceTree = "<group>"; };
-		600EC5BF23065FA700222289 /* GKWYNewsCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsCommentViewController.m; sourceTree = "<group>"; };
-		600EC5C023065FA700222289 /* GKWYNewsLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsLiveViewController.h; sourceTree = "<group>"; };
-		600EC5C123065FA700222289 /* GKWYNewsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsHomeViewController.h; sourceTree = "<group>"; };
-		600EC5C223065FA700222289 /* GKWYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsDetailViewController.m; sourceTree = "<group>"; };
-		600EC5C323065FA700222289 /* GKWYNewsProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsProfileViewController.h; sourceTree = "<group>"; };
-		600EC5C423065FA700222289 /* GKWYNewsNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsNewViewController.h; sourceTree = "<group>"; };
-		600EC5C523065FA700222289 /* GKWYNewsCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsCommentViewController.h; sourceTree = "<group>"; };
-		600EC5C623065FA700222289 /* GKWYNewsVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsVideoViewController.m; sourceTree = "<group>"; };
-		600EC5C723065FA700222289 /* GKWYNewsLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsLiveViewController.m; sourceTree = "<group>"; };
-		600EC5C823065FA700222289 /* GKWYNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsViewController.h; sourceTree = "<group>"; };
-		600EC5CA23065FA700222289 /* GKToutiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoViewController.m; sourceTree = "<group>"; };
-		600EC5CC23065FA700222289 /* GKToutiaoMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoMineViewController.m; sourceTree = "<group>"; };
-		600EC5CD23065FA700222289 /* GKToutiaoMicroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoMicroViewController.h; sourceTree = "<group>"; };
-		600EC5CE23065FA700222289 /* GKToutiaoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoDetailViewController.m; sourceTree = "<group>"; };
-		600EC5CF23065FA700222289 /* GKToutiaoVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoVideoViewController.m; sourceTree = "<group>"; };
-		600EC5D023065FA700222289 /* GKToutiaoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoHomeViewController.h; sourceTree = "<group>"; };
-		600EC5D123065FA700222289 /* GKToutiaoMicroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoMicroViewController.m; sourceTree = "<group>"; };
-		600EC5D223065FA700222289 /* GKToutiaoMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoMineViewController.h; sourceTree = "<group>"; };
-		600EC5D323065FA700222289 /* GKToutiaoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoDetailViewController.h; sourceTree = "<group>"; };
-		600EC5D423065FA700222289 /* GKToutiaoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoVideoViewController.h; sourceTree = "<group>"; };
-		600EC5D523065FA700222289 /* GKToutiaoHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoHomeViewController.m; sourceTree = "<group>"; };
-		600EC5D623065FA700222289 /* GKToutiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoViewController.h; sourceTree = "<group>"; };
-		600EC5D823065FA700222289 /* GKDemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemoBaseViewController.h; sourceTree = "<group>"; };
-		600EC5D923065FA700222289 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		600EC5DA23065FA700222289 /* GKTabBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTabBaseViewController.m; sourceTree = "<group>"; };
-		600EC5DB23065FA700222289 /* GKDemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemoBaseViewController.m; sourceTree = "<group>"; };
-		600EC5DC23065FA700222289 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		600EC5DD23065FA700222289 /* GKTabBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTabBaseViewController.h; sourceTree = "<group>"; };
-		600EC5DF23065FA700222289 /* GKDouyinScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinScrollView.h; sourceTree = "<group>"; };
-		600EC5E023065FA700222289 /* GKDouyinHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeViewController.h; sourceTree = "<group>"; };
-		600EC5E123065FA700222289 /* GKDouyinHomeSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeSearchViewController.h; sourceTree = "<group>"; };
-		600EC5E223065FA700222289 /* GKDouyinPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinPersonalViewController.h; sourceTree = "<group>"; };
-		600EC5E323065FA700222289 /* GKDouyinHomePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomePlayerViewController.m; sourceTree = "<group>"; };
-		600EC5E423065FA700222289 /* GKDouyinHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeViewController.m; sourceTree = "<group>"; };
-		600EC5E523065FA700222289 /* GKDouyinScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinScrollView.m; sourceTree = "<group>"; };
-		600EC5E623065FA700222289 /* GKDouyinPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinPersonalViewController.m; sourceTree = "<group>"; };
-		600EC5E723065FA700222289 /* GKDouyinHomeSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeSearchViewController.m; sourceTree = "<group>"; };
-		600EC5E823065FA700222289 /* GKDouyinHomePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomePlayerViewController.h; sourceTree = "<group>"; };
-		600EC5E923065FA700222289 /* GKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMainViewController.h; sourceTree = "<group>"; };
-		600EC5EA23065FA700222289 /* GKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMainViewController.m; sourceTree = "<group>"; };
-		600EC5EC23065FA700222289 /* GKTab003ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTab003ViewController.h; sourceTree = "<group>"; };
-		600EC5ED23065FA700222289 /* GKTab002ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTab002ViewController.h; sourceTree = "<group>"; };
-		600EC5EE23065FA700222289 /* GKTab001ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTab001ViewController.m; sourceTree = "<group>"; };
-		600EC5EF23065FA700222289 /* GKTab003ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTab003ViewController.m; sourceTree = "<group>"; };
-		600EC5F023065FA700222289 /* GKTab002ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTab002ViewController.m; sourceTree = "<group>"; };
-		600EC5F123065FA700222289 /* GKTab001ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTab001ViewController.h; sourceTree = "<group>"; };
-		600EC5F323065FA700222289 /* GKDemo010ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo010ViewController.m; sourceTree = "<group>"; };
-		600EC5F423065FA700222289 /* GKDemo009ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo009ViewController.m; sourceTree = "<group>"; };
-		600EC5F523065FA700222289 /* GKDemo006ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo006ViewController.m; sourceTree = "<group>"; };
-		600EC5F623065FA700222289 /* GKDemo002ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo002ViewController.h; sourceTree = "<group>"; };
-		600EC5F723065FA700222289 /* GKDemo005ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo005ViewController.h; sourceTree = "<group>"; };
-		600EC5F823065FA700222289 /* GKDemo001ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo001ViewController.m; sourceTree = "<group>"; };
-		600EC5F923065FA700222289 /* GKDemo004ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo004ViewController.h; sourceTree = "<group>"; };
-		600EC5FA23065FA700222289 /* GKDemo012ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo012ViewController.h; sourceTree = "<group>"; };
-		600EC5FB23065FA700222289 /* GKDemo011ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo011ViewController.m; sourceTree = "<group>"; };
-		600EC5FC23065FA700222289 /* GKDemo008ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo008ViewController.m; sourceTree = "<group>"; };
-		600EC5FE23065FA700222289 /* GKDemo007ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo007ViewController.m; sourceTree = "<group>"; };
-		600EC5FF23065FA700222289 /* GKDemo003ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo003ViewController.h; sourceTree = "<group>"; };
-		600EC60023065FA700222289 /* GKDemo002ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo002ViewController.m; sourceTree = "<group>"; };
-		600EC60123065FA700222289 /* GKDemo006ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo006ViewController.h; sourceTree = "<group>"; };
-		600EC60223065FA700222289 /* GKDemo009ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo009ViewController.h; sourceTree = "<group>"; };
-		600EC60323065FA700222289 /* GKDemo010ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo010ViewController.h; sourceTree = "<group>"; };
-		600EC60423065FA700222289 /* GKDemo001ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo001ViewController.h; sourceTree = "<group>"; };
-		600EC60523065FA700222289 /* GKDemo005ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo005ViewController.m; sourceTree = "<group>"; };
-		600EC60623065FA700222289 /* GKDemo012ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo012ViewController.m; sourceTree = "<group>"; };
-		600EC60723065FA700222289 /* GKDemo004ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo004ViewController.m; sourceTree = "<group>"; };
-		600EC60823065FA700222289 /* GKDemo003ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo003ViewController.m; sourceTree = "<group>"; };
-		600EC60923065FA700222289 /* GKDemo007ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo007ViewController.h; sourceTree = "<group>"; };
-		600EC60A23065FA700222289 /* GKDemo008ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo008ViewController.h; sourceTree = "<group>"; };
-		600EC60B23065FA700222289 /* GKDemo011ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo011ViewController.h; sourceTree = "<group>"; };
 		600EC66523067CD000222289 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushTransitionAnimation.m; sourceTree = "<group>"; };
 		600EC6B723067F5400222289 /* GKDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDelegateHandler.m; sourceTree = "<group>"; };
@@ -257,21 +156,81 @@
 		60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKNavigationBarViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60180AB623585A7500C48293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60180B332358669300C48293 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .travis.yml; path = ../../.travis.yml; sourceTree = "<group>"; };
-		603C8EDE234ED0A2001B4C3C /* GKDemo013ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo013ViewController.h; sourceTree = "<group>"; };
-		603C8EDF234ED0A2001B4C3C /* GKDemo013ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo013ViewController.m; sourceTree = "<group>"; };
-		603C8EE1234ED4ED001B4C3C /* GKPushTab001ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKPushTab001ViewController.h; sourceTree = "<group>"; };
-		603C8EE2234ED4ED001B4C3C /* GKPushTab001ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKPushTab001ViewController.m; sourceTree = "<group>"; };
-		603C8EE4234ED4F7001B4C3C /* GKPushTab002ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKPushTab002ViewController.h; sourceTree = "<group>"; };
-		603C8EE5234ED4F7001B4C3C /* GKPushTab002ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKPushTab002ViewController.m; sourceTree = "<group>"; };
-		603C8EEA234ED5F7001B4C3C /* GKDemo013PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo013PushViewController.h; sourceTree = "<group>"; };
-		603C8EEB234ED5F7001B4C3C /* GKDemo013PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo013PushViewController.m; sourceTree = "<group>"; };
-		60B2CEC423CDB42E00D57911 /* GKDemo014ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo014ViewController.h; sourceTree = "<group>"; };
-		60B2CEC523CDB42E00D57911 /* GKDemo015ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo015ViewController.h; sourceTree = "<group>"; };
-		60B2CEC623CDB42E00D57911 /* GKDemo014ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo014ViewController.m; sourceTree = "<group>"; };
-		60B2CEC723CDB42E00D57911 /* GKDemo015ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo015ViewController.m; sourceTree = "<group>"; };
 		656BD2E20F7FF5D6C823AB90 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
-		793A13CC234B1B380085DF82 /* UIViewController+FullScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FullScreen.h"; sourceTree = "<group>"; };
-		793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FullScreen.m"; sourceTree = "<group>"; };
+		79C48BC7243CC462000B0815 /* GKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKMainViewController.h; sourceTree = "<group>"; };
+		79C48BC9243CC462000B0815 /* GKToutiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoViewController.m; sourceTree = "<group>"; };
+		79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoMineViewController.m; sourceTree = "<group>"; };
+		79C48BCC243CC462000B0815 /* GKToutiaoMicroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoMicroViewController.h; sourceTree = "<group>"; };
+		79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoDetailViewController.m; sourceTree = "<group>"; };
+		79C48BCE243CC462000B0815 /* GKToutiaoVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoVideoViewController.m; sourceTree = "<group>"; };
+		79C48BCF243CC462000B0815 /* GKToutiaoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoHomeViewController.h; sourceTree = "<group>"; };
+		79C48BD0243CC462000B0815 /* GKToutiaoMicroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoMicroViewController.m; sourceTree = "<group>"; };
+		79C48BD1243CC462000B0815 /* GKToutiaoMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoMineViewController.h; sourceTree = "<group>"; };
+		79C48BD2243CC462000B0815 /* GKToutiaoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoDetailViewController.h; sourceTree = "<group>"; };
+		79C48BD3243CC462000B0815 /* GKToutiaoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoVideoViewController.h; sourceTree = "<group>"; };
+		79C48BD4243CC462000B0815 /* GKToutiaoHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKToutiaoHomeViewController.m; sourceTree = "<group>"; };
+		79C48BD5243CC462000B0815 /* GKToutiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKToutiaoViewController.h; sourceTree = "<group>"; };
+		79C48BD7243CC462000B0815 /* GKDemo000ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GKDemo000ViewController.xib; sourceTree = "<group>"; };
+		79C48BD8243CC462000B0815 /* GKDemo002ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo002ViewController.h; sourceTree = "<group>"; };
+		79C48BD9243CC462000B0815 /* GKDemoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemoWebViewController.h; sourceTree = "<group>"; };
+		79C48BDA243CC462000B0815 /* GKDemo001ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo001ViewController.m; sourceTree = "<group>"; };
+		79C48BDB243CC462000B0815 /* GKDemo000ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo000ViewController.m; sourceTree = "<group>"; };
+		79C48BDC243CC462000B0815 /* GKDemo003ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo003ViewController.h; sourceTree = "<group>"; };
+		79C48BDD243CC462000B0815 /* GKDemo002ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo002ViewController.m; sourceTree = "<group>"; };
+		79C48BDE243CC462000B0815 /* GKDemo001ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo001ViewController.h; sourceTree = "<group>"; };
+		79C48BDF243CC462000B0815 /* GKDemoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemoWebViewController.m; sourceTree = "<group>"; };
+		79C48BE0243CC462000B0815 /* GKDemo000ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemo000ViewController.h; sourceTree = "<group>"; };
+		79C48BE1243CC462000B0815 /* GKDemo003ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemo003ViewController.m; sourceTree = "<group>"; };
+		79C48BE2243CC462000B0815 /* web.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = web.txt; sourceTree = "<group>"; };
+		79C48BE4243CC462000B0815 /* GKWYMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicViewController.h; sourceTree = "<group>"; };
+		79C48BE6243CC462000B0815 /* GKWYMusicMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicMineViewController.h; sourceTree = "<group>"; };
+		79C48BE7243CC462000B0815 /* GKWYMusicFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicFindViewController.h; sourceTree = "<group>"; };
+		79C48BE8243CC462000B0815 /* GKWYMusicFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicFriendViewController.h; sourceTree = "<group>"; };
+		79C48BE9243CC462000B0815 /* GKWYMusicAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicAccountViewController.h; sourceTree = "<group>"; };
+		79C48BEA243CC462000B0815 /* GKWYMusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicDetailViewController.m; sourceTree = "<group>"; };
+		79C48BEB243CC462000B0815 /* GKWYMusicFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicFriendViewController.m; sourceTree = "<group>"; };
+		79C48BEC243CC462000B0815 /* GKWYMusicFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicFindViewController.m; sourceTree = "<group>"; };
+		79C48BED243CC462000B0815 /* GKWYMusicMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicMineViewController.m; sourceTree = "<group>"; };
+		79C48BEE243CC462000B0815 /* GKWYMusicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicDetailViewController.h; sourceTree = "<group>"; };
+		79C48BEF243CC462000B0815 /* GKWYMusicAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicAccountViewController.m; sourceTree = "<group>"; };
+		79C48BF0243CC462000B0815 /* GKWYMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYMusicViewController.m; sourceTree = "<group>"; };
+		79C48BF2243CC463000B0815 /* GKDemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDemoBaseViewController.h; sourceTree = "<group>"; };
+		79C48BF3243CC463000B0815 /* GKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseViewController.m; sourceTree = "<group>"; };
+		79C48BF4243CC463000B0815 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		79C48BF5243CC463000B0815 /* GKTabBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTabBaseViewController.m; sourceTree = "<group>"; };
+		79C48BF6243CC463000B0815 /* GKBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseNavigationController.h; sourceTree = "<group>"; };
+		79C48BF7243CC463000B0815 /* GKDemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDemoBaseViewController.m; sourceTree = "<group>"; };
+		79C48BF8243CC463000B0815 /* GKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseViewController.h; sourceTree = "<group>"; };
+		79C48BF9243CC463000B0815 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		79C48BFA243CC463000B0815 /* GKBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseNavigationController.m; sourceTree = "<group>"; };
+		79C48BFB243CC463000B0815 /* GKTabBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTabBaseViewController.h; sourceTree = "<group>"; };
+		79C48BFC243CC463000B0815 /* GKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKMainViewController.m; sourceTree = "<group>"; };
+		79C48BFE243CC463000B0815 /* GKWYNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsViewController.m; sourceTree = "<group>"; };
+		79C48C00243CC463000B0815 /* GKWYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsDetailViewController.h; sourceTree = "<group>"; };
+		79C48C01243CC463000B0815 /* GKWYNewsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsHomeViewController.m; sourceTree = "<group>"; };
+		79C48C02243CC463000B0815 /* GKWYNewsNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsNewViewController.m; sourceTree = "<group>"; };
+		79C48C03243CC463000B0815 /* GKWYNewsProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsProfileViewController.m; sourceTree = "<group>"; };
+		79C48C04243CC463000B0815 /* GKWYNewsVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsVideoViewController.h; sourceTree = "<group>"; };
+		79C48C05243CC463000B0815 /* GKWYNewsCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsCommentViewController.m; sourceTree = "<group>"; };
+		79C48C06243CC463000B0815 /* GKWYNewsLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsLiveViewController.h; sourceTree = "<group>"; };
+		79C48C07243CC463000B0815 /* GKWYNewsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsHomeViewController.h; sourceTree = "<group>"; };
+		79C48C08243CC463000B0815 /* GKWYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsDetailViewController.m; sourceTree = "<group>"; };
+		79C48C09243CC463000B0815 /* GKWYNewsProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsProfileViewController.h; sourceTree = "<group>"; };
+		79C48C0A243CC463000B0815 /* GKWYNewsNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsNewViewController.h; sourceTree = "<group>"; };
+		79C48C0B243CC463000B0815 /* GKWYNewsCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsCommentViewController.h; sourceTree = "<group>"; };
+		79C48C0C243CC463000B0815 /* GKWYNewsVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsVideoViewController.m; sourceTree = "<group>"; };
+		79C48C0D243CC463000B0815 /* GKWYNewsLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWYNewsLiveViewController.m; sourceTree = "<group>"; };
+		79C48C0E243CC463000B0815 /* GKWYNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYNewsViewController.h; sourceTree = "<group>"; };
+		79C48C10243CC463000B0815 /* GKDouyinScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinScrollView.h; sourceTree = "<group>"; };
+		79C48C11243CC463000B0815 /* GKDouyinHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeViewController.h; sourceTree = "<group>"; };
+		79C48C12243CC463000B0815 /* GKDouyinHomeSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomeSearchViewController.h; sourceTree = "<group>"; };
+		79C48C13243CC463000B0815 /* GKDouyinPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinPersonalViewController.h; sourceTree = "<group>"; };
+		79C48C14243CC463000B0815 /* GKDouyinHomePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomePlayerViewController.m; sourceTree = "<group>"; };
+		79C48C15243CC463000B0815 /* GKDouyinHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeViewController.m; sourceTree = "<group>"; };
+		79C48C16243CC463000B0815 /* GKDouyinScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinScrollView.m; sourceTree = "<group>"; };
+		79C48C17243CC464000B0815 /* GKDouyinPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinPersonalViewController.m; sourceTree = "<group>"; };
+		79C48C18243CC464000B0815 /* GKDouyinHomeSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeSearchViewController.m; sourceTree = "<group>"; };
+		79C48C19243CC464000B0815 /* GKDouyinHomePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomePlayerViewController.h; sourceTree = "<group>"; };
 		CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -363,190 +322,16 @@
 		600EC5A823065F8800222289 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				600EC5E923065FA700222289 /* GKMainViewController.h */,
-				600EC5EA23065FA700222289 /* GKMainViewController.m */,
-				793A13CC234B1B380085DF82 /* UIViewController+FullScreen.h */,
-				793A13CD234B1B380085DF82 /* UIViewController+FullScreen.m */,
-				600EC5D723065FA700222289 /* BaseVC */,
-				600EC5EB23065FA700222289 /* TabVC */,
-				600EC5DE23065FA700222289 /* 抖音 */,
-				600EC5C923065FA700222289 /* 今日头条 */,
-				600EC5A923065FA600222289 /* 网易云音乐 */,
-				600EC5B723065FA600222289 /* 网易新闻 */,
-				600EC5F223065FA700222289 /* DemoVC */,
+				79C48BC7243CC462000B0815 /* GKMainViewController.h */,
+				79C48BFC243CC463000B0815 /* GKMainViewController.m */,
+				79C48BF1243CC463000B0815 /* BaseVC */,
+				79C48BD6243CC462000B0815 /* DemoVC */,
+				79C48C0F243CC463000B0815 /* 抖音 */,
+				79C48BC8243CC462000B0815 /* 今日头条 */,
+				79C48BFD243CC463000B0815 /* 网易新闻 */,
+				79C48BE3243CC462000B0815 /* 网易云音乐 */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		600EC5A923065FA600222289 /* 网易云音乐 */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5AA23065FA600222289 /* GKWYMusicViewController.h */,
-				600EC5AB23065FA600222289 /* tab */,
-				600EC5B623065FA600222289 /* GKWYMusicViewController.m */,
-			);
-			path = "网易云音乐";
-			sourceTree = "<group>";
-		};
-		600EC5AB23065FA600222289 /* tab */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5AC23065FA600222289 /* GKWYMusicMineViewController.h */,
-				600EC5AD23065FA600222289 /* GKWYMusicFindViewController.h */,
-				600EC5AE23065FA600222289 /* GKWYMusicFriendViewController.h */,
-				600EC5AF23065FA600222289 /* GKWYMusicAccountViewController.h */,
-				600EC5B023065FA600222289 /* GKWYMusicDetailViewController.m */,
-				600EC5B123065FA600222289 /* GKWYMusicFriendViewController.m */,
-				600EC5B223065FA600222289 /* GKWYMusicFindViewController.m */,
-				600EC5B323065FA600222289 /* GKWYMusicMineViewController.m */,
-				600EC5B423065FA600222289 /* GKWYMusicDetailViewController.h */,
-				600EC5B523065FA600222289 /* GKWYMusicAccountViewController.m */,
-			);
-			path = tab;
-			sourceTree = "<group>";
-		};
-		600EC5B723065FA600222289 /* 网易新闻 */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5B823065FA600222289 /* GKWYNewsViewController.m */,
-				600EC5B923065FA600222289 /* tab */,
-				600EC5C823065FA700222289 /* GKWYNewsViewController.h */,
-			);
-			path = "网易新闻";
-			sourceTree = "<group>";
-		};
-		600EC5B923065FA600222289 /* tab */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5BA23065FA600222289 /* GKWYNewsDetailViewController.h */,
-				600EC5BB23065FA600222289 /* GKWYNewsHomeViewController.m */,
-				600EC5BC23065FA600222289 /* GKWYNewsNewViewController.m */,
-				600EC5BD23065FA700222289 /* GKWYNewsProfileViewController.m */,
-				600EC5BE23065FA700222289 /* GKWYNewsVideoViewController.h */,
-				600EC5BF23065FA700222289 /* GKWYNewsCommentViewController.m */,
-				600EC5C023065FA700222289 /* GKWYNewsLiveViewController.h */,
-				600EC5C123065FA700222289 /* GKWYNewsHomeViewController.h */,
-				600EC5C223065FA700222289 /* GKWYNewsDetailViewController.m */,
-				600EC5C323065FA700222289 /* GKWYNewsProfileViewController.h */,
-				600EC5C423065FA700222289 /* GKWYNewsNewViewController.h */,
-				600EC5C523065FA700222289 /* GKWYNewsCommentViewController.h */,
-				600EC5C623065FA700222289 /* GKWYNewsVideoViewController.m */,
-				600EC5C723065FA700222289 /* GKWYNewsLiveViewController.m */,
-			);
-			path = tab;
-			sourceTree = "<group>";
-		};
-		600EC5C923065FA700222289 /* 今日头条 */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5CB23065FA700222289 /* tab */,
-				600EC5D623065FA700222289 /* GKToutiaoViewController.h */,
-				600EC5CA23065FA700222289 /* GKToutiaoViewController.m */,
-			);
-			path = "今日头条";
-			sourceTree = "<group>";
-		};
-		600EC5CB23065FA700222289 /* tab */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5D023065FA700222289 /* GKToutiaoHomeViewController.h */,
-				600EC5D523065FA700222289 /* GKToutiaoHomeViewController.m */,
-				600EC5D423065FA700222289 /* GKToutiaoVideoViewController.h */,
-				600EC5CF23065FA700222289 /* GKToutiaoVideoViewController.m */,
-				600EC5CD23065FA700222289 /* GKToutiaoMicroViewController.h */,
-				600EC5D123065FA700222289 /* GKToutiaoMicroViewController.m */,
-				600EC5D323065FA700222289 /* GKToutiaoDetailViewController.h */,
-				600EC5CE23065FA700222289 /* GKToutiaoDetailViewController.m */,
-				600EC5D223065FA700222289 /* GKToutiaoMineViewController.h */,
-				600EC5CC23065FA700222289 /* GKToutiaoMineViewController.m */,
-			);
-			path = tab;
-			sourceTree = "<group>";
-		};
-		600EC5D723065FA700222289 /* BaseVC */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5D823065FA700222289 /* GKDemoBaseViewController.h */,
-				600EC5DB23065FA700222289 /* GKDemoBaseViewController.m */,
-				600EC5DD23065FA700222289 /* GKTabBaseViewController.h */,
-				600EC5DA23065FA700222289 /* GKTabBaseViewController.m */,
-				600EC5D923065FA700222289 /* UIView+Extension.h */,
-				600EC5DC23065FA700222289 /* UIView+Extension.m */,
-			);
-			path = BaseVC;
-			sourceTree = "<group>";
-		};
-		600EC5DE23065FA700222289 /* 抖音 */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5DF23065FA700222289 /* GKDouyinScrollView.h */,
-				600EC5E023065FA700222289 /* GKDouyinHomeViewController.h */,
-				600EC5E123065FA700222289 /* GKDouyinHomeSearchViewController.h */,
-				600EC5E223065FA700222289 /* GKDouyinPersonalViewController.h */,
-				600EC5E323065FA700222289 /* GKDouyinHomePlayerViewController.m */,
-				600EC5E423065FA700222289 /* GKDouyinHomeViewController.m */,
-				600EC5E523065FA700222289 /* GKDouyinScrollView.m */,
-				600EC5E623065FA700222289 /* GKDouyinPersonalViewController.m */,
-				600EC5E723065FA700222289 /* GKDouyinHomeSearchViewController.m */,
-				600EC5E823065FA700222289 /* GKDouyinHomePlayerViewController.h */,
-			);
-			path = "抖音";
-			sourceTree = "<group>";
-		};
-		600EC5EB23065FA700222289 /* TabVC */ = {
-			isa = PBXGroup;
-			children = (
-				600EC5F123065FA700222289 /* GKTab001ViewController.h */,
-				600EC5EE23065FA700222289 /* GKTab001ViewController.m */,
-				600EC5ED23065FA700222289 /* GKTab002ViewController.h */,
-				600EC5F023065FA700222289 /* GKTab002ViewController.m */,
-				600EC5EC23065FA700222289 /* GKTab003ViewController.h */,
-				600EC5EF23065FA700222289 /* GKTab003ViewController.m */,
-				603C8EE1234ED4ED001B4C3C /* GKPushTab001ViewController.h */,
-				603C8EE2234ED4ED001B4C3C /* GKPushTab001ViewController.m */,
-				603C8EE4234ED4F7001B4C3C /* GKPushTab002ViewController.h */,
-				603C8EE5234ED4F7001B4C3C /* GKPushTab002ViewController.m */,
-			);
-			path = TabVC;
-			sourceTree = "<group>";
-		};
-		600EC5F223065FA700222289 /* DemoVC */ = {
-			isa = PBXGroup;
-			children = (
-				600EC60423065FA700222289 /* GKDemo001ViewController.h */,
-				600EC5F823065FA700222289 /* GKDemo001ViewController.m */,
-				600EC5F623065FA700222289 /* GKDemo002ViewController.h */,
-				600EC60023065FA700222289 /* GKDemo002ViewController.m */,
-				600EC5FF23065FA700222289 /* GKDemo003ViewController.h */,
-				600EC60823065FA700222289 /* GKDemo003ViewController.m */,
-				600EC5F923065FA700222289 /* GKDemo004ViewController.h */,
-				600EC60723065FA700222289 /* GKDemo004ViewController.m */,
-				600EC5F723065FA700222289 /* GKDemo005ViewController.h */,
-				600EC60523065FA700222289 /* GKDemo005ViewController.m */,
-				600EC60123065FA700222289 /* GKDemo006ViewController.h */,
-				600EC5F523065FA700222289 /* GKDemo006ViewController.m */,
-				600EC60923065FA700222289 /* GKDemo007ViewController.h */,
-				600EC5FE23065FA700222289 /* GKDemo007ViewController.m */,
-				600EC60A23065FA700222289 /* GKDemo008ViewController.h */,
-				600EC5FC23065FA700222289 /* GKDemo008ViewController.m */,
-				600EC60223065FA700222289 /* GKDemo009ViewController.h */,
-				600EC5F423065FA700222289 /* GKDemo009ViewController.m */,
-				600EC60323065FA700222289 /* GKDemo010ViewController.h */,
-				600EC5F323065FA700222289 /* GKDemo010ViewController.m */,
-				600EC60B23065FA700222289 /* GKDemo011ViewController.h */,
-				600EC5FB23065FA700222289 /* GKDemo011ViewController.m */,
-				600EC5FA23065FA700222289 /* GKDemo012ViewController.h */,
-				600EC60623065FA700222289 /* GKDemo012ViewController.m */,
-				603C8EDE234ED0A2001B4C3C /* GKDemo013ViewController.h */,
-				603C8EDF234ED0A2001B4C3C /* GKDemo013ViewController.m */,
-				603C8EEA234ED5F7001B4C3C /* GKDemo013PushViewController.h */,
-				603C8EEB234ED5F7001B4C3C /* GKDemo013PushViewController.m */,
-				60B2CEC423CDB42E00D57911 /* GKDemo014ViewController.h */,
-				60B2CEC623CDB42E00D57911 /* GKDemo014ViewController.m */,
-				60B2CEC523CDB42E00D57911 /* GKDemo015ViewController.h */,
-				60B2CEC723CDB42E00D57911 /* GKDemo015ViewController.m */,
-			);
-			path = DemoVC;
 			sourceTree = "<group>";
 		};
 		600EC6B423067F5300222289 /* GKNavigationBarViewController */ = {
@@ -616,6 +401,144 @@
 				600EC6D323067F5400222289 /* GKNavigationBarConfigure.m */,
 			);
 			path = GKConfigure;
+			sourceTree = "<group>";
+		};
+		79C48BC8243CC462000B0815 /* 今日头条 */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BD5243CC462000B0815 /* GKToutiaoViewController.h */,
+				79C48BC9243CC462000B0815 /* GKToutiaoViewController.m */,
+				79C48BCA243CC462000B0815 /* tab */,
+			);
+			path = "今日头条";
+			sourceTree = "<group>";
+		};
+		79C48BCA243CC462000B0815 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */,
+				79C48BCC243CC462000B0815 /* GKToutiaoMicroViewController.h */,
+				79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */,
+				79C48BCE243CC462000B0815 /* GKToutiaoVideoViewController.m */,
+				79C48BCF243CC462000B0815 /* GKToutiaoHomeViewController.h */,
+				79C48BD0243CC462000B0815 /* GKToutiaoMicroViewController.m */,
+				79C48BD1243CC462000B0815 /* GKToutiaoMineViewController.h */,
+				79C48BD2243CC462000B0815 /* GKToutiaoDetailViewController.h */,
+				79C48BD3243CC462000B0815 /* GKToutiaoVideoViewController.h */,
+				79C48BD4243CC462000B0815 /* GKToutiaoHomeViewController.m */,
+			);
+			path = tab;
+			sourceTree = "<group>";
+		};
+		79C48BD6243CC462000B0815 /* DemoVC */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BE0243CC462000B0815 /* GKDemo000ViewController.h */,
+				79C48BDB243CC462000B0815 /* GKDemo000ViewController.m */,
+				79C48BD7243CC462000B0815 /* GKDemo000ViewController.xib */,
+				79C48BDE243CC462000B0815 /* GKDemo001ViewController.h */,
+				79C48BDA243CC462000B0815 /* GKDemo001ViewController.m */,
+				79C48BD8243CC462000B0815 /* GKDemo002ViewController.h */,
+				79C48BDD243CC462000B0815 /* GKDemo002ViewController.m */,
+				79C48BDC243CC462000B0815 /* GKDemo003ViewController.h */,
+				79C48BE1243CC462000B0815 /* GKDemo003ViewController.m */,
+				79C48BD9243CC462000B0815 /* GKDemoWebViewController.h */,
+				79C48BDF243CC462000B0815 /* GKDemoWebViewController.m */,
+				79C48BE2243CC462000B0815 /* web.txt */,
+			);
+			path = DemoVC;
+			sourceTree = "<group>";
+		};
+		79C48BE3243CC462000B0815 /* 网易云音乐 */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BE4243CC462000B0815 /* GKWYMusicViewController.h */,
+				79C48BF0243CC462000B0815 /* GKWYMusicViewController.m */,
+				79C48BE5243CC462000B0815 /* tab */,
+			);
+			path = "网易云音乐";
+			sourceTree = "<group>";
+		};
+		79C48BE5243CC462000B0815 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BE6243CC462000B0815 /* GKWYMusicMineViewController.h */,
+				79C48BE7243CC462000B0815 /* GKWYMusicFindViewController.h */,
+				79C48BE8243CC462000B0815 /* GKWYMusicFriendViewController.h */,
+				79C48BE9243CC462000B0815 /* GKWYMusicAccountViewController.h */,
+				79C48BEA243CC462000B0815 /* GKWYMusicDetailViewController.m */,
+				79C48BEB243CC462000B0815 /* GKWYMusicFriendViewController.m */,
+				79C48BEC243CC462000B0815 /* GKWYMusicFindViewController.m */,
+				79C48BED243CC462000B0815 /* GKWYMusicMineViewController.m */,
+				79C48BEE243CC462000B0815 /* GKWYMusicDetailViewController.h */,
+				79C48BEF243CC462000B0815 /* GKWYMusicAccountViewController.m */,
+			);
+			path = tab;
+			sourceTree = "<group>";
+		};
+		79C48BF1243CC463000B0815 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				79C48BF8243CC463000B0815 /* GKBaseViewController.h */,
+				79C48BF3243CC463000B0815 /* GKBaseViewController.m */,
+				79C48BF2243CC463000B0815 /* GKDemoBaseViewController.h */,
+				79C48BF7243CC463000B0815 /* GKDemoBaseViewController.m */,
+				79C48BF5243CC463000B0815 /* GKTabBaseViewController.m */,
+				79C48BFB243CC463000B0815 /* GKTabBaseViewController.h */,
+				79C48BF4243CC463000B0815 /* UIView+Extension.h */,
+				79C48BF9243CC463000B0815 /* UIView+Extension.m */,
+				79C48BF6243CC463000B0815 /* GKBaseNavigationController.h */,
+				79C48BFA243CC463000B0815 /* GKBaseNavigationController.m */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		79C48BFD243CC463000B0815 /* 网易新闻 */ = {
+			isa = PBXGroup;
+			children = (
+				79C48C0E243CC463000B0815 /* GKWYNewsViewController.h */,
+				79C48BFE243CC463000B0815 /* GKWYNewsViewController.m */,
+				79C48BFF243CC463000B0815 /* tab */,
+			);
+			path = "网易新闻";
+			sourceTree = "<group>";
+		};
+		79C48BFF243CC463000B0815 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				79C48C00243CC463000B0815 /* GKWYNewsDetailViewController.h */,
+				79C48C07243CC463000B0815 /* GKWYNewsHomeViewController.h */,
+				79C48C01243CC463000B0815 /* GKWYNewsHomeViewController.m */,
+				79C48C02243CC463000B0815 /* GKWYNewsNewViewController.m */,
+				79C48C03243CC463000B0815 /* GKWYNewsProfileViewController.m */,
+				79C48C04243CC463000B0815 /* GKWYNewsVideoViewController.h */,
+				79C48C05243CC463000B0815 /* GKWYNewsCommentViewController.m */,
+				79C48C06243CC463000B0815 /* GKWYNewsLiveViewController.h */,
+				79C48C08243CC463000B0815 /* GKWYNewsDetailViewController.m */,
+				79C48C09243CC463000B0815 /* GKWYNewsProfileViewController.h */,
+				79C48C0A243CC463000B0815 /* GKWYNewsNewViewController.h */,
+				79C48C0B243CC463000B0815 /* GKWYNewsCommentViewController.h */,
+				79C48C0C243CC463000B0815 /* GKWYNewsVideoViewController.m */,
+				79C48C0D243CC463000B0815 /* GKWYNewsLiveViewController.m */,
+			);
+			path = tab;
+			sourceTree = "<group>";
+		};
+		79C48C0F243CC463000B0815 /* 抖音 */ = {
+			isa = PBXGroup;
+			children = (
+				79C48C11243CC463000B0815 /* GKDouyinHomeViewController.h */,
+				79C48C15243CC463000B0815 /* GKDouyinHomeViewController.m */,
+				79C48C12243CC463000B0815 /* GKDouyinHomeSearchViewController.h */,
+				79C48C18243CC464000B0815 /* GKDouyinHomeSearchViewController.m */,
+				79C48C19243CC464000B0815 /* GKDouyinHomePlayerViewController.h */,
+				79C48C14243CC463000B0815 /* GKDouyinHomePlayerViewController.m */,
+				79C48C17243CC464000B0815 /* GKDouyinPersonalViewController.m */,
+				79C48C13243CC463000B0815 /* GKDouyinPersonalViewController.h */,
+				79C48C10243CC463000B0815 /* GKDouyinScrollView.h */,
+				79C48C16243CC463000B0815 /* GKDouyinScrollView.m */,
+			);
+			path = "抖音";
 			sourceTree = "<group>";
 		};
 		D7F64A91D4217D7E5C3F0E36 /* Frameworks */ = {
@@ -758,6 +681,8 @@
 			files = (
 				600EC6E523067F6800222289 /* README.md in Resources */,
 				600EC5632306588700222289 /* LaunchScreen.storyboard in Resources */,
+				79C48C20243CC464000B0815 /* GKDemo000ViewController.xib in Resources */,
+				79C48C26243CC464000B0815 /* web.txt in Resources */,
 				600EC6DF23067F5400222289 /* GKNavigationBarViewController.bundle in Resources */,
 				600EC5602306588700222289 /* Assets.xcassets in Resources */,
 				60180B342358669300C48293 /* .travis.yml in Resources */,
@@ -829,72 +754,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				600EC61123065FA700222289 /* GKWYMusicViewController.m in Sources */,
-				600EC62A23065FA700222289 /* GKTab003ViewController.m in Sources */,
-				600EC62223065FA700222289 /* UIView+Extension.m in Sources */,
-				600EC63023065FA700222289 /* GKDemo011ViewController.m in Sources */,
-				600EC61A23065FA700222289 /* GKToutiaoViewController.m in Sources */,
-				600EC63523065FA700222289 /* GKDemo012ViewController.m in Sources */,
-				600EC61C23065FA700222289 /* GKToutiaoDetailViewController.m in Sources */,
-				600EC62423065FA700222289 /* GKDouyinHomeViewController.m in Sources */,
-				600EC61B23065FA700222289 /* GKToutiaoMineViewController.m in Sources */,
-				600EC63123065FA700222289 /* GKDemo008ViewController.m in Sources */,
 				600EC6D823067F5400222289 /* UINavigationController+GKCategory.m in Sources */,
+				79C48C1B243CC464000B0815 /* GKToutiaoMineViewController.m in Sources */,
 				600EC6DD23067F5400222289 /* UIViewController+GKCategory.m in Sources */,
-				600EC62823065FA700222289 /* GKMainViewController.m in Sources */,
+				79C48C25243CC464000B0815 /* GKDemo003ViewController.m in Sources */,
+				79C48C35243CC464000B0815 /* GKWYNewsNewViewController.m in Sources */,
 				600EC6D623067F5400222289 /* GKPopTransitionAnimation.m in Sources */,
+				79C48C3D243CC464000B0815 /* GKDouyinScrollView.m in Sources */,
+				79C48C23243CC464000B0815 /* GKDemo002ViewController.m in Sources */,
+				79C48C3A243CC464000B0815 /* GKWYNewsLiveViewController.m in Sources */,
 				600EC6D723067F5400222289 /* GKBaseTransitionAnimation.m in Sources */,
-				600EC61323065FA700222289 /* GKWYNewsHomeViewController.m in Sources */,
-				603C8EEC234ED5F7001B4C3C /* GKDemo013PushViewController.m in Sources */,
-				603C8EE0234ED0A2001B4C3C /* GKDemo013ViewController.m in Sources */,
-				600EC62E23065FA700222289 /* GKDemo006ViewController.m in Sources */,
-				600EC63323065FA700222289 /* GKDemo002ViewController.m in Sources */,
-				600EC62D23065FA700222289 /* GKDemo009ViewController.m in Sources */,
+				79C48C2E243CC464000B0815 /* GKTabBaseViewController.m in Sources */,
+				79C48C1D243CC464000B0815 /* GKToutiaoVideoViewController.m in Sources */,
 				600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */,
 				600EC5662306588700222289 /* main.m in Sources */,
+				79C48C37243CC464000B0815 /* GKWYNewsCommentViewController.m in Sources */,
+				79C48C29243CC464000B0815 /* GKWYMusicFindViewController.m in Sources */,
 				600EC6DB23067F5400222289 /* UIScrollView+GKCategory.m in Sources */,
+				79C48C1E243CC464000B0815 /* GKToutiaoMicroViewController.m in Sources */,
+				79C48C36243CC464000B0815 /* GKWYNewsProfileViewController.m in Sources */,
+				79C48C22243CC464000B0815 /* GKDemo000ViewController.m in Sources */,
+				79C48C38243CC464000B0815 /* GKWYNewsDetailViewController.m in Sources */,
+				79C48C39243CC464000B0815 /* GKWYNewsVideoViewController.m in Sources */,
+				79C48C2B243CC464000B0815 /* GKWYMusicAccountViewController.m in Sources */,
 				600EC5582306588500222289 /* AppDelegate.m in Sources */,
-				600EC63623065FA700222289 /* GKDemo004ViewController.m in Sources */,
-				600EC60E23065FA700222289 /* GKWYMusicFindViewController.m in Sources */,
-				793A13CE234B1B380085DF82 /* UIViewController+FullScreen.m in Sources */,
-				600EC61423065FA700222289 /* GKWYNewsNewViewController.m in Sources */,
-				600EC62723065FA700222289 /* GKDouyinHomeSearchViewController.m in Sources */,
-				600EC62123065FA700222289 /* GKDemoBaseViewController.m in Sources */,
-				600EC62523065FA700222289 /* GKDouyinScrollView.m in Sources */,
 				600EC6DC23067F5400222289 /* UINavigationItem+GKCategory.m in Sources */,
+				79C48C30243CC464000B0815 /* UIView+Extension.m in Sources */,
+				79C48C32243CC464000B0815 /* GKMainViewController.m in Sources */,
 				600EC6DE23067F5400222289 /* GKNavigationBar.m in Sources */,
-				600EC61623065FA700222289 /* GKWYNewsCommentViewController.m in Sources */,
-				600EC61F23065FA700222289 /* GKToutiaoHomeViewController.m in Sources */,
-				60B2CEC823CDB42E00D57911 /* GKDemo014ViewController.m in Sources */,
-				600EC62C23065FA700222289 /* GKDemo010ViewController.m in Sources */,
-				600EC61223065FA700222289 /* GKWYNewsViewController.m in Sources */,
-				600EC61023065FA700222289 /* GKWYMusicAccountViewController.m in Sources */,
-				600EC63423065FA700222289 /* GKDemo005ViewController.m in Sources */,
-				600EC60F23065FA700222289 /* GKWYMusicMineViewController.m in Sources */,
-				600EC62023065FA700222289 /* GKTabBaseViewController.m in Sources */,
-				600EC62623065FA700222289 /* GKDouyinPersonalViewController.m in Sources */,
-				600EC60C23065FA700222289 /* GKWYMusicDetailViewController.m in Sources */,
+				79C48C28243CC464000B0815 /* GKWYMusicFriendViewController.m in Sources */,
+				79C48C1C243CC464000B0815 /* GKToutiaoDetailViewController.m in Sources */,
+				79C48C3E243CC464000B0815 /* GKDouyinPersonalViewController.m in Sources */,
+				79C48C1A243CC464000B0815 /* GKToutiaoViewController.m in Sources */,
+				79C48C1F243CC464000B0815 /* GKToutiaoHomeViewController.m in Sources */,
+				79C48C2C243CC464000B0815 /* GKWYMusicViewController.m in Sources */,
 				600EC6DA23067F5400222289 /* UIBarButtonItem+GKCategory.m in Sources */,
-				600EC62F23065FA700222289 /* GKDemo001ViewController.m in Sources */,
-				603C8EE6234ED4F7001B4C3C /* GKPushTab002ViewController.m in Sources */,
-				600EC61723065FA700222289 /* GKWYNewsDetailViewController.m in Sources */,
-				600EC61823065FA700222289 /* GKWYNewsVideoViewController.m in Sources */,
-				60B2CEC923CDB42E00D57911 /* GKDemo015ViewController.m in Sources */,
+				79C48C2F243CC464000B0815 /* GKDemoBaseViewController.m in Sources */,
+				79C48C2D243CC464000B0815 /* GKBaseViewController.m in Sources */,
 				600EC6D423067F5400222289 /* GKPushTransitionAnimation.m in Sources */,
-				600EC61D23065FA700222289 /* GKToutiaoVideoViewController.m in Sources */,
-				603C8EE3234ED4ED001B4C3C /* GKPushTab001ViewController.m in Sources */,
+				79C48C34243CC464000B0815 /* GKWYNewsHomeViewController.m in Sources */,
+				79C48C3B243CC464000B0815 /* GKDouyinHomePlayerViewController.m in Sources */,
 				600EC6E023067F5400222289 /* GKNavigationBarViewController.m in Sources */,
 				6011631B236FF52900622897 /* UIImage+GKCategory.m in Sources */,
-				600EC61523065FA700222289 /* GKWYNewsProfileViewController.m in Sources */,
-				600EC63723065FA700222289 /* GKDemo003ViewController.m in Sources */,
-				600EC62B23065FA700222289 /* GKTab002ViewController.m in Sources */,
-				600EC61E23065FA700222289 /* GKToutiaoMicroViewController.m in Sources */,
-				600EC63223065FA700222289 /* GKDemo007ViewController.m in Sources */,
+				79C48C24243CC464000B0815 /* GKDemoWebViewController.m in Sources */,
+				79C48C3C243CC464000B0815 /* GKDouyinHomeViewController.m in Sources */,
+				79C48C33243CC464000B0815 /* GKWYNewsViewController.m in Sources */,
 				600EC6D523067F5400222289 /* GKDelegateHandler.m in Sources */,
-				600EC62323065FA700222289 /* GKDouyinHomePlayerViewController.m in Sources */,
-				600EC61923065FA700222289 /* GKWYNewsLiveViewController.m in Sources */,
-				600EC62923065FA700222289 /* GKTab001ViewController.m in Sources */,
-				600EC60D23065FA700222289 /* GKWYMusicFriendViewController.m in Sources */,
+				79C48C2A243CC464000B0815 /* GKWYMusicMineViewController.m in Sources */,
+				79C48C27243CC464000B0815 /* GKWYMusicDetailViewController.m in Sources */,
+				79C48C31243CC464000B0815 /* GKBaseNavigationController.m in Sources */,
+				79C48C3F243CC464000B0815 /* GKDouyinHomeSearchViewController.m in Sources */,
+				79C48C21243CC464000B0815 /* GKDemo001ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

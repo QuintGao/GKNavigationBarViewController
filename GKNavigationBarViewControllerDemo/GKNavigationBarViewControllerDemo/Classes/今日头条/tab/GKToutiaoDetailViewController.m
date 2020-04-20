@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"头条详情";
+    self.gk_navigationItem.title = @"头条详情";
     
     self.gk_navBackgroundColor = [UIColor whiteColor];
     

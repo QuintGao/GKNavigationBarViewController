@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"直播";
+    self.gk_navigationItem.title = @"直播";
     
     self.view.backgroundColor = [UIColor whiteColor];
     

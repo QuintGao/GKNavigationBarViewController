@@ -1,13 +1,14 @@
 //
-//  GKSecondViewController.h
-//  GKNavigationController
+//  GKDemo002ViewController.h
+//  GKNavigationBarViewControllerDemo
 //
-//  Created by QuintGao on 2017/6/21.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Created by QuintGao on 2018/7/31.
+//  Copyright © 2018年 gaokun. All rights reserved.
 //
 
-#import "GKDemoBaseViewController.h"
+#import <UIKit/UIKit.h>
+#import "GKBaseViewController.h"
 
-@interface GKDemo002ViewController : GKDemoBaseViewController
+@interface GKDemo002ViewController : GKBaseViewController
 
 @end

@@ -14,6 +14,14 @@
 
 @class JXCategoryBaseView;
 
+@protocol JXCategoryViewListContainer <NSObject>
+- (void)setDefaultSelectedIndex:(NSInteger)index;
+- (UIScrollView *)contentScrollView;
+- (void)reloadData;
+- (void)scrollingFromLeftIndex:(NSInteger)leftIndex toRightIndex:(NSInteger)rightIndex ratio:(CGFloat)ratio selectedIndex:(NSInteger)selectedIndex;
+- (void)didClickSelectedItemAtIndex:(NSInteger)index;
+@end
+
 @protocol JXCategoryViewDelegate <NSObject>
 
 @optional
@@ -72,7 +80,15 @@
 
 @property (nonatomic, weak) id<JXCategoryViewDelegate> delegate;
 
-@property (nonatomic, strong) UIScrollView *contentScrollView;    //需要关联的contentScrollView
+/**
+ 高封装度的列表容器，使用该类可以让列表拥有完成的生命周期、自动同步defaultSelectedIndex、自动调用reloadData。
+ */
+@property (nonatomic, weak) id<JXCategoryViewListContainer> listContainer;
+
+/**
+ 推荐使用封装度更高的listContainer属性。如果使用contentScrollView请参考`LoadDataListCustomViewController`使用示例。
+ */
+@property (nonatomic, strong) UIScrollView *contentScrollView;
 
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;   //修改初始化的时候默认选择的index
 
@@ -105,6 +121,7 @@
 
 /**
  选中目标index的item
+ 如果要同时触发列表容器对应index的列表加载，请再调用`[self.listContainerView didClickSelectedItemAtIndex:index];`方法
 
  @param index 目标index
  */
@@ -116,6 +133,11 @@
 - (void)reloadData;
 
 /**
+ 重新配置categoryView但是不需要reload listContainer。特殊情况是该方法。
+ */
+- (void)reloadDataWithoutListContainer;
+
+/**
  刷新指定的index的cell
  内部会触发`- (void)refreshCellModel:(JXCategoryBaseCellModel *)cellModel index:(NSInteger)index`方法进行cellModel刷新
 
@@ -125,22 +147,20 @@
 
 @end
 
-@interface JXCategoryBaseView (UISubclassingBaseHooks)
 
+
+@interface JXCategoryBaseView (UISubclassingBaseHooks)
 
 /**
  获取目标cell当前的frame，反应当前真实的frame受到cellWidthSelectedZoomScale的影响。
  */
 - (CGRect)getTargetCellFrame:(NSInteger)targetIndex;
 
-
 /**
  获取目标cell的选中时的frame，其他cell的状态都当做普通状态处理。
  */
 - (CGRect)getTargetSelectedCellFrame:(NSInteger)targetIndex selectedType:(JXCategoryCellSelectedType)selectedType;
-
 - (void)initializeData NS_REQUIRES_SUPER;
-
 - (void)initializeViews NS_REQUIRES_SUPER;
 
 /**

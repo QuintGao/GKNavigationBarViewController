@@ -45,7 +45,10 @@
     self.cellWidthZoomScale = currentScale;
     self.cellSpacing = [JXCategoryFactory interpolationFrom:self.minVerticalCellSpacing to:self.maxVerticalCellSpacing percent:percent];
     if (shouldReloadData) {
-        [self reloadData];
+        [self refreshDataSource];
+        [self refreshState];
+        [self.collectionView.collectionViewLayout invalidateLayout];
+        [self.collectionView reloadData];
     }
 }
 
@@ -59,6 +62,13 @@
     _maxVerticalCellSpacing = maxVerticalCellSpacing;
 
     self.cellSpacing = maxVerticalCellSpacing;
+}
+
+- (void)setMaxVerticalFontScale:(CGFloat)maxVerticalFontScale {
+    _maxVerticalFontScale = maxVerticalFontScale;
+
+    self.titleLabelZoomScale = maxVerticalFontScale;
+    self.cellWidthZoomScale = maxVerticalFontScale;
 }
 
 - (Class)preferredCellClass {
