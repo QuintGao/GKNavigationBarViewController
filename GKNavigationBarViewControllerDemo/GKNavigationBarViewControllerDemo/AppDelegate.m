@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GKMainViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -26,6 +27,11 @@
         configure.gk_navItemRightSpace = 12.0f;
 //        configure.gk_disableFixSpace = YES;
     }];
+    
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *nav = [UINavigationController rootVC:[GKMainViewController new] translationScale:NO];

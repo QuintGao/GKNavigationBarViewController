@@ -20,6 +20,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.title = @"系统导航";
+    
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = [[UISearchController alloc] init];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

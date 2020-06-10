@@ -975,7 +975,7 @@
 			baseConfigurationReference = 269F61B4ACDBF25AE775D67A /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xinjun zhang (DNJGV7XB9Q)";
+				CODE_SIGN_IDENTITY = "Apple Development: xinjun zhang (DNJGV7XB9Q)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X52753HQNM;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
@@ -997,7 +997,7 @@
 			baseConfigurationReference = 656BD2E20F7FF5D6C823AB90 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xinjun zhang (DNJGV7XB9Q)";
+				CODE_SIGN_IDENTITY = "Apple Development: xinjun zhang (DNJGV7XB9Q)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X52753HQNM;
 				GCC_PREFIX_HEADER = GKNavigationBarViewControllerDemo/PrefixHeader.pch;
