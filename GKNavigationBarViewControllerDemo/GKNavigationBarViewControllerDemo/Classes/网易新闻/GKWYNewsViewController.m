@@ -27,15 +27,6 @@
     self.tabBar.barTintColor = [UIColor whiteColor];
     self.tabBar.translucent = NO;
     
-    // 统一设置导航栏样式
-    GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
-    [configure setupDefaultConfigure];
-    
-    // 设置自定义样式
-    configure.backgroundColor = [UIColor colorWithRed:(212 / 255.0) green:(25 /255.0) blue:(37 / 255.0) alpha:1.0];
-    configure.titleColor = [UIColor whiteColor];
-    configure.titleFont  = [UIFont systemFontOfSize:18];
-    
     // 添加子控制器
     [self addChildVCs];
 }
