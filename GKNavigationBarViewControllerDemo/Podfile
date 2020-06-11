@@ -12,5 +12,6 @@ target 'GKNavigationBarViewControllerDemo' do
   pod 'JXCategoryView'
   pod 'MJRefresh'
   pod 'TZImagePickerController'
+  pod 'IQKeyboardManager'
 
 end

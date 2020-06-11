@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -172,6 +172,14 @@
                         <action selector="navBarAlphaAction:" destination="-1" eventType="valueChanged" id="xI1-9u-iP6"/>
                     </connections>
                 </slider>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-R7-93F">
+                    <rect key="frame" x="20" y="685" width="374" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="lta-UW-fvN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -189,7 +197,9 @@
                 <constraint firstItem="P5Y-HW-fz1" firstAttribute="centerY" secondItem="xZw-Ks-QAd" secondAttribute="centerY" id="D08-gQ-0fN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0ha-lc-FHH" secondAttribute="trailing" constant="20" id="E2r-8L-EpI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hA4-En-KBv" secondAttribute="trailing" id="FXc-rR-Z4f"/>
+                <constraint firstItem="JuP-R7-93F" firstAttribute="top" secondItem="hA4-En-KBv" secondAttribute="bottom" constant="30" id="Iaz-eu-yn3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4ze-0c-gSo" secondAttribute="trailing" id="JTR-pY-2Wj"/>
+                <constraint firstItem="JuP-R7-93F" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Jr0-iY-ePO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ovx-xy-5Ty" secondAttribute="trailing" constant="20" id="KZJ-Qf-cwG"/>
                 <constraint firstItem="TBy-1H-zKb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="LeH-IO-5y6"/>
                 <constraint firstItem="4pp-uD-QvV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="MMo-EV-OBc"/>
@@ -202,6 +212,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wyA-Tz-gge" secondAttribute="trailing" constant="20" id="a9C-St-7Vc"/>
                 <constraint firstItem="Fg1-t7-YrN" firstAttribute="top" secondItem="TBy-1H-zKb" secondAttribute="bottom" constant="20" id="ahN-d5-S9f"/>
                 <constraint firstItem="C5M-pQ-sWR" firstAttribute="top" secondItem="c9r-cv-81Q" secondAttribute="bottom" constant="20" id="coy-KW-kd1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JuP-R7-93F" secondAttribute="trailing" constant="20" id="deT-Xr-JpD"/>
                 <constraint firstItem="laa-x0-wuY" firstAttribute="centerY" secondItem="l25-WB-Gdi" secondAttribute="centerY" id="eEw-BN-y3Y"/>
                 <constraint firstItem="s14-x2-jEm" firstAttribute="centerY" secondItem="n2C-Th-mSO" secondAttribute="centerY" id="flA-4m-z2O"/>
                 <constraint firstItem="hA4-En-KBv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gGP-4V-Oib"/>

@@ -8,6 +8,7 @@
 
 #import "GKDemo000ViewController.h"
 #import "GKDemoWebViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface GKDemo000ViewController ()<GKViewControllerPushDelegate>
 
@@ -69,6 +70,18 @@
     self.fullScreenDistanceLabel.text = [NSString stringWithFormat:@"全屏返回手势距离：%f", self.gk_popMaxAllowedDistanceToLeftEdge];
     self.navBarAlphaSlider.value = self.gk_navBarAlpha;
     self.navBarAlphaLabel.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.gk_navBarAlpha];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
 - (IBAction)interactivePopAction:(id)sender {

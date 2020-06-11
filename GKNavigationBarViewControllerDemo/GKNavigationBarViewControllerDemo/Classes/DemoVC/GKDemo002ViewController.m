@@ -37,6 +37,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    pickerVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    pickerVC.gk_disabledGestureHandle = YES;
     GKConfigure.gk_disableFixSpace = YES;
     [self presentViewController:pickerVC animated:YES completion:nil];
 }
