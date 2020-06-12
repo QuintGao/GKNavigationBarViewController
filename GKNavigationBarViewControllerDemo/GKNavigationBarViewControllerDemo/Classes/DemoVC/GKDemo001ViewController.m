@@ -34,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.navigationController.navigationBar.hidden = YES;
     self.gk_navigationBar.hidden = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
