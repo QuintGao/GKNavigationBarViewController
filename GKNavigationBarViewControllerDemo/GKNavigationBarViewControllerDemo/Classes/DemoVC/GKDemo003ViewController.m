@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.gk_statusBarHidden = YES;
+//    self.gk_statusBarHidden = YES;
     
     self.navigationItem.title = @"系统导航";
     

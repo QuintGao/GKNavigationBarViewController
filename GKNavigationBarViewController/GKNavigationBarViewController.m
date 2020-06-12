@@ -130,33 +130,31 @@
 }
 
 - (void)setupNavBarFrame {
-    // 获取屏幕宽度
     CGFloat width  = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
-    // 获取状态栏高度
-    CGFloat statusBarH = [UIApplication sharedApplication].statusBarFrame.size.height;
-    // 获取导航栏高度
-    CGFloat navBarH = self.navigationController.navigationBar.frame.size.height;
+    CGFloat navBarH = 0;
+    if (width > height) { // 横屏
+        if (GK_IS_iPad) {
+            CGFloat statusBarH = [UIApplication sharedApplication].statusBarFrame.size.height;
+            CGFloat navigaBarH = self.navigationController.navigationBar.frame.size.height;
+            navBarH = statusBarH + navigaBarH;
+        }else if (GK_IS_iPhoneX) {
+            navBarH = GK_NAVBAR_HEIGHT;
+        }else {
+            if (width == 736.0f && height == 414.0f) { // plus横屏
+                navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+            }else { // 其他机型横屏
+                navBarH = self.gk_statusBarHidden ? 32.0f : 52.0f;
+            }
+        }
+    }else { // 竖屏
+        navBarH = self.gk_statusBarHidden ? (GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT) : GK_STATUSBAR_NAVBAR_HEIGHT;
+    }
     
-    // 状态栏+导航栏的高度为自定义导航栏的高度
-    CGFloat totalH = statusBarH + navBarH;
-    
-    self.gk_navigationBar.frame = CGRectMake(0, 0, width, totalH);
+    self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
     self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
     [self.gk_navigationBar layoutSubviews];
-}
-
-#pragma mark - 控制屏幕旋转的方法
-- (BOOL)shouldAutorotate {
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
 }
 
 #pragma mark - 控制状态栏的方法
