@@ -68,8 +68,15 @@
     
     // 重置navitem_space
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace  = configure.navItemLeftSpace;
-        configure.gk_navItemRightSpace = configure.navItemRightSpace;
+        // bug fix：#41
+        // 做下判断，解决当viewWillDisappear时gk_navItemLeftSpace已经被其他控制器改变了，这里就不用作处理了
+        if (configure.gk_navItemLeftSpace == self.gk_navItemLeftSpace) {
+            configure.gk_navItemLeftSpace = configure.navItemLeftSpace;
+        }
+        
+        if (configure.gk_navItemRightSpace == self.gk_navItemRightSpace) {
+            configure.gk_navItemRightSpace = configure.navItemRightSpace;
+        }
     }];
 }
 
