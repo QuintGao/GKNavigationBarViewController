@@ -416,16 +416,16 @@
 		79C48BCA243CC462000B0815 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */,
-				79C48BCC243CC462000B0815 /* GKToutiaoMicroViewController.h */,
-				79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */,
-				79C48BCE243CC462000B0815 /* GKToutiaoVideoViewController.m */,
 				79C48BCF243CC462000B0815 /* GKToutiaoHomeViewController.h */,
+				79C48BD4243CC462000B0815 /* GKToutiaoHomeViewController.m */,
+				79C48BD3243CC462000B0815 /* GKToutiaoVideoViewController.h */,
+				79C48BCE243CC462000B0815 /* GKToutiaoVideoViewController.m */,
+				79C48BCC243CC462000B0815 /* GKToutiaoMicroViewController.h */,
 				79C48BD0243CC462000B0815 /* GKToutiaoMicroViewController.m */,
 				79C48BD1243CC462000B0815 /* GKToutiaoMineViewController.h */,
+				79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */,
 				79C48BD2243CC462000B0815 /* GKToutiaoDetailViewController.h */,
-				79C48BD3243CC462000B0815 /* GKToutiaoVideoViewController.h */,
-				79C48BD4243CC462000B0815 /* GKToutiaoHomeViewController.m */,
+				79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -462,16 +462,16 @@
 		79C48BE5243CC462000B0815 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				79C48BE6243CC462000B0815 /* GKWYMusicMineViewController.h */,
-				79C48BE7243CC462000B0815 /* GKWYMusicFindViewController.h */,
-				79C48BE8243CC462000B0815 /* GKWYMusicFriendViewController.h */,
 				79C48BE9243CC462000B0815 /* GKWYMusicAccountViewController.h */,
-				79C48BEA243CC462000B0815 /* GKWYMusicDetailViewController.m */,
-				79C48BEB243CC462000B0815 /* GKWYMusicFriendViewController.m */,
-				79C48BEC243CC462000B0815 /* GKWYMusicFindViewController.m */,
-				79C48BED243CC462000B0815 /* GKWYMusicMineViewController.m */,
-				79C48BEE243CC462000B0815 /* GKWYMusicDetailViewController.h */,
 				79C48BEF243CC462000B0815 /* GKWYMusicAccountViewController.m */,
+				79C48BE8243CC462000B0815 /* GKWYMusicFriendViewController.h */,
+				79C48BEB243CC462000B0815 /* GKWYMusicFriendViewController.m */,
+				79C48BEE243CC462000B0815 /* GKWYMusicDetailViewController.h */,
+				79C48BEA243CC462000B0815 /* GKWYMusicDetailViewController.m */,
+				79C48BE7243CC462000B0815 /* GKWYMusicFindViewController.h */,
+				79C48BEC243CC462000B0815 /* GKWYMusicFindViewController.m */,
+				79C48BE6243CC462000B0815 /* GKWYMusicMineViewController.h */,
+				79C48BED243CC462000B0815 /* GKWYMusicMineViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -506,19 +506,19 @@
 		79C48BFF243CC463000B0815 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				79C48C00243CC463000B0815 /* GKWYNewsDetailViewController.h */,
 				79C48C07243CC463000B0815 /* GKWYNewsHomeViewController.h */,
 				79C48C01243CC463000B0815 /* GKWYNewsHomeViewController.m */,
+				79C48C0A243CC463000B0815 /* GKWYNewsNewViewController.h */,
 				79C48C02243CC463000B0815 /* GKWYNewsNewViewController.m */,
-				79C48C03243CC463000B0815 /* GKWYNewsProfileViewController.m */,
-				79C48C04243CC463000B0815 /* GKWYNewsVideoViewController.h */,
-				79C48C05243CC463000B0815 /* GKWYNewsCommentViewController.m */,
-				79C48C06243CC463000B0815 /* GKWYNewsLiveViewController.h */,
+				79C48C00243CC463000B0815 /* GKWYNewsDetailViewController.h */,
 				79C48C08243CC463000B0815 /* GKWYNewsDetailViewController.m */,
 				79C48C09243CC463000B0815 /* GKWYNewsProfileViewController.h */,
-				79C48C0A243CC463000B0815 /* GKWYNewsNewViewController.h */,
+				79C48C03243CC463000B0815 /* GKWYNewsProfileViewController.m */,
 				79C48C0B243CC463000B0815 /* GKWYNewsCommentViewController.h */,
+				79C48C05243CC463000B0815 /* GKWYNewsCommentViewController.m */,
+				79C48C04243CC463000B0815 /* GKWYNewsVideoViewController.h */,
 				79C48C0C243CC463000B0815 /* GKWYNewsVideoViewController.m */,
+				79C48C06243CC463000B0815 /* GKWYNewsLiveViewController.h */,
 				79C48C0D243CC463000B0815 /* GKWYNewsLiveViewController.m */,
 			);
 			path = tab;

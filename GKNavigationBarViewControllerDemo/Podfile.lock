@@ -1,32 +1,24 @@
 PODS:
   - IQKeyboardManager (6.5.5)
-  - JXCategoryView (1.5.2)
   - Masonry (1.1.0)
-  - MJRefresh (3.3.1)
-  - TZImagePickerController (3.2.9)
+  - TZImagePickerController (3.3.2)
 
 DEPENDENCIES:
   - IQKeyboardManager
-  - JXCategoryView
   - Masonry
-  - MJRefresh
   - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManager
-    - JXCategoryView
     - Masonry
-    - MJRefresh
     - TZImagePickerController
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
-  JXCategoryView: b284d35a7a8772eada05dd78642233e1eb763ea8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
-  TZImagePickerController: 1f92968aa0e98a06b9e2eccca8560acc19254257
+  TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
 
-PODFILE CHECKSUM: 87e0171a8e1733fe28c2842572cb72731b734392
+PODFILE CHECKSUM: 5f7e71f1bd9e8e068511abe6d0bb6c8dd9fa1629
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

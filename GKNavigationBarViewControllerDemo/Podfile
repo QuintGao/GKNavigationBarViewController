@@ -9,8 +9,6 @@ target 'GKNavigationBarViewControllerDemo' do
   use_frameworks!
 
   pod 'Masonry'
-  pod 'JXCategoryView'
-  pod 'MJRefresh'
   pod 'TZImagePickerController'
   pod 'IQKeyboardManager'
 

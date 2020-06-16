@@ -38,6 +38,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
+    self.gk_navItemRightSpace = 20;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

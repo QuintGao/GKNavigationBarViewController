@@ -25,6 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
+    self.gk_navItemRightSpace = 10;
     
     [self.gk_navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
 }
