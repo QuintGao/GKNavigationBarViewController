@@ -19,10 +19,10 @@ iOS自定义导航栏 - 导航栏联动效果
 ## 重要
 感谢使用该库，如果在使用过程中遇到问题可查看issue或提交issue，或者进QQ群1047100313
 
-### 推荐使用
+##### 推荐使用
 对于GKNavigationBarViewController有人提出侵入性较高，于是我修改了实现方式，写了[GKNavigationBar](https://github.com/QuintGao/GKNavigationBar)这个库，推荐使用，另外也提供了swift版本[GKNavigationBarSwift](https://github.com/QuintGao/GKNavigationBarSwift)
 
-### 状态栏问题
+##### 状态栏问题
 1、有时修改状态栏会闪动（从黑色变成白色等）或状态栏颜色显示异常（左边黑色右边白色等）
 
     在UIViewController的init方法中修改gk_statusBarStyle即可
