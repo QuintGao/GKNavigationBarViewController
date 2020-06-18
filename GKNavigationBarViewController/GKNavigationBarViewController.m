@@ -40,12 +40,14 @@
         [self.view bringSubviewToFront:self.gk_navigationBar];
     }
     
+    // bug fix：#41
+    // 每次控制器出现的时候重置导航栏间距
     if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemLeftSpace = GKConfigure.gk_navItemLeftSpace;
+        self.gk_navItemLeftSpace = GKConfigure.navItemLeftSpace;
     }
     
     if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemRightSpace = GKConfigure.gk_navItemRightSpace;
+        self.gk_navItemRightSpace = GKConfigure.navItemRightSpace;
     }
     
     // 重置navitem_space
@@ -61,23 +63,6 @@
     if (self.gk_backStyle == GKNavigationBarBackStyleNone) {
         self.gk_backStyle = GKConfigure.backStyle;
     }
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    // 重置navitem_space
-    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        // bug fix：#41
-        // 做下判断，解决当viewWillDisappear时gk_navItemLeftSpace已经被其他控制器改变了，这里就不用作处理了
-        if (configure.gk_navItemLeftSpace == self.gk_navItemLeftSpace) {
-            configure.gk_navItemLeftSpace = configure.navItemLeftSpace;
-        }
-        
-        if (configure.gk_navItemRightSpace == self.gk_navItemRightSpace) {
-            configure.gk_navItemRightSpace = configure.navItemRightSpace;
-        }
-    }];
 }
 
 #pragma mark - Public Methods
