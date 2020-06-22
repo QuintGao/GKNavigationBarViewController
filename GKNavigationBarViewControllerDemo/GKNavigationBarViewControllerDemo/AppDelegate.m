@@ -23,8 +23,17 @@
         configure.gk_translationY = 20;
         configure.gk_scaleX = 0.90;
         configure.gk_scaleY = 0.92;
+        // 导航栏背景色
+        configure.backgroundColor = [UIColor whiteColor];
+        // 导航栏标题颜色
+        configure.titleColor = [UIColor blackColor];
+        // 导航栏标题字体
+        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        // 导航栏返回按钮样式
+        configure.backStyle = GKNavigationBarBackStyleBlack;
+        // 导航栏itme左右间距
         configure.gk_navItemLeftSpace = 12.0f;
-        configure.gk_navItemRightSpace = 12.0f;
+        configure.gk_navItemRightSpace = 14.0f;
 //        configure.gk_disableFixSpace = YES;
     }];
     

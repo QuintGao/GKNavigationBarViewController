@@ -162,7 +162,7 @@
         UIButton *btn = [UIButton new];
         btn.frame = CGRectMake(0, 0, 44, 44);
         [btn setTitle:@"更多" forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor redColor];
+        btn.backgroundColor = [UIColor blackColor];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         _moreItem = [[UIBarButtonItem alloc] initWithCustomView:btn];

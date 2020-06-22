@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GKDemo003ViewController : GKBaseViewController
+@interface GKDemo003ViewController : UIViewController
 
 @end
 

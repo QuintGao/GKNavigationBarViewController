@@ -53,8 +53,41 @@ iOS自定义导航栏 - 导航栏联动效果
 
 
 ## 使用说明
+1. 配置默认值
+在AppDelegate的didFinishLaunchingWithOptions方法中配置导航栏的默认属性：
+```
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        // 导航栏背景色
+        configure.backgroundColor = [UIColor whiteColor];
+        // 导航栏标题颜色
+        configure.titleColor = [UIColor blackColor];
+        // 导航栏标题字体
+        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        // 导航栏返回按钮样式
+        configure.backStyle = GKNavigationBarBackStyleBlack;
+        // 导航栏itme左右间距
+        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemRightSpace = 12.0f;
+    }];
+```
+2. 将基类控制器修改为GKNavigationBarViewController
+可在每个控制器的viewDidLoad中单独设置导航栏的样式
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // 设置导航栏样式
+    self.gk_navTitle = @"Demo";
+    self.gk_navTitleColor = [UIColor whiteColor];
+    self.gk_navBackgroundColor = [UIColor redColor];
+    self.gk_navShadowColor = [UIColor blackColor];
+    self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    self.gk_navRightBarButtonItem = self.moreItem;
+}
+```
 
-1. 今日头条的实现
+
+3. 今日头条的实现
 
 UINavigationController作为根控制器，包含一个UITabBarController，UITabBarController中包含以GKNavigationBarViewController为父类的子类
 
@@ -67,11 +100,11 @@ UINavigationController *nav = [UINavigationController rootVC:toutiaoVC translati
 
 ```
 
-2. 网易云音乐的实现
+4. 网易云音乐的实现
 
 UITabBarController作为根控制器，包含带导航栏的以GKNavigationBarViewController为父类的子类
 
-3. 网易新闻的实现
+5. 网易新闻的实现
 
 UITabBarController作为根控制器，包含带导航栏的以GKNavigationBarViewController为父类的子类
 其中导航栏开启左滑push手势，主要代码如下：
@@ -93,7 +126,7 @@ self.gk_pushDelegate = self;
 
 ```
 
-4. 部分属性介绍
+6. 部分属性介绍
 
 UINavigationController
 ```
