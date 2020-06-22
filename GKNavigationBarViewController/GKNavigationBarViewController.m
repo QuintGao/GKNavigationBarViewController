@@ -40,22 +40,6 @@
         [self.view bringSubviewToFront:self.gk_navigationBar];
     }
     
-    // bug fix：#41
-    // 每次控制器出现的时候重置导航栏间距
-    if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemLeftSpace = GKConfigure.navItemLeftSpace;
-    }
-    
-    if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemRightSpace = GKConfigure.navItemRightSpace;
-    }
-    
-    // 重置navitem_space
-    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
-        configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
-    }];
-    
     // 获取状态
     self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
     
@@ -110,9 +94,6 @@
     }
     
     self.gk_backStyle           = configure.backStyle;
-    
-    self.gk_navItemLeftSpace    = GKNavigationBarItemSpace;
-    self.gk_navItemRightSpace   = GKNavigationBarItemSpace;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -260,26 +241,6 @@
     _gk_navRightBarButtonItems = gk_navRightBarButtonItems;
     
     self.gk_navigationItem.rightBarButtonItems = gk_navRightBarButtonItems;
-}
-
-- (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {
-    _gk_navItemLeftSpace = gk_navItemLeftSpace;
-    
-    if (gk_navItemLeftSpace == GKNavigationBarItemSpace) return;
-    
-    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace   = gk_navItemLeftSpace;
-    }];
-}
-
-- (void)setGk_navItemRightSpace:(CGFloat)gk_navItemRightSpace {
-    _gk_navItemRightSpace = gk_navItemRightSpace;
-
-    if (gk_navItemRightSpace == GKNavigationBarItemSpace) return;
-    
-    [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemRightSpace  = gk_navItemRightSpace;
-    }];
 }
 
 - (void)setGk_navLineHidden:(BOOL)gk_navLineHidden {
