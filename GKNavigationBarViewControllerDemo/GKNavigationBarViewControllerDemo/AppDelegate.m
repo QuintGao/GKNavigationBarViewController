@@ -31,10 +31,9 @@
         configure.titleFont = [UIFont systemFontOfSize:18.0f];
         // 导航栏返回按钮样式
         configure.backStyle = GKNavigationBarBackStyleBlack;
-        // 导航栏itme左右间距
+        // 导航栏左右item间距
         configure.gk_navItemLeftSpace = 12.0f;
-        configure.gk_navItemRightSpace = 14.0f;
-//        configure.gk_disableFixSpace = YES;
+        configure.gk_navItemRightSpace = 12.0f;
     }];
     
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];

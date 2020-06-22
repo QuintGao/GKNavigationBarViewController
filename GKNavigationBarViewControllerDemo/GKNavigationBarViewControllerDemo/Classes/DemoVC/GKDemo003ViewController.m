@@ -23,7 +23,10 @@
     self.navigationItem.title = @"系统导航";
     
     self.gk_navItemRightSpace = 20;
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"哈哈" target:self action:@selector(click)];
+    UIBarButtonItem *rightItem = [UIBarButtonItem itemWithTitle:@"跳转" target:self action:@selector(click)];
+    rightItem.customView.backgroundColor = UIColor.redColor;
+    
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)click {
