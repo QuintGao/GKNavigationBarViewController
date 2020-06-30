@@ -52,6 +52,19 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 }
 
 - (void)gk_viewWillAppear:(BOOL)animated {
+    if ([self isKindOfClass:[UINavigationController class]]) return;
+    if ([self isKindOfClass:[UITabBarController class]]) return;
+    if (!self.navigationController) return;
+    
+    __block BOOL exist = NO;
+    [GKConfigure.shieldVCs enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([self isKindOfClass:vc.class]) {
+            exist = YES;
+            *stop = YES;
+        }
+    }];
+    if (exist) return;
+    
     // bug fix：#41
     // 每次控制器出现的时候重置导航栏间距
     if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
