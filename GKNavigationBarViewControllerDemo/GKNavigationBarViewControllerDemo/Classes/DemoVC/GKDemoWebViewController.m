@@ -100,6 +100,7 @@
         back.frame = CGRectMake(0, 0, 44, 44);
         [back setImage:[UIImage gk_imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
         back.backgroundColor = [UIColor redColor];
+        [back addTarget:self action:@selector(backItemClick:) forControlEvents:UIControlEventTouchUpInside];
         
         _backBtn = [[UIBarButtonItem alloc] initWithCustomView:back];
     }
@@ -113,6 +114,7 @@
         [close setTitle:@"关闭" forState:UIControlStateNormal];
         [close setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         close.backgroundColor = [UIColor redColor];
+        [close addTarget:self action:@selector(backItemClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [close addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
         _closeBtn = [[UIBarButtonItem alloc] initWithCustomView:close];

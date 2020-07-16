@@ -167,21 +167,7 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 - (void)setGk_backStyle:(GKNavigationBarBackStyle)gk_backStyle {
     objc_setAssociatedObject(self, GKBackStyleKey, @(gk_backStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    if (self.navigationController.childViewControllers.count <= 1) return;
-    
-    UIImage *backImage = self.gk_backImage;
-    
-    if (!backImage && self.gk_backStyle != GKNavigationBarBackStyleNone) {
-        NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
-        backImage = [UIImage gk_imageNamed:imageName];
-    }
-    
-    if (backImage) {
-        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
-            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(backItemClick:)];
-        }
-    }
+    [self setBackItemImage:self.gk_backImage];
 }
 
 - (UIImage *)gk_backImage {
@@ -191,12 +177,7 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 - (void)setGk_backImage:(UIImage *)gk_backImage {
     objc_setAssociatedObject(self, GKBackImageKey, gk_backImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    if (gk_backImage) {
-        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
-            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
-            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:gk_backImage target:self action:@selector(backItemClick:)];
-        }
-    }
+    [self setBackItemImage:gk_backImage];
 }
 
 - (id<GKViewControllerPushDelegate>)gk_pushDelegate {
@@ -298,6 +279,27 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
         NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
         return nil;
     }
+}
+
+- (void)setBackItemImage:(UIImage *)image {
+    // 根控制器不作处理
+    if (self.navigationController.childViewControllers.count <= 1) return;
+    
+    // 非GKNavigationBarViewController不作处理
+    if (![self isKindOfClass:[GKNavigationBarViewController class]]) return;
+    
+    if (!image) {
+        if (self.gk_backStyle != GKNavigationBarBackStyleNone) {
+            NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+            image = [UIImage gk_imageNamed:imageName];
+        }
+    }
+    
+    // 没有image
+    if (!image) return;
+    
+    GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
+    vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:image target:self action:@selector(backItemClick:)];
 }
 
 - (void)backItemClick:(id)sender {
