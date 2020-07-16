@@ -23,6 +23,7 @@
     self.gk_navigationItem.title = @"嵌套TZImagePickerController";
     
     self.gk_statusBarStyle = UIStatusBarStyleDefault;
+    self.gk_backImage = [UIImage imageNamed:@"Mine_selected"];
     
     UILabel *label = [UILabel new];
     label.font = [UIFont systemFontOfSize:16.0f];

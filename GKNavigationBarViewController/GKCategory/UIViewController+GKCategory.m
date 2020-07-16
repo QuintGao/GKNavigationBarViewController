@@ -18,6 +18,7 @@ static const void* GKPopMaxDistanceKey      = @"GKPopMaxDistanceKey";
 static const void* GKNavBarAlphaKey         = @"GKNavBarAlphaKey";
 static const void* GKStatusBarStyleKey      = @"GKStatusBarStyleKey";
 static const void* GKStatusBarHiddenKey     = @"GKStatusBarHiddenKey";
+static const void* GKBackImageKey           = @"GKBackImageKey";
 static const void* GKBackStyleKey           = @"GKBackStyleKey";
 static const void* GKPushDelegateKey        = @"GKPushDelegateKey";
 static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
@@ -168,13 +169,32 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     
     if (self.navigationController.childViewControllers.count <= 1) return;
     
-    if (self.gk_backStyle != GKNavigationBarBackStyleNone) {
+    UIImage *backImage = self.gk_backImage;
+    
+    if (!backImage && self.gk_backStyle != GKNavigationBarBackStyleNone) {
         NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
-        UIImage *backImage = [UIImage gk_imageNamed:imageName];
-        
+        backImage = [UIImage gk_imageNamed:imageName];
+    }
+    
+    if (backImage) {
         if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
             GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
             vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:backImage target:self action:@selector(backItemClick:)];
+        }
+    }
+}
+
+- (UIImage *)gk_backImage {
+    return objc_getAssociatedObject(self, GKBackImageKey);
+}
+
+- (void)setGk_backImage:(UIImage *)gk_backImage {
+    objc_setAssociatedObject(self, GKBackImageKey, gk_backImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (gk_backImage) {
+        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
+            GKNavigationBarViewController *vc = (GKNavigationBarViewController *)self;
+            vc.gk_navLeftBarButtonItem = [UIBarButtonItem itemWithTitle:nil image:gk_backImage target:self action:@selector(backItemClick:)];
         }
     }
 }

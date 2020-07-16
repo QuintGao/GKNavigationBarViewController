@@ -50,6 +50,9 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 /** 设置状态栏是否隐藏(default is NO 即不隐藏) */
 @property (nonatomic, assign) BOOL gk_statusBarHidden;
 
+/** 自定义返回按钮图片 */
+@property (nonatomic, strong) UIImage *gk_backImage;
+
 /** 设置返回按钮的类型 */
 @property (nonatomic, assign) GKNavigationBarBackStyle gk_backStyle;
 
