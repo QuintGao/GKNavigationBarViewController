@@ -58,7 +58,7 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     if (!self.navigationController) return;
     
     __block BOOL exist = NO;
-    [GKConfigure.shieldVCs enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL * _Nonnull stop) {
+    [GKConfigure.shiledItemSpaceVCs enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([self isKindOfClass:vc.class]) {
             exist = YES;
             *stop = YES;
@@ -257,28 +257,6 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     }
     // 底部分割线
     navBar.clipsToBounds = alpha == 0.0;
-}
-
-- (UIViewController *)gk_visibleViewControllerIfExist {
-    
-    if (self.presentedViewController) {
-        return [self.presentedViewController gk_visibleViewControllerIfExist];
-    }
-    
-    if ([self isKindOfClass:[UINavigationController class]]) {
-        return [((UINavigationController *)self).topViewController gk_visibleViewControllerIfExist];
-    }
-    
-    if ([self isKindOfClass:[UITabBarController class]]) {
-        return [((UITabBarController *)self).selectedViewController gk_visibleViewControllerIfExist];
-    }
-    
-    if ([self isViewLoaded] && self.view.window) {
-        return self;
-    }else {
-        NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
-        return nil;
-    }
 }
 
 - (void)setBackItemImage:(UIImage *)image {

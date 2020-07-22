@@ -65,6 +65,20 @@
     // 获取通知传递的控制器
     UIViewController *vc = (UIViewController *)notify.object[@"viewController"];
     
+    // 不处理导航控制器和tabbar控制器
+    if ([vc isKindOfClass:[UINavigationController class]]) return;
+    if ([vc isKindOfClass:[UITabBarController class]]) return;
+    if (!vc.navigationController) return;
+    
+    __block BOOL exist = NO;
+    [GKConfigure.shiledGuestureVCs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([vc isKindOfClass:[obj class]]) {
+            exist = YES;
+            *stop = YES;
+        }
+    }];
+    if (exist) return;
+    
     // 禁止手势处理
     if (self.gk_disabledGestureHandle || vc.navigationController.gk_disabledGestureHandle) {
         self.interactivePopGestureRecognizer.delegate = nil;
@@ -73,9 +87,6 @@
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
         return;
     }
-    
-    // 不处理导航控制器
-    if ([vc isKindOfClass:[UINavigationController class]]) return;
     
     BOOL isRootVC = vc == self.viewControllers.firstObject;
     

@@ -67,11 +67,6 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 @property (nonatomic, assign) CGFloat gk_navItemRightSpace;
 
 /**
- 返回显示的控制器
- */
-- (UIViewController *)gk_visibleViewControllerIfExist;
-
-/**
  返回按钮点击
  */
 - (void)backItemClick:(id)sender;
