@@ -69,6 +69,7 @@
     if ([vc isKindOfClass:[UINavigationController class]]) return;
     if ([vc isKindOfClass:[UITabBarController class]]) return;
     if (!vc.navigationController) return;
+    if (vc.navigationController != self) return;
     
     __block BOOL exist = NO;
     [GKConfigure.shiledGuestureVCs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -80,7 +81,7 @@
     if (exist) return;
     
     // 禁止手势处理
-    if (self.gk_disabledGestureHandle || vc.navigationController.gk_disabledGestureHandle) {
+    if (self.gk_disabledGestureHandle) {
         self.interactivePopGestureRecognizer.delegate = nil;
         self.interactivePopGestureRecognizer.enabled = NO;
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
@@ -118,7 +119,7 @@
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
         
         // 给self.interactivePopGestureRecognizer.view 添加全屏滑动手势
-        if (!isRootVC && ![self.interactivePopGestureRecognizer.view.gestureRecognizers containsObject:self.panGesture]) {
+        if (![self.interactivePopGestureRecognizer.view.gestureRecognizers containsObject:self.panGesture]) {
             [self.interactivePopGestureRecognizer.view addGestureRecognizer:self.panGesture];
             self.panGesture.delegate = self.popGestureDelegate;
         }
