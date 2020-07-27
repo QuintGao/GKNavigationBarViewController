@@ -34,11 +34,11 @@
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        gk_swizzled_method(self, @"viewDidLoad", self);
+        gk_swizzled_method(@"gkNav", self, @"viewDidLoad", self);
     });
 }
 
-- (void)gk_viewDidLoad {
+- (void)gkNav_viewDidLoad {
     // 处理特殊控制器
     if ([self isKindOfClass:[UIImagePickerController class]]) return;
     if ([self isKindOfClass:[UIVideoEditorController class]]) return;
@@ -53,7 +53,7 @@
     // 注册通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
     
-    [self gk_viewDidLoad];
+    [self gkNav_viewDidLoad];
 }
 
 - (void)dealloc {

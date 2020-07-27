@@ -32,9 +32,13 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        gk_swizzled_method(self, @"viewDidLoad", self);
-        gk_swizzled_method(self, @"viewWillAppear:", self);
-        gk_swizzled_method(self, @"viewDidAppear:" ,self);
+        NSArray <NSString *> *oriSels = @[@"viewDidLoad",
+                                          @"viewWillAppear:",
+                                          @"viewDidAppear:"];
+        
+        [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
+            gk_swizzled_method(@"gk", self, oriSel, self);
+        }];
     });
 }
 
