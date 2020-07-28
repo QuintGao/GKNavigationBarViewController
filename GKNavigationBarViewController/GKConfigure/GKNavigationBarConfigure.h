@@ -56,10 +56,10 @@
 @property (nonatomic, assign) CGFloat   gk_scaleX;
 @property (nonatomic, assign) CGFloat   gk_scaleY;
 
-// 调整导航栏间距时需要屏蔽的VC（默认nil）
+// 调整导航栏间距时需要屏蔽的VC（默认nil），支持Class和NSString
 @property (nonatomic, strong) NSArray *shiledItemSpaceVCs;
 
-// 需要屏蔽手势处理的VC（默认nil）
+// 需要屏蔽手势处理的VC（默认nil），支持Class和NSString
 @property (nonatomic, strong) NSArray *shiledGuestureVCs;
 
 /// 导航栏左右间距，内部使用
