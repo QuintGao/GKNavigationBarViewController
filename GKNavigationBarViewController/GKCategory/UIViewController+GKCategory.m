@@ -47,27 +47,10 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     self.gk_navItemLeftSpace    = GKNavigationBarItemSpace;
     self.gk_navItemRightSpace   = GKNavigationBarItemSpace;
     
-    [self gk_viewDidLoad];
-}
-
-- (void)gk_viewDidAppear:(BOOL)animated {
-    [self postPropertyChangeNotification];
-    
-    [self gk_viewDidAppear:animated];
-}
-
-- (void)gk_viewWillAppear:(BOOL)animated {
-    if ([self isKindOfClass:[UINavigationController class]]) return;
-    if ([self isKindOfClass:[UITabBarController class]]) return;
-    if ([self isKindOfClass:[UIAlertController class]]) return;
-    if ([self isKindOfClass:[UIImagePickerController class]]) return;
-    if ([self isKindOfClass:[UIVideoEditorController class]]) return;
-    if ([NSStringFromClass(self.class) isEqualToString:@"PUPhotoPickerHostViewController"]) return;
-    if (!self.navigationController) return;
-    
+    // 判断是否需要屏蔽导航栏间距调整
     __block BOOL exist = NO;
     [GKConfigure.shiledItemSpaceVCs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[UIViewController class]]) {
+        if ([[obj class] isSubclassOfClass:[UIViewController class]]) {
             if ([self isKindOfClass:[obj class]]) {
                 exist = YES;
                 *stop = YES;
@@ -79,25 +62,48 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
             }
         }
     }];
-    if (exist) return;
     
-    // bug fix：#41
-    // 每次控制器出现的时候重置导航栏间距
-    if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemLeftSpace = GKConfigure.navItemLeftSpace;
-    }
-    
-    if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
-        self.gk_navItemRightSpace = GKConfigure.navItemRightSpace;
-    }
-    
-    // 重置navitem_space
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
-        configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
+        configure.gk_disableFixSpace = exist;
     }];
     
+    [self gk_viewDidLoad];
+}
+
+- (void)gk_viewWillAppear:(BOOL)animated {
+    if ([self isKindOfClass:[UINavigationController class]]) return;
+    if ([self isKindOfClass:[UITabBarController class]]) return;
+    if ([self isKindOfClass:[UIAlertController class]]) return;
+    if ([self isKindOfClass:[UIImagePickerController class]]) return;
+    if ([self isKindOfClass:[UIVideoEditorController class]]) return;
+    if ([NSStringFromClass(self.class) isEqualToString:@"PUPhotoPickerHostViewController"]) return;
+    if (!self.navigationController) return;
+    
+    // bug fix：#41
+    if (!GKConfigure.gk_disableFixSpace) {
+        // 每次控制器出现的时候重置导航栏间距
+        if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
+            self.gk_navItemLeftSpace = GKConfigure.navItemLeftSpace;
+        }
+        
+        if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
+            self.gk_navItemRightSpace = GKConfigure.navItemRightSpace;
+        }
+        
+        // 重置navitem_space
+        [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
+            configure.gk_navItemLeftSpace   = self.gk_navItemLeftSpace;
+            configure.gk_navItemRightSpace  = self.gk_navItemRightSpace;
+        }];
+    }
+    
     [self gk_viewWillAppear:animated];
+}
+
+- (void)gk_viewDidAppear:(BOOL)animated {
+    [self postPropertyChangeNotification];
+    
+    [self gk_viewDidAppear:animated];
 }
 
 #pragma mark - StatusBar
