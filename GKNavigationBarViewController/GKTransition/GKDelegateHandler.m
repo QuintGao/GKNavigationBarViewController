@@ -99,9 +99,9 @@
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     if ((self.navigationController.gk_translationScale) || (self.navigationController.gk_openScrollLeftPush && self.pushTransition)) {
         if (operation == UINavigationControllerOperationPush) {
-            return [GKPushTransitionAnimation transitionWithScale:self.navigationController.gk_translationScale];
+            return [[GKPushTransitionAnimation alloc] initWithScale:self.navigationController.gk_translationScale];
         }else if (operation == UINavigationControllerOperationPop) {
-            return [GKPopTransitionAnimation transitionWithScale:self.navigationController.gk_translationScale];
+            return [[GKPopTransitionAnimation alloc] initWithScale:self.navigationController.gk_translationScale];
         }
     }
     

@@ -26,13 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIViewController    *toViewController;
 
 
-/**
- 初始化方法
-
- @param scale 是否需要缩放，默认为NO
- @return 实例对象
- */
-+ (instancetype)transitionWithScale:(BOOL)scale;
+/// 初始化
+/// @param scale 是否需要缩放
+- (instancetype)initWithScale:(BOOL)scale;
 
 /**
  动画

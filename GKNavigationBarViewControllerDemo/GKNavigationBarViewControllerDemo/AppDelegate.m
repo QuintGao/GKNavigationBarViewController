@@ -19,10 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 配置导航栏属性
     [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.gk_translationX = 15;
-        configure.gk_translationY = 20;
-        configure.gk_scaleX = 0.90;
-        configure.gk_scaleY = 0.92;
+//        configure.gk_translationX = 15;
+//        configure.gk_translationY = 20;
+//        configure.gk_scaleX = 0.90;
+//        configure.gk_scaleY = 0.92;
         // 导航栏背景色
         configure.backgroundColor = [UIColor whiteColor];
         // 导航栏标题颜色
