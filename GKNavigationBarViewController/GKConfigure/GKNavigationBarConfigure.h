@@ -80,6 +80,9 @@
 /// @param block 配置回调
 - (void)updateConfigure:(void (^)(GKNavigationBarConfigure *configure))block;
 
+/// 获取APP当前最顶层的可见viewController
+- (UIViewController *)visibleViewController;
+
 #pragma mark - 内部方法
 
 /// 获取当前item修复间距

@@ -11,6 +11,8 @@
 #import "GKWYMusicViewController.h"
 #import "GKWYNewsViewController.h"
 #import "GKDouyinHomeViewController.h"
+#import "GKWXViewController.h"
+#import "GKWXHomeViewController.h"
 
 @interface GKMainViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +33,8 @@
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
-                        @"网易新闻"];
+                        @"网易新闻",
+                        @"微信"];
     }
     return _dataSource;
 }
@@ -124,6 +127,14 @@
             GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
             newsVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:newsVC animated:YES completion:nil];
+        }else if (indexPath.row == 8) {
+//            GKWXViewController *wxVC = [GKWXViewController new];
+//            wxVC.modalPresentationStyle = UIModalPresentationFullScreen;
+//            [self presentViewController:wxVC animated:YES completion:nil];
+            GKWXHomeViewController *homeVC = [GKWXHomeViewController new];
+            UINavigationController *nav = [UINavigationController rootVC:homeVC translationScale:NO];
+            nav.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:nav animated:YES completion:nil];
         }
     }
 }

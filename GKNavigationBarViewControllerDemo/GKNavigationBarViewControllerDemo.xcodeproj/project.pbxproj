@@ -96,6 +96,13 @@
 		79C48C3D243CC464000B0815 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C16243CC463000B0815 /* GKDouyinScrollView.m */; };
 		79C48C3E243CC464000B0815 /* GKDouyinPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C17243CC464000B0815 /* GKDouyinPersonalViewController.m */; };
 		79C48C3F243CC464000B0815 /* GKDouyinHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48C18243CC464000B0815 /* GKDouyinHomeSearchViewController.m */; };
+		79FBECEA253AE3F90053F518 /* GKWXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBECE9253AE3F90053F518 /* GKWXViewController.m */; };
+		79FBECF1253AE6C60053F518 /* GKWXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBECF0253AE6C60053F518 /* GKWXHomeViewController.m */; };
+		79FBECF7253AE6E90053F518 /* GKWXFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBECF6253AE6E90053F518 /* GKWXFindViewController.m */; };
+		79FBECFD253AE6F10053F518 /* GKWXMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBECFC253AE6F10053F518 /* GKWXMineViewController.m */; };
+		79FBED06253AE8AA0053F518 /* GKWXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBED05253AE8AA0053F518 /* GKWXDetailViewController.m */; };
+		79FBED0D253AE9110053F518 /* GKFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBED0B253AE9110053F518 /* GKFloatView.m */; };
+		79FBED13253AE9590053F518 /* GKFloatTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FBED11253AE9590053F518 /* GKFloatTransition.m */; };
 		8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -231,6 +238,20 @@
 		79C48C17243CC464000B0815 /* GKDouyinPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinPersonalViewController.m; sourceTree = "<group>"; };
 		79C48C18243CC464000B0815 /* GKDouyinHomeSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinHomeSearchViewController.m; sourceTree = "<group>"; };
 		79C48C19243CC464000B0815 /* GKDouyinHomePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinHomePlayerViewController.h; sourceTree = "<group>"; };
+		79FBECE8253AE3F90053F518 /* GKWXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWXViewController.h; sourceTree = "<group>"; };
+		79FBECE9253AE3F90053F518 /* GKWXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWXViewController.m; sourceTree = "<group>"; };
+		79FBECEF253AE6C60053F518 /* GKWXHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWXHomeViewController.h; sourceTree = "<group>"; };
+		79FBECF0253AE6C60053F518 /* GKWXHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWXHomeViewController.m; sourceTree = "<group>"; };
+		79FBECF5253AE6E90053F518 /* GKWXFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWXFindViewController.h; sourceTree = "<group>"; };
+		79FBECF6253AE6E90053F518 /* GKWXFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWXFindViewController.m; sourceTree = "<group>"; };
+		79FBECFB253AE6F10053F518 /* GKWXMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWXMineViewController.h; sourceTree = "<group>"; };
+		79FBECFC253AE6F10053F518 /* GKWXMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWXMineViewController.m; sourceTree = "<group>"; };
+		79FBED04253AE8AA0053F518 /* GKWXDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWXDetailViewController.h; sourceTree = "<group>"; };
+		79FBED05253AE8AA0053F518 /* GKWXDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWXDetailViewController.m; sourceTree = "<group>"; };
+		79FBED0B253AE9110053F518 /* GKFloatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKFloatView.m; sourceTree = "<group>"; };
+		79FBED0C253AE9110053F518 /* GKFloatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKFloatView.h; sourceTree = "<group>"; };
+		79FBED11253AE9590053F518 /* GKFloatTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKFloatTransition.m; sourceTree = "<group>"; };
+		79FBED12253AE9590053F518 /* GKFloatTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKFloatTransition.h; sourceTree = "<group>"; };
 		CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKNavigationBarViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -330,6 +351,7 @@
 				79C48BC8243CC462000B0815 /* 今日头条 */,
 				79C48BFD243CC463000B0815 /* 网易新闻 */,
 				79C48BE3243CC462000B0815 /* 网易云音乐 */,
+				79FBECE7253AE3C00053F518 /* 微信 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -483,8 +505,8 @@
 				79C48BF3243CC463000B0815 /* GKBaseViewController.m */,
 				79C48BF2243CC463000B0815 /* GKDemoBaseViewController.h */,
 				79C48BF7243CC463000B0815 /* GKDemoBaseViewController.m */,
-				79C48BF5243CC463000B0815 /* GKTabBaseViewController.m */,
 				79C48BFB243CC463000B0815 /* GKTabBaseViewController.h */,
+				79C48BF5243CC463000B0815 /* GKTabBaseViewController.m */,
 				79C48BF4243CC463000B0815 /* UIView+Extension.h */,
 				79C48BF9243CC463000B0815 /* UIView+Extension.m */,
 				79C48BF6243CC463000B0815 /* GKBaseNavigationController.h */,
@@ -539,6 +561,43 @@
 				79C48C16243CC463000B0815 /* GKDouyinScrollView.m */,
 			);
 			path = "抖音";
+			sourceTree = "<group>";
+		};
+		79FBECE7253AE3C00053F518 /* 微信 */ = {
+			isa = PBXGroup;
+			children = (
+				79FBECE8253AE3F90053F518 /* GKWXViewController.h */,
+				79FBECE9253AE3F90053F518 /* GKWXViewController.m */,
+				79FBECEE253AE40D0053F518 /* tab */,
+				79FBED0A253AE8F00053F518 /* FloatView */,
+			);
+			path = "微信";
+			sourceTree = "<group>";
+		};
+		79FBECEE253AE40D0053F518 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				79FBECEF253AE6C60053F518 /* GKWXHomeViewController.h */,
+				79FBECF0253AE6C60053F518 /* GKWXHomeViewController.m */,
+				79FBECF5253AE6E90053F518 /* GKWXFindViewController.h */,
+				79FBECF6253AE6E90053F518 /* GKWXFindViewController.m */,
+				79FBECFB253AE6F10053F518 /* GKWXMineViewController.h */,
+				79FBECFC253AE6F10053F518 /* GKWXMineViewController.m */,
+				79FBED04253AE8AA0053F518 /* GKWXDetailViewController.h */,
+				79FBED05253AE8AA0053F518 /* GKWXDetailViewController.m */,
+			);
+			path = tab;
+			sourceTree = "<group>";
+		};
+		79FBED0A253AE8F00053F518 /* FloatView */ = {
+			isa = PBXGroup;
+			children = (
+				79FBED0C253AE9110053F518 /* GKFloatView.h */,
+				79FBED0B253AE9110053F518 /* GKFloatView.m */,
+				79FBED12253AE9590053F518 /* GKFloatTransition.h */,
+				79FBED11253AE9590053F518 /* GKFloatTransition.m */,
+			);
+			path = FloatView;
 			sourceTree = "<group>";
 		};
 		D7F64A91D4217D7E5C3F0E36 /* Frameworks */ = {
@@ -639,7 +698,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = gaokun;
 				TargetAttributes = {
 					600EC5522306588500222289 = {
@@ -754,18 +813,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FBED06253AE8AA0053F518 /* GKWXDetailViewController.m in Sources */,
 				600EC6D823067F5400222289 /* UINavigationController+GKCategory.m in Sources */,
 				79C48C1B243CC464000B0815 /* GKToutiaoMineViewController.m in Sources */,
 				600EC6DD23067F5400222289 /* UIViewController+GKCategory.m in Sources */,
+				79FBECEA253AE3F90053F518 /* GKWXViewController.m in Sources */,
 				79C48C25243CC464000B0815 /* GKDemo003ViewController.m in Sources */,
 				79C48C35243CC464000B0815 /* GKWYNewsNewViewController.m in Sources */,
 				600EC6D623067F5400222289 /* GKPopTransitionAnimation.m in Sources */,
 				79C48C3D243CC464000B0815 /* GKDouyinScrollView.m in Sources */,
 				79C48C23243CC464000B0815 /* GKDemo002ViewController.m in Sources */,
+				79FBECF1253AE6C60053F518 /* GKWXHomeViewController.m in Sources */,
 				79C48C3A243CC464000B0815 /* GKWYNewsLiveViewController.m in Sources */,
 				600EC6D723067F5400222289 /* GKBaseTransitionAnimation.m in Sources */,
 				79C48C2E243CC464000B0815 /* GKTabBaseViewController.m in Sources */,
 				79C48C1D243CC464000B0815 /* GKToutiaoVideoViewController.m in Sources */,
+				79FBECFD253AE6F10053F518 /* GKWXMineViewController.m in Sources */,
 				600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */,
 				600EC5662306588700222289 /* main.m in Sources */,
 				79C48C37243CC464000B0815 /* GKWYNewsCommentViewController.m in Sources */,
@@ -785,13 +848,16 @@
 				79C48C28243CC464000B0815 /* GKWYMusicFriendViewController.m in Sources */,
 				79C48C1C243CC464000B0815 /* GKToutiaoDetailViewController.m in Sources */,
 				79C48C3E243CC464000B0815 /* GKDouyinPersonalViewController.m in Sources */,
+				79FBED13253AE9590053F518 /* GKFloatTransition.m in Sources */,
 				79C48C1A243CC464000B0815 /* GKToutiaoViewController.m in Sources */,
 				79C48C1F243CC464000B0815 /* GKToutiaoHomeViewController.m in Sources */,
 				79C48C2C243CC464000B0815 /* GKWYMusicViewController.m in Sources */,
 				600EC6DA23067F5400222289 /* UIBarButtonItem+GKCategory.m in Sources */,
 				79C48C2F243CC464000B0815 /* GKDemoBaseViewController.m in Sources */,
 				79C48C2D243CC464000B0815 /* GKBaseViewController.m in Sources */,
+				79FBED0D253AE9110053F518 /* GKFloatView.m in Sources */,
 				600EC6D423067F5400222289 /* GKPushTransitionAnimation.m in Sources */,
+				79FBECF7253AE6E90053F518 /* GKWXFindViewController.m in Sources */,
 				79C48C34243CC464000B0815 /* GKWYNewsHomeViewController.m in Sources */,
 				79C48C3B243CC464000B0815 /* GKDouyinHomePlayerViewController.m in Sources */,
 				600EC6E023067F5400222289 /* GKNavigationBarViewController.m in Sources */,
@@ -884,6 +950,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -943,6 +1010,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

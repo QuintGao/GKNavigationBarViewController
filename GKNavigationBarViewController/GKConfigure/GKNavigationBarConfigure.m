@@ -80,6 +80,11 @@ static GKNavigationBarConfigure *instance = nil;
     !block ? : block(self);
 }
 
+- (UIViewController *)visibleViewController {
+    UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
+    return [rootViewController gk_visibleViewControllerIfExist];
+}
+
 - (CGFloat)gk_fixedSpace {
     CGSize screentSize = [UIScreen mainScreen].bounds.size;
     return MIN(screentSize.width, screentSize.height) > 375 ? 20 : 16;

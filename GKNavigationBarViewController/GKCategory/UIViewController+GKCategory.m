@@ -22,6 +22,8 @@ static const void* GKBackImageKey           = @"GKBackImageKey";
 static const void* GKBackStyleKey           = @"GKBackStyleKey";
 static const void* GKPushDelegateKey        = @"GKPushDelegateKey";
 static const void* GKPopDelegateKey         = @"GKPopDelegateKey";
+static const void* GKPushTransitionKey      = @"GKPushTransitionKey";
+static const void* GKPopTransitionKey       = @"GKPopTransitionKey";
 static const void* GKNavItemLeftSpaceKey    = @"GKNavItemLeftSpaceKey";
 static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 
@@ -221,6 +223,22 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     [self postPropertyChangeNotification];
 }
 
+- (id<UIViewControllerAnimatedTransitioning>)gk_pushTransition {
+    return objc_getAssociatedObject(self, GKPushTransitionKey);
+}
+
+- (void)setGk_pushTransition:(id<UIViewControllerAnimatedTransitioning>)gk_pushTransition {
+    objc_setAssociatedObject(self, GKPushTransitionKey, gk_pushTransition, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)gk_popTransition {
+    return objc_getAssociatedObject(self, GKPopTransitionKey);
+}
+
+- (void)setGk_popTransition:(id<UIViewControllerAnimatedTransitioning>)gk_popTransition {
+    objc_setAssociatedObject(self, GKPopTransitionKey, gk_popTransition, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (CGFloat)gk_navItemLeftSpace {
     return [objc_getAssociatedObject(self, GKNavItemLeftSpaceKey) floatValue];
 }
@@ -303,6 +321,24 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 
 - (void)backItemClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIViewController *)gk_visibleViewControllerIfExist {
+    if (self.presentedViewController) {
+        return [self.presentedViewController gk_visibleViewControllerIfExist];
+    }
+    if ([self isKindOfClass:[UINavigationController class]]) {
+        return [((UINavigationController *)self).topViewController gk_visibleViewControllerIfExist];
+    }
+    if ([self isKindOfClass:[UITabBarController class]]) {
+        return [((UITabBarController *)self).selectedViewController gk_visibleViewControllerIfExist];
+    }
+    if ([self isViewLoaded] && self.view.window) {
+        return self;
+    }else {
+        NSLog(@"找不到可见的控制器，viewcontroller.self = %@，self.view.window=%@", self, self.view.window);
+        return nil;
+    }
 }
 
 - (void)postPropertyChangeNotification {
