@@ -128,13 +128,9 @@
             newsVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:newsVC animated:YES completion:nil];
         }else if (indexPath.row == 8) {
-//            GKWXViewController *wxVC = [GKWXViewController new];
-//            wxVC.modalPresentationStyle = UIModalPresentationFullScreen;
-//            [self presentViewController:wxVC animated:YES completion:nil];
-            GKWXHomeViewController *homeVC = [GKWXHomeViewController new];
-            UINavigationController *nav = [UINavigationController rootVC:homeVC translationScale:NO];
-            nav.modalPresentationStyle = UIModalPresentationFullScreen;
-            [self presentViewController:nav animated:YES completion:nil];
+            GKWXViewController *wxVC = [GKWXViewController new];
+            wxVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:wxVC animated:YES completion:nil];
         }
     }
 }

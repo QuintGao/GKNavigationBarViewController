@@ -83,6 +83,8 @@
     [contView addSubview:toVC.view];
     [contView addSubview:fromVC.view];
 
+    [GKFloatView show];
+    
     CGRect floatBallRect = [GKFloatView floatView].frame;
     [toVC.view addSubview:self.coverView];
 
@@ -102,12 +104,8 @@
     maskLayerAnimation.delegate = self;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
 
-
     [UIView animateWithDuration:0.5 animations:^{
         self.coverView.alpha = 0;
-    }];
-    [UIView animateWithDuration:0.5 animations:^{
-//        [HKFloatManager shared].floatBall.alpha = 1;
     }];
 }
 

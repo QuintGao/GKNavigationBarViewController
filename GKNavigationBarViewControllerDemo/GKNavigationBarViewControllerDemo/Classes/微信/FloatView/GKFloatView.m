@@ -28,12 +28,10 @@ static GKFloatView *_floatView;
 @implementation GKFloatView
 
 + (void)create {
-    if (_floatView) {
-        [GKFloatView destory];
-    }
+    if (_floatView) return;
     
     GKFloatView *floatView = [GKFloatView new];
-    floatView.frame = CGRectMake(10, 80, GKFloatWH, GKFloatWH);
+    floatView.frame = CGRectMake(GKFloatScreenW - 10 - GKFloatWH, GK_STATUSBAR_NAVBAR_HEIGHT + 20, GKFloatWH, GKFloatWH);
     _floatView = floatView;
     
     [[UIApplication sharedApplication].delegate.window addSubview:floatView];
@@ -66,7 +64,7 @@ static GKFloatView *_floatView;
 
 + (void)dismissVC {
     if (_floatView) {
-        
+        [_floatView dismissVC];
     }
 }
 
@@ -92,14 +90,18 @@ static GKFloatView *_floatView;
 }
 
 - (void)hide {
-    self.fromVC.gk_pushTransition = [GKFloatTransition transitionWithType:GKFloatTransitionTypePush];
     self.toVC.gk_popTransition = [GKFloatTransition transitionWithType:GKFloatTransitionTypePop];
 }
 
 - (void)dismissVC {
+    [GKFloatView show];
+    
+    if (!self.toVC) {
+        self.toVC = GKConfigure.visibleViewController;
+    }
+    
     self.toVC.gk_popTransition = [GKFloatTransition transitionWithType:GKFloatTransitionTypePop];
     [self.toVC.navigationController popViewControllerAnimated:YES];
-    [GKFloatView show];
 }
 
 - (void)dealloc {
