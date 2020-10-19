@@ -41,6 +41,10 @@
     [self animateTransition];
 }
 
+- (NSTimeInterval)animationDuration {
+    return [self transitionDuration:self.transitionContext];
+}
+
 // 子类重写
 - (void)animateTransition{}
 

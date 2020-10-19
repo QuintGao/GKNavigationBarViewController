@@ -10,8 +10,6 @@
 
 @interface GKFloatTransition()<CAAnimationDelegate>
 
-@property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
-
 @property (nonatomic, strong) UIView *coverView;
 
 @property (nonatomic, assign) GKFloatTransitionType type;
@@ -36,36 +34,46 @@
     return 0.5;
 }
 
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    self.transitionContext = transitionContext;
-
+- (void)animateTransition {
     if (self.type == GKFloatTransitionTypePush) {
-        [self pushTransition:transitionContext];
-    }else {
-        [self popTransition:transitionContext];
+        [self pushTransition];
+    }else if (self.type == GKFloatTransitionTypePop) {
+        [self popTransition];
     }
 }
 
-- (void)pushTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+- (void)pushTransition {
+    self.isHideTabBar = self.fromViewController.tabBarController && self.toViewController.hidesBottomBarWhenPushed;
+    __block UIView *fromView = nil;
+    if (self.isHideTabBar) {
+        // 获取fromVC的截图
+        UIImage *captureImage = [self getCaptureWithView:self.fromViewController.view.window];
+        UIImageView *captureView = [[UIImageView alloc] initWithImage:captureImage];
+        captureView.frame = self.containerView.frame;
+        [self.containerView addSubview:captureView];
+        fromView = captureView;
+        self.fromViewController.gk_captureImage = captureImage;
+        self.fromViewController.view.hidden = YES;
+        self.fromViewController.tabBarController.tabBar.hidden = YES;
+    }else {
+        fromView = self.fromViewController.view;
+    }
+    self.contentView = fromView;
 
-    UIView *contView = [transitionContext containerView];
-    [contView addSubview:fromVC.view];
-    [contView addSubview:toVC.view];
+    [self.containerView addSubview:self.toViewController.view];
 
     CGRect floatBallRect = [GKFloatView floatView].frame;
-    [fromVC.view addSubview:self.coverView];
+    [self.contentView addSubview:self.coverView];
     UIBezierPath *maskStartBP = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(floatBallRect.origin.x, floatBallRect.origin.y, floatBallRect.size.width, floatBallRect.size.height) cornerRadius:floatBallRect.size.height / 2];
     UIBezierPath *maskFinalBP = [UIBezierPath bezierPathWithRoundedRect:[UIScreen mainScreen].bounds cornerRadius:floatBallRect.size.width / 2];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.path = maskFinalBP.CGPath;
-    toVC.view.layer.mask = maskLayer;
+    self.toViewController.view.layer.mask = maskLayer;
 
     CABasicAnimation *maskLayerAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     maskLayerAnimation.fromValue = (__bridge id) (maskStartBP.CGPath);
     maskLayerAnimation.toValue = (__bridge id) ((maskFinalBP.CGPath));
-    maskLayerAnimation.duration = [self transitionDuration:transitionContext];
+    maskLayerAnimation.duration = self.animationDuration;
     maskLayerAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     maskLayerAnimation.delegate = self;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
@@ -75,18 +83,28 @@
     }];
 }
 
-- (void)popTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-
-    UIView *contView = [transitionContext containerView];
-    [contView addSubview:toVC.view];
-    [contView addSubview:fromVC.view];
+- (void)popTransition {
+    [self.containerView insertSubview:self.toViewController.view belowSubview:self.fromViewController.view];
+    // 是否隐藏tabbar
+    self.isHideTabBar = self.toViewController.tabBarController && self.fromViewController.hidesBottomBarWhenPushed;
+    
+    __block UIView *toView = nil;
+    if (self.isHideTabBar) {
+        UIImageView *captureView = [[UIImageView alloc] initWithImage:self.toViewController.gk_captureImage];
+        captureView.frame = self.containerView.frame;
+        [self.containerView insertSubview:captureView belowSubview:self.fromViewController.view];
+        toView = captureView;
+        self.toViewController.view.hidden = YES;
+        self.toViewController.tabBarController.tabBar.hidden = YES;
+    }else {
+        toView = self.toViewController.view;
+    }
+    self.contentView = toView;
 
     [GKFloatView show];
     
     CGRect floatBallRect = [GKFloatView floatView].frame;
-    [toVC.view addSubview:self.coverView];
+    [self.contentView addSubview:self.coverView];
 
     UIBezierPath *maskStartBP = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(floatBallRect.origin.x, floatBallRect.origin.y, floatBallRect.size.width, floatBallRect.size.height) cornerRadius:floatBallRect.size.height / 2];
 
@@ -94,12 +112,12 @@
 
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.path = maskStartBP.CGPath;
-    fromVC.view.layer.mask = maskLayer;
+    self.fromViewController.view.layer.mask = maskLayer;
 
     CABasicAnimation *maskLayerAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     maskLayerAnimation.toValue = (__bridge id) (maskStartBP.CGPath);
     maskLayerAnimation.fromValue = (__bridge id) ((maskFinalBP.CGPath));
-    maskLayerAnimation.duration = [self transitionDuration:transitionContext];
+    maskLayerAnimation.duration = self.animationDuration;
     maskLayerAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     maskLayerAnimation.delegate = self;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
@@ -110,12 +128,26 @@
 }
 
 #pragma mark - CABasicAnimation的Delegate
-
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    [self.transitionContext completeTransition:YES];
-    [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
-    [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
+    [self completeTransition];
+    self.fromViewController.view.layer.mask = nil;
+    self.toViewController.view.layer.mask = nil;
     [self.coverView removeFromSuperview];
+    if (self.isHideTabBar) {
+        [self.contentView removeFromSuperview];
+        self.contentView = nil;
+        if (self.type == GKFloatTransitionTypePush) {
+            self.fromViewController.view.hidden = NO;
+            if (self.fromViewController.navigationController.childViewControllers.count == 1) {
+                self.fromViewController.tabBarController.tabBar.hidden = NO;
+            }
+        }else if (self.type == GKFloatTransitionTypePop) {
+            self.toViewController.view.hidden = NO;
+            if (self.toViewController.navigationController.childViewControllers.count == 1) {
+                self.toViewController.tabBarController.tabBar.hidden = NO;
+            }
+        }
+    }
 }
 
 - (UIView *)coverView {

@@ -6,15 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GKBaseTransitionAnimation.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, GKFloatTransitionType) {
-    GKFloatTransitionTypePush = 0,
-    GKFloatTransitionTypePop  = 1
+    GKFloatTransitionTypePush = 0,  // 圆放大
+    GKFloatTransitionTypePop  = 1,  // 圆缩小
 };
 
-@interface GKFloatTransition : NSObject<UIViewControllerAnimatedTransitioning>
+@interface GKFloatTransition : GKBaseTransitionAnimation
 
 + (instancetype)transitionWithType:(GKFloatTransitionType)type;
 

@@ -9,6 +9,7 @@
 #import "GKWXHomeViewController.h"
 #import "GKFloatView.h"
 #import "GKWXDetailViewController.h"
+#import "GKBaseTransitionAnimation.h"
 
 @interface GKWXHomeViewController ()
 
@@ -32,6 +33,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    self.gk_captureImage = [self getCaptureWithView:self.view.window];
+}
+
+- (UIImage *)getCaptureWithView:(UIView *)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 - (void)showAction {

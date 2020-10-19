@@ -83,6 +83,8 @@
 /// 获取APP当前最顶层的可见viewController
 - (UIViewController *)visibleViewController;
 
+- (BOOL)gk_isNotchedScreen;
+
 #pragma mark - 内部方法
 
 /// 获取当前item修复间距

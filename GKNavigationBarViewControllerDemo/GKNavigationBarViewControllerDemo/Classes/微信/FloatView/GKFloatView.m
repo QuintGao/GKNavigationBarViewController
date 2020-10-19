@@ -144,10 +144,10 @@ static GKFloatView *_floatView;
         frame.origin.x = GKFloatScreenW - GKFloatWH - 10;
     }
     
-    if (point.y <= 20) {
+    if (frame.origin.y > GKFloatScreenH - frame.size.height - 10) {
+        frame.origin.y = GKFloatScreenH - frame.size.height - 10;
+    }else if (frame.origin.y < 20) {
         frame.origin.y = 20;
-    }else if (point.y > GKFloatScreenH - GKFloatWH - 64) {
-        frame.origin.y = GKFloatScreenH - GKFloatWH - 64;
     }
     
     [UIView animateWithDuration:0.3 animations:^{
