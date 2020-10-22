@@ -87,6 +87,7 @@
 
 #pragma mark - 内部方法
 
+- (UIEdgeInsets)gk_safeAreaInsets;
 /// 获取当前item修复间距
 - (CGFloat)gk_fixedSpace;
 
