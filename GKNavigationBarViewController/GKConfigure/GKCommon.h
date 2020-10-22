@@ -24,7 +24,7 @@
 #define GK_SCREEN_HEIGHT                [UIScreen mainScreen].bounds.size.height
 #define GK_SAFEAREA_TOP                 (GK_IS_iPhoneX ? 24.0f : 0.0f)   // 顶部安全区域
 #define GK_SAFEAREA_BTM                 (GK_IS_iPhoneX ? 34.0f : 0.0f)   // 底部安全区域
-#define GK_STATUSBAR_HEIGHT             (GK_IS_iPhoneX ? [GKConfigure gk_safeAreaInsets] : 20.0f)  // 状态栏高度
+#define GK_STATUSBAR_HEIGHT             (GK_IS_iPhoneX ? [GKConfigure gk_safeAreaInsets].top : 20.0f)  // 状态栏高度
 #define GK_NAVBAR_HEIGHT                44.0f   // 导航栏高度
 #define GK_STATUSBAR_NAVBAR_HEIGHT      (GK_STATUSBAR_HEIGHT + GK_NAVBAR_HEIGHT) // 状态栏+导航栏高度
 #define GK_TABBAR_HEIGHT                (GK_IS_iPhoneX ? 83.0f : 49.0f)  //tabbar高度
