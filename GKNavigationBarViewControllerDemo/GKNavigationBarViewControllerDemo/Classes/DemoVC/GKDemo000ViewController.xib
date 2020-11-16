@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +15,8 @@
                 <outlet property="backStyleSwitch" destination="Ovx-xy-5Ty" id="ERc-fN-XcG"/>
                 <outlet property="fullScreenDistanceLabel" destination="Fg1-t7-YrN" id="5sJ-Yu-zuG"/>
                 <outlet property="fullScreenDistanceSlider" destination="4ze-0c-gSo" id="b1x-gp-h11"/>
+                <outlet property="fullScreenInterceptLabel" destination="nDa-6d-253" id="W49-M6-AB1"/>
+                <outlet property="fullScreenInterceptSwitch" destination="ZIj-ql-Qlz" id="Q6e-rR-Sck"/>
                 <outlet property="fullScreenPopLabel" destination="l25-WB-Gdi" id="XdB-Zc-AaO"/>
                 <outlet property="fullScreenPopSwitch" destination="laa-x0-wuY" id="ice-Hg-sAI"/>
                 <outlet property="interactivePopLabel" destination="n2C-Th-mSO" id="J8K-US-wKA"/>
@@ -149,41 +152,56 @@
                     </connections>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全屏返回手势距离：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-t7-YrN">
-                    <rect key="frame" x="20" y="493" width="156" height="21"/>
+                    <rect key="frame" x="20" y="534" width="156" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4ze-0c-gSo">
-                    <rect key="frame" x="-2" y="534" width="418" height="31"/>
+                    <rect key="frame" x="-2" y="575" width="418" height="31"/>
                     <connections>
                         <action selector="fullScreenDistanceAction:" destination="-1" eventType="valueChanged" id="Rtn-fA-A1H"/>
                     </connections>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="导航栏透明度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTk-ty-beN">
-                    <rect key="frame" x="20" y="584" width="121.5" height="21"/>
+                    <rect key="frame" x="20" y="625" width="121.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hA4-En-KBv">
-                    <rect key="frame" x="-2" y="625" width="418" height="31"/>
+                    <rect key="frame" x="-2" y="666" width="418" height="31"/>
                     <connections>
                         <action selector="navBarAlphaAction:" destination="-1" eventType="valueChanged" id="xI1-9u-iP6"/>
                     </connections>
                 </slider>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-R7-93F">
-                    <rect key="frame" x="20" y="685" width="374" height="34"/>
+                    <rect key="frame" x="20" y="726" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="lta-UW-fvN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全屏手势返回拦截：关" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDa-6d-253">
+                    <rect key="frame" x="20" y="493" width="173.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZIj-ql-Qlz">
+                    <rect key="frame" x="345" y="488" width="51" height="31"/>
+                    <connections>
+                        <action selector="fullScreenInterceptAction:" destination="-1" eventType="valueChanged" id="0JE-vJ-JOR"/>
+                        <action selector="moreItemAction:" destination="-1" eventType="valueChanged" id="Rnm-h1-CrK"/>
+                    </connections>
+                </switch>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="6np-m4-hwa" firstAttribute="top" secondItem="cMW-9Y-rSl" secondAttribute="bottom" constant="20" id="079-6m-tdy"/>
+                <constraint firstItem="ZIj-ql-Qlz" firstAttribute="trailing" secondItem="0ha-lc-FHH" secondAttribute="trailing" id="0Ih-st-Zfi"/>
                 <constraint firstItem="C5M-pQ-sWR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="1Ef-tA-IDJ"/>
                 <constraint firstItem="0ha-lc-FHH" firstAttribute="centerY" secondItem="TBy-1H-zKb" secondAttribute="centerY" id="2uo-rA-8hN"/>
                 <constraint firstItem="c9r-cv-81Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="35X-Bd-ghp"/>
@@ -210,7 +228,7 @@
                 <constraint firstItem="o2P-Ht-MgQ" firstAttribute="centerY" secondItem="C5M-pQ-sWR" secondAttribute="centerY" id="V6h-6e-g7x"/>
                 <constraint firstItem="4pp-uD-QvV" firstAttribute="top" secondItem="l25-WB-Gdi" secondAttribute="bottom" constant="20" id="Vpx-TN-oSh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wyA-Tz-gge" secondAttribute="trailing" constant="20" id="a9C-St-7Vc"/>
-                <constraint firstItem="Fg1-t7-YrN" firstAttribute="top" secondItem="TBy-1H-zKb" secondAttribute="bottom" constant="20" id="ahN-d5-S9f"/>
+                <constraint firstItem="ZIj-ql-Qlz" firstAttribute="centerY" secondItem="nDa-6d-253" secondAttribute="centerY" id="ak4-Rx-BeM"/>
                 <constraint firstItem="C5M-pQ-sWR" firstAttribute="top" secondItem="c9r-cv-81Q" secondAttribute="bottom" constant="20" id="coy-KW-kd1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JuP-R7-93F" secondAttribute="trailing" constant="20" id="deT-Xr-JpD"/>
                 <constraint firstItem="laa-x0-wuY" firstAttribute="centerY" secondItem="l25-WB-Gdi" secondAttribute="centerY" id="eEw-BN-y3Y"/>
@@ -220,12 +238,15 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o2P-Ht-MgQ" secondAttribute="trailing" constant="20" id="iKa-KF-Y9u"/>
                 <constraint firstItem="4ze-0c-gSo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iwc-P6-Ais"/>
                 <constraint firstItem="4ze-0c-gSo" firstAttribute="top" secondItem="Fg1-t7-YrN" secondAttribute="bottom" constant="20" id="j4s-GU-t0g"/>
+                <constraint firstItem="nDa-6d-253" firstAttribute="top" secondItem="TBy-1H-zKb" secondAttribute="bottom" constant="20" id="joB-ik-6dF"/>
                 <constraint firstItem="n2C-Th-mSO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="kn1-dM-bjb"/>
+                <constraint firstItem="Fg1-t7-YrN" firstAttribute="top" secondItem="nDa-6d-253" secondAttribute="bottom" constant="20" id="mAM-u8-kDc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="s14-x2-jEm" secondAttribute="trailing" constant="20" id="mdH-JH-mKs"/>
                 <constraint firstItem="TBy-1H-zKb" firstAttribute="top" secondItem="6np-m4-hwa" secondAttribute="bottom" constant="20" id="nFb-xP-K7K"/>
                 <constraint firstItem="V5n-ie-3cd" firstAttribute="centerY" secondItem="6np-m4-hwa" secondAttribute="centerY" id="nGY-sk-BKQ"/>
                 <constraint firstItem="hA4-En-KBv" firstAttribute="top" secondItem="HTk-ty-beN" secondAttribute="bottom" constant="20" id="qFD-wW-w5l"/>
                 <constraint firstItem="xZw-Ks-QAd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sWq-TE-0Je"/>
+                <constraint firstItem="nDa-6d-253" firstAttribute="leading" secondItem="TBy-1H-zKb" secondAttribute="leading" id="t43-Xz-iRH"/>
                 <constraint firstItem="l25-WB-Gdi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="te9-Cg-n3m"/>
                 <constraint firstItem="HTk-ty-beN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="vda-3o-BBs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="laa-x0-wuY" secondAttribute="trailing" constant="20" id="vek-3V-qoC"/>
@@ -233,8 +254,12 @@
                 <constraint firstItem="n2C-Th-mSO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zXz-YS-u3s"/>
                 <constraint firstItem="Fg1-t7-YrN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zg9-fg-PsJ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

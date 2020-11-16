@@ -10,7 +10,7 @@
 #import "GKDemoWebViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
-@interface GKDemo000ViewController ()<GKViewControllerPushDelegate>
+@interface GKDemo000ViewController ()<GKViewControllerPushDelegate, GKViewControllerPopDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *interactivePopLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *interactivePopSwitch;
@@ -30,6 +30,12 @@
 @property (weak, nonatomic) IBOutlet UISwitch *leftPushSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *moreItemLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *moreItemSwitch;
+
+@property (weak, nonatomic) IBOutlet UILabel *fullScreenInterceptLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *fullScreenInterceptSwitch;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *fullScreenDistanceLabel;
 @property (weak, nonatomic) IBOutlet UISlider *fullScreenDistanceSlider;
 @property (weak, nonatomic) IBOutlet UILabel *navBarAlphaLabel;
@@ -62,6 +68,7 @@
     
     self.leftPushSwitch.on = NO;
     self.moreItemSwitch.on = NO;
+    self.fullScreenInterceptSwitch.on = NO;
     self.fullScreenDistanceSlider.minimumValue = 0;
     self.fullScreenDistanceSlider.maximumValue = self.view.frame.size.width;
     if (self.gk_popMaxAllowedDistanceToLeftEdge == 0) {
@@ -147,6 +154,16 @@
     }
     self.moreItemLabel.text = [NSString stringWithFormat:@"多个导航按钮：%@", self.moreItemSwitch.on ? @"开" : @"关"];
 }
+
+- (IBAction)fullScreenInterceptAction:(id)sender {
+    if (self.fullScreenInterceptSwitch.on) {
+        self.gk_popDelegate = self;
+    }else {
+        self.gk_popDelegate = nil;
+    }
+    self.fullScreenInterceptLabel.text = [NSString stringWithFormat:@"全屏手势处理拦截：%@", self.fullScreenInterceptSwitch.on ? @"开" : @"关"];
+}
+
 - (IBAction)fullScreenDistanceAction:(id)sender {
     self.gk_popMaxAllowedDistanceToLeftEdge = self.fullScreenDistanceSlider.value;
     self.fullScreenDistanceLabel.text = [NSString stringWithFormat:@"全屏返回手势距离：%f", self.gk_popMaxAllowedDistanceToLeftEdge];
@@ -181,6 +198,17 @@
         _shareItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
     return _shareItem;
+}
+
+#pragma mark - GKViewControllerPopDelegate
+- (void)viewControllerPopScrollBegan {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"确定要返回吗？" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.gk_popDelegate = nil;
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 #pragma mark - GKViewControllerPushDelegate
