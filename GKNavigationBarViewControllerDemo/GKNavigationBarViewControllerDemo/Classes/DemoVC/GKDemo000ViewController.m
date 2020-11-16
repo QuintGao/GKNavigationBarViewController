@@ -161,7 +161,7 @@
     }else {
         self.gk_popDelegate = nil;
     }
-    self.fullScreenInterceptLabel.text = [NSString stringWithFormat:@"全屏手势处理拦截：%@", self.fullScreenInterceptSwitch.on ? @"开" : @"关"];
+    self.fullScreenInterceptLabel.text = [NSString stringWithFormat:@"全屏手势返回拦截：%@", self.fullScreenInterceptSwitch.on ? @"开" : @"关"];
 }
 
 - (IBAction)fullScreenDistanceAction:(id)sender {
