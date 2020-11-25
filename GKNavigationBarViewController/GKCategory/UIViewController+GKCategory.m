@@ -27,6 +27,14 @@ static const void* GKPopTransitionKey       = @"GKPopTransitionKey";
 static const void* GKNavItemLeftSpaceKey    = @"GKNavItemLeftSpaceKey";
 static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 
+@interface UIViewController (GKCategory)<GKViewControllerPushDelegate, GKViewControllerPopDelegate>
+
+@property (nonatomic, assign) BOOL hasPushDelegate;
+
+@property (nonatomic, assign) BOOL hasPopDelegate;
+
+@end
+
 @implementation UIViewController (GKCategory)
 
 // 方法交换
@@ -36,7 +44,8 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     dispatch_once(&onceToken, ^{
         NSArray <NSString *> *oriSels = @[@"viewDidLoad",
                                           @"viewWillAppear:",
-                                          @"viewDidAppear:"];
+                                          @"viewDidAppear:",
+                                          @"viewDidDisappear:"];
         
         [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
             gk_swizzled_method(@"gk", self, oriSel, self);
@@ -73,6 +82,16 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 }
 
 - (void)gk_viewWillAppear:(BOOL)animated {
+    if (self.hasPushDelegate) {
+        self.gk_pushDelegate = self;
+        self.hasPushDelegate = NO;
+    }
+    
+    if (self.hasPopDelegate) {
+        self.gk_popDelegate = self;
+        self.hasPopDelegate = NO;
+    }
+    
     if ([self isKindOfClass:[UINavigationController class]]) return;
     if ([self isKindOfClass:[UITabBarController class]]) return;
     if ([self isKindOfClass:[UIAlertController class]]) return;
@@ -106,6 +125,22 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     [self postPropertyChangeNotification];
     
     [self gk_viewDidAppear:animated];
+}
+
+- (void)gk_viewDidDisappear:(BOOL)animated {
+    if (self.gk_pushDelegate == self) {
+        self.hasPushDelegate = YES;
+    }
+    
+    if (self.gk_popDelegate == self) {
+        self.hasPopDelegate = YES;
+    }
+    
+    // 这两个代理系统不会自动回收，所以要做下处理
+    self.gk_pushDelegate = nil;
+    self.gk_popDelegate = nil;
+    
+    [self gk_viewDidDisappear:animated];
 }
 
 #pragma mark - StatusBar
@@ -265,6 +300,24 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
         configure.gk_navItemRightSpace = gk_navItemRightSpace;
     }];
+}
+
+static char kAssociatedObjectKey_hasPushDelegate;
+- (BOOL)hasPushDelegate {
+    return [objc_getAssociatedObject(self, &kAssociatedObjectKey_hasPushDelegate) boolValue];
+}
+
+- (void)setHasPushDelegate:(BOOL)hasPushDelegate {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey_hasPushDelegate, @(hasPushDelegate), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+static char kAssociatedObjectKey_hasPopDelegate;
+- (BOOL)hasPopDelegate {
+    return [objc_getAssociatedObject(self, &kAssociatedObjectKey_hasPopDelegate) boolValue];
+}
+
+- (void)setHasPopDelegate:(BOOL)hasPopDelegate {
+    return objc_setAssociatedObject(self, &kAssociatedObjectKey_hasPopDelegate, @(hasPopDelegate), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setNavBarAlpha:(CGFloat)alpha {

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "UIViewController+GKCategory.h"
 #import "UIBarButtonItem+GKCategory.h"
-#import "GKDelegateHandler.h"
 
 @interface UINavigationController (GKCategory)
 
@@ -25,5 +24,8 @@
 
 /** 是否禁止导航控制器的手势处理，默认NO，如果设置为YES，则手势操作将失效(包括全屏手势和边缘手势) */
 @property (nonatomic, assign) BOOL gk_disabledGestureHandle;
+
+/// 开启系统导航与GKNavigationBar过渡处理，需要在显示系统导航栏的控制器中调用显示导航栏方法
+@property (nonatomic, assign) BOOL gk_openSystemNavHandle;
 
 @end
