@@ -53,6 +53,7 @@
 		60180AEE23585BF500C48293 /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180AEF23585BF500C48293 /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6D223067F5400222289 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180B342358669300C48293 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 60180B332358669300C48293 /* .travis.yml */; };
+		60B70D48256F8498008D62FC /* GKNavigationInteractiveTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7913689A256E9C95008AB9F5 /* GKNavigationInteractiveTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60D0DC07236FF8B800266415 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6011631A236FF52900622897 /* UIImage+GKCategory.m */; };
 		60D0DC08236FF8C200266415 /* UIImage+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60116319236FF52900622897 /* UIImage+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7913689C256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7913689B256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m */; };
@@ -613,6 +614,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B70D48256F8498008D62FC /* GKNavigationInteractiveTransition.h in Headers */,
 				60180AE123585BF500C48293 /* GKPushTransitionAnimation.h in Headers */,
 				60180AE223585BF500C48293 /* GKPopTransitionAnimation.h in Headers */,
 				60180AE323585BF500C48293 /* GKBaseTransitionAnimation.h in Headers */,
