@@ -31,3 +31,7 @@
 + (instancetype)viewFromBgColor:(UIColor *)bgColor;
 
 @end
+
+@interface UIViewController (Extension)
+
+@end

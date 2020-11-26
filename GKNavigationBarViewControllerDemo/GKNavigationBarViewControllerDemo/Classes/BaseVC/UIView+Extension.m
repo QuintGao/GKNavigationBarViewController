@@ -146,3 +146,12 @@
 }
 
 @end
+
+@implementation UIViewController (Extension)
+
+- (void)dealloc
+{
+    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+}
+
+@end

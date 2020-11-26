@@ -35,6 +35,8 @@
         // 导航栏左右item间距
         configure.gk_navItemLeftSpace = 12.0f;
         configure.gk_navItemRightSpace = 12.0f;
+        configure.shiledGuestureVCs = @[@"TZ"];
+        configure.shiledItemSpaceVCs = @[@"TZ"];
     }];
     
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];

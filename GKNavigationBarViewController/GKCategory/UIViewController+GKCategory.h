@@ -59,7 +59,7 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 @end
 
-@interface UIViewController (GKCategory)<GKGesturePopHandlerProtocol>
+@interface UIViewController (GKGesture)<GKGesturePopHandlerProtocol>
 
 /** 是否禁止当前控制器的滑动返回(包括全屏返回和边缘返回) */
 @property (nonatomic, assign) BOOL gk_interactivePopDisabled;
@@ -69,6 +69,22 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 /** 全屏滑动时，滑动区域距离屏幕左边的最大位置，默认是0：表示全屏都可滑动 */
 @property (nonatomic, assign) CGFloat gk_popMaxAllowedDistanceToLeftEdge;
+
+/** push代理 */
+@property (nonatomic, weak) id<GKViewControllerPushDelegate> gk_pushDelegate;
+
+/** pop代理，如果设置了gk_popDelegate，原来的滑动返回手势将失效 */
+@property (nonatomic, weak) id<GKViewControllerPopDelegate> gk_popDelegate;
+
+/** 自定义push转场动画 */
+@property (nonatomic, weak) id<UIViewControllerAnimatedTransitioning> gk_pushTransition;
+
+/** 自定义pop转场动画 */
+@property (nonatomic, weak) id<UIViewControllerAnimatedTransitioning> gk_popTransition;
+
+@end
+
+@interface UIViewController (GKCategory)
 
 /** 设置导航栏的透明度 */
 @property (nonatomic, assign) CGFloat gk_navBarAlpha;
@@ -84,18 +100,6 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 /** 设置返回按钮的类型 */
 @property (nonatomic, assign) GKNavigationBarBackStyle gk_backStyle;
-
-/** push代理 */
-@property (nonatomic, weak) id<GKViewControllerPushDelegate> gk_pushDelegate;
-
-/** pop代理，如果设置了gk_popDelegate，原来的滑动返回手势将失效 */
-@property (nonatomic, weak) id<GKViewControllerPopDelegate> gk_popDelegate;
-
-/** 自定义push转场动画 */
-@property (nonatomic, weak) id<UIViewControllerAnimatedTransitioning> gk_pushTransition;
-
-/** 自定义pop转场动画 */
-@property (nonatomic, weak) id<UIViewControllerAnimatedTransitioning> gk_popTransition;
 
 /** 导航栏左右按钮距离屏幕边缘的距离，需在设置左右item之前设置此属性 */
 @property (nonatomic, assign) CGFloat gk_navItemLeftSpace;

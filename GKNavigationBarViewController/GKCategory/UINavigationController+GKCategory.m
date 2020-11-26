@@ -22,8 +22,9 @@
  
 - (instancetype)initWithRootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {
     if (self = [super init]) {
-        [self pushViewController:rootVC animated:YES];
+        self.gk_openGestureHandle = YES;
         self.gk_translationScale = translationScale;
+        [self pushViewController:rootVC animated:YES];
     }
     return self;
 }
@@ -36,34 +37,27 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         gk_swizzled_method(@"gkNav", self, @"viewDidLoad", self);
-        gk_swizzled_method(@"gkNav", self, @"pushViewController:animated:", self);
     });
 }
 
 - (void)gkNav_viewDidLoad {
-    // 处理特殊控制器
-    if ([self isKindOfClass:[UIImagePickerController class]]) return;
-    if ([self isKindOfClass:[UIVideoEditorController class]]) return;
-    
-    // 设置代理和通知
-    // 设置背景色
-    self.view.backgroundColor = [UIColor blackColor];
-    
-    // 设置代理
-    self.delegate = self.interactiveTransition;
-    self.interactivePopGestureRecognizer.enabled = NO;
-    
-    // 注册通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
+    if (self.gk_openGestureHandle) {
+        // 处理特殊控制器
+        if ([self isKindOfClass:[UIImagePickerController class]]) return;
+        if ([self isKindOfClass:[UIVideoEditorController class]]) return;
+        
+        // 设置背景色
+        self.view.backgroundColor = [UIColor blackColor];
+        
+        // 设置代理
+        self.delegate = self.interactiveTransition;
+        self.interactivePopGestureRecognizer.enabled = NO;
+        
+        // 注册控制器属性改变通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
+    }
     
     [self gkNav_viewDidLoad];
-}
-
-- (void)gkNav_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.gk_openSystemNavHandle) {
-        self.navigationBarHidden = YES;
-    }
-    [self gkNav_pushViewController:viewController animated:animated];
 }
 
 - (void)dealloc {
@@ -100,10 +94,7 @@
     }];
     if (exist) return;
     
-    if (self.gk_disabledGestureHandle) {
-        [self.view removeGestureRecognizer:self.screenPanGesture];
-        [self.view removeGestureRecognizer:self.panGesture];
-    }else if (vc.gk_interactivePopDisabled) { // 禁止滑动
+    if (vc.gk_interactivePopDisabled) { // 禁止滑动
         [self.view removeGestureRecognizer:self.screenPanGesture];
         [self.view removeGestureRecognizer:self.panGesture];
     }else if (vc.gk_fullScreenPopDisabled) { // 禁止全屏滑动
@@ -126,11 +117,7 @@
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (BOOL)gk_disabledGestureHandle {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (BOOL)gk_openSystemNavHandle {
+- (BOOL)gk_openGestureHandle {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
@@ -191,12 +178,8 @@ static char kAssociatedObjectKey_interactiveTransition;
     objc_setAssociatedObject(self, @selector(gk_openScrollLeftPush), @(gk_openScrollLeftPush), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)setGk_disabledGestureHandle:(BOOL)gk_disabledGestureHandle {
-    objc_setAssociatedObject(self, @selector(gk_disabledGestureHandle), @(gk_disabledGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setGk_openSystemNavHandle:(BOOL)gk_openSystemNavHandle {
-    objc_setAssociatedObject(self, @selector(gk_openSystemNavHandle), @(gk_openSystemNavHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setGk_openGestureHandle:(BOOL)gk_openGestureHandle {
+    objc_setAssociatedObject(self, @selector(gk_openGestureHandle), @(gk_openGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

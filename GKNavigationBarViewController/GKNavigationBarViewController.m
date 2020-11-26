@@ -34,9 +34,7 @@
     [super viewWillAppear:animated];
     
     // 隐藏系统导航栏
-    if (!self.navigationController.gk_openSystemNavHandle) {
-        [self.navigationController setNavigationBarHidden:YES];
-    }
+    [self.navigationController setNavigationBarHidden:YES];
     
     // 将自定义导航栏放置顶层
     if (self.gk_navigationBar && !self.gk_navigationBar.hidden) {

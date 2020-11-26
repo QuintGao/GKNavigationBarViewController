@@ -23,6 +23,7 @@
     self.gk_navigationItem.title = @"嵌套TZImagePickerController";
     
     self.gk_statusBarStyle = UIStatusBarStyleDefault;
+    self.gk_navItemLeftSpace = 20;
     self.gk_backImage = [UIImage imageNamed:@"Mine_selected"];
     
     UILabel *label = [UILabel new];
@@ -38,23 +39,18 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    pickerVC.allowCrop = YES;
     pickerVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    pickerVC.gk_disabledGestureHandle = YES;
-    GKConfigure.gk_disableFixSpace = YES;
     [self presentViewController:pickerVC animated:YES completion:nil];
-}
-
-- (void)dealloc {
-    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
 }
 
 #pragma mark - TZImagePickerControllerDelegate
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
-    GKConfigure.gk_disableFixSpace = NO;
+    
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
-    GKConfigure.gk_disableFixSpace = NO;
+    
 }
 
 @end
