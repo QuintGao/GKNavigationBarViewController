@@ -149,9 +149,18 @@
 
 @implementation UIViewController (Extension)
 
-- (void)dealloc
-{
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"dealloc")),
+                                    
+                                       class_getInstanceMethod(self.class, @selector(swizzledDealloc)));
+    });
+}
+
+- (void)swizzledDealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+    [self swizzledDealloc];
 }
 
 @end
