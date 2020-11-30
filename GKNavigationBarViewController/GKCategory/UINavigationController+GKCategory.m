@@ -37,6 +37,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         gk_swizzled_method(@"gkNav", self, @"viewDidLoad", self);
+        gk_swizzled_method(@"gkNav", self, @"pushViewController:animated:", self);
     });
 }
 
@@ -58,6 +59,13 @@
     }
     
     [self gkNav_viewDidLoad];
+}
+
+- (void)gkNav_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.gk_openSystemNavHandle) {
+        self.navigationBarHidden = YES;
+    }
+    [self gkNav_pushViewController:viewController animated:animated];
 }
 
 - (void)dealloc {
@@ -121,6 +129,10 @@
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
+- (BOOL)gk_openSystemNavHandle {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
 - (UIScreenEdgePanGestureRecognizer *)screenPanGesture {
     UIScreenEdgePanGestureRecognizer *panGesture = objc_getAssociatedObject(self, _cmd);
     if (!panGesture) {
@@ -180,6 +192,10 @@ static char kAssociatedObjectKey_interactiveTransition;
 
 - (void)setGk_openGestureHandle:(BOOL)gk_openGestureHandle {
     objc_setAssociatedObject(self, @selector(gk_openGestureHandle), @(gk_openGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setGk_openSystemNavHandle:(BOOL)gk_openSystemNavHandle {
+    objc_setAssociatedObject(self, @selector(gk_openSystemNavHandle), @(gk_openSystemNavHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

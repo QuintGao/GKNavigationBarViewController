@@ -26,4 +26,7 @@
 /// 只能通过上面的两个初始化方法开启
 @property (nonatomic, assign, readonly) BOOL gk_openGestureHandle;
 
+/// 开启系统导航与GKNavigationBar过渡处理，需要在显示系统导航栏的控制器中调用显示导航栏方法
+@property (nonatomic, assign) BOOL gk_openSystemNavHandle;
+
 @end

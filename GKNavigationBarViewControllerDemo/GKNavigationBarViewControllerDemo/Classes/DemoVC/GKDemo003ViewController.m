@@ -8,8 +8,9 @@
 
 #import "GKDemo003ViewController.h"
 #import "GKDemo000ViewController.h"
+#import "GKDemoTransitionViewController.h"
 
-@interface GKDemo003ViewController ()
+@interface GKDemo003ViewController ()<GKViewControllerPushDelegate, GKViewControllerPopDelegate>
 
 @end
 
@@ -24,9 +25,11 @@
     
     self.gk_navItemRightSpace = 20;
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithTitle:@"跳转" target:self action:@selector(click)];
-    rightItem.customView.backgroundColor = UIColor.redColor;
-    
+    rightItem.customView.backgroundColor = UIColor.blackColor;
     self.navigationItem.rightBarButtonItem = rightItem;
+    
+    self.gk_pushDelegate = self;
+    self.gk_popDelegate = self;
 }
 
 - (void)click {
@@ -40,10 +43,41 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+#pragma mark - GKViewControllerPushDelegate
+- (void)pushToNextViewController {
+    GKDemoTransitionViewController *transitionVC = [GKDemoTransitionViewController new];
+    [self.navigationController pushViewController:transitionVC animated:YES];
+}
+
+- (void)viewControllerPushScrollBegan {
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (void)viewControllerPushScrollUpdate:(float)progress {
+    self.navigationController.navigationBar.alpha = 1 - progress;
+}
+
+- (void)viewControllerPushScrollEnded:(BOOL)finished {
+    self.navigationController.navigationBar.alpha = 1;
+    self.navigationController.navigationBarHidden = finished;
+}
+
+#pragma mark - GKViewControllerPopDelegate
+- (void)viewControllerPopScrollBegan {
     
-    NSLog(@"%@", NSStringFromCGRect(self.navigationController.navigationBar.frame));
+}
+
+- (void)viewControllerPopScrollUpdate:(float)progress {
+    // 由于已经出栈，所以self.navigationController为nil，不能直接获取导航控制器
+    UIViewController *vc = [GKConfigure visibleViewController];
+    vc.navigationController.navigationBar.alpha = 1 - progress;
+}
+
+- (void)viewControllerPopScrollEnded:(BOOL)finished {
+    // 由于已经出栈，所以self.navigationController为nil，不能直接获取导航控制器
+    UIViewController *vc = [GKConfigure visibleViewController];
+    vc.navigationController.navigationBar.alpha = 1;
+    vc.navigationController.navigationBarHidden = finished;
 }
 
 @end

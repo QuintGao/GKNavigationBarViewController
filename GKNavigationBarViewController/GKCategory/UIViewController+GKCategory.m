@@ -68,6 +68,10 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
 - (void)gkGesture_viewDidAppear:(BOOL)animated {
     [self postPropertyChangeNotification];
     
+    if ([self isKindOfClass:[GKNavigationBarViewController class]] && !self.navigationController.isNavigationBarHidden) {
+        self.navigationController.navigationBarHidden = YES;
+    }
+    
     [self gkGesture_viewDidAppear:animated];
 }
 
@@ -180,8 +184,7 @@ static char kAssociatedObjectKey_hasPopDelegate;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSArray <NSString *> *oriSels = @[@"viewDidLoad",
-                                          @"viewWillAppear:",
-                                          @"viewDidAppear:"];
+                                          @"viewWillAppear:"];
         
         [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
             gk_swizzled_method(@"gk", self, oriSel, self);
@@ -248,12 +251,6 @@ static char kAssociatedObjectKey_hasPopDelegate;
     }
     
     [self gk_viewWillAppear:animated];
-}
-
-- (void)gk_viewDidAppear:(BOOL)animated {
-    [self postPropertyChangeNotification];
-    
-    [self gk_viewDidAppear:animated];
 }
 
 #pragma mark - StatusBar

@@ -86,16 +86,16 @@ static GKNavigationBarConfigure *instance = nil;
 
 - (UIEdgeInsets)gk_safeAreaInsets {
     UIEdgeInsets safeAreaInsets = UIEdgeInsetsZero;
-    if (@available(iOS 11.0, *)) {
+    if ([GKConfigure gk_isNotchedScreen]) {
         UIWindow *keyWindow = [GKConfigure getKeyWindow];
         if (keyWindow) {
-            return keyWindow.safeAreaInsets;
+            if (@available(iOS 11.0, *)) {
+                safeAreaInsets = keyWindow.safeAreaInsets;
+            }
         }else { // 如果获取到的window是空
             // 对于刘海屏，当window没有创建的时候，可根据状态栏设置安全区域顶部高度
             // iOS14之后顶部安全区域不再是固定的44，所以修改为以下方式获取
-            if ([GKConfigure gk_isNotchedScreen]) {
-                safeAreaInsets = UIEdgeInsetsMake([GKConfigure gk_statusBarFrame].size.height, 0, 34, 0);
-            }
+            safeAreaInsets = UIEdgeInsetsMake([GKConfigure gk_statusBarFrame].size.height, 0, 34, 0);
         }
     }
     return safeAreaInsets;
@@ -122,24 +122,31 @@ static GKNavigationBarConfigure *instance = nil;
     return statusBarFrame;
 }
 
+static NSInteger isNotchedScreen = -1;
 - (BOOL)gk_isNotchedScreen {
-    if (@available(iOS 11.0, *)) {
-        UIWindow *keyWindow = [GKConfigure getKeyWindow];
-        if (keyWindow) {
-            return keyWindow.safeAreaInsets.bottom > 0;
+    if (isNotchedScreen < 0) {
+        if (@available(iOS 11.0, *)) {
+            UIWindow *keyWindow = [GKConfigure getKeyWindow];
+            if (keyWindow) {
+                isNotchedScreen = keyWindow.safeAreaInsets.bottom > 0 ? 1 : 0;
+            }
+        }
+        
+        // 当iOS11以下或获取不到keyWindow时用以下方案
+        if (isNotchedScreen < 0) {
+            CGSize screenSize = UIScreen.mainScreen.bounds.size;
+            BOOL _isNotchedSize = (CGSizeEqualToSize(screenSize, CGSizeMake(375, 812)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(812, 375)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(414, 896)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(896, 414)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(390, 844)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(844, 390)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(428, 926)) ||
+                                  CGSizeEqualToSize(screenSize, CGSizeMake(926, 428)));
+            isNotchedScreen = _isNotchedSize ? 1 : 0;
         }
     }
-    
-    // 当iOS11以下或获取不到keyWindow时用以下方案
-    CGSize screenSize = UIScreen.mainScreen.bounds.size;
-    return (CGSizeEqualToSize(screenSize, CGSizeMake(375, 812)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(812, 375)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(414, 896)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(896, 414)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(390, 844)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(844, 390)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(428, 926)) ||
-            CGSizeEqualToSize(screenSize, CGSizeMake(926, 428)));
+    return isNotchedScreen > 0;
 }
 
 - (CGFloat)gk_fixedSpace {

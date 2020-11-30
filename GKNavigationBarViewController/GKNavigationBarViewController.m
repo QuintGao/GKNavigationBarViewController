@@ -34,7 +34,9 @@
     [super viewWillAppear:animated];
     
     // 隐藏系统导航栏
-    [self.navigationController setNavigationBarHidden:YES];
+    if (!self.navigationController.gk_openSystemNavHandle) {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
     
     // 将自定义导航栏放置顶层
     if (self.gk_navigationBar && !self.gk_navigationBar.hidden) {
@@ -124,13 +126,22 @@
             CGFloat statusBarH = [GKConfigure gk_statusBarFrame].size.height;
             CGFloat navigaBarH = self.navigationController.navigationBar.frame.size.height;
             navBarH = statusBarH + navigaBarH;
-        }else if (GK_IS_iPhoneX) {
-            navBarH = GK_NAVBAR_HEIGHT;
+        }else if (GK_IS_iPhoneX) { // 刘海屏横屏时高度为32
+            navBarH = 32.0f;
         }else {
-            if (width == 736.0f && height == 414.0f) { // plus横屏
-                navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
-            }else { // 其他机型横屏
-                navBarH = self.gk_statusBarHidden ? 32.0f : 52.0f;
+            // iOS13之后，横屏不再显示状态栏了，做下区分
+            if (@available(iOS 13.0, *)) {
+                if (width == 736.0f && height == 414.0f) {
+                    navBarH = GK_NAVBAR_HEIGHT;
+                }else {
+                    navBarH = 32.0f;
+                }
+            }else {
+                if (width == 736.0f && height == 414.0f) { // plus横屏
+                    navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+                }else { // 其他机型横屏
+                    navBarH = self.gk_statusBarHidden ? 32.0f : 52.0f;
+                }
             }
         }
     }else { // 竖屏

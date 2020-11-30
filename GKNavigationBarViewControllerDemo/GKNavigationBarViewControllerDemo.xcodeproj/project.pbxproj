@@ -53,6 +53,7 @@
 		60180AEE23585BF500C48293 /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180AEF23585BF500C48293 /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6D223067F5400222289 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180B342358669300C48293 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 60180B332358669300C48293 /* .travis.yml */; };
+		603BE6B0257494BB0039D2ED /* GKDemoTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */; };
 		60B70D48256F8498008D62FC /* GKNavigationInteractiveTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7913689A256E9C95008AB9F5 /* GKNavigationInteractiveTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60D0DC07236FF8B800266415 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6011631A236FF52900622897 /* UIImage+GKCategory.m */; };
 		60D0DC08236FF8C200266415 /* UIImage+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 60116319236FF52900622897 /* UIImage+GKCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -160,6 +161,8 @@
 		60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKNavigationBarViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60180AB623585A7500C48293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60180B332358669300C48293 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .travis.yml; path = ../../.travis.yml; sourceTree = "<group>"; };
+		603BE6AE257494BB0039D2ED /* GKDemoTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemoTransitionViewController.h; sourceTree = "<group>"; };
+		603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemoTransitionViewController.m; sourceTree = "<group>"; };
 		656BD2E20F7FF5D6C823AB90 /* Pods-GKNavigationBarViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; path = "Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7913689A256E9C95008AB9F5 /* GKNavigationInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKNavigationInteractiveTransition.h; sourceTree = "<group>"; };
 		7913689B256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNavigationInteractiveTransition.m; sourceTree = "<group>"; };
@@ -463,6 +466,8 @@
 				79C48BDD243CC462000B0815 /* GKDemo002ViewController.m */,
 				79C48BDC243CC462000B0815 /* GKDemo003ViewController.h */,
 				79C48BE1243CC462000B0815 /* GKDemo003ViewController.m */,
+				603BE6AE257494BB0039D2ED /* GKDemoTransitionViewController.h */,
+				603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */,
 				79C48BD9243CC462000B0815 /* GKDemoWebViewController.h */,
 				79C48BDF243CC462000B0815 /* GKDemoWebViewController.m */,
 				79C48BE2243CC462000B0815 /* web.txt */,
@@ -814,6 +819,7 @@
 			files = (
 				79FBED06253AE8AA0053F518 /* GKWXDetailViewController.m in Sources */,
 				600EC6D823067F5400222289 /* UINavigationController+GKCategory.m in Sources */,
+				603BE6B0257494BB0039D2ED /* GKDemoTransitionViewController.m in Sources */,
 				79C48C1B243CC464000B0815 /* GKToutiaoMineViewController.m in Sources */,
 				600EC6DD23067F5400222289 /* UIViewController+GKCategory.m in Sources */,
 				79FBECEA253AE3F90053F518 /* GKWXViewController.m in Sources */,

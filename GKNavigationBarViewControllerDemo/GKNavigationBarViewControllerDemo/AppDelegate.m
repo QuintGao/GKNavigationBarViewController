@@ -48,6 +48,7 @@
     UINavigationController *nav = [UINavigationController rootVC:[GKMainViewController new] translationScale:NO];
 //    UINavigationController *nav = [UINavigationController rootVC:[GKWXHomeViewController new] translationScale:NO];
     nav.gk_openScrollLeftPush = YES;
+    nav.gk_openSystemNavHandle = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
