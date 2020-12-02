@@ -150,8 +150,13 @@ static NSInteger isNotchedScreen = -1;
 }
 
 - (CGFloat)gk_fixedSpace {
-    CGSize screentSize = [UIScreen mainScreen].bounds.size;
-    return MIN(screentSize.width, screentSize.height) > 375 ? 20 : 16;
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    
+    // 经测试发现iPhone 12和iPhone 12 Pro，默认导航栏间距是16，需要单独处理
+    CGFloat deviceWidth = MIN(screenSize.width, screenSize.height);
+    CGFloat deviceHeight = MAX(screenSize.width, screenSize.height);
+    if (deviceWidth == 390.0f && deviceHeight == 844.0f) return 16;
+    return deviceWidth > 375.0f ? 20 : 16;
 }
 
 - (UIWindow *)getKeyWindow {

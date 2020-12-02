@@ -36,8 +36,12 @@
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        gk_swizzled_method(@"gkNav", self, @"viewDidLoad", self);
-        gk_swizzled_method(@"gkNav", self, @"pushViewController:animated:", self);
+        NSArray <NSString *> *oriSels = @[@"viewDidLoad",
+                                          @"pushViewController:animated:",
+                                          @"dealloc"];
+        [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
+            gk_swizzled_method(@"gkNav", self, oriSel, self);
+        }];
     });
 }
 
@@ -68,8 +72,9 @@
     [self gkNav_pushViewController:viewController animated:animated];
 }
 
-- (void)dealloc {
+- (void)gkNav_dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:GKViewControllerPropertyChangedNotification object:nil];
+    [self gkNav_dealloc];
 }
 
 #pragma mark - Notification Handle

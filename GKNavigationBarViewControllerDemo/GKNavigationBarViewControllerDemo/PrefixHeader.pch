@@ -12,15 +12,4 @@
 #import "GKNavigationBarViewController.h"
 #import <Masonry/Masonry.h>
 
-#define IS_35INCH       [UIScreen mainScreen].bounds.size.height == 480.0f
-#define IS_40INCH       [UIScreen mainScreen].bounds.size.height == 568.0f
-#define IS_47INCH       [UIScreen mainScreen].bounds.size.height == 667.0f
-#define IS_55INCH       [UIScreen mainScreen].bounds.size.height == 736.0f
-// iPhone X，iPhone XS
-#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
-// iPhone XR
-#define IS_61INCH       [UIScreen mainScreen].bounds.size.height == 896.0f
-// iPhone XS Max
-#define IS_65INCH       [UIScreen mainScreen].bounds.size.height == 896.0f
-
 #endif /* PrefixHeader_pch */
