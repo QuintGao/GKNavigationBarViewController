@@ -80,18 +80,6 @@
     self.navBarAlphaLabel.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.gk_navBarAlpha];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-//    [[IQKeyboardManager sharedManager] setEnable:NO];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-//    [[IQKeyboardManager sharedManager] setEnable:YES];
-}
-
 - (IBAction)interactivePopAction:(id)sender {
     self.gk_interactivePopDisabled = !self.interactivePopSwitch.on;
     
