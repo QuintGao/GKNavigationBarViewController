@@ -14,6 +14,7 @@ NSString *const GKViewControllerPropertyChangedNotification = @"GKViewController
 
 static const void* GKInteractivePopKey      = @"GKInteractivePopKey";
 static const void* GKFullScreenPopKey       = @"GKFullScreenPopKey";
+static const void* GKSystemGestureHandleKey = @"GKSystemGestureHandleKey";
 static const void* GKPopMaxDistanceKey      = @"GKPopMaxDistanceKey";
 static const void* GKNavBarAlphaKey         = @"GKNavBarAlphaKey";
 static const void* GKStatusBarStyleKey      = @"GKStatusBarStyleKey";
@@ -110,6 +111,14 @@ static const void* GKNavItemRightSpaceKey   = @"GKNavItemRightSpaceKey";
     [self postPropertyChangeNotification];
 }
 
+- (BOOL)gk_systemGestureHandleDisabled {
+    return [objc_getAssociatedObject(self, GKSystemGestureHandleKey) boolValue];
+}
+
+- (void)setGk_systemGestureHandleDisabled:(BOOL)gk_systemGestureHandleDisabled {
+    objc_setAssociatedObject(self, GKSystemGestureHandleKey, @(gk_systemGestureHandleDisabled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (CGFloat)gk_popMaxAllowedDistanceToLeftEdge {
     return [objc_getAssociatedObject(self, GKPopMaxDistanceKey) floatValue];
 }
@@ -170,6 +179,13 @@ static char kAssociatedObjectKey_hasPopDelegate;
     return objc_setAssociatedObject(self, &kAssociatedObjectKey_hasPopDelegate, @(hasPopDelegate), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+#pragma mark - GKGesturePopHandlerProtocol
+- (BOOL)navigationShouldPopOnGesture {
+    return YES;
+}
+
+#pragma mark - Private Methods
+// 发送属性改变通知
 - (void)postPropertyChangeNotification {
     [[NSNotificationCenter defaultCenter] postNotificationName:GKViewControllerPropertyChangedNotification object:@{@"viewController": self}];
 }

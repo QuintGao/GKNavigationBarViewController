@@ -49,13 +49,14 @@ static GKNavigationBarConfigure *instance = nil;
     self.navItemLeftSpace       = 0;
     self.navItemRightSpace      = 0;
     
-    self.gk_pushTransitionCriticalValue = 0.3;
-    self.gk_popTransitionCriticalValue  = 0.5;
+    self.gk_snapMovementSensitivity = 0.7f;
+    self.gk_pushTransitionCriticalValue = 0.3f;
+    self.gk_popTransitionCriticalValue  = 0.5f;
     
     self.gk_translationX = 5.0f;
     self.gk_translationY = 5.0f;
-    self.gk_scaleX = 0.95;
-    self.gk_scaleY = 0.97;
+    self.gk_scaleX = 0.95f;
+    self.gk_scaleY = 0.97f;
 }
 
 - (void)setGk_navItemLeftSpace:(CGFloat)gk_navItemLeftSpace {
@@ -157,6 +158,10 @@ static NSInteger isNotchedScreen = -1;
     CGFloat deviceHeight = MAX(screenSize.width, screenSize.height);
     if (deviceWidth == 390.0f && deviceHeight == 844.0f) return 16;
     return deviceWidth > 375.0f ? 20 : 16;
+}
+
+- (BOOL)isVelocityInSensitivity:(CGFloat)velocity {
+    return (fabs(velocity) - (1000.0f * (1 - self.gk_snapMovementSensitivity))) > 0;
 }
 
 - (UIWindow *)getKeyWindow {

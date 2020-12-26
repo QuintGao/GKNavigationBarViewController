@@ -27,6 +27,16 @@ iOS自定义导航栏 - 导航栏联动效果
 
     在UIViewController的init方法中修改gk_statusBarStyle即可
 
+##### 使用IQKeyboardManager滑动返回错乱问题
+需要修改IQKeyBoardManager源码，将系统导航手势修改为自定义手势，如下
+```
+UIPanGestureRecognizer *gesture = [strongRootController.navigationController valueForKey:@"panGesture"];
+if (gesture.state == UIGestureRecognizerStateBegan) {
+    strongSelf.rootViewControllerWhilePopGestureRecognizerActive = strongRootController;
+    strongSelf.topViewBeginOriginWhilePopGestureRecognizerActive = strongSelf.topViewBeginOrigin;
+}
+```
+
 ## 说明：
 
 现在大多数的APP都有导航栏联动效果，即滑动返回的时候导航栏也跟着一起返回，比如：网易新闻，网易云音乐，腾讯视频等等，于是通过查找一些资料及其他库的做法，自己也写了一个框架，可以让每一个控制器都拥有自己的导航栏，可以很方便的改变导航栏的样式等
@@ -192,6 +202,7 @@ pod 'GKNavigationBarViewController'
 
 ## 时间记录(倒序)
 
+* 2020.12.26 -- 2.7.0 手势处理优化，返回拦截优化
 * 2020.12.02 -- 2.6.6 修复iPhone 12，iPhone 12 Pro机型调整导航栏间距不准确的bug
 * 2020.11.30 -- 2.6.5 修复安全区域判断bug，支持与系统导航平滑切换处理
 * 2020.11.26 -- 2.6.4 手势处理逻辑优化，修复某些情况下控制器不能释放的bug

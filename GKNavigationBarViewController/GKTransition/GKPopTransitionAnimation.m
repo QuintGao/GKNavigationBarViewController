@@ -16,11 +16,15 @@
     
     // 是否隐藏tabbar
     self.isHideTabBar = self.toViewController.tabBarController && self.fromViewController.hidesBottomBarWhenPushed && self.toViewController.gk_captureImage;
+    
+    CGFloat screenW = self.containerView.bounds.size.width;
+    CGFloat screenH = self.containerView.bounds.size.height;
+    
     __block UIView *toView = nil;
     
     if (self.isHideTabBar) {
         UIImageView *captureView = [[UIImageView alloc] initWithImage:self.toViewController.gk_captureImage];
-        captureView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
+        captureView.frame = CGRectMake(0, 0, screenW, screenH);
         [self.containerView insertSubview:captureView belowSubview:self.fromViewController.view];
         toView = captureView;
         self.toViewController.view.hidden = YES;
@@ -32,9 +36,8 @@
     
     if (self.scale) {
         // 初始化阴影图层
-        self.shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT)];
+        self.shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenW, screenH)];
         self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
-        
         [toView addSubview:self.shadowView];
         
         if (@available(iOS 11.0, *)) {
@@ -42,31 +45,32 @@
             frame.origin.x     = GKConfigure.gk_translationX;
             frame.origin.y     = GKConfigure.gk_translationY;
             frame.size.height -= 2 * GKConfigure.gk_translationY;
-            
             toView.frame = frame;
         }else {
             toView.transform = CGAffineTransformMakeScale(GKConfigure.gk_scaleX, GKConfigure.gk_scaleY);
         }
     }else {
-        self.fromViewController.view.frame = CGRectMake(- (0.3 * GK_SCREEN_WIDTH), 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
+        toView.frame = CGRectMake(- (0.3 * screenW), 0, screenW, screenH);
     }
     
     // 添加阴影
     self.fromViewController.view.layer.shadowColor   = [[UIColor blackColor] CGColor];
-    self.fromViewController.view.layer.shadowOpacity = 0.2;
-    self.fromViewController.view.layer.shadowRadius  = 4;
+    self.fromViewController.view.layer.shadowOpacity = 0.15f;
+    self.fromViewController.view.layer.shadowRadius  = 3.0f;
     
-    [UIView animateWithDuration:[self transitionDuration:self.transitionContext] animations:^{
-        self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    [UIView animateWithDuration:[self transitionDuration:self.transitionContext] delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.fromViewController.view.frame = CGRectMake(screenW, 0, screenW, screenH);
         
-        self.fromViewController.view.frame = CGRectMake(GK_SCREEN_WIDTH, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
+        if (self.scale) {
+            self.shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+        }
         
         if (@available(iOS 11.0, *)) {
-            toView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT);
+            toView.frame = CGRectMake(0, 0, screenW, screenH);
         }else {
             toView.transform = CGAffineTransformIdentity;
         }
-    }completion:^(BOOL finished) {
+    } completion:^(BOOL finished) {
         [self completeTransition];
         if (self.isHideTabBar) {
             [self.contentView removeFromSuperview];
@@ -77,7 +81,9 @@
                 self.toViewController.tabBarController.tabBar.hidden = NO;
             }
         }
-        [self.shadowView removeFromSuperview];
+        if (self.scale) {
+            [self.shadowView removeFromSuperview];
+        }
     }];
 }
 

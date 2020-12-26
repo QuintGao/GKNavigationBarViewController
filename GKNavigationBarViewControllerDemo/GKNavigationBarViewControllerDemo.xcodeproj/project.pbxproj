@@ -11,7 +11,6 @@
 		600EC5602306588700222289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 600EC55F2306588700222289 /* Assets.xcassets */; };
 		600EC5632306588700222289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600EC5612306588700222289 /* LaunchScreen.storyboard */; };
 		600EC5662306588700222289 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC5652306588700222289 /* main.m */; };
-		600EC5702306588700222289 /* GKNavigationBarViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC56F2306588700222289 /* GKNavigationBarViewControllerDemoTests.m */; };
 		600EC6D423067F5400222289 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B623067F5400222289 /* GKPushTransitionAnimation.m */; };
 		600EC6D623067F5400222289 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B823067F5400222289 /* GKPopTransitionAnimation.m */; };
 		600EC6D723067F5400222289 /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 600EC6B923067F5400222289 /* GKBaseTransitionAnimation.m */; };
@@ -64,6 +63,7 @@
 		60D1407025873EA8004393D0 /* GKWYMusicAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1406A25873EA8004393D0 /* GKWYMusicAccountViewController.m */; };
 		60D1407125873EA8004393D0 /* GKWYMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1406B25873EA8004393D0 /* GKWYMusicViewController.m */; };
 		7913689C256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7913689B256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m */; };
+		796EB946259732D00043B2E6 /* GKNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7913689B256E9C95008AB9F5 /* GKNavigationInteractiveTransition.m */; };
 		79C48C1A243CC464000B0815 /* GKToutiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BC9243CC462000B0815 /* GKToutiaoViewController.m */; };
 		79C48C1B243CC464000B0815 /* GKToutiaoMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BCB243CC462000B0815 /* GKToutiaoMineViewController.m */; };
 		79C48C1C243CC464000B0815 /* GKToutiaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C48BCD243CC462000B0815 /* GKToutiaoDetailViewController.m */; };
@@ -106,16 +106,6 @@
 		8DF46E5B66130A8189FB62B1 /* Pods_GKNavigationBarViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3617061D50CAD65A453EBD /* Pods_GKNavigationBarViewControllerDemo.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		600EC56C2306588700222289 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 600EC54B2306588500222289 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 600EC5522306588500222289;
-			remoteInfo = GKNavigationBarViewControllerDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		269F61B4ACDBF25AE775D67A /* Pods-GKNavigationBarViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; path = "Target Support Files/Pods-GKNavigationBarViewControllerDemo/Pods-GKNavigationBarViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		600EC5532306588500222289 /* GKNavigationBarViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKNavigationBarViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +115,6 @@
 		600EC5622306588700222289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		600EC5642306588700222289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		600EC5652306588700222289 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		600EC56B2306588700222289 /* GKNavigationBarViewControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKNavigationBarViewControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		600EC56F2306588700222289 /* GKNavigationBarViewControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewControllerDemoTests.m; sourceTree = "<group>"; };
 		600EC5712306588700222289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		600EC66523067CD000222289 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -266,13 +255,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		600EC5682306588700222289 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		60180AB023585A7500C48293 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				600EC5532306588500222289 /* GKNavigationBarViewControllerDemo.app */,
-				600EC56B2306588700222289 /* GKNavigationBarViewControllerDemoTests.xctest */,
 				60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */,
 			);
 			name = Products;
@@ -659,24 +640,6 @@
 			productReference = 600EC5532306588500222289 /* GKNavigationBarViewControllerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		600EC56A2306588700222289 /* GKNavigationBarViewControllerDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 600EC5822306588700222289 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerDemoTests" */;
-			buildPhases = (
-				600EC5672306588700222289 /* Sources */,
-				600EC5682306588700222289 /* Frameworks */,
-				600EC5692306588700222289 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				600EC56D2306588700222289 /* PBXTargetDependency */,
-			);
-			name = GKNavigationBarViewControllerDemoTests;
-			productName = GKNavigationBarViewControllerDemoTests;
-			productReference = 600EC56B2306588700222289 /* GKNavigationBarViewControllerDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		60180AB223585A7500C48293 /* GKNavigationBarViewControllerFramework */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60180ACF23585A7500C48293 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerFramework" */;
@@ -702,15 +665,11 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = gaokun;
 				TargetAttributes = {
 					600EC5522306588500222289 = {
 						CreatedOnToolsVersion = 10.3;
-					};
-					600EC56A2306588700222289 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 600EC5522306588500222289;
 					};
 					60180AB223585A7500C48293 = {
 						CreatedOnToolsVersion = 11.1;
@@ -731,7 +690,6 @@
 			projectRoot = "";
 			targets = (
 				600EC5522306588500222289 /* GKNavigationBarViewControllerDemo */,
-				600EC56A2306588700222289 /* GKNavigationBarViewControllerDemoTests */,
 				60180AB223585A7500C48293 /* GKNavigationBarViewControllerFramework */,
 			);
 		};
@@ -750,13 +708,6 @@
 				600EC5602306588700222289 /* Assets.xcassets in Resources */,
 				60180B342358669300C48293 /* .travis.yml in Resources */,
 				600EC6E423067F6800222289 /* GKNavigationBarViewController.podspec in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		600EC5692306588700222289 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,18 +830,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		600EC5672306588700222289 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				600EC5702306588700222289 /* GKNavigationBarViewControllerDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		60180AAF23585A7500C48293 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796EB946259732D00043B2E6 /* GKNavigationInteractiveTransition.m in Sources */,
 				60D0DC07236FF8B800266415 /* UIImage+GKCategory.m in Sources */,
 				60180AD223585B8600C48293 /* GKPushTransitionAnimation.m in Sources */,
 				60180AD323585B8600C48293 /* GKPopTransitionAnimation.m in Sources */,
@@ -907,14 +851,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		600EC56D2306588700222289 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 600EC5522306588500222289 /* GKNavigationBarViewControllerDemo */;
-			targetProxy = 600EC56C2306588700222289 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		600EC5612306588700222289 /* LaunchScreen.storyboard */ = {
@@ -1086,42 +1022,6 @@
 			};
 			name = Release;
 		};
-		600EC5832306588700222289 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GKNavigationBarViewControllerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKNavigationBarViewControllerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKNavigationBarViewControllerDemo.app/GKNavigationBarViewControllerDemo";
-			};
-			name = Debug;
-		};
-		600EC5842306588700222289 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GKNavigationBarViewControllerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKNavigationBarViewControllerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKNavigationBarViewControllerDemo.app/GKNavigationBarViewControllerDemo";
-			};
-			name = Release;
-		};
 		60180ACB23585A7500C48293 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1135,7 +1035,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GKNavigationBarViewControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1168,7 +1068,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GKNavigationBarViewControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1205,15 +1105,6 @@
 			buildConfigurations = (
 				600EC5802306588700222289 /* Debug */,
 				600EC5812306588700222289 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		600EC5822306588700222289 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewControllerDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				600EC5832306588700222289 /* Debug */,
-				600EC5842306588700222289 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

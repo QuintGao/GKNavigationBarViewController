@@ -13,13 +13,16 @@
 
 @implementation UINavigationController (GKCategory)
 
++ (instancetype)rootVC:(UIViewController *)rootVC {
+    return [[self alloc] initWithRootVC:rootVC translationScale:NO];
+}
+
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {
     return [[self alloc] initWithRootVC:rootVC translationScale:translationScale];
 }
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-designated-initializers"
- 
 - (instancetype)initWithRootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale {
     if (self = [super init]) {
         self.gk_openGestureHandle = YES;
@@ -28,7 +31,6 @@
     }
     return self;
 }
-
 #pragma clang diagnostic pop
 
 // 方法交换
@@ -113,11 +115,19 @@
     }else if (vc.gk_fullScreenPopDisabled) { // 禁止全屏滑动
         [self.view removeGestureRecognizer:self.panGesture];
         [self.view addGestureRecognizer:self.screenPanGesture];
-        [self.screenPanGesture addTarget:self.systemTarget action:self.systemAction];
+        if (vc.gk_systemGestureHandleDisabled) {
+            [self.screenPanGesture removeTarget:self.systemTarget action:self.systemAction];
+        }else {
+            [self.screenPanGesture addTarget:self.systemTarget action:self.systemAction];
+        }
     }else {
         [self.view removeGestureRecognizer:self.screenPanGesture];
         [self.view addGestureRecognizer:self.panGesture];
-        [self.panGesture addTarget:self.systemTarget action:self.systemAction];
+        if (vc.gk_systemGestureHandleDisabled) {
+            [self.panGesture removeTarget:self.systemTarget action:self.systemAction];
+        }else {
+            [self.panGesture addTarget:self.systemTarget action:self.systemAction];
+        }
     }
 }
 

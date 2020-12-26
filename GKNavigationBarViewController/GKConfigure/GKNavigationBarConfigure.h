@@ -41,6 +41,9 @@
 /// 状态栏类型，默认UIStatusBarStyleDefault
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 
+/// 快速滑动时的敏感度，默认0.7
+@property (nonatomic, assign) CGFloat   gk_snapMovementSensitivity;
+
 /// 左滑push过渡临界值，默认0.3，大于此值完成push操作
 @property (nonatomic, assign) CGFloat   gk_pushTransitionCriticalValue;
 
@@ -95,5 +98,9 @@
 #pragma mark - 内部方法
 /// 获取当前item修复间距
 - (CGFloat)gk_fixedSpace;
+
+/// 判断当前速度是是否在敏感度范围
+/// @param velocity 速度
+- (BOOL)isVelocityInSensitivity:(CGFloat)velocity;
 
 @end

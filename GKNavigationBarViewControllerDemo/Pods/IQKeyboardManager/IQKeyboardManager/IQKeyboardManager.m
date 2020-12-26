@@ -1288,7 +1288,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
 
                 strongSelf.movedDistance = 0;
                 
-                UIGestureRecognizer *gesture = [strongRootController.navigationController valueForKey:@"panGesture"];
+                UIPanGestureRecognizer *gesture = [strongRootController.navigationController valueForKey:@"panGesture"];
                 if (gesture.state == UIGestureRecognizerStateBegan) {
                     strongSelf.rootViewControllerWhilePopGestureRecognizerActive = strongRootController;
                     strongSelf.topViewBeginOriginWhilePopGestureRecognizerActive = strongSelf.topViewBeginOrigin;

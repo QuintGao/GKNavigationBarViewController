@@ -12,6 +12,13 @@
 
 @interface UINavigationController (GKCategory)
 
+/// 创建支持手势返回的导航栏
+/// @param rootVC 根控制器
++ (instancetype)rootVC:(UIViewController *)rootVC;
+
+/// 创建支持手势返回的导航栏
+/// @param rootVC 根控制器
+/// @param translationScale 是否需要缩放
 + (instancetype)rootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale;
 
 - (instancetype)initWithRootVC:(UIViewController *)rootVC translationScale:(BOOL)translationScale;

@@ -78,6 +78,9 @@
     self.fullScreenDistanceLabel.text = [NSString stringWithFormat:@"全屏返回手势距离：%f", self.gk_popMaxAllowedDistanceToLeftEdge];
     self.navBarAlphaSlider.value = self.gk_navBarAlpha;
     self.navBarAlphaLabel.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.gk_navBarAlpha];
+    
+//    self.gk_systemGestureHandleDisabled = YES;
+    self.gk_popDelegate = self;
 }
 
 - (IBAction)interactivePopAction:(id)sender {
@@ -96,7 +99,11 @@
     if (self.statusBarStyleSwitch.on) {
         self.gk_statusBarStyle = UIStatusBarStyleLightContent;
     }else {
-        self.gk_statusBarStyle = UIStatusBarStyleDefault;
+        if (@available(iOS 13.0, *)) {
+            self.gk_statusBarStyle = UIStatusBarStyleDarkContent;
+        } else {
+            self.gk_statusBarStyle = UIStatusBarStyleDefault;
+        }
     }
     self.statusBarStyleLabel.text = [NSString stringWithFormat:@"状态栏样式：%@", self.statusBarStyleSwitch.on ? @"LightContent" : @"Default"];
 }
