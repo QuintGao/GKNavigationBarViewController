@@ -351,7 +351,7 @@ static char kAssociatedObjectKey_hasPopDelegate;
 - (void)backItemClick:(id)sender {
     BOOL shouldPop = [self navigationShouldPop];
     if ([self respondsToSelector:@selector(navigationShouldPopOnClick)]) {
-        shouldPop = [self performSelector:@selector(navigationShouldPopOnClick)];
+        shouldPop = [[self performSelector:@selector(navigationShouldPopOnClick)] boolValue];
     }
     if (shouldPop) {
         [self.navigationController popViewControllerAnimated:YES];
