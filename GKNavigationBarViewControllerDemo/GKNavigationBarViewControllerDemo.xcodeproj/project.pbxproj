@@ -421,16 +421,16 @@
 		60D1406025873EA8004393D0 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				60D1406125873EA8004393D0 /* GKWYMusicMineViewController.h */,
 				60D1406225873EA8004393D0 /* GKWYMusicFindViewController.h */,
-				60D1406325873EA8004393D0 /* GKWYMusicFriendViewController.h */,
-				60D1406425873EA8004393D0 /* GKWYMusicAccountViewController.h */,
-				60D1406525873EA8004393D0 /* GKWYMusicDetailViewController.m */,
-				60D1406625873EA8004393D0 /* GKWYMusicFriendViewController.m */,
 				60D1406725873EA8004393D0 /* GKWYMusicFindViewController.m */,
+				60D1406325873EA8004393D0 /* GKWYMusicFriendViewController.h */,
+				60D1406625873EA8004393D0 /* GKWYMusicFriendViewController.m */,
+				60D1406125873EA8004393D0 /* GKWYMusicMineViewController.h */,
 				60D1406825873EA8004393D0 /* GKWYMusicMineViewController.m */,
-				60D1406925873EA8004393D0 /* GKWYMusicDetailViewController.h */,
+				60D1406425873EA8004393D0 /* GKWYMusicAccountViewController.h */,
 				60D1406A25873EA8004393D0 /* GKWYMusicAccountViewController.m */,
+				60D1406925873EA8004393D0 /* GKWYMusicDetailViewController.h */,
+				60D1406525873EA8004393D0 /* GKWYMusicDetailViewController.m */,
 			);
 			path = tab;
 			sourceTree = "<group>";

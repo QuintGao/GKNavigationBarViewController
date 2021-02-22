@@ -121,12 +121,10 @@
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
     CGFloat navBarH = 0;
-    if (width > height) { // 横屏
-        if (GK_IS_iPad) {
-            CGFloat statusBarH = [GKConfigure gk_statusBarFrame].size.height;
-            CGFloat navigaBarH = self.navigationController.navigationBar.frame.size.height;
-            navBarH = statusBarH + navigaBarH;
-        }else if (GK_IS_iPhoneX) { // 刘海屏横屏时高度为32
+    if (GK_IS_iPad) { // iPad
+        navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+    }else if (width > height) { // 横屏
+        if (GK_IS_iPhoneX) { // 刘海屏横屏时高度为32
             navBarH = 32.0f;
         }else {
             // iOS13之后，横屏不再显示状态栏了，做下区分

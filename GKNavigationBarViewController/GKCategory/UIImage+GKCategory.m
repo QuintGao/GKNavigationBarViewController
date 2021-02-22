@@ -13,8 +13,10 @@
 + (UIImage *)gk_imageNamed:(NSString *)name {
     NSString *bundleName = [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:name];
     NSString *frameWorkName = [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:name];
-
-    return [UIImage imageNamed:bundleName] ? : [UIImage imageNamed:frameWorkName];
+    
+    UIImage *image = [UIImage imageNamed:bundleName] ?: [UIImage imageNamed:frameWorkName];
+    if (!image) image = [UIImage imageNamed:name];
+    return image;
 }
 
 + (UIImage *)gk_imageWithColor:(UIColor *)color {

@@ -169,6 +169,14 @@
     self.navBarAlphaLabel.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.gk_navBarAlpha];
 }
 
+- (void)moreClick {
+    GKDemoWebViewController *webVC = [GKDemoWebViewController new];
+    
+    UINavigationController *nav = [UINavigationController rootVC:webVC];
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 #pragma mark - 懒加载
 - (UIBarButtonItem *)moreItem {
     if (!_moreItem) {
@@ -177,6 +185,7 @@
         [btn setTitle:@"更多" forState:UIControlStateNormal];
 //        btn.backgroundColor = [UIColor blackColor];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
         
         _moreItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
@@ -203,19 +212,11 @@
 }
 
 #pragma mark - GKGesturePopHandlerProtocol
-- (BOOL)navigationShouldPopOnGesture {
+- (BOOL)navigationShouldPop {
     if (self.disableBack) {
         [self showBackAlert];
     }
     return !self.disableBack;
-}
-
-- (void)backItemClick:(id)sender {
-    if (self.disableBack) {
-        [self showBackAlert];
-        return;
-    }
-    [super backItemClick:sender];
 }
 
 - (void)showBackAlert {

@@ -62,7 +62,10 @@
                 self.popTransition = [UIPercentDrivenInteractiveTransition new];
                 [self.navigationController popViewControllerAnimated:YES];
             }else if (self.visibleVC.gk_systemGestureHandleDisabled) {
-                BOOL shouldPop = [self.visibleVC navigationShouldPopOnGesture];
+                BOOL shouldPop = [self.visibleVC navigationShouldPop];
+                if ([self.visibleVC respondsToSelector:@selector(navigationShouldPopOnGesture)]) {
+                    [self.visibleVC navigationShouldPopOnGesture];
+                }
                 if (shouldPop) {
                     self.popTransition = [UIPercentDrivenInteractiveTransition new];
                     [self.navigationController popViewControllerAnimated:YES];
@@ -224,7 +227,10 @@
         }
     }else if (transition.x > 0) { // 右滑
         if (!visibleVC.gk_systemGestureHandleDisabled) {
-            BOOL shouldPop = [visibleVC navigationShouldPopOnGesture];
+            BOOL shouldPop = [visibleVC navigationShouldPop];
+            if ([visibleVC respondsToSelector:@selector(navigationShouldPopOnGesture)]) {
+                shouldPop = [visibleVC navigationShouldPopOnGesture];
+            }
             if (!shouldPop) return NO;
         }
         

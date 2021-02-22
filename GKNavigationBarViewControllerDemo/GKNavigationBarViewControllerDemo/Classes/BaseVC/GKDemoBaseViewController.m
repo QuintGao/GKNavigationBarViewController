@@ -29,10 +29,6 @@
     [self setupUI];
 }
 
-- (void)dealloc {
-    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
-}
-
 - (void)setupUI {
     self.view.backgroundColor = [UIColor whiteColor];
     

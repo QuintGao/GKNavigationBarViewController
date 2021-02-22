@@ -43,6 +43,12 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
+- (BOOL)navigationShouldPopOnClick {
+    self.navigationController.navigationBar.hidden = YES;
+    
+    return YES;
+}
+
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     GKDemoTransitionViewController *transitionVC = [GKDemoTransitionViewController new];

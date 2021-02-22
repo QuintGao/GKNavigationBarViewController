@@ -27,6 +27,8 @@
     self.gk_navigationItem.title = @"WebView跳转";
     self.gk_navLeftBarButtonItem = self.backBtn;
     self.gk_navRightBarButtonItem = self.closeBtn;
+    self.gk_navItemLeftSpace = 0;
+    self.gk_navItemRightSpace = 0;
     
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,6 +60,14 @@
         
     }else {
         decisionHandler(WKNavigationActionPolicyAllow);
+    }
+}
+
+- (void)backItemClick:(id)sender {
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

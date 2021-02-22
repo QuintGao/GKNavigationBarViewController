@@ -36,7 +36,9 @@
                 
                 CGFloat y = 0;
                 
-                if (width > height) {   // 横屏
+                if (GK_IS_iPad) {
+                    y = self.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
+                }else if (width > height) {   // 横屏
                     if (GK_IS_iPhoneX) {
                         y = 0;
                     }else {

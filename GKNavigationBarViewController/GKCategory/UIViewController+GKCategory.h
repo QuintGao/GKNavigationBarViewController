@@ -55,7 +55,14 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 @optional
 
+/// 包括点击返回的手势返回，默认YES
+- (BOOL)navigationShouldPop;
+
+/// 手势返回拦截
 - (BOOL)navigationShouldPopOnGesture;
+
+/// 点击返回拦截，包括系统返回按钮点击和自定义返回按钮点击
+- (BOOL)navigationShouldPopOnClick;
 
 @end
 
@@ -104,6 +111,9 @@ extern NSString *const GKViewControllerPropertyChangedNotification;
 
 /** 设置返回按钮的类型 */
 @property (nonatomic, assign) GKNavigationBarBackStyle gk_backStyle;
+
+/** 是否禁止调整当前控制器导航栏间距，默认GKConfigure.gk_disableFixSpace */
+@property (nonatomic, assign) BOOL gk_disableFixNavItemSpace;
 
 /** 导航栏左右按钮距离屏幕边缘的距离，需在设置左右item之前设置此属性 */
 @property (nonatomic, assign) CGFloat gk_navItemLeftSpace;

@@ -24,7 +24,8 @@
     
     self.gk_statusBarStyle = UIStatusBarStyleDefault;
     self.gk_navItemLeftSpace = 20;
-    self.gk_backImage = [UIImage imageNamed:@"Mine_selected"];
+//    self.gk_disableFixNavItemSpace = YES;
+    self.gk_backImage = [UIImage gk_imageNamed:@"Mine_selected"];
     
     UILabel *label = [UILabel new];
     label.font = [UIFont systemFontOfSize:16.0f];
