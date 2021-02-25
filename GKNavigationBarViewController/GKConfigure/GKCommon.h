@@ -11,29 +11,36 @@
 
 #import <objc/runtime.h>
 
-#define GKConfigure [GKNavigationBarConfigure sharedInstance]
+#define GKConfigure                     [GKNavigationBarConfigure sharedInstance]
 
 // 操作系统版本号，只获取第二级的版本号，例如 10.3.1 只会得到 10.3
 #define GK_SYSTEM_VERSION               ([[[UIDevice currentDevice] systemVersion] doubleValue])
 
-// 带物理凹槽的刘海屏
-#define GK_IS_NotchedScreen             [GKConfigure gk_isNotchedScreen]
+/// 是否横竖屏
+/// 用户界面横屏了才会返回YES
+#define GK_IS_LANDSCAPE             UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)
 
-// 判断是否是iPhoneX系列手机（带物理凹槽的刘海屏）
-#define GK_IS_iPhoneX                   [GKConfigure gk_isNotchedScreen]
+// 带物理凹槽的刘海屏
+#define GK_NOTCHED_SCREEN               [GKNavigationBarConfigure isNotchedScreen]
 
 // 判断是否是iPad
-#define GK_IS_iPad                      UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+#define GK_IS_iPad                      [GKNavigationBarConfigure isIPad]
 
 // 屏幕相关
 #define GK_SCREEN_WIDTH                 [UIScreen mainScreen].bounds.size.width
 #define GK_SCREEN_HEIGHT                [UIScreen mainScreen].bounds.size.height
-#define GK_SAFEAREA_TOP                 [GKConfigure gk_safeAreaInsets].top      // 顶部安全区域
-#define GK_SAFEAREA_BTM                 [GKConfigure gk_safeAreaInsets].bottom   // 底部安全区域
-#define GK_STATUSBAR_HEIGHT             [GKConfigure gk_statusBarFrame].size.height  // 状态栏高度
-#define GK_NAVBAR_HEIGHT                (GK_IS_iPad ? (GK_SYSTEM_VERSION >= 12.0 ? 50 : 44) : 44)   // 导航栏高度
-#define GK_STATUSBAR_NAVBAR_HEIGHT      (GK_STATUSBAR_HEIGHT + GK_NAVBAR_HEIGHT) // 状态栏+导航栏高度
-#define GK_TABBAR_HEIGHT                (GK_SAFEAREA_BTM + 49.0f)  //tabbar高度
+// 顶部安全区域高度
+#define GK_SAFEAREA_TOP                 [GKNavigationBarConfigure safeAreaInsets].top
+// 底部安全区域高度
+#define GK_SAFEAREA_BTM                 [GKNavigationBarConfigure safeAreaInsets].bottom
+// 状态栏高度
+#define GK_STATUSBAR_HEIGHT             [GKNavigationBarConfigure statusBarFrame].size.height
+// 导航栏高度
+#define GK_NAVBAR_HEIGHT                [GKNavigationBarConfigure navBarHeight]
+// 状态栏+导航栏高度
+#define GK_STATUSBAR_NAVBAR_HEIGHT      (GK_STATUSBAR_HEIGHT + GK_NAVBAR_HEIGHT)
+// tabbar高度
+#define GK_TABBAR_HEIGHT                (GK_SAFEAREA_BTM + 49.0f)
 
 // 导航栏间距，用于不同控制器之间的间距
 static const CGFloat GKNavigationBarItemSpace = -1;

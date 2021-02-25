@@ -43,9 +43,6 @@
         [self.view bringSubviewToFront:self.gk_navigationBar];
     }
     
-    // 获取状态
-    self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
-    
     // 返回按钮样式
     if (self.gk_backStyle == GKNavigationBarBackStyleNone) {
         self.gk_backStyle = GKConfigure.backStyle;
@@ -117,37 +114,19 @@
 }
 
 - (void)setupNavBarFrame {
-    CGFloat width  = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
-    
-    CGFloat navBarH = 0;
+    CGFloat navBarH = 0.0f;
     if (GK_IS_iPad) { // iPad
         navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
-    }else if (width > height) { // 横屏
-        if (GK_IS_iPhoneX) { // 刘海屏横屏时高度为32
-            navBarH = 32.0f;
+    }else if (GK_IS_LANDSCAPE) { // 横屏不显示状态栏
+        navBarH = GK_NAVBAR_HEIGHT;
+    }else {
+        if (GK_NOTCHED_SCREEN) { // 刘海屏手机
+            navBarH = GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT;
         }else {
-            // iOS13之后，横屏不再显示状态栏了，做下区分
-            if (@available(iOS 13.0, *)) {
-                if (width == 736.0f && height == 414.0f) {
-                    navBarH = GK_NAVBAR_HEIGHT;
-                }else {
-                    navBarH = 32.0f;
-                }
-            }else {
-                if (width == 736.0f && height == 414.0f) { // plus横屏
-                    navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
-                }else { // 其他机型横屏
-                    navBarH = self.gk_statusBarHidden ? 32.0f : 52.0f;
-                }
-            }
+            navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
         }
-    }else { // 竖屏
-        navBarH = self.gk_statusBarHidden ? (GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT) : GK_STATUSBAR_NAVBAR_HEIGHT;
     }
-    
-    self.gk_navigationBar.frame = CGRectMake(0, 0, width, navBarH);
-    self.gk_navigationBar.gk_statusBarHidden = self.gk_statusBarHidden;
+    self.gk_navigationBar.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, navBarH);
     [self.gk_navigationBar layoutSubviews];
 }
 

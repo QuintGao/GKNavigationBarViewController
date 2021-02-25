@@ -31,25 +31,8 @@
                 frame.size.height = self.frame.size.height;
                 obj.frame = frame;
             }else {
-                CGFloat width  = [UIScreen mainScreen].bounds.size.width;
-                CGFloat height = [UIScreen mainScreen].bounds.size.height;
-                
-                CGFloat y = 0;
-                
-                if (GK_IS_iPad) {
-                    y = self.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
-                }else if (width > height) {   // 横屏
-                    if (GK_IS_iPhoneX) {
-                        y = 0;
-                    }else {
-                        y = self.gk_statusBarHidden ? 0 : GK_STATUSBAR_HEIGHT;
-                    }
-                }else {
-                    y = self.gk_statusBarHidden ? GK_SAFEAREA_TOP : GK_STATUSBAR_HEIGHT;
-                }
-        
                 CGRect frame   = obj.frame;
-                frame.origin.y = y;
+                frame.origin.y = self.frame.size.height - GK_NAVBAR_HEIGHT;
                 obj.frame      = frame;
             }
         }];
