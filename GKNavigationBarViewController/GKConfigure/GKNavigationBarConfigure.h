@@ -65,6 +65,10 @@
 // 需要屏蔽手势处理的VC（默认nil），支持Class和NSString
 @property (nonatomic, strong) NSArray *shiledGuestureVCs;
 
+// 全局开启UIScrollView手势处理，默认NO
+// 如果设置为YES，所有UIScrollView都开启手势处理功能，可在单个UIScrollView中通过设置gk_openGestureHandle关闭
+@property (nonatomic, assign) BOOL gk_openScrollViewGestureHandle;
+
 /// 导航栏左右间距，内部使用
 @property (nonatomic, assign, readonly) CGFloat navItemLeftSpace;
 @property (nonatomic, assign, readonly) CGFloat navItemRightSpace;

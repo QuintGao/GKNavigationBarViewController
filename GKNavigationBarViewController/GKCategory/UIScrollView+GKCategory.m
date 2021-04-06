@@ -8,23 +8,42 @@
 
 #import "UIScrollView+GKCategory.h"
 #import <objc/runtime.h>
+#import "GKNavigationBarConfigure.h"
 
-static const void* GKDisableGestureHandleKey = @"GKDisableGestureHandleKey";
+static const void* GKOpenGestureHandleKey = @"GKOpenGestureHandleKey";
 
 @implementation UIScrollView (GKCategory)
 
-- (void)setGk_disableGestureHandle:(BOOL)gk_disableGestureHandle {
-    objc_setAssociatedObject(self, GKDisableGestureHandleKey, @(gk_disableGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray <NSString *> *oriSels = @[@"willMoveToSuperview:"];
+        
+        [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
+            gk_swizzled_method(@"gkGesture", self, oriSel, self);
+        }];
+    });
 }
 
-- (BOOL)gk_disableGestureHandle {
-    return [objc_getAssociatedObject(self, GKDisableGestureHandleKey) boolValue];
+- (void)gkGesture_willMoveToSuperview:(UIView *)newSuperview {
+    if (newSuperview && GKConfigure.gk_openScrollViewGestureHandle) {
+        self.gk_openGestureHandle = YES;
+    }
+    [self gkGesture_willMoveToSuperview:newSuperview];
+}
+
+- (void)setGk_openGestureHandle:(BOOL)gk_openGestureHandle {
+    objc_setAssociatedObject(self, GKOpenGestureHandleKey, @(gk_openGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)gk_openGestureHandle {
+    return [objc_getAssociatedObject(self, GKOpenGestureHandleKey) boolValue];
 }
 
 #pragma mark - 解决全屏滑动时的手势冲突
 // 当UIScrollView在水平方向滑动到第一个时，默认是不能全屏滑动返回的，通过下面的方法可实现其滑动返回。
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (self.gk_disableGestureHandle) return YES;
+    if (!self.gk_openGestureHandle) return YES;
 
     if ([self panBack:gestureRecognizer]) return NO;
     
@@ -32,7 +51,7 @@ static const void* GKDisableGestureHandleKey = @"GKDisableGestureHandleKey";
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (self.gk_disableGestureHandle) return NO;
+    if (!self.gk_openGestureHandle) return NO;
     
     if ([self panBack:gestureRecognizer]) return YES;
     

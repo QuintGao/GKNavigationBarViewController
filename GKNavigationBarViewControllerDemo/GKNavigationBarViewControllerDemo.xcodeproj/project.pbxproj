@@ -52,6 +52,9 @@
 		60180AEE23585BF500C48293 /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6CD23067F5400222289 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180AEF23585BF500C48293 /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 600EC6D223067F5400222289 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60180B342358669300C48293 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 60180B332358669300C48293 /* .travis.yml */; };
+		602B933A261C395E002F9742 /* GKDemo004ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B9338261C395E002F9742 /* GKDemo004ViewController.m */; };
+		602B933B261C395E002F9742 /* GKDemo004ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602B9339261C395E002F9742 /* GKDemo004ViewController.xib */; };
+		602B9340261C482E002F9742 /* GKDemo005ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B933F261C482E002F9742 /* GKDemo005ViewController.m */; };
 		603BE6B0257494BB0039D2ED /* GKDemoTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */; };
 		60B70D48256F8498008D62FC /* GKNavigationInteractiveTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7913689A256E9C95008AB9F5 /* GKNavigationInteractiveTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60D0DC07236FF8B800266415 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6011631A236FF52900622897 /* UIImage+GKCategory.m */; };
@@ -150,6 +153,11 @@
 		60180AB323585A7500C48293 /* GKNavigationBarViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKNavigationBarViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60180AB623585A7500C48293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60180B332358669300C48293 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .travis.yml; path = ../../.travis.yml; sourceTree = "<group>"; };
+		602B9337261C395E002F9742 /* GKDemo004ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo004ViewController.h; sourceTree = "<group>"; };
+		602B9338261C395E002F9742 /* GKDemo004ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo004ViewController.m; sourceTree = "<group>"; };
+		602B9339261C395E002F9742 /* GKDemo004ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GKDemo004ViewController.xib; sourceTree = "<group>"; };
+		602B933E261C482E002F9742 /* GKDemo005ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemo005ViewController.h; sourceTree = "<group>"; };
+		602B933F261C482E002F9742 /* GKDemo005ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemo005ViewController.m; sourceTree = "<group>"; };
 		603BE6AE257494BB0039D2ED /* GKDemoTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKDemoTransitionViewController.h; sourceTree = "<group>"; };
 		603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKDemoTransitionViewController.m; sourceTree = "<group>"; };
 		60D1405E25873EA8004393D0 /* GKWYMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWYMusicViewController.h; sourceTree = "<group>"; };
@@ -474,6 +482,11 @@
 				79C48BDD243CC462000B0815 /* GKDemo002ViewController.m */,
 				79C48BDC243CC462000B0815 /* GKDemo003ViewController.h */,
 				79C48BE1243CC462000B0815 /* GKDemo003ViewController.m */,
+				602B9337261C395E002F9742 /* GKDemo004ViewController.h */,
+				602B9338261C395E002F9742 /* GKDemo004ViewController.m */,
+				602B9339261C395E002F9742 /* GKDemo004ViewController.xib */,
+				602B933E261C482E002F9742 /* GKDemo005ViewController.h */,
+				602B933F261C482E002F9742 /* GKDemo005ViewController.m */,
 				603BE6AE257494BB0039D2ED /* GKDemoTransitionViewController.h */,
 				603BE6AF257494BB0039D2ED /* GKDemoTransitionViewController.m */,
 				79C48BD9243CC462000B0815 /* GKDemoWebViewController.h */,
@@ -665,7 +678,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = gaokun;
 				TargetAttributes = {
 					600EC5522306588500222289 = {
@@ -705,6 +718,7 @@
 				79C48C20243CC464000B0815 /* GKDemo000ViewController.xib in Resources */,
 				79C48C26243CC464000B0815 /* web.txt in Resources */,
 				600EC6DF23067F5400222289 /* GKNavigationBarViewController.bundle in Resources */,
+				602B933B261C395E002F9742 /* GKDemo004ViewController.xib in Resources */,
 				600EC5602306588700222289 /* Assets.xcassets in Resources */,
 				60180B342358669300C48293 /* .travis.yml in Resources */,
 				600EC6E423067F6800222289 /* GKNavigationBarViewController.podspec in Resources */,
@@ -786,6 +800,7 @@
 				79C48C3A243CC464000B0815 /* GKWYNewsLiveViewController.m in Sources */,
 				600EC6D723067F5400222289 /* GKBaseTransitionAnimation.m in Sources */,
 				79C48C2E243CC464000B0815 /* GKTabBaseViewController.m in Sources */,
+				602B933A261C395E002F9742 /* GKDemo004ViewController.m in Sources */,
 				79C48C1D243CC464000B0815 /* GKToutiaoVideoViewController.m in Sources */,
 				79FBECFD253AE6F10053F518 /* GKWXMineViewController.m in Sources */,
 				600EC6E123067F5400222289 /* GKNavigationBarConfigure.m in Sources */,
@@ -819,6 +834,7 @@
 				79C48C34243CC464000B0815 /* GKWYNewsHomeViewController.m in Sources */,
 				79C48C3B243CC464000B0815 /* GKDouyinHomePlayerViewController.m in Sources */,
 				600EC6E023067F5400222289 /* GKNavigationBarViewController.m in Sources */,
+				602B9340261C482E002F9742 /* GKDemo005ViewController.m in Sources */,
 				6011631B236FF52900622897 /* UIImage+GKCategory.m in Sources */,
 				79C48C24243CC464000B0815 /* GKDemoWebViewController.m in Sources */,
 				79C48C3C243CC464000B0815 /* GKDouyinHomeViewController.m in Sources */,

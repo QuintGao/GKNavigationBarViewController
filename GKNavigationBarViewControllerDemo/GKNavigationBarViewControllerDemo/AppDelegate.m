@@ -37,6 +37,7 @@
         configure.gk_navItemRightSpace = 12.0f;
         configure.shiledGuestureVCs = @[@"TZ"];
         configure.shiledItemSpaceVCs = @[@"TZ", @"GKDemoWebViewController"];
+        configure.gk_openScrollViewGestureHandle = YES;
     }];
     
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];

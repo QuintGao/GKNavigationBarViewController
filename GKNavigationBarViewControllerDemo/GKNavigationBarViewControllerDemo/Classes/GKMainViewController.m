@@ -30,6 +30,8 @@
                         @"UIScrollView使用（手势冲突）",
                         @"TZImagePickerController使用",
                         @"系统导航",
+                        @"UITableView xib",
+                        @"WKWebView",
                         @"抖音左右滑动",
                         @"今日头条",
                         @"网易云音乐",
@@ -110,24 +112,24 @@
     if (vc) {
         [self.navigationController pushViewController:vc animated:YES];
     }else {
-        if (indexPath.row == 4) {
+        if (indexPath.row == 6) {
             UINavigationController *nav = [UINavigationController rootVC:[GKDouyinHomeViewController new] translationScale:NO];
             nav.gk_openScrollLeftPush = YES;
             nav.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:nav animated:YES completion:nil];
-        }else if (indexPath.row == 5) {
+        }else if (indexPath.row == 7) {
             GKToutiaoViewController *toutiaoVC = [GKToutiaoViewController new];
             toutiaoVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:toutiaoVC animated:YES completion:nil];
-        }else if (indexPath.row == 6) {
+        }else if (indexPath.row == 8) {
             GKWYMusicViewController *musicVC = [GKWYMusicViewController new];
             musicVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:musicVC animated:YES completion:nil];
-        }else if (indexPath.row == 7) {
+        }else if (indexPath.row == 9) {
             GKWYNewsViewController *newsVC = [GKWYNewsViewController new];
             newsVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:newsVC animated:YES completion:nil];
-        }else if (indexPath.row == 8) {
+        }else if (indexPath.row == 10) {
             GKWXViewController *wxVC = [GKWXViewController new];
             wxVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:wxVC animated:YES completion:nil];
