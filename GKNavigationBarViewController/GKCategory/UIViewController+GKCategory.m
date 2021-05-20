@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/7.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "UIViewController+GKCategory.h"
@@ -210,10 +210,18 @@ static char kAssociatedObjectKey_hasPopDelegate;
 }
 
 - (void)gk_viewDidLoad {
-    // 初始化导航栏间距
-    self.gk_navItemLeftSpace       = GKNavigationBarItemSpace;
-    self.gk_navItemRightSpace      = GKNavigationBarItemSpace;
-    self.gk_disableFixNavItemSpace = [self checkFixNavItemSpace];
+    if ([self navItemSpaceChangeIfNeeded]) {
+        // 设置默认导航栏间距
+        self.gk_navItemLeftSpace       = GKNavigationBarItemSpace;
+        self.gk_navItemRightSpace      = GKNavigationBarItemSpace;
+        self.gk_disableFixNavItemSpace = [self checkFixNavItemSpace];
+    }
+    // 如果是根控制器，取消返回按钮
+    if (self.navigationController && self.navigationController.childViewControllers.count <= 1) {
+        if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
+            ((GKNavigationBarViewController *)self).gk_navLeftBarButtonItem = nil;
+        }
+    }
     [self gk_viewDidLoad];
 }
 
@@ -227,14 +235,22 @@ static char kAssociatedObjectKey_hasPopDelegate;
     if (!self.navigationController) return;
     
     // bug fix：#41
-    if (!self.gk_disableFixNavItemSpace) {
+    if ([self navItemSpaceChangeIfNeeded]  && !self.gk_disableFixNavItemSpace) {
         // 每次控制器出现的时候重置导航栏间距
         if (self.gk_navItemLeftSpace == GKNavigationBarItemSpace) {
             self.gk_navItemLeftSpace = GKConfigure.navItemLeftSpace;
+        }else {
+            [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
+                configure.gk_navItemLeftSpace = self.gk_navItemLeftSpace;
+            }];
         }
 
         if (self.gk_navItemRightSpace == GKNavigationBarItemSpace) {
             self.gk_navItemRightSpace = GKConfigure.navItemRightSpace;
+        }else {
+            [GKConfigure updateConfigure:^(GKNavigationBarConfigure *configure) {
+                configure.gk_navItemRightSpace = self.gk_navItemRightSpace;
+            }];
         }
     }
     
@@ -397,6 +413,13 @@ static char kAssociatedObjectKey_hasPopDelegate;
         }
     }];
     return exist;
+}
+
+- (BOOL)navItemSpaceChangeIfNeeded {
+    if ([self isKindOfClass:[GKNavigationBarViewController class]]) {
+        return YES;
+    }
+    return [self.parentViewController isKindOfClass:[UINavigationController class]];
 }
 
 - (void)setNavBarAlpha:(CGFloat)alpha {

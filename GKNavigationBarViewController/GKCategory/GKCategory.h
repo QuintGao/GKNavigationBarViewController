@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/8/31.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #ifndef GKCategory_h

@@ -2,19 +2,18 @@
 //  UIImage+GKCategory.m
 //  GKNavigationBar
 //
-//  Created by gaokun on 2019/11/1.
+//  Created by QuintGao on 2019/11/1.
 //  Copyright © 2019 QuintGao. All rights reserved.
 //
 
 #import "UIImage+GKCategory.h"
+#import "GKNavigationBarConfigure.h"
 
 @implementation UIImage (GKCategory)
 
 + (UIImage *)gk_imageNamed:(NSString *)name {
-    NSString *bundleName = [@"GKNavigationBarViewController.bundle" stringByAppendingPathComponent:name];
-    NSString *frameWorkName = [@"Frameworks/GKNavigationBarViewController.framework/GKNavigationBarViewController.bundle" stringByAppendingPathComponent:name];
-    
-    UIImage *image = [UIImage imageNamed:bundleName] ?: [UIImage imageNamed:frameWorkName];
+    if (![GKConfigure gk_libraryBundle]) return [UIImage imageNamed:name];
+    UIImage *image = [UIImage imageNamed:name inBundle:[GKConfigure gk_libraryBundle] compatibleWithTraitCollection:nil];
     if (!image) image = [UIImage imageNamed:name];
     return image;
 }

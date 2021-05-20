@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/7.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //  所有需要显示导航条的基类，可根据自己的需求设置导航栏
 //  基本原理就是为每一个控制器添加自定义导航条，做到导航条与控制器相连的效果
 

@@ -2,8 +2,8 @@
 //  GKDemoTransitionViewController.m
 //  GKNavigationBarViewControllerDemo
 //
-//  Created by gaokun on 2020/11/30.
-//  Copyright © 2020 gaokun. All rights reserved.
+//  Created by QuintGao on 2020/11/30.
+//  Copyright © 2020 QuintGao. All rights reserved.
 //
 
 #import "GKDemoTransitionViewController.h"

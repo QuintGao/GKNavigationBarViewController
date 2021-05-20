@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/7.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "GKNavigationBarViewController.h"
@@ -114,16 +114,42 @@
 }
 
 - (void)setupNavBarFrame {
+    BOOL isNonFullScreen = NO;
+    CGFloat viewW = GK_SCREEN_WIDTH;
+    CGFloat viewH = GK_SCREEN_HEIGHT;
+    // 防止在init方法中创建导航栏会提前触发viewDidLoad方法，所以做下判断
+    if (self.isViewLoaded) {
+        UIViewController *parentVC = self;
+        while (parentVC.parentViewController) {
+            parentVC = parentVC.parentViewController;
+        }
+        viewW = parentVC.view.frame.size.width;
+        viewH = parentVC.view.frame.size.height;
+        if (viewW == 0 || viewH == 0) return;
+    
+        // 如果是通过present方式弹出且高度小于屏幕高度，则认为是非全屏
+        isNonFullScreen = self.presentingViewController && viewH < GK_SCREEN_HEIGHT;
+    }
     CGFloat navBarH = 0.0f;
     if (GK_IS_iPad) { // iPad
-        navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+        if (isNonFullScreen) {
+            navBarH = GK_NAVBAR_HEIGHT_NFS;
+            self.gk_navigationBar.gk_nonFullScreen = YES;
+        }else {
+            navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+        }
     }else if (GK_IS_LANDSCAPE) { // 横屏不显示状态栏
         navBarH = GK_NAVBAR_HEIGHT;
     }else {
-        if (GK_NOTCHED_SCREEN) { // 刘海屏手机
-            navBarH = GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT;
+        if (isNonFullScreen) {
+            navBarH = GK_NAVBAR_HEIGHT_NFS;
+            self.gk_navigationBar.gk_nonFullScreen = YES;
         }else {
-            navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+            if (GK_NOTCHED_SCREEN) { // 刘海屏手机
+                navBarH = GK_SAFEAREA_TOP + GK_NAVBAR_HEIGHT;
+            }else {
+                navBarH = self.gk_statusBarHidden ? GK_NAVBAR_HEIGHT : GK_STATUSBAR_NAVBAR_HEIGHT;
+            }
         }
     }
     self.gk_navigationBar.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, navBarH);

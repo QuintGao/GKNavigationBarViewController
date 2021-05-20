@@ -3,7 +3,7 @@
 //  GKNavigationBarViewControllerDemo
 //
 //  Created by QuintGao on 2020/10/17.
-//  Copyright © 2020 gaokun. All rights reserved.
+//  Copyright © 2020 QuintGao. All rights reserved.
 //
 
 #import "GKWXDetailViewController.h"

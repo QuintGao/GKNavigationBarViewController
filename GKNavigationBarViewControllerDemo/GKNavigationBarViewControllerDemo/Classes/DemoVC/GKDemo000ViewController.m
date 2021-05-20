@@ -65,6 +65,7 @@
     self.gk_navBackgroundColor = [UIColor redColor];
     self.gk_navShadowColor = [UIColor blackColor];
     self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    self.gk_navItemRightSpace = 30;
     self.gk_navRightBarButtonItem = self.moreItem;
     
     self.leftPushSwitch.on = NO;
@@ -79,8 +80,13 @@
     self.navBarAlphaSlider.value = self.gk_navBarAlpha;
     self.navBarAlphaLabel.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.gk_navBarAlpha];
     
-//    self.gk_systemGestureHandleDisabled = YES;
+    self.gk_systemGestureHandleDisabled = YES;
     self.gk_popDelegate = self;
+    
+    UIViewController *vc = [UIViewController new];
+    [self addChildViewController:vc];
+    vc.view.userInteractionEnabled = NO;
+    [self.view addSubview:vc.view];
 }
 
 - (IBAction)interactivePopAction:(id)sender {

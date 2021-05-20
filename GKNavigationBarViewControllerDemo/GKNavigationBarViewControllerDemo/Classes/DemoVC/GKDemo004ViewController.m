@@ -2,8 +2,8 @@
 //  GKDemo004ViewController.m
 //  GKNavigationBarViewControllerDemo
 //
-//  Created by gaokun on 2021/4/6.
-//  Copyright © 2021 gaokun. All rights reserved.
+//  Created by QuintGao on 2021/4/6.
+//  Copyright © 2021 QuintGao. All rights reserved.
 //
 
 #import "GKDemo004ViewController.h"

@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/7.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "UINavigationController+GKCategory.h"
@@ -118,6 +118,8 @@
     if ([vc isKindOfClass:[UITabBarController class]]) return;
     if (!vc.navigationController) return;
     if (vc.navigationController != self) return;
+    // 修复非导航栏控制器子类时出现的问题
+    if (vc.parentViewController != self) return;
     
     __block BOOL exist = NO;
     [GKConfigure.shiledGuestureVCs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

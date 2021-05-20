@@ -3,7 +3,7 @@
 //  GKNavigationController
 //
 //  Created by QuintGao on 2017/6/22.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "GKDemo001ViewController.h"

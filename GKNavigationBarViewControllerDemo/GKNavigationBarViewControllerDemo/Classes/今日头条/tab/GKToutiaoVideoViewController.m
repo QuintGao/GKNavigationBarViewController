@@ -3,7 +3,7 @@
 //  GKNavigationBarViewControllerDemo
 //
 //  Created by QuintGao on 2017/7/9.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "GKToutiaoVideoViewController.h"

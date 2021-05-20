@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/7/10.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -94,6 +94,9 @@
 /// 获取当前item修复间距
 - (CGFloat)gk_fixedSpace;
 
+/// 获取bundle
+- (NSBundle *)gk_libraryBundle;
+
 /// 判断当前速度是是否在敏感度范围
 /// @param velocity 速度
 - (BOOL)isVelocityInSensitivity:(CGFloat)velocity;
@@ -116,61 +119,66 @@
 @property (class, nonatomic, readonly) BOOL isRegularScreen;
 
 /// iPhone 12 Pro Max
-@property(class, nonatomic, readonly) BOOL is67InchScreen;
+@property (class, nonatomic, readonly) BOOL is67InchScreen;
 
 /// iPhone XS Max / 11 Pro Max
-@property(class, nonatomic, readonly) BOOL is65InchScreen;
+@property (class, nonatomic, readonly) BOOL is65InchScreen;
 
 /// iPhone 12 / 12 Pro
-@property(class, nonatomic, readonly) BOOL is61InchScreenAndiPhone12;
+@property (class, nonatomic, readonly) BOOL is61InchScreenAndiPhone12;
 
 /// iPhone XR / 11
-@property(class, nonatomic, readonly) BOOL is61InchScreen;
+@property (class, nonatomic, readonly) BOOL is61InchScreen;
 
 /// iPhone X / XS / 11Pro
-@property(class, nonatomic, readonly) BOOL is58InchScreen;
+@property (class, nonatomic, readonly) BOOL is58InchScreen;
 
 /// iPhone 6，6s，7，8 Plus
-@property(class, nonatomic, readonly) BOOL is55InchScreen;
+@property (class, nonatomic, readonly) BOOL is55InchScreen;
 
 /// iPhone 12 mini
-@property(class, nonatomic, readonly) BOOL is54InchScreen;
+@property (class, nonatomic, readonly) BOOL is54InchScreen;
 
 /// iPhone 6，6s，7，8，SE2
-@property(class, nonatomic, readonly) BOOL is47InchScreen;
+@property (class, nonatomic, readonly) BOOL is47InchScreen;
 
 /// iPhone 5，5s，5c，SE
-@property(class, nonatomic, readonly) BOOL is40InchScreen;
+@property (class, nonatomic, readonly) BOOL is40InchScreen;
 
 /// iPhone 4
-@property(class, nonatomic, readonly) BOOL is35InchScreen;
+@property (class, nonatomic, readonly) BOOL is35InchScreen;
 
-@property(class, nonatomic, readonly) CGSize screenSizeFor67Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor65Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor61InchAndiPhone12;
-@property(class, nonatomic, readonly) CGSize screenSizeFor61Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor58Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor55Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor54Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor47Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor40Inch;
-@property(class, nonatomic, readonly) CGSize screenSizeFor35Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor67Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor65Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor61InchAndiPhone12;
+@property (class, nonatomic, readonly) CGSize screenSizeFor61Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor58Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor55Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor54Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor47Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor40Inch;
+@property (class, nonatomic, readonly) CGSize screenSizeFor35Inch;
 
-// 导航栏高度，包括竖屏，横屏，放大模式
-// 机型\高度         尺寸        竖屏       横屏      放大模式
-// 5,5s,5c,SE       4.0        44        32         不支持
-// 6,6s,7,8,SE2     4.7        44        32          32
-// 6,6s,7,8plus     5.5        44        44          32
-// X,XS,11Pro       5.8        44        32          32
-// XR,11            6.1        44        44          32
-// XS MAX,11Pro Max 6.5        44        44          32
-// 12mini           5.4        44        32          32
-// 12,12Pro         6.1        44        32          32
-// 12Pro Max        6.7        44        44          32
+// 导航栏高度，包括竖屏，横屏，放大模式，非全屏模式
+// 机型\高度         尺寸        竖屏       横屏      放大模式    非全屏模式
+// 5,5s,5c,SE       4.0        44        32         不支持       56
+// 6,6s,7,8,SE2     4.7        44        32          32         56
+// 6,6s,7,8plus     5.5        44        44          32         56
+// X,XS,11Pro       5.8        44        32          32         56
+// XR,11            6.1        44        44          32         56
+// XS MAX,11Pro Max 6.5        44        44          32         56
+// 12mini           5.4        44        32          32         56
+// 12,12Pro         6.1        44        32          32         56
+// 12Pro Max        6.7        44        44          32         56
 // iPad iOS12之前是44，之后是50
-@property(class, nonatomic, readonly) CGFloat      navBarHeight;
-@property(class, nonatomic, readonly) UIEdgeInsets safeAreaInsets;
-@property(class, nonatomic, readonly) CGRect       statusBarFrame;
-@property(class, nonatomic, readonly) UIWindow     *keyWindow;
+@property (class, nonatomic, readonly) CGFloat      navBarHeight;
+@property (class, nonatomic, readonly) CGFloat      navBarHeight_nonFullScreen;
+@property (class, nonatomic, readonly) CGFloat      tabBarHeight;
+@property (class, nonatomic, readonly) UIEdgeInsets safeAreaInsets;
+@property (class, nonatomic, readonly) CGRect       statusBarFrame;
+@property (class, nonatomic, readonly) UIWindow     *keyWindow;
+
+// 用于获取 isNotchedScreen 设备的 insets，注意对于 iPad Pro 11-inch 这种无刘海凹槽但却有使用 Home Indicator 的设备，它的 top 返回0，bottom 返回 safeAreaInsets.bottom 的值
++ (UIEdgeInsets)safeAreaInsetsForDeviceWithNotch;
 
 @end

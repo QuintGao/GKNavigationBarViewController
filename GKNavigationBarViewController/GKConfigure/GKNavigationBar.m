@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/9/20.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //
 
 #import "GKNavigationBar.h"
@@ -32,7 +32,7 @@
                 obj.frame = frame;
             }else {
                 CGRect frame   = obj.frame;
-                frame.origin.y = self.frame.size.height - GK_NAVBAR_HEIGHT;
+                frame.origin.y = self.frame.size.height - (self.gk_nonFullScreen ? GK_NAVBAR_HEIGHT_NFS : GK_NAVBAR_HEIGHT);
                 obj.frame      = frame;
             }
         }];

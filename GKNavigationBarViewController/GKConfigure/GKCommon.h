@@ -3,7 +3,7 @@
 //  GKNavigationBarViewController
 //
 //  Created by QuintGao on 2017/10/13.
-//  Copyright © 2017年 高坤. All rights reserved.
+//  Copyright © 2017年 QuintGao. All rights reserved.
 //  一些公共的方法、宏定义、枚举等
 
 #ifndef GKCommon_h
@@ -37,10 +37,12 @@
 #define GK_STATUSBAR_HEIGHT             [GKNavigationBarConfigure statusBarFrame].size.height
 // 导航栏高度
 #define GK_NAVBAR_HEIGHT                [GKNavigationBarConfigure navBarHeight]
+// 非全屏导航栏高度
+#define GK_NAVBAR_HEIGHT_NFS            [GKNavigationBarConfigure navBarHeight_nonFullScreen]
 // 状态栏+导航栏高度
 #define GK_STATUSBAR_NAVBAR_HEIGHT      (GK_STATUSBAR_HEIGHT + GK_NAVBAR_HEIGHT)
 // tabbar高度
-#define GK_TABBAR_HEIGHT                (GK_SAFEAREA_BTM + 49.0f)
+#define GK_TABBAR_HEIGHT                [GKNavigationBarConfigure tabBarHeight]
 
 // 导航栏间距，用于不同控制器之间的间距
 static const CGFloat GKNavigationBarItemSpace = -1;
