@@ -678,7 +678,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = gaokun;
 				TargetAttributes = {
 					600EC5522306588500222289 = {

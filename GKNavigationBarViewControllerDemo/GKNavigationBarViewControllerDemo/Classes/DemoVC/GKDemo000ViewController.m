@@ -87,6 +87,21 @@
     [self addChildViewController:vc];
     vc.view.userInteractionEnabled = NO;
     [self.view addSubview:vc.view];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notify {
+    [self.view.superview addSubview:self.gk_navigationBar];
+}
+
+- (void)keyboardDidHide:(NSNotification *)notify {
+    [self.view addSubview:self.gk_navigationBar];
 }
 
 - (IBAction)interactivePopAction:(id)sender {
